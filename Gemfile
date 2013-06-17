@@ -40,5 +40,5 @@ gem "less-rails"
 gem 'sass-rails', '~> 4.0.0.rc1'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
-gem 'twitter-bootstrap-rails'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'haml-rails'
