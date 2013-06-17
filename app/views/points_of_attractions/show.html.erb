@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @points_of_attraction.name %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @points_of_attraction.type_id %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @points_of_attraction.comments %>
+</p>
+
+<p>
+  <strong>Destination:</strong>
+  <%= @points_of_attraction.destination_id %>
+</p>
+
+<%= link_to 'Edit', edit_points_of_attraction_path(@points_of_attraction) %> |
+<%= link_to 'Back', points_of_attractions_path %>

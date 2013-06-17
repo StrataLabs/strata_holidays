@@ -1,0 +1,35 @@
+%h1 Listing properties
+
+%table
+  %tr
+    %th Destination
+    %th Name
+    %th Type
+    %th Official rating
+    %th Customer rating
+    %th Pool
+    %th Funzone
+    %th Restaurent
+    %th Comments
+    %th
+    %th
+    %th
+
+  - @properties.each do |property|
+    %tr
+      %td= property.destination_id
+      %td= property.name
+      %td= property.type
+      %td= property.official_rating
+      %td= property.customer_rating
+      %td= property.pool
+      %td= property.funzone
+      %td= property.restaurent
+      %td= property.comments
+      %td= link_to 'Show', property
+      %td= link_to 'Edit', edit_property_path(property)
+      %td= link_to 'Destroy', property, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Property', new_property_path

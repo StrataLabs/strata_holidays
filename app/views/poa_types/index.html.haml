@@ -1,0 +1,27 @@
+%h1 Listing poa_types
+
+%table
+  %tr
+    %th Type
+    %th Description
+    %th Meant fof
+    %th Time can be spent
+    %th Comments
+    %th
+    %th
+    %th
+
+  - @poa_types.each do |poa_type|
+    %tr
+      %td= poa_type.type
+      %td= poa_type.description
+      %td= poa_type.meant_fof
+      %td= poa_type.time_can_be_spent
+      %td= poa_type.comments
+      %td= link_to 'Show', poa_type
+      %td= link_to 'Edit', edit_poa_type_path(poa_type)
+      %td= link_to 'Destroy', poa_type, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Poa type', new_poa_type_path

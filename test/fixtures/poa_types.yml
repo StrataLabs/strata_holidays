@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  type: 
+  description: MyString
+  meant_fof: MyString
+  time_can_be_spent: MyString
+  comments: MyString
+
+two:
+  type: 
+  description: MyString
+  meant_fof: MyString
+  time_can_be_spent: MyString
+  comments: MyString

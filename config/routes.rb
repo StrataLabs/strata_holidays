@@ -1,4 +1,12 @@
 StrataHolidays::Application.routes.draw do
+  resources :properties
+
+  resources :poa_types
+
+  resources :points_of_attractions
+
+  resources :destinations
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

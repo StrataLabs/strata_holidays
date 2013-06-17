@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  destination_id: 1
+  name: MyString
+  type: 
+  official_rating: MyString
+  customer_rating: MyString
+  pool: false
+  funzone: false
+  restaurent: false
+  comments: MyString
+
+two:
+  destination_id: 1
+  name: MyString
+  type: 
+  official_rating: MyString
+  customer_rating: MyString
+  pool: false
+  funzone: false
+  restaurent: false
+  comments: MyString

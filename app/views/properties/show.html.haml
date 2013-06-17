@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Destination:
+  = @property.destination_id
+%p
+  %b Name:
+  = @property.name
+%p
+  %b Type:
+  = @property.type
+%p
+  %b Official rating:
+  = @property.official_rating
+%p
+  %b Customer rating:
+  = @property.customer_rating
+%p
+  %b Pool:
+  = @property.pool
+%p
+  %b Funzone:
+  = @property.funzone
+%p
+  %b Restaurent:
+  = @property.restaurent
+%p
+  %b Comments:
+  = @property.comments
+
+= link_to 'Edit', edit_property_path(@property)
+\|
+= link_to 'Back', properties_path

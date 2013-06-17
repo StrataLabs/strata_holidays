@@ -1,0 +1,2 @@
+module PoaTypesHelper
+end

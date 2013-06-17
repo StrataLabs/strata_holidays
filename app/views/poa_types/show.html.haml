@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Type:
+  = @poa_type.type
+%p
+  %b Description:
+  = @poa_type.description
+%p
+  %b Meant fof:
+  = @poa_type.meant_fof
+%p
+  %b Time can be spent:
+  = @poa_type.time_can_be_spent
+%p
+  %b Comments:
+  = @poa_type.comments
+
+= link_to 'Edit', edit_poa_type_path(@poa_type)
+\|
+= link_to 'Back', poa_types_path

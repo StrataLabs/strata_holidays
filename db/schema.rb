@@ -11,7 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130617082500) do
+ActiveRecord::Schema.define(version: 20130617110950) do
+
+  create_table "destinations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poa_types", force: true do |t|
+    t.string   "type"
+    t.string   "description"
+    t.string   "meant_fof"
+    t.string   "time_can_be_spent"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "points_of_attractions", force: true do |t|
+    t.string   "name"
+    t.integer  "type_id"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "destination_id"
+  end
+
+  create_table "properties", force: true do |t|
+    t.integer  "destination_id"
+    t.string   "name"
+    t.string   "type"
+    t.string   "official_rating"
+    t.string   "customer_rating"
+    t.boolean  "pool"
+    t.boolean  "funzone"
+    t.boolean  "restaurent"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                              default: "", null: false

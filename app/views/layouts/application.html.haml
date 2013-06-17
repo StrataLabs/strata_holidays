@@ -1,0 +1,25 @@
+!!!
+%html
+  %head
+    %title StrataHolidays
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    %header.navbar.navbar-fixed-top.navbar-inverse
+      .navbar-inner
+        .container
+          %nav
+            = link_to "Strata Holidays", '#', id: "logo"
+            %ul.nav.pull-right{:style => 'color:white'}
+              - if current_user
+                Welcome
+                = current_user.email
+                = link_to "(Logout)", destroy_user_session_path, method: :delete
+              - else
+                %li= link_to "Sign in", new_user_session_path
+                %li= link_to "Sign up", "/users/sign_up"
+    .container
+      - flash.each do |name, msg|
+        = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
+      = yield
