@@ -1,7 +1,5 @@
 require 'spec_helper'
 
 describe Property do
-  context "associations" do
-    it { should belong_to :destination }
-  end
+  pending "add some examples to (or delete) #{__FILE__}"
 end

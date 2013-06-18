@@ -4,12 +4,12 @@ FactoryGirl.define do
   factory :property do
     destination_id 1
     name "MyString"
-    type ""
+    property_type "MyString"
     official_rating "MyString"
     customer_rating "MyString"
-    restaurent false
+    restaurant false
     pool false
-    funzoze false
+    fun_zone false
     comments "MyString"
   end
 end

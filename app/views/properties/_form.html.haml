@@ -2,15 +2,15 @@
   .control-group
     = f.label :destination_id, :class => 'control-label'
     .controls
-      = f.text_field :destination_id, :class => 'text_field'
+      = f.select :destination_id, options_for_select(build_destination_options, @property.destination_id), {}
   .control-group
     = f.label :name, :class => 'control-label'
     .controls
       = f.text_field :name, :class => 'text_field'
   .control-group
-    = f.label :type, :class => 'control-label'
+    = f.label :property_type, :class => 'control-label'
     .controls
-      = f.text_field :type, :class => 'text_field'
+      = f.text_field :property_type, :class => 'text_field'
   .control-group
     = f.label :official_rating, :class => 'control-label'
     .controls
@@ -20,17 +20,26 @@
     .controls
       = f.text_field :customer_rating, :class => 'text_field'
   .control-group
-    = f.label :restaurent, :class => 'control-label'
+    = f.label :restaurant, :class => 'control-label'
     .controls
-      = f.text_field :restaurent, :class => 'text_field'
+      = f.radio_button :restaurant, 1 , :checked => true
+      Yes
+      = f.radio_button :restaurant, 0 
+      No
   .control-group
     = f.label :pool, :class => 'control-label'
     .controls
-      = f.text_field :pool, :class => 'text_field'
+      = f.radio_button :pool, 1 , :checked => true
+      Yes
+      = f.radio_button :pool, 0 
+      No
   .control-group
-    = f.label :funzoze, :class => 'control-label'
+    = f.label :fun_zone, :class => 'control-label'
     .controls
-      = f.text_field :funzoze, :class => 'text_field'
+      = f.radio_button :fun_zone, 1 , :checked => true
+      Yes
+      = f.radio_button :fun_zone, 0 
+      No
   .control-group
     = f.label :comments, :class => 'control-label'
     .controls

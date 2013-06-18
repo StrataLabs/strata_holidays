@@ -2,7 +2,8 @@
   .control-group
     = f.label :destination_id, :class => 'control-label'
     .controls
-      = f.text_field :destination_id, :class => 'text_field'
+      = f.select :destination_id, options_for_select(build_destination_options, @points_of_attraction.destination_id), {}
+      / = f.text_field :destination_id, :class => 'text_field'
   .control-group
     = f.label :name, :class => 'control-label'
     .controls
@@ -10,7 +11,7 @@
   .control-group
     = f.label :poa_type_id, :class => 'control-label'
     .controls
-      = f.text_field :poa_type_id, :class => 'text_field'
+      = f.select :poa_type_id, options_for_select(build_poa_type_options, @points_of_attraction.poa_type_id), {}
   .control-group
     = f.label :comments, :class => 'control-label'
     .controls

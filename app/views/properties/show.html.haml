@@ -11,9 +11,9 @@
   %br
   = @property.name
 %p
-  %strong= model_class.human_attribute_name(:type) + ':'
+  %strong= model_class.human_attribute_name(:property_type) + ':'
   %br
-  = @property.type
+  = @property.property_type
 %p
   %strong= model_class.human_attribute_name(:official_rating) + ':'
   %br
@@ -23,17 +23,17 @@
   %br
   = @property.customer_rating
 %p
-  %strong= model_class.human_attribute_name(:restaurent) + ':'
+  %strong= model_class.human_attribute_name(:restaurant) + ':'
   %br
-  = @property.restaurent
+  = @property.restaurant
 %p
   %strong= model_class.human_attribute_name(:pool) + ':'
   %br
   = @property.pool
 %p
-  %strong= model_class.human_attribute_name(:funzoze) + ':'
+  %strong= model_class.human_attribute_name(:fun_zone) + ':'
   %br
-  = @property.funzoze
+  = @property.fun_zone
 %p
   %strong= model_class.human_attribute_name(:comments) + ':'
   %br

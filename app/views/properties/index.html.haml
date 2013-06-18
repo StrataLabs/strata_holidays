@@ -7,12 +7,12 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:destination_id)
       %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:type)
+      %th= model_class.human_attribute_name(:property_type)
       %th= model_class.human_attribute_name(:official_rating)
       %th= model_class.human_attribute_name(:customer_rating)
-      %th= model_class.human_attribute_name(:restaurent)
+      %th= model_class.human_attribute_name(:restaurant)
       %th= model_class.human_attribute_name(:pool)
-      %th= model_class.human_attribute_name(:funzoze)
+      %th= model_class.human_attribute_name(:fun_zone)
       %th= model_class.human_attribute_name(:comments)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
@@ -22,12 +22,12 @@
         %td= link_to property.id, property_path(property)
         %td= property.destination_id
         %td= property.name
-        %td= property.type
+        %td= property.property_type
         %td= property.official_rating
         %td= property.customer_rating
-        %td= property.restaurent
+        %td= property.restaurant
         %td= property.pool
-        %td= property.funzoze
+        %td= property.fun_zone
         %td= property.comments
         %td= property.created_at
         %td
