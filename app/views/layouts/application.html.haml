@@ -11,12 +11,14 @@
         .container
           %nav-collpase.collapse
             %ul.nav
-              %li.active= link_to "Strata Holidays", '#', id: "brand"
+              %li.active= link_to "Strata Holidays", root_path, id: "brand"
             %ul.nav.pull-right{:style => 'color:white'}
+              %li= link_to "Destinations", destinations_path
+              %li= link_to "POA", points_of_attractions_path
+              %li= link_to "POA Types", poa_types_path
+              %li= link_to "Properties", properties_path
               - if current_user
-                Welcome
-                = current_user.email
-                = link_to "(Logout)", destroy_user_session_path, method: :delete
+                %li.active= link_to "Welcome #{current_user.email}", '#'
               - else
                 %li= link_to "Sign in", new_user_session_path
                 %li= link_to "Sign up", "/users/sign_up"
