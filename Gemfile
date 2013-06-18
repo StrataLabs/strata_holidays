@@ -46,3 +46,9 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'haml-rails'
 
 gem 'pg' , :group => :production
+
+group :production do
+ # For Heroku
+ gem 'rails_log_stdout',           github: 'heroku/rails_log_stdout'
+ gem 'rails3_serve_static_assets', github: 'heroku/rails3_serve_static_assets'
+end
