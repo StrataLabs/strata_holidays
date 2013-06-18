@@ -3,17 +3,13 @@
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
 %p
-  %strong= model_class.human_attribute_name(:type) + ':'
+  %strong= model_class.human_attribute_name(:poa_type) + ':'
   %br
-  = @poa_type.type
+  = @poa_type.poa_type
 %p
   %strong= model_class.human_attribute_name(:description) + ':'
   %br
   = @poa_type.description
-%p
-  %strong= model_class.human_attribute_name(:meant_fof) + ':'
-  %br
-  = @poa_type.meant_fof
 %p
   %strong= model_class.human_attribute_name(:time_can_be_spent) + ':'
   %br

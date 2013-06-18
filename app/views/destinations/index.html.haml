@@ -13,7 +13,7 @@
       %tr
         %td= link_to destination.id, destination_path(destination)
         %td= destination.name
-        %td=l destination.created_at
+        %td= destination.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(destination), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(destination), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'

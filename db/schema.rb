@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130618063241) do
+ActiveRecord::Schema.define(version: 20130618105646) do
 
   create_table "destinations", force: true do |t|
     t.string   "name"
@@ -20,9 +20,8 @@ ActiveRecord::Schema.define(version: 20130618063241) do
   end
 
   create_table "poa_types", force: true do |t|
-    t.string   "type"
+    t.string   "poa_type"
     t.string   "description"
-    t.string   "meant_fof"
     t.string   "time_can_be_spent"
     t.string   "comments"
     t.datetime "created_at"
@@ -30,12 +29,12 @@ ActiveRecord::Schema.define(version: 20130618063241) do
   end
 
   create_table "points_of_attractions", force: true do |t|
+    t.integer  "destination_id"
+    t.integer  "poa_type_id"
     t.string   "name"
-    t.integer  "type_id"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "destination_id"
   end
 
   create_table "properties", force: true do |t|
@@ -44,9 +43,18 @@ ActiveRecord::Schema.define(version: 20130618063241) do
     t.string   "type"
     t.string   "official_rating"
     t.string   "customer_rating"
-    t.boolean  "pool"
-    t.boolean  "funzone"
     t.boolean  "restaurent"
+    t.boolean  "pool"
+    t.boolean  "funzoze"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "types", force: true do |t|
+    t.string   "type"
+    t.string   "description"
+    t.string   "time_can_be_spent"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -5,21 +5,21 @@
   %thead
     %tr
       %th= model_class.human_attribute_name(:id)
-      %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:type_id)
-      %th= model_class.human_attribute_name(:comments)
       %th= model_class.human_attribute_name(:destination_id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:poa_type_id)
+      %th= model_class.human_attribute_name(:comments)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @points_of_attractions.each do |points_of_attraction|
       %tr
         %td= link_to points_of_attraction.id, points_of_attraction_path(points_of_attraction)
-        %td= points_of_attraction.name
-        %td= points_of_attraction.type_id
-        %td= points_of_attraction.comments
         %td= points_of_attraction.destination_id
-        %td=l points_of_attraction.created_at
+        %td= points_of_attraction.name
+        %td= points_of_attraction.poa_type_id
+        %td= points_of_attraction.comments
+        %td= points_of_attraction.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_points_of_attraction_path(points_of_attraction), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), points_of_attraction_path(points_of_attraction), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'

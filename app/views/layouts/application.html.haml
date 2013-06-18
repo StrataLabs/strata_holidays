@@ -6,22 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %header.navbar.navbar-fixed-top.navbar-inverse
-      .navbar-inner
-        .container
-          %nav-collpase.collapse
-            %ul.nav
-              %li.active= link_to "Strata Holidays", root_path, id: "brand"
-            %ul.nav.pull-right{:style => 'color:white'}
-              %li= link_to "Destinations", destinations_path
-              %li= link_to "POA", points_of_attractions_path
-              %li= link_to "POA Types", poa_types_path
-              %li= link_to "Properties", properties_path
-              - if current_user
-                %li.active= link_to "Welcome #{current_user.email}", '#'
-              - else
-                %li= link_to "Sign in", new_user_session_path
-                %li= link_to "Sign up", "/users/sign_up"
+    = render 'layouts/header'
     .container
       - flash.each do |name, msg|
         = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
