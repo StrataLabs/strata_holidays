@@ -55,10 +55,10 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 2.13.2"
-  
+
   #Factory Girl instead of Fixtures
   gem "factory_girl_rails", "~> 4.0"
-  
+
   gem 'debugger'
 end
 
@@ -66,12 +66,12 @@ group :development do
   #Guard Goodies
   gem "guard-bundler", "~> 1.0.0"
   gem "guard-rspec", "~> 3.0.2"
-  
+
   #Spork and related guard
   gem 'spork-rails', github: 'railstutorial/spork-rails'
   gem 'guard-spork', '1.5.0'
   gem 'childprocess', '0.3.6'
-  
+
   # Guard and LiveReload - Install LiveReload Chrome Extension as well
   gem "guard-livereload", "~> 1.4.0"
   gem "growl", "~> 1.0.3"
@@ -85,3 +85,5 @@ end
 group :test do
   gem "shoulda-matchers"
 end
+
+gem "simple_form", :git => 'git@github.com:plataformatec/simple_form.git' , :branch => 'master'

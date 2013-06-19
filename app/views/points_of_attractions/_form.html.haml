@@ -1,21 +1,26 @@
-= form_for @points_of_attraction, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :destination_id, :class => 'control-label'
-    .controls
-      = f.select :destination_id, options_for_select(build_destination_options, @points_of_attraction.destination_id), {}
-      / = f.text_field :destination_id, :class => 'text_field'
-  .control-group
-    = f.label :name, :class => 'control-label'
-    .controls
-      = f.text_field :name, :class => 'text_field'
-  .control-group
-    = f.label :poa_type_id, :class => 'control-label'
-    .controls
-      = f.select :poa_type_id, options_for_select(build_poa_type_options, @points_of_attraction.poa_type_id), {}
-  .control-group
-    = f.label :comments, :class => 'control-label'
-    .controls
-      = f.text_field :comments, :class => 'text_field'
+= simple_form_for @points_of_attraction, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :destination_id , :collection => build_destination_options, prompt: "Select Destination"
+  = f.input :name
+  = f.association :poa_type, :collection => build_poa_type_options, prompt: "Select Type"
+  = f.input :comments
+
+  / .control-group
+  /   = f.label :destination_id, :class => 'control-label'
+  /   .controls
+  /     = f.select :destination_id, options_for_select(build_destination_options, @points_of_attraction.destination_id), {}
+  /     / = f.text_field :destination_id, :class => 'text_field'
+  / .control-group
+  /   = f.label :name, :class => 'control-label'
+  /   .controls
+  /     = f.text_field :name, :class => 'text_field'
+  / .control-group
+  /   = f.label :poa_type_id, :class => 'control-label'
+  /   .controls
+  /     = f.select :poa_type_id, options_for_select(build_poa_type_options, @points_of_attraction.poa_type_id), {}
+  / .control-group
+  /   = f.label :comments, :class => 'control-label'
+  /   .controls
+  /     = f.text_field :comments, :class => 'text_field'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), points_of_attractions_path, :class => 'btn'
