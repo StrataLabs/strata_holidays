@@ -1,0 +1,35 @@
+- model_class = ItiDestinationXref
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:iti_header_id)
+      %th= model_class.human_attribute_name(:destination_id)
+      %th= model_class.human_attribute_name(:destination_group_id)
+      %th= model_class.human_attribute_name(:dest_start_date)
+      %th= model_class.human_attribute_name(:dest_end_date)
+      %th= model_class.human_attribute_name(:season)
+      %th= model_class.human_attribute_name(:duration)
+      %th= model_class.human_attribute_name(:no_of_people)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @iti_destination_xrefs.each do |iti_destination_xref|
+      %tr
+        %td= link_to iti_destination_xref.id, iti_destination_xref_path(iti_destination_xref)
+        %td= iti_destination_xref.iti_header_id
+        %td= iti_destination_xref.destination_id
+        %td= iti_destination_xref.destination_group_id
+        %td= iti_destination_xref.dest_start_date
+        %td= iti_destination_xref.dest_end_date
+        %td= iti_destination_xref.season
+        %td= iti_destination_xref.duration
+        %td= iti_destination_xref.no_of_people
+        %td= iti_destination_xref.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_destination_xref_path(iti_destination_xref), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), iti_destination_xref_path(iti_destination_xref), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_iti_destination_xref_path, :class => 'btn btn-primary'

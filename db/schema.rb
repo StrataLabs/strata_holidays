@@ -11,10 +11,57 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130618121307) do
+ActiveRecord::Schema.define(version: 20130619092903) do
 
   create_table "destinations", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "iti_day_details", force: true do |t|
+    t.integer  "iti_header_id"
+    t.integer  "day_number"
+    t.integer  "points_of_attraction_id"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "iti_destination_xrefs", force: true do |t|
+    t.integer  "iti_header_id"
+    t.integer  "destination_id"
+    t.integer  "destination_group_id"
+    t.date     "dest_start_date"
+    t.date     "dest_end_date"
+    t.string   "season"
+    t.integer  "duration"
+    t.integer  "no_of_people"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "iti_details", force: true do |t|
+    t.integer  "iti_header_id"
+    t.integer  "destination_id"
+    t.integer  "day_number"
+    t.integer  "property_id"
+    t.date     "iti_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "iti_headers", force: true do |t|
+    t.string   "name"
+    t.string   "iti_type"
+    t.integer  "vacation_type_id"
+    t.date     "iti_start_date"
+    t.date     "iti_end_date"
+    t.string   "season"
+    t.integer  "duration"
+    t.integer  "no_of_people"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
