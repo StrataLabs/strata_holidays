@@ -9,8 +9,6 @@
           %li= link_to "POA", points_of_attractions_path
           %li= link_to "POA Types", poa_types_path
           %li= link_to "Properties", properties_path
-          - if current_user
-            %li.active= link_to "Welcome #{current_user.email}", '#'
-          - else
-            %li= link_to "Sign in", new_user_session_path
-            %li= link_to "Sign up", "/users/sign_up"
+          %li= link_to "Itinerary Header", iti_headers_path
+          %li= link_to "Itinerary Details", iti_details_path
+          %li= link_to "Iti Day Details", iti_day_details_path

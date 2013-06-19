@@ -1,5 +1,8 @@
 require 'spec_helper'
 
 describe ItiDayDetail do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "associations" do
+    it { should belong_to :iti_header }
+    it { should belong_to :points_of_attraction }
+  end
 end

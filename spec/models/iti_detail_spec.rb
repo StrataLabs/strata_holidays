@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe ItiDetail do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "associations" do
+    it { should belong_to :destination }
+    it { should belong_to :iti_header }
+    it { should belong_to :property }
+  end
 end
+
