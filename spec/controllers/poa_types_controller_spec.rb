@@ -23,7 +23,7 @@ describe PoaTypesController do
   # This should return the minimal set of attributes required to create a valid
   # PoaType. As you add validations to PoaType, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "poa_type" => "MyString" , "time_can_be_spent" => "2"} }
+  let(:valid_attributes) { { "description" => "MyString" , "time_can_be_spent" => "2"} }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -106,8 +106,8 @@ describe PoaTypesController do
         # specifies that the PoaType created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        PoaType.any_instance.should_receive(:update).with({ "poa_type" => "MyString" })
-        put :update, {:id => poa_type.to_param, :poa_type => { "poa_type" => "MyString" }}, valid_session
+        PoaType.any_instance.should_receive(:update).with({ "description" => "MyString" })
+        put :update, {:id => poa_type.to_param, :poa_type => { "description" => "MyString" }}, valid_session
       end
 
       it "assigns the requested poa_type as @poa_type" do

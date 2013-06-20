@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :poa_type do
-    poa_type "MyString"
+    description "MyString"
     time_can_be_spent "MyString"
     comments "MyString"
   end

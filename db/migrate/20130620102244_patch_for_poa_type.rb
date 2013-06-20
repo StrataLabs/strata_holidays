@@ -1,12 +1,12 @@
 class PatchForPoaType < ActiveRecord::Migration
   def change
-    if PoaType.column_names.include? "description"
+    if PoaType.column_names.include? "poa_type"
       poas = PoaType.all
       poas.each do |poa|
-        poa.poa_type = poa.description
+        poa.description = poa.poa_type
         poa.save
       end
-      remove_column :poa_types, :description
+      remove_column :poa_types, :poa_type
     end
   end
 end
