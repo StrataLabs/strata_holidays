@@ -31,4 +31,12 @@ describe ItiHeader do
       iti_header.errors_on(:iti_end_date).should include("cannot be past start date")
     end
   end
+  it "create iti details after creating iti header" do
+    iti_header = FactoryGirl.create(:iti_header, :iti_start_date => Time.zone.today + 10.days, :iti_end_date => Time.zone.today + 20.days)
+    iti_details = ItiDetail.where(:iti_header_id => iti_header.id)
+    iti_details.count.should == 10
+    iti_details.first.iti_date.should == iti_header.iti_start_date
+    iti_details.first.day_number.should == 1
+    iti_details.last.iti_date.should == iti_header.iti_start_date + 9.days
+  end
 end
