@@ -86,4 +86,4 @@ group :test do
   gem "shoulda-matchers"
 end
 
-gem "simple_form", :git => 'git@github.com:plataformatec/simple_form.git' , :branch => 'master'
+gem "simple_form", :git => 'https://github.com/plataformatec/simple_form.git' , :branch => 'master'

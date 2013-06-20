@@ -28,7 +28,7 @@ GIT
       railties (>= 3.1)
 
 GIT
-  remote: git@github.com:plataformatec/simple_form.git
+  remote: https://github.com/plataformatec/simple_form.git
   revision: 3df45ebff856c4a0d7653fa3b24442a3fe8f6c17
   branch: master
   specs:
