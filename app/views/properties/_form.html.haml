@@ -1,49 +1,13 @@
 = simple_form_for @property, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :destination_id, :class => 'control-label'
-    .controls
-      = f.select :destination_id, options_for_select(build_destination_options, @property.destination_id), {}
-  .control-group
-    = f.label :name, :class => 'control-label'
-    .controls
-      = f.text_field :name, :class => 'text_field'
-  .control-group
-    = f.label :property_type, :class => 'control-label'
-    .controls
-      = f.text_field :property_type, :class => 'text_field'
-  .control-group
-    = f.label :official_rating, :class => 'control-label'
-    .controls
-      = f.text_field :official_rating, :class => 'text_field'
-  .control-group
-    = f.label :customer_rating, :class => 'control-label'
-    .controls
-      = f.text_field :customer_rating, :class => 'text_field'
-  .control-group
-    = f.label :restaurant, :class => 'control-label'
-    .controls
-      = f.radio_button :restaurant, 1 , :checked => true
-      Yes
-      = f.radio_button :restaurant, 0
-      No
-  .control-group
-    = f.label :pool, :class => 'control-label'
-    .controls
-      = f.radio_button :pool, 1 , :checked => true
-      Yes
-      = f.radio_button :pool, 0
-      No
-  .control-group
-    = f.label :fun_zone, :class => 'control-label'
-    .controls
-      = f.radio_button :fun_zone, 1 , :checked => true
-      Yes
-      = f.radio_button :fun_zone, 0
-      No
-  .control-group
-    = f.label :comments, :class => 'control-label'
-    .controls
-      = f.text_field :comments, :class => 'text_field'
+  = f.association :destination, :include_blank => false
+  = f.input :name, :class => 'text_field'
+  = f.input :property_type, :class => 'text_field'
+  = f.input :official_rating, :class => 'text_field'
+  = f.input :customer_rating, :class => 'text_field'
+  = f.input :restaurant, :as => :boolean
+  = f.input :pool, :as => :boolean
+  = f.input :fun_zone, :as => :boolean
+  = f.input :comments, :class => 'text_field'
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), properties_path, :class => 'btn'

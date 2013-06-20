@@ -13,7 +13,6 @@ describe ItiDayDetail do
       it { should validate_presence_of :points_of_attraction_id }
       it { should validate_presence_of :start_time }
       it { should validate_presence_of :end_time }
-      it { should validate_presence_of :comments }
     end
   end
 end

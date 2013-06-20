@@ -1,20 +1,8 @@
 = simple_form_for @poa_type, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :poa_type, :class => 'control-label'
-    .controls
-      = f.text_field :poa_type, :class => 'text_field'
-  .control-group
-    = f.label :description, :class => 'control-label'
-    .controls
-      = f.text_field :description, :class => 'text_field'
-  .control-group
-    = f.label :time_can_be_spent, :class => 'control-label'
-    .controls
-      = f.text_field :time_can_be_spent, :class => 'text_field'
-  .control-group
-    = f.label :comments, :class => 'control-label'
-    .controls
-      = f.text_field :comments, :class => 'text_field'
+  = f.input :poa_type
+  = f.input :description
+  = f.input :time_can_be_spent
+  = f.input :comments
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), poa_types_path, :class => 'btn'

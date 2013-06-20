@@ -1,28 +1,10 @@
 = simple_form_for @iti_day_detail, :html => { :class => 'form-horizontal' } do |f|
-  .control-group
-    = f.label :iti_header_id, :class => 'control-label'
-    .controls
-      = f.text_field :iti_header_id, :class => 'text_field'
-  .control-group
-    = f.label :day_number, :class => 'control-label'
-    .controls
-      = f.text_field :day_number, :class => 'text_field'
-  .control-group
-    = f.label :points_of_attraction_id, :class => 'control-label'
-    .controls
-      = f.text_field :points_of_attraction_id, :class => 'text_field'
-  .control-group
-    = f.label :start_time, :class => 'control-label'
-    .controls
-      = f.text_field :start_time, :class => 'text_field'
-  .control-group
-    = f.label :end_time, :class => 'control-label'
-    .controls
-      = f.text_field :end_time, :class => 'text_field'
-  .control-group
-    = f.label :comments, :class => 'control-label'
-    .controls
-      = f.text_field :comments, :class => 'text_field'
+  = f.association :iti_header, :include_blank => false
+  = f.input :day_number
+  = f.association :points_of_attraction, :include_blank => false
+  = f.input :start_time
+  = f.input :end_time
+  = f.input :comments
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), iti_day_details_path, :class => 'btn'

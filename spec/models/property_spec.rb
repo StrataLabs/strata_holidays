@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe Property do
   context "validation" do
+    context "association" do
+      it {should belong_to :destination}
+    end
     context "presense" do
       subject { FactoryGirl.create(:property) }
       it { should validate_presence_of :destination_id }
