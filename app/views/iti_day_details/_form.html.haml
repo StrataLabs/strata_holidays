@@ -1,7 +1,7 @@
 = simple_form_for @iti_day_detail, :html => { :class => 'form-horizontal' } do |f|
   = f.association :iti_header, :include_blank => false
   = f.input :day_number
-  = f.association :points_of_attraction, :include_blank => false
+  = f.association :points_of_attraction, :label_method => lambda{|poa| "#{poa.name} - #{poa.destination.name}"}, :include_blank => false
   = f.input :start_time
   = f.input :end_time
   = f.input :comments

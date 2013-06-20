@@ -2,7 +2,7 @@
   = f.association :iti_header, :include_blank => false
   = f.association :destination, :include_blank => false
   = f.input :day_number
-  = f.association :property, :include_blank => false
+  = f.association :property, :label_method => lambda{|prop| "#{prop.name} - #{prop.destination.name}"}, :include_blank => false
   = f.input :iti_date
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'
