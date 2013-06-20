@@ -14,7 +14,6 @@ describe "poa_types/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Poa Type/)
-    rendered.should match(/Description/)
     rendered.should match(/Time Can Be Spent/)
     rendered.should match(/Comments/)
   end

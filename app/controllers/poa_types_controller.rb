@@ -69,6 +69,6 @@ class PoaTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poa_type_params
-      params.require(:poa_type).permit(:poa_type, :description, :time_can_be_spent, :comments)
+      params.require(:poa_type).permit(:poa_type, :time_can_be_spent, :comments)
     end
 end

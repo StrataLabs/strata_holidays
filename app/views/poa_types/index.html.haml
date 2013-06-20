@@ -6,7 +6,6 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:poa_type)
-      %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:time_can_be_spent)
       %th= model_class.human_attribute_name(:comments)
       %th= model_class.human_attribute_name(:created_at)
@@ -16,7 +15,6 @@
       %tr
         %td= link_to poa_type.id, poa_type_path(poa_type)
         %td= poa_type.poa_type
-        %td= poa_type.description
         %td= poa_type.time_can_be_spent
         %td= poa_type.comments
         %td= poa_type.created_at

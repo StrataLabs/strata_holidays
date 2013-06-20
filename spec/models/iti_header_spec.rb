@@ -2,6 +2,9 @@ require 'spec_helper'
 
 describe ItiHeader do
   context "validation" do
+    context "association" do
+      it {should belong_to :vacation_type}
+    end
     context "presense" do
       subject { FactoryGirl.create(:iti_header) }
       it { should validate_presence_of :name }

@@ -23,7 +23,7 @@ describe PoaTypesController do
   # This should return the minimal set of attributes required to create a valid
   # PoaType. As you add validations to PoaType, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "poa_type" => "MyString" , "description" => "MyString", "time_can_be_spent" => "2"} }
+  let(:valid_attributes) { { "poa_type" => "MyString" , "time_can_be_spent" => "2"} }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
