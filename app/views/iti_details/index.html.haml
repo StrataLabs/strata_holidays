@@ -16,14 +16,12 @@
     - @iti_details.each do |iti_detail|
       %tr
         %td= link_to iti_detail.id, iti_detail_path(iti_detail)
-        %td= iti_detail.iti_header_id
-        %td= iti_detail.destination_id
+        %td= iti_detail.iti_header.name rescue 'NA'
+        %td= iti_detail.destination.name rescue 'NA'
         %td= iti_detail.day_number
-        %td= iti_detail.property_id
+        %td= iti_detail.property.name rescue 'NA'
         %td= iti_detail.iti_date
         %td= iti_detail.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_detail_path(iti_detail), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), iti_detail_path(iti_detail), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-
-= link_to t('.new', :default => t("helpers.links.new")), new_iti_detail_path, :class => 'btn btn-primary'

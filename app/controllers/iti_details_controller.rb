@@ -4,7 +4,11 @@ class ItiDetailsController < ApplicationController
   # GET /iti_details
   # GET /iti_details.json
   def index
-    @iti_details = ItiDetail.all
+    if params[:iti_header_id].present?
+      @iti_details = ItiDetail.where(:iti_header_id => params[:iti_header_id])
+    else
+      @iti_details = ItiDetail.all
+    end
   end
 
   # GET /iti_details/1

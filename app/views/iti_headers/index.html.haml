@@ -19,9 +19,9 @@
     - @iti_headers.each do |iti_header|
       %tr
         %td= link_to iti_header.id, iti_header_path(iti_header)
-        %td= iti_header.name
+        %td= iti_header.name rescue ''
         %td= iti_header.iti_type
-        %td= iti_header.vacation_type_id
+        %td= iti_header.vacation_type.vac_type rescue ''
         %td= iti_header.iti_start_date
         %td= iti_header.iti_end_date
         %td= iti_header.season
@@ -29,8 +29,9 @@
         %td= iti_header.no_of_people
         %td= iti_header.created_at
         %td
-          = link_to t('.new', :default => t("helpers.links.clone")), new_iti_header_path(:id => iti_header.id), :class => 'btn btn-mini'
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_header_path(iti_header), :class => 'btn btn-mini'
+          = link_to "Iti Details", iti_details_path(:iti_header_id => iti_header.id), :class => 'btn btn-mini'
+          = link_to "Clone", new_iti_header_path(:id => iti_header.id), :class => 'btn btn-mini'
+          / = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_header_path(iti_header), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), iti_header_path(iti_header), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
 = link_to t('.new', :default => t("helpers.links.new")), new_iti_header_path, :class => 'btn btn-primary'

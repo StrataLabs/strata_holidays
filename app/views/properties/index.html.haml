@@ -20,7 +20,7 @@
     - @properties.each do |property|
       %tr
         %td= link_to property.id, property_path(property)
-        %td= property.destination_id
+        %td= property.destination.name
         %td= property.name
         %td= property.property_type
         %td= property.official_rating

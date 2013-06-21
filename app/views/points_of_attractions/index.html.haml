@@ -15,9 +15,9 @@
     - @points_of_attractions.each do |points_of_attraction|
       %tr
         %td= link_to points_of_attraction.id, points_of_attraction_path(points_of_attraction)
-        %td= points_of_attraction.destination_id
+        %td= points_of_attraction.destination.name rescue ''
         %td= points_of_attraction.name
-        %td= points_of_attraction.poa_type_id
+        %td= points_of_attraction.poa_type.description rescue ''
         %td= points_of_attraction.comments
         %td= points_of_attraction.created_at
         %td

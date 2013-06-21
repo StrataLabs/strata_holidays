@@ -17,9 +17,9 @@
     - @iti_day_details.each do |iti_day_detail|
       %tr
         %td= link_to iti_day_detail.id, iti_day_detail_path(iti_day_detail)
-        %td= iti_day_detail.iti_header_id
+        %td= iti_day_detail.iti_header.name rescue ''
         %td= iti_day_detail.day_number
-        %td= iti_day_detail.points_of_attraction_id
+        %td= iti_day_detail.points_of_attraction.name rescue ''
         %td= iti_day_detail.start_time
         %td= iti_day_detail.end_time
         %td= iti_day_detail.comments
