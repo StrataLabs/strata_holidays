@@ -16,12 +16,20 @@ class ItiHeader < ActiveRecord::Base
 
   def create_iti_details
     no_of_days = (iti_end_date - iti_start_date).to_i
-    (0..no_of_days-1).each do |day|
+    if no_of_days == 0
       iti_details = ItiDetail.new
-      iti_details.day_number = day + 1
+      iti_details.day_number = 1
       iti_details.iti_header = self
-      iti_details.iti_date = iti_start_date + day.days
+      iti_details.iti_date = iti_start_date
       iti_details.save(:validate => false)
+    else
+      (0..no_of_days-1).each do |day|
+        iti_details = ItiDetail.new
+        iti_details.day_number = day + 1
+        iti_details.iti_header = self
+        iti_details.iti_date = iti_start_date + day.days
+        iti_details.save(:validate => false)
+      end
     end
   end
 end
