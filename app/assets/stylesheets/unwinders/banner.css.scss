@@ -1,0 +1,221 @@
+html{padding-top: 0;}
+
+#banner{
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0; padding: 40px 0;
+  background: $white;
+
+  h1{
+    display: block;
+    position: relative;
+    background: transparent image-url('unwinders/logo.png') center center no-repeat;
+    width: 320px;
+    height: 130px;
+    float: left;
+    z-index: 20;
+    margin: -30px 0 0 0; padding: 0;
+    text-indent: -1000em;
+
+    @media screen and (max-width: 600px) {
+      margin: 0;
+    }
+  }
+
+  h2{
+    display: block;
+    position: relative;
+    color: $white;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 42px;
+    padding: 6px 0 0 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  #menu{
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: -90px 0 0 0;
+    background: $secondary-color;
+    color: $white;
+    z-index: 10;
+
+    font-weight: 100;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 48px;
+    float: left;
+    width: 100%;
+
+    @media screen and (max-width: 600px) {
+      margin: 20px 0 0 0;
+    }
+
+    div#search{
+      display: block; float: right;
+      width: 200px; height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      margin: 9px 10px 0 0;
+      padding: 0;
+      background: $white;
+      @include border-radius(15px);
+
+      &:after{
+        content: "\1F50E";
+        font-family: "SSStandard";
+        display: block;
+        float: right;
+        width: 30px; height: 30px;
+        font-size: 18px;
+        line-height: 36px;
+        text-align: center;
+        background: transparent;
+        color: $gray-light;
+      }
+
+      input{
+        background: transparent;
+        border: transparent;
+        display: block;
+        float: left;
+        height: 30px; line-height: 30px;
+
+        @include border-radius(0 15px 15px 0);
+      }
+    }
+
+
+    ul#filters{
+      display: block;
+      margin: 0 0 0 320px; padding: 0;
+      font-weight: 100;
+      font-size: 24px;
+      text-transform: uppercase;
+      line-height: 48px;
+
+      @media screen and (max-width: 600px) {
+        margin: 0;
+      }
+
+      li{
+        display: block;
+        float: left;
+        position: relative;
+
+        &.instructions{
+          background: transparent;
+          margin: -36px -300px 0 0;
+          width: 300px;
+          font-size: 13px;
+          font-weight: 400;
+
+          color: $gray;
+        }
+
+
+        &.list{
+          margin-right: 40px;
+        }
+
+        span.label{
+          display: block;
+          float: left;
+          background: transparent;
+          width: auto;
+          padding-right: 10px;
+          width: 80px;
+          text-align: right;
+        }
+
+        span.prompt{
+          display: block;
+          position: relative;
+          float: left;
+          width: 200px;
+          padding: 0 0 0 12px;
+          background: rgba($black, 0.1);
+          cursor: pointer;
+
+          &:after{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            right: 12px;
+            top: 18px;
+
+
+            border-top: solid 10px rgba($black, 0.5);
+            border-right: solid 6px transparent;
+            border-left: solid 6px transparent;
+          }
+
+        }
+
+        ul{
+          display: block;
+          position: absolute;
+          top: 48px;
+          left: -1000em;
+          margin: 0 0 0 90px; padding: 0;
+
+          width: 212px;
+          height: auto;
+          max-height: 420px;
+          overflow-y: auto;
+          background: $white;
+          color: $secondary-color;
+          z-index: 100;
+          @include box-shadow-center;
+
+          li{
+            width: 90%;
+            height: auto;
+            padding: 0 5%;
+            margin: 0;
+            line-height: 30px;
+            font-size: 20px;
+            text-transform: lowercase;
+            background: transparent;
+
+            &:hover{
+              background: rgba($black, 0.1);
+              cursor: pointer;
+            }
+          }
+        }
+
+        &:hover ul, &.hover ul{left: auto;}
+      }
+    }
+
+  }
+
+  #submenu{
+    display: block;
+    position: absolute;
+    top: 0; right: 20px;
+    line-height: 14px;
+    padding: 10px 0 0 0;
+
+    ul{
+      display: block; margin: 0; padding: 0;
+
+      li{
+        display: block;
+        float: left;
+        border-right: solid 1px $gray;
+
+        &:last-child{border-right: none;}
+        a{display: block; padding: 0 10px; font-size: 13px; color: $gray;}
+      }
+    }
+  }
+}

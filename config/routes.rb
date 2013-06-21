@@ -1,4 +1,5 @@
 StrataHolidays::Application.routes.draw do  devise_for :users
+  resources :unwinders
   resources :vacation_types
   resources :iti_day_details
   resources :iti_details

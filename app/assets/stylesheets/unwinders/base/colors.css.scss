@@ -1,0 +1,36 @@
+$black: #000;
+$gray-xdark: #333;
+$gray-dark: #666;
+$gray: #888;
+$gray-light: #ccc;
+$gray-xlight: #eee;
+$gray-xxlight: #F7F7F7;
+$gray-xxxlight: #fafafa;
+$white: #fff;
+
+$primary-color-dark:#2D3681;
+$primary-color: #2D3681;
+$primary-color-light: #30719A;
+$primary-color-xlight: #AFC5CF;
+$primary-color-xxlight: #E6EEF2;
+
+$secondary-color: #DB4034;  
+$highlight: #ffe;
+$yellow: #ff0;
+
+$danger: #c00;
+$danger-light: #fcc;
+
+$blue: #56A9F5;
+$blue-light: #D9EEFD;
+
+$green: #7AC943;
+
+$orange: #EC9138;
+
+$red: #E64437;
+
+html, body{
+  color: $gray-dark;
+  background: $white;
+}

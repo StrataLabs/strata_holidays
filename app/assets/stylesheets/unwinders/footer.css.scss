@@ -1,0 +1,26 @@
+#footer{
+  display: block;
+  position: relative;
+  clear: both;
+  margin: 40px 0 0 0; padding: 20px;
+  background: $gray-xxxlight;
+  border-top: solid 1px $gray-xlight;
+  @include clearfix;
+
+  ul.navigation{
+    display: block; float: left;
+    margin: 0; padding: 0;
+
+    li{ list-style: none;}
+  }
+
+  div.contact{
+    display: block; float: right; text-align: right;
+    margin: 0; padding: 0;
+
+    p{
+      margin: 0 0 4px 0;
+      strong{display: block; }
+    }
+  }
+}

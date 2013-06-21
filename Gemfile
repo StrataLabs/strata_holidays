@@ -40,6 +40,11 @@ end
 gem "devise", "~> 3.0.0.rc"
 gem "less-rails"
 gem 'sass-rails', '~> 4.0.0.rc1'
+# gem "compass-rails", "~> 1.0.3"
+gem "compass-rails", github: "milgner/compass-rails", branch: "rails4"
+gem "compass-normalize", "~> 1.4.3"
+gem "susy", "~> 1.0.9"
+
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

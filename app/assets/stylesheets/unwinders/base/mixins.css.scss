@@ -1,0 +1,14 @@
+@mixin box-shadow-center($width:5px, $dark:0.4){
+  @include box-shadow(0 0 $width rgba(0,0,0,$dark));
+  html.ie8 &{
+    outline: solid 1px $gray-light;
+  }
+}
+
+@mixin icon-smoothing{
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}

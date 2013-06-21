@@ -1,0 +1,56 @@
+.container
+  .action
+    = image_tag("jb/5.jpg")
+
+    %p.intro There were several Mahars first, and then at least twenty awe-inspiring pterodactyls—thipdars, they are called within Pellucidar.
+
+    %ul.plans
+      %li.lite
+        = link_to "Signup", '/web_signups/new?plan_id=203'
+        %strong lite
+        1 Books at a time
+      %li.basic
+        = link_to "Signup", '/web_signups/new?plan_id=44'
+        %strong basic
+        2 Books at a time
+      %li.regular
+        = link_to "Signup", '/web_signups/new?plan_id=42'
+        %strong Regular
+        3 Books at a time
+      %li.avid
+        = link_to "Signup", '/web_signups/new?plan_id=39'
+        %strong Avid+
+        4 Books at a time
+
+  .map
+    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Justbooks+Indira+Nagar,+Bangalore,+Karnataka,+India&amp;aq=&amp;sll=12.970994,77.641215&amp;sspn=0.007611,0.009549&amp;ie=UTF8&amp;hq=Justbooks&amp;hnear=Indira+Nagar,+Bangalore,+Bengaluru+Urban,+Karnataka,+India&amp;ll=12.970994,77.641215&amp;spn=0.006295,0.006838&amp;t=m&amp;output=embed"></iframe>
+
+    <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Justbooks+Indira+Nagar,+Bangalore,+Karnataka,+India&amp;aq=&amp;sll=12.970994,77.641215&amp;sspn=0.007611,0.009549&amp;ie=UTF8&amp;hq=Justbooks&amp;hnear=Indira+Nagar,+Bangalore,+Bengaluru+Urban,+Karnataka,+India&amp;ll=12.970994,77.641215&amp;spn=0.006295,0.006838&amp;t=m">View Larger Map</a>
+
+    %p= ""
+
+  .refer
+    %h3 Refer &amp; get rewarded
+    %p Share the joy of reading. Introduce your friends to JustBooks. For each introduction, you get a free month.
+
+  .info
+    %h3 Online Catalog
+    %p The online catelog now shows which books are in stock in our branch. And if a book you want is not in stock, you can order it without ever leaving your home.
+
+    %h3 Refer &amp; get rewarded
+    %p Share the joy of reading. Introduce your friends to JustBooks. For each introduction, you get a free month.
+
+  .newsletter
+    - if @featured_newsletter
+      %div.well
+        %span3
+        .ic_container#jbconnect
+          %a{:href => "/newsletters/current", :class => "jbconnect_link", :target => "_blank"}
+            = image_tag("http://image.issuu.com/#{@featured_newsletter.documentid}/jpg/page_1_thumb_large.jpg", :border=>0, :class => "ic_img", :width => "236px", :height => "333px")
+            #jbconnect_caption.ic_overlay{:style => "display:none;"}
+            .ic_caption
+              %p.ic_category= "READ ONLINE"
+              %h3= "JustBooks Connect"
+              %p.ic_text= @featured_newsletter.title
+
+

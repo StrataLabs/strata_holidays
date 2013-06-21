@@ -1,0 +1,111 @@
+div.home{
+  display: block; 
+  margin: -20px 20px 20px 20px;
+  @include clearfix;
+  clear: both;
+}
+
+div.ad, ul.branch-list li{
+  display: block;
+  float: left;
+  height: 300px;
+  overflow: hidden;
+  padding: 0;
+
+  margin: percentage(0.3/100);
+
+  a, a:hover{font-color: $gray-dark; border: none;}
+
+  @media screen and (min-width: 1200px) {
+    width: percentage(13.6/100);
+  }
+
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    width: percentage(19.4/100);
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    width: percentage(32.7/100);
+  }
+}
+
+@media screen and (min-width: 600px){
+  div.ad{
+    display: block;
+    float: left;
+    height: 300px;
+    background: transparent image-url('microsites/ad-1.jpg') center center no-repeat;
+  }
+  
+  ul.branch-list{
+    display: inline;
+    margin: 0;
+    padding: 0;
+
+    li{
+      &.branch{
+        @include box-shadow(0 0 6px rgba($black, 0.2));
+  
+        div{
+          padding: 6px; font-size: 12px; line-height: 14px;
+          
+          h3{
+            font-size: 12px;
+            line-height: 16px;
+            padding: 0; margin: 0;
+          }
+        }
+      }
+      
+      &.quote{
+        font-size: 22px;
+        line-height: 30px;
+        text-align: center;
+        height: 300px;
+  
+        p,h3{
+          font-weight: 300;
+          padding: 30px 20px;
+          color: $gray-light;
+        }
+        
+        h3{
+          padding: 50px 20px;
+          font-size: 48px;
+          line-height: 60px;
+          font-weight: 100;
+        }
+      }
+  
+      
+      img{width: 100%;}
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px){
+  div.ad{display: none;}
+  ul.branch-list{
+    margin: 0; padding: 0; display: block;
+    
+    li{
+      display: block;
+      margin: 0.3%; padding: 0;
+      width: 49%; height: auto;
+      border: solid 0.2% $gray-xlight;
+      
+      img{width: 100%;}
+      
+      div{
+        display: block;
+        
+        h3{margin: 0 0 20px 0; font-weight: normal; font-size: 13px;}
+        p{display: none;}
+      }
+      
+      &.quote{display: none;}
+    }
+  }
+  
+}
