@@ -14,7 +14,11 @@ class ItiHeadersController < ApplicationController
 
   # GET /iti_headers/new
   def new
-    @iti_header = ItiHeader.new
+    if params[:id].present?
+      @iti_header = ItiHeader.new(ItiHeader.find(params[:id]).attributes)
+    else
+      @iti_header = ItiHeader.new
+    end
   end
 
   # GET /iti_headers/1/edit
