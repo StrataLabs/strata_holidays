@@ -2,6 +2,8 @@
   = f.input :destination_id , :collection => build_destination_options, prompt: "Select Destination"
   = f.input :name
   = f.association :poa_type, :collection => build_poa_type_options, prompt: "Select Type"
+  = f.input :preferred_start_time
+  = f.input :preferred_end_time
   = f.input :comments
 
   / .control-group

@@ -1,0 +1,7 @@
+= simple_form_for @dest_iti_header, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :dest_iti_name
+  = f.association :destination
+  = f.input :day_number
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), dest_iti_headers_path, :class => 'btn'

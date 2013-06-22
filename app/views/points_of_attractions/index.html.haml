@@ -8,6 +8,8 @@
       %th= model_class.human_attribute_name(:destination_id)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:poa_type_id)
+      %th= model_class.human_attribute_name(:preffered_start_time)
+      %th= model_class.human_attribute_name(:preffered_end_time)
       %th= model_class.human_attribute_name(:comments)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
@@ -18,6 +20,8 @@
         %td= points_of_attraction.destination.name rescue ''
         %td= points_of_attraction.name
         %td= points_of_attraction.poa_type.description rescue ''
+        %td= points_of_attraction.preferred_start_time.strftime("%I:%M %p") rescue 'NA'
+        %td= points_of_attraction.preferred_end_time.strftime("%I:%M %p") rescue 'NA'
         %td= points_of_attraction.comments
         %td= points_of_attraction.created_at
         %td

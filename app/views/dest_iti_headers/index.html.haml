@@ -1,0 +1,25 @@
+- model_class = DestItiHeader
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:dest_iti_name)
+      %th= model_class.human_attribute_name(:destination_id)
+      %th= model_class.human_attribute_name(:day_number)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @dest_iti_headers.each do |dest_iti_header|
+      %tr
+        %td= link_to dest_iti_header.id, dest_iti_header_path(dest_iti_header)
+        %td= dest_iti_header.dest_iti_name
+        %td= dest_iti_header.destination_id
+        %td= dest_iti_header.day_number
+        %td= dest_iti_header.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_dest_iti_header_path(dest_iti_header), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), dest_iti_header_path(dest_iti_header), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_dest_iti_header_path, :class => 'btn btn-primary'
