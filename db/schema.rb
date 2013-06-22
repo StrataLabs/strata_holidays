@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130622100445) do
+ActiveRecord::Schema.define(version: 20130622105135) do
 
   create_table "dest_iti_details", force: true do |t|
     t.integer  "dest_iti_header_id"
-    t.integer  "day_number"
     t.integer  "points_of_attraction_id"
     t.string   "comments"
     t.datetime "created_at"

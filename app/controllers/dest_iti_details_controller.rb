@@ -69,6 +69,6 @@ class DestItiDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dest_iti_detail_params
-      params.require(:dest_iti_detail).permit(:dest_iti_header_id, :day_number, :points_of_attraction_id, :comments)
+      params.require(:dest_iti_detail).permit(:dest_iti_header_id, :points_of_attraction_id, :comments)
     end
 end

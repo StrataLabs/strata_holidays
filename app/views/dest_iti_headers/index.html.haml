@@ -15,7 +15,7 @@
       %tr
         %td= link_to dest_iti_header.id, dest_iti_header_path(dest_iti_header)
         %td= dest_iti_header.dest_iti_name
-        %td= dest_iti_header.destination_id
+        %td= dest_iti_header.destination.name rescue ''
         %td= dest_iti_header.day_number
         %td= dest_iti_header.created_at
         %td
