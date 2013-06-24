@@ -1,0 +1,10 @@
+= simple_form_for @cust_iti_detail, :html => { :class => 'form-horizontal' } do |f|
+  = f.association :cust_iti_header, :label_method => :cust_iti_name
+  = f.association :destination
+  = f.input :destination_group_id
+  = f.input :dest_start_date
+  = f.input :dest_end_date
+  = f.association :property
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_details_path, :class => 'btn'

@@ -1,0 +1,29 @@
+- model_class = ItiCustDestDetail
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:cust_iti_detail_id)
+      %th= model_class.human_attribute_name(:dest_iti_detail)
+      %th= model_class.human_attribute_name(:preferred_time_of_arrival)
+      %th= model_class.human_attribute_name(:preferred_time_of_departure)
+      %th= model_class.human_attribute_name(:comments)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @iti_cust_dest_details.each do |iti_cust_dest_detail|
+      %tr
+        %td= link_to iti_cust_dest_detail.id, iti_cust_dest_detail_path(iti_cust_dest_detail)
+        %td= iti_cust_dest_detail.cust_iti_detail_id
+        %td= iti_cust_dest_detail.dest_iti_detail
+        %td= iti_cust_dest_detail.preferred_time_of_arrival
+        %td= iti_cust_dest_detail.preferred_time_of_departure
+        %td= iti_cust_dest_detail.comments
+        %td= iti_cust_dest_detail.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_cust_dest_detail_path(iti_cust_dest_detail), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), iti_cust_dest_detail_path(iti_cust_dest_detail), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_iti_cust_dest_detail_path, :class => 'btn btn-primary'

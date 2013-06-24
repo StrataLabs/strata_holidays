@@ -1,0 +1,37 @@
+- model_class = CustItiHeader
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:cust_iti_name)
+      %th= model_class.human_attribute_name(:iti_type)
+      %th= model_class.human_attribute_name(:vacation_type_id)
+      %th= model_class.human_attribute_name(:trip_start_date)
+      %th= model_class.human_attribute_name(:trip_end_date)
+      %th= model_class.human_attribute_name(:seasons)
+      %th= model_class.human_attribute_name(:duration)
+      %th= model_class.human_attribute_name(:no_of_adults)
+      %th= model_class.human_attribute_name(:no_of_children)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @cust_iti_headers.each do |cust_iti_header|
+      %tr
+        %td= link_to cust_iti_header.id, cust_iti_header_path(cust_iti_header)
+        %td= cust_iti_header.cust_iti_name
+        %td= cust_iti_header.iti_type
+        %td= cust_iti_header.vacation_type_id
+        %td= cust_iti_header.trip_start_date
+        %td= cust_iti_header.trip_end_date
+        %td= cust_iti_header.seasons
+        %td= cust_iti_header.duration
+        %td= cust_iti_header.no_of_adults
+        %td= cust_iti_header.no_of_children
+        %td= cust_iti_header.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_cust_iti_header_path(cust_iti_header), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), cust_iti_header_path(cust_iti_header), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_cust_iti_header_path, :class => 'btn btn-primary'

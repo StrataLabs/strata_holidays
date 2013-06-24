@@ -11,7 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130622105135) do
+ActiveRecord::Schema.define(version: 20130624073750) do
+
+  create_table "cust_iti_details", force: true do |t|
+    t.integer  "cust_iti_header_id"
+    t.integer  "destination_id"
+    t.integer  "destination_group_id"
+    t.date     "dest_start_date"
+    t.date     "dest_end_date"
+    t.integer  "property_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "cust_iti_headers", force: true do |t|
+    t.string   "cust_iti_name"
+    t.string   "iti_type"
+    t.integer  "vacation_type_id"
+    t.date     "trip_start_date"
+    t.date     "trip_end_date"
+    t.string   "seasons"
+    t.integer  "duration"
+    t.integer  "no_of_adults"
+    t.string   "no_of_children"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dest_iti_details", force: true do |t|
     t.integer  "dest_iti_header_id"
@@ -31,6 +56,16 @@ ActiveRecord::Schema.define(version: 20130622105135) do
 
   create_table "destinations", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "iti_cust_dest_details", force: true do |t|
+    t.integer  "cust_iti_detail_id"
+    t.integer  "dest_iti_detail_id"
+    t.time     "preferred_time_of_arrival"
+    t.time     "preferred_time_of_departure"
+    t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,13 @@
+= simple_form_for @cust_iti_header, :html => { :class => 'form-horizontal' } do |f|
+  = f.input :cust_iti_name
+  = f.input :iti_type
+  = f.association :vacation_type, :label_method => :vac_type
+  = f.input :trip_start_date
+  = f.input :trip_end_date
+  = f.input :seasons
+  = f.input :duration
+  = f.input :no_of_adults
+  = f.input :no_of_children
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_headers_path, :class => 'btn'

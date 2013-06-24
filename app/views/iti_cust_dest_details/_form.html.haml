@@ -1,0 +1,9 @@
+= simple_form_for @iti_cust_dest_detail, :html => { :class => 'form-horizontal' } do |f|
+  = f.association :cust_iti_detail, :label_method => lambda{|cus_det| "#{cus_det.cust_iti_header.cust_iti_name}"}
+  = f.association :dest_iti_detail, :label_method => lambda{|des_det| "#{des_det.dest_iti_header.dest_iti_name}"}
+  = f.input :preferred_time_of_arrival
+  = f.input :preferred_time_of_departure
+  = f.input :comments
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), iti_cust_dest_details_path, :class => 'btn'
