@@ -92,6 +92,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.2)
+    colorize (0.5.8)
     columnize (0.3.6)
     commonjs (0.2.6)
     compass (0.12.2)
@@ -100,6 +101,12 @@ GEM
       sass (~> 3.1)
     compass-normalize (1.4.3)
       compass (>= 0.12.0)
+    coveralls (0.6.7)
+      colorize
+      multi_json (~> 1.3)
+      rest-client
+      simplecov (>= 0.7)
+      thor
     debug_inspector (0.0.2)
     debugger (1.6.0)
       columnize (>= 0.3.1)
@@ -221,6 +228,8 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     ref (1.0.5)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -246,6 +255,10 @@ GEM
       rdoc (~> 3.10)
     shoulda-matchers (2.2.0)
       activesupport (>= 3.0.0)
+    simplecov (0.7.1)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.7.1)
+    simplecov-html (0.7.1)
     slop (3.4.5)
     spork (1.0.0rc3)
     sprockets (2.10.0)
@@ -290,6 +303,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   compass-normalize (~> 1.4.3)
   compass-rails!
+  coveralls
   debugger
   devise (~> 3.0.0.rc)
   factory_girl_rails (~> 4.0)

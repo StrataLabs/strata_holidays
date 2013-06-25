@@ -92,3 +92,5 @@ group :test do
 end
 
 gem "simple_form", :git => 'https://github.com/plataformatec/simple_form.git' , :branch => 'master'
+
+gem 'coveralls', require: false
