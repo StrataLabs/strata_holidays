@@ -2,7 +2,9 @@
 %html
   %head
     %title Strata Holidays
+    = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag "unwinders/application", :media => "all"
+    / = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
   %body{:id => "list"}
     #banner
@@ -12,14 +14,14 @@
         #search
           %input{:name => "search", :type => "text"}/
         .container
-          %h2.branch_name Kodaikanal
+          %h2.branch_name Strata Holidays
       #submenu
         %ul
-          %li= link_to "sign in", "#"
-          %li= link_to "sign up", "#"
-          %li= link_to "plans", '#'
-          %li= link_to "how it works", '#'
-          %li= link_to "contact us", '#'
+          %li= link_to "Signin", "#"
+          %li= link_to "Signup", "#"
+          %li= link_to "Destinations", '#'
+          %li= link_to "About Us", '#'
+          %li= link_to "Contact Us", '#'
     / = render :partial => 'flash', :object => flash
     = yield
     #footer

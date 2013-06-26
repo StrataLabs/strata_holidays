@@ -2,8 +2,6 @@
   .navbar-inner
     .container
       %nav-collpase.collapse
-        %ul.nav
-          %li.active= link_to "Strata Holidays", root_path, id: "brand"
         %ul.nav.pull-right{:style => 'color:white'}
           %li= link_to "Destinations", destinations_path
           %li= link_to "POA", points_of_attractions_path
@@ -13,7 +11,7 @@
           %li= link_to "Dest Iti Details", dest_iti_details_path
           %li= link_to "Cust Iti Header", cust_iti_headers_path
           %li= link_to "Cust Iti Details", cust_iti_details_path
-          %li= link_to "Iti Cust Dest Details",iti_cust_dest_details_path
+          %li= link_to "Iti Cust Dest Poa Details",iti_cust_dest_poa_details_path
           / %li= link_to "Itinerary Header", iti_headers_path
           / %li= link_to "Itinerary Details", iti_details_path
           / %li= link_to "Iti Day Details", iti_day_details_path

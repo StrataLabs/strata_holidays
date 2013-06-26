@@ -1,0 +1,13 @@
+- @poa_all.each do |poa|
+  = simple_form_for @iti_cust_dest_poa_detail, :html => { :class => 'form-inline' } do |f|    
+    = f.select :dest_iti_detail_id, options_for_select(build_dest_iti_options(@dest), @iti_cust_dest_poa_detail.dest_iti_detail_id), {},:label => false, :placeholder => 'Dest Iti Detail'
+    = f.select :points_of_attraction_id, options_for_select(build_poa_options(@poa_all), poa.id), :label => false, :class => 'input-medium', :placeholder => 'POA'
+    = f.input_field :day_number, :label => false, :class => 'input-medium', :placeholder => 'Day Number'
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    = f.input_field :preferred_time_of_arrival, :label => false, :class => 'input-mini'
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    = f.input_field :preferred_time_of_departure, :label => false, :class => 'input-mini'
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+    / .form-actions
+    = f.button :submit , "Create", :class => 'btn-primary btn-mini'
+    / = link_to t('.cancel', :default => t("helpers.links.cancel")), iti_cust_dest_poa_details_path, :class => 'btn'  

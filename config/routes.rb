@@ -1,4 +1,5 @@
 StrataHolidays::Application.routes.draw do  devise_for :users
+  resources :iti_cust_dest_poa_details
   resources :iti_cust_dest_details
   resources :cust_iti_details
   resources :cust_iti_headers

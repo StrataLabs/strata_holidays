@@ -15,7 +15,7 @@
     - @dest_iti_details.each do |dest_iti_detail|
       %tr
         %td= link_to dest_iti_detail.id, dest_iti_detail_path(dest_iti_detail)
-        %td= dest_iti_detail.dest_iti_header.dest_iti_name rescue ''
+        %td= dest_iti_detail.dest_iti_header.dest_iti_name + "-" + dest_iti_detail.dest_iti_header.destination.name rescue ''
         %td= dest_iti_detail.points_of_attraction.name rescue ''
         %td= dest_iti_detail.dest_iti_header.day_number
         %td= dest_iti_detail.comments

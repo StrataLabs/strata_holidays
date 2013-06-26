@@ -1,0 +1,1 @@
+json.extract! @iti_cust_dest_poa_detail, :cust_iti_detail_id, :dest_iti_detail_id, :points_of_attraction_id, :preferred_time_of_arrival, :preferred_time_of_departure, :comments, :created_at, :updated_at

@@ -10,4 +10,37 @@
  *
  *= require_self
  *= require bootstrap_and_overrides
+ *= require custom_css
  */
+
+.in-progress
+{
+  list-style: none;
+  margin: 0px;
+  li{
+    clear: both;
+  }
+  label{
+    width: auto;
+    font-weight: bold;
+    line-height: 25px;
+    display: block;
+    float: left;
+    background: #EFEFEF;
+    margin-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+
+.item-details p b {
+  font-weight: bold;
+  color: #999;
+  background: #f2f2f2;
+  width: 200px;
+  text-align: right;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  padding-right: 5px;
+}
