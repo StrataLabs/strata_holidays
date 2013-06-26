@@ -23,7 +23,7 @@
         %td= iti_cust_dest_poa_detail.preferred_time_of_arrival
         %td= iti_cust_dest_poa_detail.preferred_time_of_departure
         %td= iti_cust_dest_poa_detail.comments
-        %td=l iti_cust_dest_poa_detail.created_at
+        %td= iti_cust_dest_poa_detail.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_cust_dest_poa_detail_path(iti_cust_dest_poa_detail), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), iti_cust_dest_poa_detail_path(iti_cust_dest_poa_detail), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
