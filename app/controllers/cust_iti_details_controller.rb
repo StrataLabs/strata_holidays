@@ -28,7 +28,8 @@ class CustItiDetailsController < ApplicationController
 
     respond_to do |format|
       if @cust_iti_detail.save
-        format.html { redirect_to @cust_iti_detail, notice: 'Cust iti detail was successfully created.' }
+        format.html { redirect_to new_iti_cust_dest_poa_detail_path(:cust_iti_detail_id => @cust_iti_detail)}
+        # format.html { redirect_to @cust_iti_detail, notice: 'Cust iti detail was successfully created.' }
         format.json { render action: 'show', status: :created, location: @cust_iti_detail }
       else
         format.html { render action: 'new' }
