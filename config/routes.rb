@@ -5,7 +5,13 @@ StrataHolidays::Application.routes.draw do  devise_for :users
   resources :cust_iti_headers
   resources :dest_iti_details
   resources :dest_iti_headers
-  resources :unwinders
+  resources :unwinders do
+    collection do
+      get 'child'
+      get 'home'
+    end
+  end
+
   resources :vacation_types
   resources :iti_day_details
   resources :iti_details

@@ -1,0 +1,44 @@
+= content_for :menu do
+  .container
+    %ul#filters
+      %li.instructions Select the library closest to you
+      %li.list
+        %span.label I live in
+        %span.prompt Select City
+        %ul
+          - Destination.all.each do |d|
+            %li= d.name
+      %li.list
+        %span.label Area
+        %span.prompt Select Branch
+        %ul
+          - PointsOfAttraction.first(10).each do |poa|
+            %li= poa.name
+
+.home
+  %div.ad
+
+  %ul.branch-list
+    %li.quote
+      %p He is Prasad, Yes he loves books. To all lovers like him, he offers the bond of friendship
+    - Destination.all.each_with_index do |b, index|
+      %li.branch
+        %a{:href => root_url , :target => 'blank'}
+          = image_tag("unwinders/ad-1.jpg")
+        %div
+          %h3= b[:name]
+          %p= b[:name]
+      %li.quote
+        %h3 Stat
+      
+
+
+
+
+-#%h4 Categories count
+-#= @categories.count
+-#%h4 Branches count
+-#= @branch_count
+-#%h4 Books count
+-#= @book_count
+-#%h4 Branches to be shown in home page(Nearest Branches ll be shown after your branch selection)

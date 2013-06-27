@@ -2,19 +2,18 @@
 %html
   %head
     %title Strata Holidays
-    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "application", :media => "all" unless @body_id == "home"
     = stylesheet_link_tag "unwinders/application", :media => "all"
     / = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
-  %body{:id => "list"}
+  %body{:id => "#{@body_id}"}
     #banner
       %h1
         %a{:href => "/"} JustBooks
       #menu
         #search
           %input{:name => "search", :type => "text"}/
-        .container
-          %h2.branch_name Strata Holidays
+        =yield :menu
       #submenu
         %ul
           %li= link_to "Signin", "#"
@@ -24,25 +23,6 @@
           %li= link_to "Contact Us", '#'
     / = render :partial => 'flash', :object => flash
     = yield
-    #footer
-      %ul.navigation
-        %li= link_to "About Us", ""
-        %li= link_to "Membership Plans", ""
-        %li= link_to "Terms & Conditions", ""
-        %li= link_to "Franchise Enquiries", ""
-        %li= link_to "Store Locations", ""
-        %li= link_to "Contact us", ""
-      .contact
-        %p
-          %strong Reach Out:
-          Monday through Saturday 9:30 AM to 6:00 PM
-        %p
-          %strong Customer Care:
-          +91 80 30752626
-        %p
-          %strong Toll Free:
-          1-800-102-2665
-        %p
-          %strong Customer Support:
-          %a{:href => "mailto:customercare@justbooksclc.com"} customercare@justbooksclc.com
-  = javascript_include_tag "application"
+    %center#footer
+      Strata Holidays &copy; 2013
+      = javascript_include_tag "application"
