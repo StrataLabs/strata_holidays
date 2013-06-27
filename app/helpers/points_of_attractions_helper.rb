@@ -7,7 +7,7 @@ module PointsOfAttractionsHelper
 
   def build_poa_type_options
     options = {}
-    PoaType.all.each {|poa| options = options.merge({poa.poa_type => poa.id}) }
+    PoaType.all.each {|poa| options = options.merge({poa.description => poa.id}) }
     options
   end
 end
