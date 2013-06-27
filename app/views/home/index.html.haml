@@ -1,8 +1,8 @@
-:javascript
-  var json = #{raw generate_jit_tree().to_json};
-= javascript_tag :defer => 'defer' do
-  $(document).ready(function () {
-  JitTree.showJit();
-  });
+/ :javascript
+/   var json = #{raw generate_jit_tree().to_json};
+/ = javascript_tag :defer => 'defer' do
+/   $(document).ready(function () {
+/   JitTree.showJit();
+/   });
 #inner-details{:style => 'display:none'}
 #infovis
