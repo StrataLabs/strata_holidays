@@ -1,4 +1,14 @@
 - model_class = ItiCustDestPoaDetail
 .page-header
   %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
-= render :partial => "form"
+= simple_form_for @iti_cust_dest_poa_detail, :html => { :class => 'form-horizontal' } do |f|
+  = f.association :cust_iti_detail, :label => @iti_cust_dest_poa_detail.cust_iti_detail.cust_iti_header.cust_iti_name, :readonly => true
+  = f.association :dest_iti_detail, :label_method => lambda {|dest| dest.dest_iti_header.dest_iti_name}
+  = f.input :preferred_time_of_arrival
+  = f.input :preferred_time_of_departure
+  = f.input :day_number
+  = f.input :comments
+  .form-actions
+    = f.button :submit, :class => 'btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), iti_cust_dest_details_path, :class => 'btn'
+

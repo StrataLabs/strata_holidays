@@ -29,7 +29,7 @@ class ItiCustDestPoaDetailsController < ApplicationController
       p @poa.dest_iti_details.first.dest_iti_header
       @iti_cust_dest_poa_detail = ItiCustDestPoaDetail.new
     else
-      @iti_cust_dest_poa_detail = ItiCustDestPoaDetail.new
+      redirect_to cust_iti_details_path
     end
   end
 

@@ -10,8 +10,7 @@
       %th= model_class.human_attribute_name(:points_of_attraction_id)
       %th= model_class.human_attribute_name(:preferred_time_of_arrival)
       %th= model_class.human_attribute_name(:preferred_time_of_departure)
-      %th= model_class.human_attribute_name(:comments)
-      %th= model_class.human_attribute_name(:created_at)
+      %th= model_class.human_attribute_name(:day_number)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @iti_cust_dest_poa_details.each do |iti_cust_dest_poa_detail|
@@ -22,10 +21,8 @@
         %td= iti_cust_dest_poa_detail.points_of_attraction.name rescue 'NA'
         %td= iti_cust_dest_poa_detail.preferred_time_of_arrival.strftime("%I:%M %p")
         %td= iti_cust_dest_poa_detail.preferred_time_of_departure.strftime("%I:%M %p")
-        %td= iti_cust_dest_poa_detail.comments
+        %td= iti_cust_dest_poa_detail.day_number
         / %td= iti_cust_dest_poa_detail.created_at
         %td
-          /= link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_cust_dest_poa_detail_path(iti_cust_dest_poa_detail), :class => 'btn btn-mini'
+          / = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_cust_dest_poa_detail_path(iti_cust_dest_poa_detail), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), iti_cust_dest_poa_detail_path(iti_cust_dest_poa_detail), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-
-= link_to t('.new', :default => t("helpers.links.new")), new_iti_cust_dest_poa_detail_path, :class => 'btn btn-primary'
