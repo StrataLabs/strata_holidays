@@ -31,87 +31,166 @@ $(function ()
     },  5000);
   }
 });
+var Sessionapp = {};
+Sessionapp.Charts = {};
+Sessionapp.ChartData = {};
+current_node_id="VC";
+var JitTree = {};
 
-// var JitTree = {};
-// JitTree.showJit = function(){
-//   console.log(json);
-//   //id of the visualization container
-//   var ht = new $jit.Hypertree({
-//   injectInto: 'infovis',
-//   //canvas width and height
-//   width: 500,
-//   height: 600,
-//   //Change node and edge styles such as
-//   //color, width and dimensions.
-//   Node: {
-//       dim: 9,
-//       color: "#f00"
-//   },
-//   Edge: {
-//       lineWidth: 2,
-//       color: "#088"
-//   },
-//   onBeforeCompute: function(node){
-//       console.log("centering");
-//   },
-//   //Attach event handlers and add text to the
-//   //labels. This method is only triggered on label
-//   //creation
-//   onCreateLabel: function(domElement, node){
-//       domElement.innerHTML = node.name;
-//       $jit.util.addEvent(domElement, 'click', function () {
-//           ht.onClick(node.id, {
-//               onComplete: function() {
-//                   ht.controller.onComplete();
-//               }
-//           });
-//       });
-//   },
-//   //Change node styles when labels are placed
-//   //or moved.
-//   onPlaceLabel: function(domElement, node){
-//       var style = domElement.style;
-//       style.display = '';
-//       style.cursor = 'pointer';
-//       if (node._depth <= 1) {
-//           style.fontSize = "0.8em";
-//           style.color = "#ddd";
+function split_data(){
+  children=[];
+  jbClc={"id": Sessionapp.ChartData["infovis"].id,
+        "name" : Sessionapp.ChartData["infovis"].name,
+        "children":[],
+        "data":Sessionapp.ChartData["infovis"].data}
 
-//       } else if(node._depth == 2){
-//           style.fontSize = "0.7em";
-//           style.color = "#555";
+  $.each(Sessionapp.ChartData["infovis"].children, function(index, value) {
+      child={"id":value.id,
+             "name":value.name,
+             "data":value.data,
+             "children":[]}
+      children_1 = [];
+      children_1[0] = jbClc;
+      $.each(value.children, function(idx, val) {
+          child_1={"id": val.id,
+            "name" : val.name,
+            "children":val.children,//todo
+            "data":val.data}
+          children_1_1=[];
+            $.each(val.children,function(i,v){
+              child_1_1 = {"id": v.id,
+                    "name" : v.name,
+                    "children":[],
+                    "data":v.data}
+              children_1_1[i] = child_1_1;
+            });
+            Sessionapp.ChartData[val.id]={
+              "id":val.id,
+              "name" : val.name,
+            "children":children_1_1,
+            "data":val.data};
+          children_1[idx+1]=child_1;
+      });
+      Sessionapp.ChartData[value.id]={
+        "id":value.id,
+        "name" : value.name,
+      "children":children_1,
+      "data":value.data};
+      children[index] = child;
+    });
+    console.log(Sessionapp.ChartData["infovis"].id);
+    Sessionapp.ChartData["VC"]={"id": Sessionapp.ChartData["infovis"].id,
+      "name" : Sessionapp.ChartData["infovis"].name,
+      "children":children,
+      "data":Sessionapp.ChartData["infovis"].data}
+    console.log(Sessionapp.ChartData);
+}
 
-//       } else {
-//           style.display = 'none';
-//       }
 
-//       var left = parseInt(style.left);
-//       var w = domElement.offsetWidth;
-//       style.left = (left - w / 2) + 'px';
-//   },
+JitTree.showJit = function(){
+  split_data();
+  current_node_id = "VC";
+  // console.log(json);
+  //id of the visualization container
+  var ht = new $jit.Hypertree({
+  injectInto: 'infovis',
+  //canvas width and height
+  width: 390,
+  height: 270,
+  levelsToShow : 2,
+  //Change node and edge styles such as
+  //color, width and dimensions.
+  Node: {
+      overridable: true,
+      dim: 9,
+      color: "#ccb",
+  },
+  Edge: {
+      lineWidth: 2,
+      color: "#088",
+      type: 'hyperline'
+  },
+  duration: 700,
+  fps: 30,
+  clearCanvas: true,
+  withLabels: true,
+  onBeforePlotNode:function(node) {
 
-//   onComplete: function(){
-//       console.log("done");
+        if(node.selected) {
+          //node.setData('color', '#f00');
+        } else {
+          //node.setData('color','#ccb');
+        }
+    },
+  onBeforeCompute: function(node){
+      console.log("centering");
+  },
+  //Attach event handlers and add text to the
+  //labels. This method is only triggered on label
+  //creation
+  onCreateLabel: function(domElement, node){
+      domElement.innerHTML = node.name;
+      $jit.util.addEvent(domElement, 'click', function () {
+          ht.onClick(node.id, {
+              onComplete: function() {
+                  ht.controller.onComplete();
+              }
+          });
+      });
+  },
+  //Change node styles when labels are placed
+  //or moved.
+  onPlaceLabel: function(domElement, node){
+      var style = domElement.style;
+      style.display = '';
+      style.cursor = 'pointer';
+      if (node._depth <= 1) {
+          style.fontSize = "0.8em";
+          style.color = "#1a1a1a";
 
-//       //Build the right column relations list.
-//       //This is done by collecting the information (stored in the data property)
-//       //for all the nodes adjacent to the centered node.
-//       var node = ht.graph.getClosestNodeToOrigin("current");
-//       var html = "<h4>" + node.name + "</h4><b>Connections:</b>";
-//       html += "<ul>";
-//       node.eachAdjacency(function(adj){
-//           var child = adj.nodeTo;
-//           if (child.data) {
-//               var rel = (child.data.band == node.name) ? child.data.relation : node.data.relation;
-//               html += "<li>" + child.name + " " + "<div class=\"relation\">(relation: " + rel + ")</div></li>";
-//           }
-//       });
-//       html += "</ul>";
-//       $jit.id('inner-details').innerHTML = html;
-//   }
-// });
-// //load JSON data.
-// ht.loadJSON(json);
-// //compute positions and plot.
-// ht.refresh();
-// }
+      } else if(node._depth == 2){
+          style.fontSize = "0.7em";
+          style.color = "#555";
+
+      } else {
+          style.display = 'none';
+      }
+
+      var left = parseInt(style.left);
+      var w = domElement.offsetWidth;
+      style.left = (left - w / 2) + 'px';
+  },
+
+  onComplete: function(){
+      console.log("done");
+
+      //Build the right column relations list.
+      //This is done by collecting the information (stored in the data property)
+      //for all the nodes adjacent to the centered node.
+      var node = ht.graph.getClosestNodeToOrigin("current");
+      var html = "<h4>" + node.name + "</h4><b>Connections:</b>";
+      html += "<ul>";
+      node.eachAdjacency(function(adj){
+          var child = adj.nodeTo;
+          if (child.data) {
+              var rel = (child.data.band == node.name) ? child.data.relation : node.data.relation;
+              html += "<li>" + child.name + " " + "<div class=\"relation\">(relation: " + rel + ")</div></li>";
+          }
+      });
+      html += "</ul>";
+      $jit.id('inner-details').innerHTML = html;
+      current_node_id = node.id;
+      if (node.data.relation == 'POA'){
+        document.location.replace('/points_of_attractions/'+node.id);
+      }
+      else{
+        ht.loadJSON(Sessionapp.ChartData[current_node_id], 1);
+        ht.refresh();
+      }
+  }
+});
+//load JSON data.
+ ht.loadJSON(Sessionapp.ChartData[current_node_id], 1);
+  //compute positions and plot.
+  ht.refresh();
+}

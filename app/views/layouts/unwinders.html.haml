@@ -26,3 +26,9 @@
     %center#footer
       Strata Holidays &copy; 2013
       = javascript_include_tag "application"
+:javascript
+  Sessionapp.ChartData["#{"infovis"}"] = #{raw generate_jit_tree().to_json};
+= javascript_tag :defer => 'defer' do
+  $(document).ready(function () {
+  JitTree.showJit();
+  });
