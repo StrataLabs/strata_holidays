@@ -17,12 +17,12 @@
     - @cust_iti_details.each do |cust_iti_detail|
       %tr
         %td= link_to cust_iti_detail.id, cust_iti_detail_path(cust_iti_detail)
-        %td= cust_iti_detail.cust_iti_header.cust_iti_name
-        %td= cust_iti_detail.destination.name
+        %td= cust_iti_detail.cust_iti_header.cust_iti_name rescue 'NA'
+        %td= cust_iti_detail.destination.name rescue 'NA'
         %td= cust_iti_detail.destination_group_id
         %td= cust_iti_detail.dest_start_date
         %td= cust_iti_detail.dest_end_date
-        %td= cust_iti_detail.property.name
+        %td= cust_iti_detail.property.name rescue 'NA'
         %td= cust_iti_detail.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_cust_iti_detail_path(cust_iti_detail), :class => 'btn btn-mini'
