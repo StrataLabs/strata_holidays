@@ -15,7 +15,7 @@
   - @dest_details.each do |dest|
     = f.input_field "dest_iti_detail[]", :value => dest.dest_iti_header.dest_iti_name,:label => false, :placeholder => 'Dest Iti Detail', :class => 'input-medium', :readonly => true
     = f.input_field :points_of_attraction, :value => dest.points_of_attraction.name, :label => false, :placeholder => 'POA', :readonly => true
-    = f.input_field :day_number, :name => "day_number[]", :label => false, :class => 'input-medium', :placeholder => 'Day Number'
+    = f.input_field :day_number, :value => dest.dest_iti_header.day_number, :name => "day_number[]", :label => false, :class => 'input-medium', :placeholder => 'Day Number'
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     = f.input_field :preferred_time_of_arrival, :name => "preferred_time_of_arrival[]" , :label => false, :class => 'input-mini'
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

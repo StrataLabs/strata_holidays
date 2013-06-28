@@ -26,7 +26,8 @@
         %td= cust_iti_detail.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_cust_iti_detail_path(cust_iti_detail), :class => 'btn btn-mini'
-          = link_to "Add POA", new_iti_cust_dest_poa_detail_path(:cust_iti_detail_id => cust_iti_detail.id), :class => 'btn btn-mini'
+          -if cust_iti_detail.iti_cust_dest_poa_details.count == 0
+            = link_to "Add POA", new_iti_cust_dest_poa_detail_path(:cust_iti_detail_id => cust_iti_detail.id), :class => 'btn btn-mini'
           / = link_to t('.destroy', :default => t("helpers.links.destroy")), cust_iti_detail_path(cust_iti_detail), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
 = link_to t('.new', :default => t("helpers.links.new")), new_cust_iti_detail_path, :class => 'btn btn-primary'
