@@ -23,16 +23,4 @@ describe "cust_iti_headers/index" do
       )
     ])
   end
-
-  it "renders a list of cust_iti_headers" do
-    render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Cust Iti Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Iti Type".to_s, :count => 2
-    assert_select "tr>td", :text => 1.to_s, :count => 2
-    assert_select "tr>td", :text => "Seasons".to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => 3.to_s, :count => 2
-    assert_select "tr>td", :text => "No Of Children".to_s, :count => 2
-  end
 end

@@ -12,16 +12,4 @@ describe "cust_iti_headers/show" do
       :no_of_children => "No Of Children"
     ))
   end
-
-  it "renders attributes in <p>" do
-    render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    rendered.should match(/Cust Iti Name/)
-    rendered.should match(/Iti Type/)
-    rendered.should match(/1/)
-    rendered.should match(/Seasons/)
-    rendered.should match(/2/)
-    rendered.should match(/3/)
-    rendered.should match(/No Of Children/)
-  end
 end

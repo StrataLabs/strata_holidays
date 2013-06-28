@@ -4,7 +4,7 @@
   = f.input :destination_group_id
   = f.input :dest_start_date
   = f.input :dest_end_date
-  = f.association :property
+  = f.association :property, :label_method => lambda{|prop| "#{prop.destination.name} - #{prop.name}"}
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_details_path, :class => 'btn'
