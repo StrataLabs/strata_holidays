@@ -8,5 +8,7 @@ FactoryGirl.define do
     dest_start_date "2013-06-24"
     dest_end_date "2013-06-24"
     property_id 1
+    created_at Time.zone.today
+    updated_at Time.zone.today
   end
 end

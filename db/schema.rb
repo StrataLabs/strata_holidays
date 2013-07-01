@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130701064408) do
+ActiveRecord::Schema.define(version: 20130701115609) do
+
+  create_table "consultant_customer_destinations", force: true do |t|
+    t.integer  "vacation_consultant_id"
+    t.integer  "customer_id"
+    t.integer  "cust_iti_header_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "cust_iti_details", force: true do |t|
     t.integer  "cust_iti_header_id"

@@ -23,7 +23,7 @@ describe CustItiDetailsController do
   # This should return the minimal set of attributes required to create a valid
   # CustItiDetail. As you add validations to CustItiDetail, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "cust_iti_header_id" => "1" } }
+  let(:valid_attributes) { FactoryGirl.build(:cust_iti_detail).attributes }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in

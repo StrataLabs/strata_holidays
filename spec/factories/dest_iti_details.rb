@@ -3,7 +3,6 @@
 FactoryGirl.define do
   factory :dest_iti_detail do
     dest_iti_header_id 1
-    day_number 1
     points_of_attraction_id 1
     comments "MyString"
   end
