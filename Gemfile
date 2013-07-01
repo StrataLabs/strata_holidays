@@ -37,7 +37,10 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+#Authentication
 gem "devise", "~> 3.0.0.rc"
+
+#CSS
 gem "less-rails"
 gem 'sass-rails', '~> 4.0.0.rc1'
 # gem "compass-rails", "~> 1.0.3"
@@ -48,8 +51,11 @@ gem "susy", "~> 1.0.9"
 gem 'coffee-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.0.3'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
+#Html
 gem 'haml-rails'
 
+#db for heroku
 gem 'pg' , :group => :production
 
 group :production do
@@ -87,13 +93,17 @@ group :development do
   gem "meta_request", "~> 0.2.6"
 end
 
+#rspec shoulda
 group :test do
   gem "shoulda-matchers"
 end
 
+#simple_form
 gem "simple_form", :git => 'https://github.com/plataformatec/simple_form.git' , :branch => 'master'
 gem "country_select", "~> 1.1.3"
 
+#code coverage
 gem 'coveralls', require: false
 
+#pagination
 gem "will_paginate", "~> 3.0.4"
