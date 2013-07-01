@@ -4,7 +4,7 @@ class DestItiDetailsController < ApplicationController
   # GET /dest_iti_details
   # GET /dest_iti_details.json
   def index
-    @dest_iti_details = DestItiDetail.all
+    @dest_iti_details = DestItiDetail.paginate(:page => params[:page])
   end
 
   # GET /dest_iti_details/1

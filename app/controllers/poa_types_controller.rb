@@ -4,7 +4,7 @@ class PoaTypesController < ApplicationController
   # GET /poa_types
   # GET /poa_types.json
   def index
-    @poa_types = PoaType.all
+    @poa_types = PoaType.paginate(:page => params[:page])
   end
 
   # GET /poa_types/1

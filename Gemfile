@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.0.rc1'
+gem "rails", "~> 4.0.0"
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', :group => :development
@@ -95,3 +95,5 @@ gem "simple_form", :git => 'https://github.com/plataformatec/simple_form.git' , 
 gem "country_select", "~> 1.1.3"
 
 gem 'coveralls', require: false
+
+gem "will_paginate", "~> 3.0.4"

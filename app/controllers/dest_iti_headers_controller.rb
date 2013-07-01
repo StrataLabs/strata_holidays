@@ -4,7 +4,7 @@ class DestItiHeadersController < ApplicationController
   # GET /dest_iti_headers
   # GET /dest_iti_headers.json
   def index
-    @dest_iti_headers = DestItiHeader.all
+    @dest_iti_headers = DestItiHeader.paginate(:page => params[:page])
   end
 
   # GET /dest_iti_headers/1

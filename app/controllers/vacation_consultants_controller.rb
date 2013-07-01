@@ -4,7 +4,7 @@ class VacationConsultantsController < ApplicationController
   # GET /vacation_consultants
   # GET /vacation_consultants.json
   def index
-    @vacation_consultants = VacationConsultant.all
+    @vacation_consultants = VacationConsultant.paginate(:page => params[:page])
   end
 
   # GET /vacation_consultants/1

@@ -4,7 +4,7 @@ class PointsOfAttractionsController < ApplicationController
   # GET /points_of_attractions
   # GET /points_of_attractions.json
   def index
-    @points_of_attractions = PointsOfAttraction.all
+    @points_of_attractions = PointsOfAttraction.paginate(:page => params[:page])
   end
 
   # GET /points_of_attractions/1

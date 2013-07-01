@@ -4,7 +4,7 @@ class VacationTypesController < ApplicationController
   # GET /vacation_types
   # GET /vacation_types.json
   def index
-    @vacation_types = VacationType.all
+    @vacation_types = VacationType.paginate(:page => params[:page])
   end
 
   # GET /vacation_types/1

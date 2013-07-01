@@ -4,7 +4,7 @@ class CustItiHeadersController < ApplicationController
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index
-    @cust_iti_headers = CustItiHeader.all
+    @cust_iti_headers = CustItiHeader.paginate(:page => params[:page])
   end
 
   # GET /cust_iti_headers/1

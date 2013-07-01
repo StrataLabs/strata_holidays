@@ -1,6 +1,7 @@
 - model_class = PoaType
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+=will_paginate(@poa_types)
 %table.table.table-striped
   %thead
     %tr

@@ -1,6 +1,7 @@
 - model_class = DestItiHeader
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+=will_paginate(@dest_iti_headers)
 %table.table.table-striped
   %thead
     %tr

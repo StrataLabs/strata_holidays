@@ -4,7 +4,7 @@ class ItiCustDestPoaDetailsController < ApplicationController
   # GET /iti_cust_dest_poa_details
   # GET /iti_cust_dest_poa_details.json
   def index
-    @iti_cust_dest_poa_details = ItiCustDestPoaDetail.all
+    @iti_cust_dest_poa_details = ItiCustDestPoaDetail.paginate(:page => params[:page])
   end
 
   # GET /iti_cust_dest_poa_details/1
