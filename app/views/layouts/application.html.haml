@@ -7,7 +7,8 @@
     = csrf_meta_tags
   %body
     = render 'layouts/header'
-    .container
+    .container.well{:style => 'min-height:500px'}
       - flash.each do |name, msg|
         = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
       = yield
+    = render 'layouts/footer'
