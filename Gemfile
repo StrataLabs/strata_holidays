@@ -107,3 +107,6 @@ gem 'coveralls', require: false
 
 #pagination
 gem "will_paginate", "~> 3.0.4"
+
+#heroku
+gem 'rails_12factor', group: :production
