@@ -2,7 +2,7 @@
 %html
   %head
     %title Strata Holidays
-    = stylesheet_link_tag "application", :media => "all" unless @body_id == "home"
+    = stylesheet_link_tag "application", :media => "all" if @body_id != "home"
     = stylesheet_link_tag "unwinders/application", :media => "all"
     / = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags

@@ -1,71 +1,99 @@
 x = []
-x << {:cust_iti_name => 'Ghanshyam-Pondicherry', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '15 May, 2011', :trip_end_date => '18 May, 2011', :seasons => 'Summer', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Dhiwakar-Wayanad', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '22 April, 2011', :trip_end_date => '25 May, 2011', :seasons => 'Summer', :duration => 3, :no_of_adults => 6, :no_of_children => 0 }
-x << {:cust_iti_name => 'Sundar Rajan', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '18 July, 2011', :trip_end_date => '31 July, 2011', :seasons => 'Monsoon', :duration => 13, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Kannan P', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '4 July, 2011', :trip_end_date => '8 July, 2011', :seasons => 'Monsoon', :duration => 4, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Vinod Shankar', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '30 June, 2011', :trip_end_date => '03 July, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Subhash Bhushan', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '8 October, 2011', :trip_end_date => '14 October, 2011', :seasons => 'Winter', :duration => 6, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Dilshad Billimoria', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '12 August, 2011', :trip_end_date => '15 August, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Fred ', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '15 August, 2011', :trip_end_date => '18 August, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Puja Sharma', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '28 September, 2011', :trip_end_date => '30 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Ram J', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '31 August, 2011', :trip_end_date => '2 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Hena James', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '1 September, 2011', :trip_end_date => '3 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Kalaiselvi', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '2 September, 2011', :trip_end_date => '5 September, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Swathi', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '2 September, 2011', :trip_end_date => '4 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 4, :no_of_children => 0 }
-x << {:cust_iti_name => 'Nirmala', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '2 September, 2011', :trip_end_date => '5 September, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Ashwin Ramachandran', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '1 September, 2011', :trip_end_date => '3 September, 2011', :seasons => 'Monsoon', :duration => 1, :no_of_adults => 4, :no_of_children => 1 }
-x << {:cust_iti_name => 'Partha', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '9 September, 2011', :trip_end_date => '11 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Lohit', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '9 September, 2011', :trip_end_date => '12 September, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Rakesh Babu', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '20 September, 2011', :trip_end_date => '22 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 4, :no_of_children => 0 }
-x << {:cust_iti_name => 'Lokesh Ramachandran', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '9 September, 2011', :trip_end_date => '11 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Nikhil S', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '4 September, 2011', :trip_end_date => '6 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Suresh S', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '14 September, 2011', :trip_end_date => '16 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Varna Kumari', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '10 September, 2011', :trip_end_date => '12 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Daphne Jennifer', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '16 September, 2011', :trip_end_date => '19 September, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Naveen', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '10 September, 2011', :trip_end_date => '12 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Supreet', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '15 September, 2011', :trip_end_date => '17 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 4, :no_of_children => 0 }
-x << {:cust_iti_name => 'Vikas', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '17 September, 2011', :trip_end_date => '19 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 1, :no_of_children => 0 }
-x << {:cust_iti_name => 'Pawan Kumar', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '23 September, 2011', :trip_end_date => '26 September, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 6, :no_of_children => 0 }
-x << {:cust_iti_name => 'Kavya Hegde', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '11 September, 2011', :trip_end_date => '12 September, 2011', :seasons => 'Monsoon', :duration => 1, :no_of_adults => 4, :no_of_children => 0 }
-x << {:cust_iti_name => 'Manjula P', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '22 September, 2011', :trip_end_date => '24 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Raghavendra', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '21 September, 2011', :trip_end_date => '23 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Satish Krishnamurthy', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '17 September, 2011', :trip_end_date => '19 September, 2011', :seasons => 'Monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Kamala Sheshadiri', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '25 September, 2011', :trip_end_date => '27 September, 2011', :seasons => 'Monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Padmini Mazumder', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '23 September, 2011', :trip_end_date => '24 September, 2011', :seasons => 'Monsoon', :duration => 1, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Atul & Abhishek', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '24 December, 2011', :trip_end_date => '26 December, 2011', :seasons => 'Post monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Sujit Williams', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '30 October, 2011', :trip_end_date => '1 November, 2011', :seasons => 'Post monsoon', :duration => 2, :no_of_adults => 4, :no_of_children => 2 }
-x << {:cust_iti_name => 'Ravikumar', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '7 October, 2011', :trip_end_date => '10 October, 2011', :seasons => 'Post monsoon', :duration => 3, :no_of_adults => 3, :no_of_children => 2 }
-x << {:cust_iti_name => 'Shanthakumari', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '15 Dec, 2012', :trip_end_date => '17 Dec, 2012', :seasons => 'Post monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Sapna Rawat', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '19 May, 2012', :trip_end_date => '21 May, 2012', :seasons => 'Summer', :duration => 2, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Mahesh Menon', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '10 Feb, 2012', :trip_end_date => '13 Feb, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Mamatha Kamath', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '09 Feb, 2012', :trip_end_date => '12 Feb, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Sonal Rao', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '16 Feb, 2012', :trip_end_date => '20 Feb, 2012', :seasons => 'Winter', :duration => 4, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Krishnaraja  Reddy ', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '11 May, 2012', :trip_end_date => '18 May, 2011', :seasons => 'Summer', :duration => 7, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Ulka kelkar', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '16 Jan, 2012', :trip_end_date => '18 Jan, 2012', :seasons => 'Winter', :duration => 2, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Sonde A S', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '26 Feb, 2012', :trip_end_date => '01 March, 2012', :seasons => 'Summer', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Shubha Ragavendra', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '26 Jan, 2012', :trip_end_date => '29 Jan, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Dr. Archana Shetty', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '5 Feb, 2012', :trip_end_date => '7 Feb, 2012', :seasons => 'Winter', :duration => 2, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Poornima Subraminian', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '14 Feb, 2012', :trip_end_date => '18 Feb, 2012', :seasons => 'Winter', :duration => 4, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Radhika Nagaraja', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '26 Jan, 2012', :trip_end_date => '29 Jan, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Archana Saraf', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '18 Feb, 2012', :trip_end_date => '21 Feb, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'P. Jyothirmayee', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '10 Feb, 2012', :trip_end_date => '13 Feb, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Karthik Chintapatla', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '11 Jan, 2012', :trip_end_date => '14 Jan, 2012', :seasons => 'Winter', :duration => 3, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Priti Mehta', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '20 Jan, 2012', :trip_end_date => '22 Jan, 2012', :seasons => 'Winter', :duration => 2, :no_of_adults => 2, :no_of_children => 1 }
-x << {:cust_iti_name => 'Bindu pal', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '29 March, 2012', :trip_end_date => '01 June, 2012', :seasons => 'Summer', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Srivatsav', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '03 November, 2012', :trip_end_date => '07 November, 2012', :seasons => 'Post monsoon', :duration => 4, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Tejas Dinkar', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '24 July, 2012', :trip_end_date => '28 July, 2012', :seasons => 'Monsoon', :duration => 4, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Seema Menon', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '18 September, 2012', :trip_end_date => '23 September, 2012', :seasons => 'Monsoon', :duration => 5, :no_of_adults => 4, :no_of_children => 2 }
-x << {:cust_iti_name => 'Chethan R', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '16 April, 2013', :trip_end_date => '21 April, 2013', :seasons => 'Summer', :duration => 5, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Shajin S', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '24 Jan, 2013', :trip_end_date => '27 Jan, 2013', :seasons => 'Winter', :duration => 3, :no_of_adults => 4, :no_of_children => 0 }
-x << {:cust_iti_name => 'Sheela/Deepti', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '6 April, 2013', :trip_end_date => '12 April, 2013', :seasons => 'Summer', :duration => 6, :no_of_adults => 4, :no_of_children => 3 }
-x << {:cust_iti_name => 'Sivaramakrishnan', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '27 Dec, 2012', :trip_end_date => '29 Dec, 2012', :seasons => 'Post monsoon', :duration => 2, :no_of_adults => 4, :no_of_children => 3 }
-x << {:cust_iti_name => 'Chaitra Balakrishnan', :iti_type => 'Single', :vacation_type_id => 2, :trip_start_date => '20 July, 2013', :trip_end_date => '25 July, 2013', :seasons => 'Monsoon', :duration => 5, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Mamtha', :iti_type => 'Multiple', :vacation_type_id => 2, :trip_start_date => '4 October, 2013', :trip_end_date => '6 October, 2013', :seasons => 'Post monsoon', :duration => 2, :no_of_adults => 2, :no_of_children => 2 }
-x << {:cust_iti_name => 'Sunil Kumar', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '14 Jan, 2013', :trip_end_date => '17 Jan, 2013', :seasons => 'Winter', :duration => 4, :no_of_adults => 2, :no_of_children => 0 }
-x << {:cust_iti_name => 'Padmini Mazumder', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '14 April, 2012', :trip_end_date => '16 April, 2012', :seasons => 'Summer', :duration => 2, :no_of_adults => 3, :no_of_children => 0 }
-x << {:cust_iti_name => 'Nikhil Sivakumar', :iti_type => 'Single', :vacation_type_id => 1, :trip_start_date => '25 October, 2012', :trip_end_date => '28 October, 2012', :seasons => 'Post monsoon', :duration => 3, :no_of_adults => 2, :no_of_children => 0 }
+x << {:name => 'Ghanshyam', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9036911926', :email => 'ghanshyam911@gmail.com'}
+x << {:name => 'Dhivakar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845357693', :email => 'dhivakar.n@gmail.com'}
+x << {:name => 'Bernadette Hookens', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9985172287', :email => 'bernu60@yahoo.co.in'}
+x << {:name => 'Sunder Rajan', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845553570', :email => 'r.sundarrajan@strata.co.in'}
+x << {:name => 'Meenakshy Iyer', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845557291', :email => 'meenakshy@wf.justbooksclc.com'}
+x << {:name => 'Anirudh N S', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9886575771', :email => 'anirudhns@gmail.com, anirudh.shashank@cegedim.com'}
+x << {:name => 'Kannan P', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9840145681', :email => 'maddykannan@gmail.com'}
+x << {:name => 'Vinod Shankar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986661642', :email => 'vinod.shankar@strata.co.in'}
+x << {:name => 'Sandya', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986661642', :email => 'vinod.shankar@strata.co.in'}
+x << {:name => 'Manjunatha', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9739888966', :email => 'vinod.shankar@strata.co.in'}
+x << {:name => 'Manju', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9739888966', :email => 'vinod.shankar@strata.co.in'}
+x << {:name => 'Subhash Bhushan', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9880597292', :email => 'subhash.bhushan@strata.co.in'}
+x << {:name => 'Sumedha', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9886698785', :email => 'sumedha85@gmail.com'}
+x << {:name => 'Vikas Dhyani', :city => 'Bangalore', :state => 'Karnataka', :mphone => '7483136216', :email => 'vikas.dhyani@strata.co.in'}
+x << {:name => 'Kalpana', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9379914719', :email => 'kalpana.jakhwal@gmail.com'}
+x << {:name => 'Dilshad Billimoria', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845023746', :email => 'dbillimoria@gmail.com'}
+x << {:name => 'Radha Rao', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9980005432', :email => 'radharao_2000@yahoo.com'}
+x << {:name => 'Sumathi K T', :city => 'Bangalore', :state => 'Karnataka', :mphone => '23346887', :email => 'kt.sumathi@gmail.com'}
+x << {:name => 'Deepak Kewalramani', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9819919145', :email => 'dkewalramani2004@yahoo.com'}
+x << {:name => 'Annamalai Muthaiah', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'email.annamalai@gmail.com'}
+x << {:name => 'Anupama', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9740233009', :email => 'anupama.rchandran@gmail.com'}
+x << {:name => 'Raam', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986060860', :email => 'raambommu@gmail.com'}
+x << {:name => 'Fredrick Micheal Alex', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9900414480', :email => 'fmichael@in.ibm.com; famick2004@gmail.com'}
+x << {:name => 'Puja Sharma', :city => 'Bangalore', :state => 'Karnataka', :mphone => '7795180935', :email => 'puja.sharma@strata.co.in'}
+x << {:name => 'Ram J', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9916405788', :email => 'ram.j@ops.strata.co.in'}
+x << {:name => 'Hena James', :city => 'Bangalore', :state => 'Karnataka', :mphone => '8050414189', :email => 'hena.james@strata.co.in'}
+x << {:name => 'Kalaiselvi', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9035507669', :email => 'kalaiselvi.r@bo.strata.co.in'}
+x << {:name => 'Swathi', :city => 'Bangalore', :state => 'Karnataka', :mphone => '8884755131', :email => 'swathi.s@strata.co.in'}
+x << {:name => 'Nirmala', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9035507669', :email => 'nirmala.b@bo.strata.co.in'}
+x << {:name => 'Ashwin Ramachandran', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9740233009', :email => 'ashnaura@gmail.com'}
+x << {:name => 'Partha', :city => 'Bangalore', :state => 'Karnataka', :mphone => '8971835633', :email => 'partha.pathanna@strata.co.in'}
+x << {:name => 'Lohit', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9972397037', :email => 'lohith.ramappa@strata.co.in'}
+x << {:name => 'Rakesh Babu', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986088411', :email => 'rakesh.babu@strata.co.in'}
+x << {:name => 'Lokesh Ramachandran', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9591007959', :email => 'lokesh.ramachandra@strata.co.in'}
+x << {:name => 'Nikhil S', :city => 'Bangalore', :state => 'Karnataka', :mphone => '7204796261', :email => 'nikhil.sivakumar@strata.co.in'}
+x << {:name => 'Suresh S', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9538320899', :email => 'suresh.babu@strata.co.in'}
+x << {:name => 'Varna Kumari', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'varna.n@bo.strata.co.in'}
+x << {:name => 'Daphne Jennifer', :city => 'Bangalore', :state => 'Karnataka', :mphone => '98441 79747', :email => 'daphne.jennifer@strata.co.in'}
+x << {:name => 'Naveen', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9900315892', :email => 'naveen.kumar@strata.co.in'}
+x << {:name => 'Supreet', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9535351454', :email => 'supreeth.burji@strata.co.in'}
+x << {:name => 'Pawan Kumar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986429938', :email => 'pavan.kumar@strata.co.in'}
+x << {:name => 'Kavya Hegde', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9880932237', :email => 'kavya.hegde@strata.co.in'}
+x << {:name => 'Manjula P', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'manjula.s@bo.strata.co.in'}
+x << {:name => 'Raghavendra', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'raghavendra.c@ops.strata.co.in'}
+x << {:name => 'Satish Krishnamurthy', :city => 'Bangalore', :state => 'Karnataka', :mphone => '7204358489', :email => 'satish.krishnamurthy@strata.co.in'}
+x << {:name => 'Kamala Sheshadiri', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9900177014', :email => 'kamala.seshadri@strata.co.in'}
+x << {:name => 'Padmini Mazumder', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9916542128', :email => 'padmini.mazumder@lit.strata.co.in'}
+x << {:name => 'Atul & Abhishek', :city => 'Bangalore', :state => 'Karnataka', :mphone => '8553308320', :email => 'atul.thapa@strata.co.in'}
+x << {:name => 'Sujit Williams', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9886090790', :email => 'sujith.william@strata.co.in'}
+x << {:name => 'Suryanarayanan', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845014363; 9845045972', :email => 'a.suryanarayanan@strata.co.in; laksurya@gmail.com'}
+x << {:name => 'Ravikumar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9980130566', :email => 'd.ravikumar@strata.co.in'}
+x << {:name => 'Shanthakumari', :city => 'Bangalore', :state => 'Karnataka', :mphone => '96111 02768', :email => 'shantha.kumari@prudentbrokers.com'}
+x << {:name => 'Vinod', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986661642', :email => 'vinod.shankar@strata.co.in'}
+x << {:name => 'Nazia Shanbhnam', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9379273976', :email => 'nazia.shabnam@strata.co.in'}
+x << {:name => 'Sapna Rawat', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9880554136', :email => ' sapana.rawat@strata.co.in'}
+x << {:name => 'Mahesh Menon', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9480423602', :email => 'krseema@hotmail.com; maheshmon@gmail.com; maheshmon@hotmail.com'}
+x << {:name => 'Mamatha Kamath', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9900353068', :email => 'rao.mamatha1@gmail.com, shenoykamath@yahoo.com'}
+x << {:name => 'Sonal Rao', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9591988412', :email => 'sonal_rahalkar@hotmail.com'}
+x << {:name => 'Krishnaraja  Reddy ', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9686444960', :email => 'rvbreddy1956@gmail.com'}
+x << {:name => 'Ulka kelkar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9448481599', :email => 'ulka.kelkar@gmail.com'}
+x << {:name => 'Sonde A S', :city => 'Bangalore', :state => 'Karnataka', :mphone => '8023341178', :email => 'anandsonde@rediffmail.com'}
+x << {:name => 'Shubha Ragavendra', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9900132219', :email => 'prakruthi6@yahoo.com'}
+x << {:name => 'Dr. Archana Shetty', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9986315104', :email => 'archanashetty50@yahoo.com'}
+x << {:name => 'Poornima Subraminian', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9886292912', :email => 'posubram@gmail.com'}
+x << {:name => 'Radhika Nagaraja', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9880657949', :email => 'radhikanagaraja@yahoo.com'}
+x << {:name => 'Archana Saraf', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9739033758', :email => 'shrutisaraf99@gmail.com'}
+x << {:name => 'P. Jyothirmayee', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9449066870', :email => 'bhavya2001p@gmail.com'}
+x << {:name => 'Karthik Chintapatla', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9008003149', :email => 'karthik.chintapatla@gmail.com'}
+x << {:name => 'Priti Mehta', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9731600936', :email => 'm.priti@gmail.com'}
+x << {:name => 'Bindu pal', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9980820794', :email => 'bindu.pal@jpn.justbooksclc.com'}
+x << {:name => 'Shruthi pal', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9980820795', :email => 'shruthi.pal@jpn.justbooksclc.com'}
+x << {:name => 'Dr. Sumathi', :city => 'Bangalore', :state => 'Karnataka', :mphone => '080-23346887; 9482232756', :email => 'kt.sumathi@gmail.com'}
+x << {:name => 'Radha Rao', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'radharao_2000@yahoo.com'}
+x << {:name => 'Srivatsav', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9740355007', :email => 'srivatsav.kalive@gmail.com'}
+x << {:name => 'Suraj', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9886277296', :email => 'suraj@fusebo.com'}
+x << {:name => 'Radha Iyer', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9867730185 ', :email => 'riyer@crownrelo.com'}
+x << {:name => 'Swetha KJ', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'swetha shweta.kj18@gmail.com'}
+x << {:name => 'Tejas Dinkar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845572696', :email => 'tejas@nilenso.com'}
+x << {:name => 'Anupama Ramachandran', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'anupama.rchandran@gmail.com'}
+x << {:name => 'Seema Menon', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9480423602', :email => 'krseema@hotmail.com'}
+x << {:name => 'Dipti Kulkarni', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'deepthi.kulkarni@gmail.com'}
+x << {:name => 'Rakesh Debur', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'rakesh.debur@gmail.com'}
+x << {:name => 'Chethan R', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9900782213 / 8088089329 / 9845484989', :email => 'chetanr456@gmail.com'}
+x << {:name => 'Smitha/Suresh Keeran', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9663387461', :email => 'suresh.warrier@rrn.justbooksclc.com'}
+x << {:name => 'S N Mohan', :city => 'Bangalore', :state => 'Karnataka', :mphone => '42129279', :email => 'sn mohan@ecstech.co.in'}
+x << {:name => 'Shajin S', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9008308642', :email => 'talk2shajin@gmail.com'}
+x << {:name => 'Sheela/Deepti', :city => 'Bangalore', :state => 'Karnataka', :mphone => '8892363391', :email => 'sheela@vij.justbooksclc.com; sheela@vij.justbooksclc.com'}
+x << {:name => 'Sivaramakrishnan', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'r.sivaramakrishnan@gmail.com'}
+x << {:name => 'Dayanand Naik', :city => 'Bangalore', :state => 'Karnataka', :mphone => '99456 89365', :email => 'Dayanand.Naik@hcl.com'}
+x << {:name => 'Ankita Mundra', :city => 'Bangalore', :state => 'Karnataka', :mphone => '', :email => 'ankita.mundra@yahoo.com'}
+x << {:name => 'Chaitra Balakrishnan', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9945874620', :email => 'chaitra.balakrishna@gmail.com'}
+x << {:name => 'Mamtha', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9845706625', :email => 'mamatha.m@ecb.justbooksclc.com'}
+x << {:name => 'Sunil Kumar', :city => 'Bangalore', :state => 'Karnataka', :mphone => '9739081663', :email => 'sunilatpharma@yahoo.co.in; mamtha1308@gmail.com'}
 
 x.each do |arg|
-  cust = CustItiHeader.new(arg)
+  cust = Customer.new(arg)
   p cust.save
 end

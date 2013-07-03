@@ -1,20 +1,42 @@
-#slideshow
-  - CustItiHeader.all.each do |cust_iti|
-    .div
-      .title= truncate(cust_iti.cust_iti_name)
-      %table.table.table-striped{:style => 'padding:2px'}
-        %tr
-          %td Iti Type :
-          %td= cust_iti.iti_type
-        %tr
-          %td Vacation Type :
-          %td= cust_iti.vacation_type.vac_type
-        %tr
-          %td Start Date :
-          %td= cust_iti.trip_start_date
-        %tr
-          %td End Date :
-          %td= cust_iti.trip_end_date
-        %tr
-          %td No Of People:
-          %td= cust_iti.no_of_adults.to_i + cust_iti.no_of_children.to_i
+/ #slideshow
+/   - CustItiHeader.all.each do |cust_iti|
+/     .div
+/       .title= truncate(cust_iti.cust_iti_name)
+/       %table.table.table-striped{:style => 'padding:2px'}
+/         %tr
+/           %td Iti Type :
+/           %td= cust_iti.iti_type
+/         %tr
+/           %td Vacation Type :
+/           %td= cust_iti.vacation_type.vac_type
+/         %tr
+/           %td Start Date :
+/           %td= cust_iti.trip_start_date
+/         %tr
+/           %td End Date :
+/           %td= cust_iti.trip_end_date
+/         %tr
+/           %td No Of People:
+/           %td= cust_iti.no_of_adults.to_i + cust_iti.no_of_children.to_i
+#my-slideshow.well
+  %ul.bjqs
+    - CustItiHeader.all.each do |cust_iti|
+      %li
+        %center
+          %h3.title{:style => 'margin:0px'}= truncate(cust_iti.cust_iti_name)
+        %table.table.table-striped{:style => 'padding:2px'}
+          %tr
+            %td Iti Type :
+            %td= cust_iti.iti_type
+          %tr
+            %td Vacation Type :
+            %td= cust_iti.vacation_type.vac_type
+          %tr
+            %td Start Date :
+            %td= cust_iti.trip_start_date
+          %tr
+            %td End Date :
+            %td= cust_iti.trip_end_date
+          %tr
+            %td No Of People:
+            %td= cust_iti.no_of_adults.to_i + cust_iti.no_of_children.to_i

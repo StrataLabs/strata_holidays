@@ -16,21 +16,35 @@
 //= require turbolinks
 //= require_tree .
 
-$(function ()
-{
-  if (($("#slideshow > div").length) > 1)
-  {
-    $("#slideshow > div:gt(0)").hide();
-    setInterval(function() {
-      $('#slideshow > div:first')
-        .fadeOut(1000)
-        .next()
-        .fadeIn(1000)
-        .end()
-        .appendTo('#slideshow');
-    },  5000);
-  }
+jQuery(document).ready(function($) {
+    $('#my-slideshow').bjqs({
+        'height' : 250,
+        'width' : 377,
+        'responsive' : true,
+        'showmarkers' : false,
+        'usecaptions' : true,
+        'animtype' : 'fade',
+        'animduration' : 450,
+        'animspeed' : 1000,
+        'automatic' : true
+    });
 });
+
+// $(function ()
+// {
+//   if (($("#slideshow > div").length) > 1)
+//   {
+//     $("#slideshow > div:gt(0)").hide();
+//     setInterval(function() {
+//       $('#slideshow > div:first')
+//         .fadeOut(1000)
+//         .next()
+//         .fadeIn(1000)
+//         .end()
+//         .appendTo('#slideshow');
+//     },  5000);
+//   }
+// });
 // var Sessionapp = {};
 // Sessionapp.Charts = {};
 // Sessionapp.ChartData = {};
