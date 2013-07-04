@@ -1,4 +1,5 @@
 StrataHolidays::Application.routes.draw do  devise_for :users
+  resources :cust_iti_requests
   resources :consultant_customer_destinations
   resources :vacation_consultants
   resources :customers
@@ -12,6 +13,7 @@ StrataHolidays::Application.routes.draw do  devise_for :users
     collection do
       get 'child'
       get 'home'
+      get 'user'
     end
   end
 

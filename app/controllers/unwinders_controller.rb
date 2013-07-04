@@ -14,4 +14,9 @@ class UnwindersController < ApplicationController
   def home
     @body_id = "home"
   end
+
+  def user
+    @body_id = "list"
+    @cust_iti_request = CustItiRequest.new
+  end
 end

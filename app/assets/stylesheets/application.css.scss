@@ -11,6 +11,8 @@
  *= require_self
  *= require bootstrap_and_overrides
  *= require custom_css
+ *= require jquery.ui.all
+ *= require chosen
  */
 
 .in-progress

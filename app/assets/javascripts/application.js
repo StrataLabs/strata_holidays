@@ -12,9 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require twitter/bootstrap
 //= require turbolinks
+//= require chosen-jquery
 //= require_tree .
+
+$(function() {
+  $('#cust_iti_request_start_date').datepicker();
+  $('#cust_iti_request_end_date').datepicker();
+});
 
 jQuery(document).ready(function($) {
     $('#my-slideshow').bjqs({

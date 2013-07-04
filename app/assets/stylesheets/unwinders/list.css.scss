@@ -1,4 +1,15 @@
 body#list{
+  .control-group{
+    margin-bottom: 10px;
+  }
+  .form-horizontal{
+    .control-label{
+      width:90px;
+    }
+    .controls {
+      margin-left: 125px;
+    }
+  }
   .action{
     display: block;
     clear: both;

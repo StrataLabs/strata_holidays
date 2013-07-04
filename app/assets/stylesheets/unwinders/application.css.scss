@@ -10,6 +10,27 @@
 @import "ecommerce";
 
 @import "bjqs";
+
+.order-package{
+  display: block;
+  position: relative;
+  clear: both;
+  margin: 0px 0 0 0;
+  padding: 0;
+  background: #fafafa;
+  border: solid 1.5px #eeeeee;
+  overflow: hidden;
+  .header{
+    padding: 10px;
+    background: #FECC00;
+    font-size: 18px;
+    text-align:center;
+    border-bottom:solid 1.5px #eeeeee;
+  }
+  .content{
+    padding:10px;
+  }
+}
 .thumb-container{
   text-align: center;
   margin-bottom: 3px;

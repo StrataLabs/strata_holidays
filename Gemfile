@@ -12,7 +12,8 @@ gem 'sqlite3', :group => :development
 gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem "jquery-rails", "~> 3.0.1"
+gem "jquery-ui-rails", "~> 4.0.3"
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -110,3 +111,6 @@ gem "will_paginate", "~> 3.0.4"
 
 #heroku
 gem 'rails_12factor', group: :production
+
+#multiple select
+gem "chosen-rails", "~> 0.10.0"
