@@ -3,30 +3,32 @@
     %h2.branch_name Strata Holidays
 .container
   .action
-    .span4.well{:style => 'margin:10px 0px 0px 0px;min-height:300px'}
-    / = image_tag("jb/6.jpg")
-
-    %p.intro There were several Mahars first, and then at least twenty awe-inspiring pterodactyls—thipdars, they are called within Pellucidar.
-    = render 'top_destinations'
+    .row
+      .span3.well{:style => 'margin:10px 0px 0px 0px;min-height:300px;padding:0px'}
+        .span2{:style => 'margin:0px'}
+          .thumb-container
+            .thumbnail.small
+              %img{:src => 'assets/unwinders/divya.jpg'}
+        %h2
+          Divya
+          VC Name
+        Other info goes here
+      .span9
+        .span3.well
+          Featured Dest Images
+        / There were several Mahars first, and then at least twenty awe-inspiring pterodactyls—thipdars, they are called within Pellucidar.
+        .span5.pull-right
+          = render 'top_destinations'
+    / %p.intro There were several Mahars first, and then at least twenty awe-inspiring pterodactyls—thipdars, they are called within Pellucidar.
+    / = render 'top_destinations'
   .map
     #inner-details{:style => 'display:none'}
     #infovis
-
+    map
   .refer
-
+    Testimonials
   .info
     = render 'iti_in_progress'
   .newsletter
-    - if @featured_newsletter
-      %div.well
-        %span3
-        .ic_container#jbconnect
-          %a{:href => "/newsletters/current", :class => "jbconnect_link", :target => "_blank"}
-            = image_tag("http://image.issuu.com/#{@featured_newsletter.documentid}/jpg/page_1_thumb_large.jpg", :border=>0, :class => "ic_img", :width => "236px", :height => "333px")
-            #jbconnect_caption.ic_overlay{:style => "display:none;"}
-            .ic_caption
-              %p.ic_category= "READ ONLINE"
-              %h3= "JustBooks Connect"
-              %p.ic_text= @featured_newsletter.title
-
+    Campaign
 

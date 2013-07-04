@@ -28,11 +28,11 @@ body#list{
       margin: 0; padding: 0;
 
       @media screen and (min-width: 900px) {
-        @include span-columns(5 omega);
+        //@include span-columns(5 omega);
       }
 
       @media screen and (max-width: 900px) {
-        @include span-columns(12);
+        //@include span-columns(12);
       }
 
       li{
