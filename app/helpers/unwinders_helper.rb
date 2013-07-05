@@ -17,4 +17,8 @@ module UnwindersHelper
       "data"=>[]
     }
   end
+
+  def get_destinations(dests)
+    dests.compact.map {|s| Destination.find(s).name}.join(" ")
+  end
 end

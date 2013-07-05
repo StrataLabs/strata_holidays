@@ -9,7 +9,6 @@
       .content
         = simple_form_for @cust_iti_request, :html => { :class => 'form-horizontal' } do |f|
           = f.input :dest_type, :collection => ["Single", "Multiple"]
-          / = f.input :destinations, :collection => Destination.all
           = f.input :destinations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations",class: 'chzn-select' ,:multiple => true }
           = f.association :vacation_type, :label_method => :vac_type
           = f.input :start_date, :as => :date_picker
@@ -20,9 +19,50 @@
           %center= f.button :submit, :value => "Request" , :class => 'btn-primary btn-small'
           / = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_requests_path, :class => 'btn'
 
-
-    .span8.well
-      .span6.well
-        hi
-      .span6.well
-    / .span3.well
+    .span8.order-package
+      .header
+        My Activities
+      .content
+        - CustItiRequest.all.each do |cust|
+          .activity-header
+            =link_to "A D Vishnu Prasad" , "#"
+            = "requested a package on #{cust.created_at.strftime("%d-%B-%Y - %I:%M %p") }"
+          %h4 Details
+          .item-details
+            %p
+              %b Destination Type
+              =cust.dest_type
+            %p
+              %b Destiantions
+              /=cust.destinations.compact
+              =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")
+            %p
+              %b Vacation Type
+              =cust.vacation_type.vac_type
+            %p
+              %b Start Date
+              =cust.start_date
+            %p
+              %b End Date
+              =cust.end_date || "NA"
+            %p
+              %b No of People
+              =cust.no_of_adults + cust.no_of_children
+            .assign-vc.pull-right
+              / =link_to "Request to All VC", '#', :class => ['btn btn-success']
+              =link_to '#', :class => ['btn btn-success'] do
+                %i.icon-exchange
+                  Assign
+            %br
+          .search-vcs{:style => 'display:none'}
+            =render 'search_vcs'
+          %hr
+#my-modal.modal.hide.fade
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Choose Vacation Consultant
+  .modal-body
+    .modal-rec-body
+  .modal-footer
+    = link_to "Done" , "#" , :class => 'btn btn-primary'
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close

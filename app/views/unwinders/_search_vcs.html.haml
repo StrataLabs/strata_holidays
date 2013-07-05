@@ -1,0 +1,11 @@
+#search-vc-box.span12.well
+  Search Vacation Consultant
+  = form_tag '/search_vcs', :class => 'form-inline', :remote => true do
+    %label Keyword
+    %input{:type => "text"}
+    &nbsp;&nbsp;&nbsp;
+    %label Neighbourhood
+    %input{:type => "text"}
+    &nbsp;&nbsp;&nbsp;
+    %button.btn{:type => "submit"} Search
+

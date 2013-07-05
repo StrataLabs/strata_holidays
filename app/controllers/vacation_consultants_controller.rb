@@ -61,6 +61,10 @@ class VacationConsultantsController < ApplicationController
     end
   end
 
+  def search
+    @vcs = VacationConsultant.all
+    render :partial => 'search_results', locals: {vcs: @vcs}
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacation_consultant
