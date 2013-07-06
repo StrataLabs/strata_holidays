@@ -1,7 +1,12 @@
 - model_class = CustItiHeader
+- p @cust_iti_header
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.titleize
 
+%p
+  %strong= model_class.human_attribute_name(:custoemr_id) + ':'
+  %br
+  = @cust_iti_header.customer.name rescue 'NA'
 %p
   %strong= model_class.human_attribute_name(:cust_iti_name) + ':'
   %br

@@ -27,7 +27,7 @@
         %td= cust_iti_request.end_date
         %td= cust_iti_request.no_of_adults
         %td= cust_iti_request.no_of_children
-        %td=l cust_iti_request.created_at
+        %td= cust_iti_request.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_cust_iti_request_path(cust_iti_request), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), cust_iti_request_path(cust_iti_request), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'

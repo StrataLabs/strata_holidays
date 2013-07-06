@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :cust_iti_header do
+    customer_id 1
     cust_iti_name "MyString"
     iti_type "MyString"
     vacation_type_id 1
