@@ -1,7 +1,7 @@
 = simple_form_for @cust_iti_header, :html => { :class => 'form-horizontal' } do |f|
   = f.input :cust_iti_name
   = f.association :customer
-  = f.input :iti_type, :collection => ["Single Destintaion", "Multiple Destintaion"]
+  = f.input :iti_type, :collection => ["Single", "Multiple", "Single Destintaion", "Multiple Destintaion"]
   = f.association :vacation_type, :label_method => :vac_type
   = f.input :trip_start_date
   = f.input :trip_end_date
