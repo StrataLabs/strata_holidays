@@ -5,6 +5,5 @@ $ ->
     width: '220px'
 
 $(".assign-vc").on "click", ->
-  console.log "am getting called"
-  $(".search-vcs").fadeToggle()
-  false
+  $('#my-modal').modal 'show'
+  $('#my-modal').modal({keyboard: true})

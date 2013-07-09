@@ -17,7 +17,8 @@ StrataHolidays::Application.routes.draw do  devise_for :users
     end
   end
 
-  post '/search_vcs' => 'vacation_consultants#search'
+  post '/search_vcs' => 'vacation_consultants#search_vcs', :as => 'search_vcs'
+  post '/search_vcs_form' => 'vacation_consultants#search', :as => 'display_vcs'
   resources :vacation_types
   resources :iti_day_details
   resources :iti_details

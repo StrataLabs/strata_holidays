@@ -57,7 +57,10 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'haml-rails'
 
 #db for heroku
-gem 'pg' , :group => :production
+gem "pg", "~> 0.15.1"
+
+#fulltext search
+gem "pg_search", "~> 0.7.0"
 
 group :production do
  # For Heroku
@@ -114,3 +117,7 @@ gem 'rails_12factor', group: :production
 
 #multiple select
 gem "chosen-rails", "~> 0.10.0"
+
+#sunspot
+gem "sunspot_rails", "~> 2.0.0"
+gem "sunspot_solr", "~> 2.0.0"

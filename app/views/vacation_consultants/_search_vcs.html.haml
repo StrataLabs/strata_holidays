@@ -1,0 +1,11 @@
+%table.table.table-stripped
+  %tbody
+    -if @vcs.empty?
+      No Results Found
+    -else
+      -@vcs.each_with_index do |vc,index|
+        %tr{:id => "tr#{index}"}
+          %td.cb
+            %input{:type => "checkbox", :value => "#{vc.id}"}/
+          %td=vc.name
+          %td=vc.email

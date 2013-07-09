@@ -50,19 +50,19 @@
               =cust.no_of_adults + cust.no_of_children
             .assign-vc.pull-right
               / =link_to "Request to All VC", '#', :class => ['btn btn-success']
-              =link_to '#', :class => ['btn btn-success'] do
-                %i.icon-exchange
-                  Assign
+              =link_to display_vcs_path, :remote => true, :method => :post, :class => ['btn btn-success'] do
+                Assign
             %br
-          .search-vcs{:style => 'display:none'}
-            =render 'search_vcs'
+          / .search-vcs{:style => 'display:none'}
           %hr
-#my-modal.modal.hide.fade
+#my-modal.modal.large.hide.fade{"tabindex" => "-1"}
   .modal-header
     %a.close{"data-dismiss" => "modal"} x
     %h3 Choose Vacation Consultant
   .modal-body
     .modal-rec-body
+    .modal-rec-body-results
+      Results will be shown here
   .modal-footer
     = link_to "Done" , "#" , :class => 'btn btn-primary'
     %a.btn{"data-dismiss" => "modal", :href => "#"} Close

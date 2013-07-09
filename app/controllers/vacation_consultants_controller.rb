@@ -61,9 +61,20 @@ class VacationConsultantsController < ApplicationController
     end
   end
 
+  def search_vcs
+    params[:keyword] ||= ''
+    @vcs = VacationConsultant.search_me(params[:keyword]).results.to_a #searching customer for time-being
+    # @vcs = VacationConsultant.where(:name => params[:keyword])
+    render :partial => 'search_vcs'
+    # respond_to do |format|
+    #   format.text "SHow me"
+    # end
+  end
+
   def search
-    @vcs = VacationConsultant.all
-    render :partial => 'search_results', locals: {vcs: @vcs}
+    respond_to do |format|
+      format.js
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.

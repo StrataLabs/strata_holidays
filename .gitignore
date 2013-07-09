@@ -9,6 +9,7 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
+/solr/data*
 /log/*.log
 /tmp
 *.rbc
