@@ -63,6 +63,7 @@ class VacationConsultantsController < ApplicationController
 
   def search_vcs
     params[:keyword] ||= ''
+    # @vcs = Customer.all
     @vcs = VacationConsultant.search_me(params[:keyword]).results.to_a #searching customer for time-being
     # @vcs = VacationConsultant.where(:name => params[:keyword])
     render :partial => 'search_vcs'

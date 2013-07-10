@@ -1,11 +1,22 @@
-%table.table.table-stripped
+%table.table.table-stripped#search_vc_table
   %tbody
     -if @vcs.empty?
       No Results Found
     -else
       -@vcs.each_with_index do |vc,index|
-        %tr{:id => "tr#{index}"}
+        %tr{:id => "#{vc.id}"}
           %td.cb
             %input{:type => "checkbox", :value => "#{vc.id}"}/
           %td=vc.name
           %td=vc.email
+= link_to 'Select', '#', :class => ['btn', 'btn-primary', 'select-vcs'], :remote => true
+
+:javascript
+  $('.select-vcs').on('click', function () {
+    var vc_ids = [];
+    $('#search_vc_table tr').filter(':has(:checkbox:checked)').each(function() {
+      vc_ids.push($(this).attr("id"));
+      console.log($(this).attr("id"));
+    });
+    return false;
+  });
