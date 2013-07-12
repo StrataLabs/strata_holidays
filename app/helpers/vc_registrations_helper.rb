@@ -1,0 +1,2 @@
+module VcRegistrationsHelper
+end

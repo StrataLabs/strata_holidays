@@ -1,5 +1,8 @@
 class VacationConsultant < ActiveRecord::Base
+  belongs_to :vc_registration
+  has_many :vc_assignments
   has_many :consultant_customer_destinations
+  attr_accessor :address, :status
   searchable do
     text :name, :boost => 2.0
     text :email
@@ -24,4 +27,14 @@ class VacationConsultant < ActiveRecord::Base
       fulltext query
     end
   end
+
+  def self.build_from_vc_reg(vc_reg)
+    vc_reg = vc_reg.attributes.delete_if {|k,v| k =="id" }
+    vc = VacationConsultant.new(vc_reg)
+    vc.address_1 = vc_reg["address"]
+    vc.created_at = Time.zone.now
+    vc.updated_at = Time.zone.now
+    vc
+  end
 end
+

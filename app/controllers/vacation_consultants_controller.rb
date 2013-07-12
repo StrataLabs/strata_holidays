@@ -3,8 +3,19 @@ class VacationConsultantsController < ApplicationController
 
   # GET /vacation_consultants
   # GET /vacation_consultants.json
+
+  def create_vc
+    vc_reg = VcRegistration.find(params[:vc_reg_id])
+    vc = VacationConsultant.build_from_vc_reg(vc_reg).save!
+    vc_reg.status = "Accepted"
+    vc_reg.save!
+    redirect_to vacation_consultants_path
+  end
+
   def index
+    @body = "list"
     @vacation_consultants = VacationConsultant.paginate(:page => params[:page])
+    # render :layout => 'unwinders'
   end
 
   # GET /vacation_consultants/1
@@ -91,6 +102,15 @@ class VacationConsultantsController < ApplicationController
       format.js
     end
   end
+
+  def edit_vc_assignment
+    new_status = params[:status]
+    vc = VcAssignment.find(params[:vc_assign_id])
+    vc.status = new_status
+    vc.save
+    redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vacation_consultant

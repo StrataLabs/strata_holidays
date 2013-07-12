@@ -1,4 +1,5 @@
 StrataHolidays::Application.routes.draw do  devise_for :users
+  resources :vc_registrations
   resources :cust_iti_requests
   resources :consultant_customer_destinations
   resources :vacation_consultants
@@ -16,10 +17,14 @@ StrataHolidays::Application.routes.draw do  devise_for :users
       get 'user'
     end
   end
+
+  get 'get_cust_iti_request' => 'cust_iti_requests#get_cust_iti_request', :as => 'get_cust_iti_request'
+  get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant'
   post '/assign-vcs' => 'vacation_consultants#assign_vcs'
   # post '/search_vcs' => 'vacation_consultants#search_vcs', :as => 'search_vcs'
   # post '/search_vcs_form' => 'vacation_consultants#search', :as => 'display_vcs'
-
+  get 'edit_vc_assignment' => 'vacation_consultants#edit_vc_assignment'
+  get 'create_vc' => 'vacation_consultants#create_vc'
   get '/search_vcs' => 'vacation_consultants#search_vcs'
   resources :vacation_types
   resources :iti_day_details

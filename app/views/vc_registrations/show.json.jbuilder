@@ -1,0 +1,1 @@
+json.extract! @vc_registration, :name, :address, :city, :state, :preferred_neighborhood, :planning, :booking, :preferred_locations, :lphone, :mphone, :email, :comments, :country, :created_at, :updated_at

@@ -1,0 +1,46 @@
+.container
+  .row
+    .span4.box
+      .title
+        Newly Assigned Requests
+        .icon-envelope-alt.pull-right
+      .content#cust-request
+        - @vc_assignments.where(:status => 'New').each do |vc_assign|
+          .icon-fighter-jet
+          New Request received from
+          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+            %b
+              = vc_assign.cust_iti_request.customer.name
+            for
+            %b
+              = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+          %hr
+
+    .span4.box
+      .title
+        In Progress
+        .icon-beaker.pull-right
+      .content
+        - @vc_assignments.where(:status => 'in_process').each do |vc_assign|
+          .icon-fighter-jet
+          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+            %b
+              = vc_assign.cust_iti_request.customer.name
+            for
+            %b
+              = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+          request is in process
+          %hr
+    .span4.box
+      .title
+        Completed
+        .icon-check.pull-right
+#my-vc-modal.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Choose Vacation Consultant
+  .modal-body
+    .modal-vc-rec-body
+  .modal-footer
+    /= link_to "Done" , edit_vc_assignment(:status => 'in_process') , :class => 'btn btn-primary', "data-dismiss" => "modal"
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close

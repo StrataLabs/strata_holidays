@@ -12,7 +12,7 @@
         %a{:href => "/"} JustBooks
       #menu
         #search
-          / %input{:name => "search", :type => "text"}/          
+          / %input{:name => "search", :type => "text"}/
         .container
           %h2.branch_name A D Vishnu Prasad
       #submenu
@@ -33,3 +33,13 @@
 /   $(document).ready(function () {
 /   JitTree.showJit();
 /   });
+#my-modal.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Choose Vacation Consultant
+  .modal-body
+    .modal-rec-body
+    .modal-rec-body-results
+  .modal-footer
+    / = link_to "Done" , "#" , :class => 'btn btn-primary'
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close

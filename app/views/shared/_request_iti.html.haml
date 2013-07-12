@@ -3,6 +3,7 @@
     Request Package
   .content
     = simple_form_for @cust_iti_request, :html => { :class => 'form-horizontal' } do |f|
+      = f.input :customer_id ,:input_html => { :value => '1' } , :as => 'hidden'
       = f.input :dest_type, :collection => ["Single", "Multiple"]
       = f.input :destinations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations",class: 'chzn-select' ,:multiple => true }
       = f.association :vacation_type, :label_method => :vac_type

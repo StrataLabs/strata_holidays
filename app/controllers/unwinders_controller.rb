@@ -15,8 +15,17 @@ class UnwindersController < ApplicationController
     @body_id = "home"
   end
 
+  #FIXME All this has to be moved to respective controllers once devise is ready
   def user
     @body_id = "list"
     @cust_iti_request = CustItiRequest.new
+  end
+
+  def vacation_consultant
+    if params[:id].present?
+      @vc = VacationConsultant.find(params[:id])
+      @vc_assignments = @vc.vc_assignments
+    else
+    end
   end
 end

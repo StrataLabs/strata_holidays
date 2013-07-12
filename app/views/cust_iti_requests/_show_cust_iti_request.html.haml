@@ -1,0 +1,31 @@
+%table.table.table-bordered.table-striped.table-hover
+  %tr
+    %td
+      Customer Name
+    %td
+      = cust_iti_request.customer.name
+  %tr
+    %td
+      Destinations
+    %td
+      = cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+  %tr
+    %td
+      Start Date
+    %td
+      = cust_iti_request.start_date
+  %tr
+    %td
+      End Date
+    %td
+      = cust_iti_request.end_date
+  %tr
+    %td
+      Adults
+    %td
+      = cust_iti_request.no_of_adults
+  %tr
+    %td
+      Children
+    %td
+      = cust_iti_request.no_of_children

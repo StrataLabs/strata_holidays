@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130710113321) do
+ActiveRecord::Schema.define(version: 20130712134125) do
 
   create_table "consultant_customer_destinations", force: true do |t|
     t.integer  "vacation_consultant_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20130710113321) do
     t.string   "seasons"
     t.integer  "duration"
     t.integer  "no_of_adults"
-    t.integer  "no_of_children",   limit: 255
+    t.integer  "no_of_children"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "customer_id"
@@ -175,12 +175,11 @@ ActiveRecord::Schema.define(version: 20130710113321) do
   end
 
   create_table "poa_types", force: true do |t|
-    t.string   "poa_type"
+    t.string   "description"
     t.string   "time_can_be_spent"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "description"
   end
 
   create_table "points_of_attractions", force: true do |t|
@@ -208,15 +207,6 @@ ActiveRecord::Schema.define(version: 20130710113321) do
     t.datetime "updated_at"
   end
 
-  create_table "types", force: true do |t|
-    t.string   "type"
-    t.string   "description"
-    t.string   "time_can_be_spent"
-    t.string   "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -232,8 +222,8 @@ ActiveRecord::Schema.define(version: 20130710113321) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "vacation_consultants", force: true do |t|
     t.string   "name"
@@ -248,6 +238,10 @@ ActiveRecord::Schema.define(version: 20130710113321) do
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "preferred_neighborhood"
+    t.string   "preferred_locations"
+    t.boolean  "planning"
+    t.boolean  "booking"
   end
 
   create_table "vacation_types", force: true do |t|
@@ -262,6 +256,25 @@ ActiveRecord::Schema.define(version: 20130710113321) do
     t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "vc_registrations", force: true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "preferred_neighborhood"
+    t.boolean  "planning"
+    t.boolean  "booking"
+    t.string   "preferred_locations"
+    t.string   "lphone"
+    t.string   "mphone"
+    t.string   "email"
+    t.string   "comments"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status",                 default: "New"
   end
 
 end

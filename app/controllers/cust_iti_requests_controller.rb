@@ -62,6 +62,14 @@ class CustItiRequestsController < ApplicationController
     end
   end
 
+  def get_cust_iti_request
+    @vc_assignment = VcAssignment.find(params[:vc_assign_id])
+    @cust_iti_request = @vc_assignment.cust_iti_request
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cust_iti_request

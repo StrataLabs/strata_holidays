@@ -33,13 +33,13 @@
             %b No of People
             =cust.no_of_adults + cust.no_of_children
             / =link_to "Request to All VC", '#', :class => ['btn btn-success']
-          %br      
+          %br
     .span8.box
       .title
         .icon-cogs
         Assigned VC's for this request
       .content
-        - unless cust.vc_assignments.empty?            
+        - unless cust.vc_assignments.empty?
           - cust.vc_assignments.map do |vc|
             = vc.vacation_consultant.name
             |
@@ -50,13 +50,3 @@
           =link_to "/search_vcs?cust_req_id=#{cust.id}", :method => :get, :class => 'btn' do
             Assign
           %br
-#my-modal.modal.large.hide.fade{"tabindex" => "-1"}
-  .modal-header
-    %a.close{"data-dismiss" => "modal"} x
-    %h3 Choose Vacation Consultant
-  .modal-body
-    .modal-rec-body
-    .modal-rec-body-results
-  .modal-footer
-    / = link_to "Done" , "#" , :class => 'btn btn-primary'
-    %a.btn{"data-dismiss" => "modal", :href => "#"} Close
