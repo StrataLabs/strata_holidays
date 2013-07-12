@@ -36,7 +36,8 @@
             %td.cb
               %input{:type => "checkbox", :value => "#{vc.id}"}/
             %td
-              %img{:src => '/assets/unwinders/divya.jpg'}
+              =image_tag "unwinders/divya.jpg"
+              / %img{:src => '/assets/unwinders/divya.jpg'}
             %td
               = link_to vc.name, vacation_consultant_path(vc.id)
               %br
