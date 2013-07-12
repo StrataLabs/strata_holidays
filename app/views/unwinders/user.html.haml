@@ -1,29 +1,14 @@
-= content_for :menu do
-  .container
-    %h2.branch_name A D Vishnu Prasad
-.container-fluid
-  .row-fluid
-    .span4.order-package
-      .header
-        Request Package
-      .content
-        = simple_form_for @cust_iti_request, :html => { :class => 'form-horizontal' } do |f|
-          = f.input :dest_type, :collection => ["Single", "Multiple"]
-          = f.input :destinations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations",class: 'chzn-select' ,:multiple => true }
-          = f.association :vacation_type, :label_method => :vac_type
-          = f.input :start_date, :as => :date_picker
-          = f.input :end_date, :as => :date_picker
-          = f.input :no_of_adults
-          = f.input :no_of_children
-          / .form-actions
-          %center= f.button :submit, :value => "Request" , :class => 'btn-primary btn-small'
-          / = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_requests_path, :class => 'btn'
-
-    .span8.order-package
-      .header
+.container
+  .row
+    .span4
+      = render :partial => 'shared/request_iti'
+    .span8.box
+      .title
         My Activities
       .content
-        - CustItiRequest.all.each do |cust|
+        -unless CustItiRequest.all.present?
+          Nothing to show here
+        - CustItiRequest.order("created_at desc").each do |cust|
           .activity-header
             = "You have  requested a package for #{cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")}  from #{cust.start_date} to #{cust.end_date} as a #{cust.dest_type} destination for #{cust.vacation_type.vac_type}."
             / =link_to "A D Vishnu Prasad" , "#"
@@ -36,10 +21,10 @@
             %p
               %b Destiantions
               /=cust.destinations.compact
-              =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")
+              =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
             %p
               %b Vacation Type
-              =cust.vacation_type.vac_type
+              =cust.vacation_type.vac_type rescue 'NA'
             %p
               %b Start Date
               =cust.start_date
@@ -48,13 +33,24 @@
               =cust.end_date || "NA"
             %p
               %b No of People
-              =cust.no_of_adults + cust.no_of_children
-            .assign-vc.pull-right
+              =cust.no_of_adults + cust.no_of_children rescue 0
               / =link_to "Request to All VC", '#', :class => ['btn btn-success']
-              =link_to display_vcs_path, :remote => true, :method => :post, :class => ['btn btn-success'] do
+            %br
+            - unless cust.vc_assignments.empty?
+              %p Assigned VC's for this request
+              - cust.vc_assignments.map do |vc|
+                = link_to "#{vc.vacation_consultant.name}", vacation_consultant_path(vc.vacation_consultant)
+                |
+              .pull-right
+                = link_to "Click here for more info", cust_iti_request_path(:id => cust.id), :id => 'vc-assignment-info'
+            -else
+              To assign the above request to specific vacation consultants, please click assign to see our panel of vacation consultants.
+              / .assign-vc.pull-right
+              /   =link_to display_vcs_path, :remote => true, :method => :post, :class => 'btn' do
+              /     Assign
+              =link_to "/search_vcs?cust_req_id=#{cust.id}", :method => :get, :class => 'btn' do
                 Assign
             %br
-          / .search-vcs{:style => 'display:none'}
           %hr
 #my-modal.modal.large.hide.fade{"tabindex" => "-1"}
   .modal-header
@@ -63,7 +59,6 @@
   .modal-body
     .modal-rec-body
     .modal-rec-body-results
-      Results will be shown here
   .modal-footer
-    = link_to "Done" , "#" , :class => 'btn btn-primary'
+    / = link_to "Done" , "#" , :class => 'btn btn-primary'
     %a.btn{"data-dismiss" => "modal", :href => "#"} Close

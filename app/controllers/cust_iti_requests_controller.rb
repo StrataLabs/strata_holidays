@@ -10,6 +10,7 @@ class CustItiRequestsController < ApplicationController
   # GET /cust_iti_requests/1
   # GET /cust_iti_requests/1.json
   def show
+    render :layout => 'unwinders'
   end
 
   # GET /cust_iti_requests/new

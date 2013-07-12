@@ -1,41 +1,62 @@
-- model_class = CustItiRequest
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
-
-%p
-  %strong= model_class.human_attribute_name(:customer_id) + ':'
-  %br
-  = @cust_iti_request.customer_id
-%p
-  %strong= model_class.human_attribute_name(:dest_type) + ':'
-  %br
-  = @cust_iti_request.dest_type
-%p
-  %strong= model_class.human_attribute_name(:destinations) + ':'
-  %br
-  = @cust_iti_request.destinations
-%p
-  %strong= model_class.human_attribute_name(:vacation_type_id) + ':'
-  %br
-  = @cust_iti_request.vacation_type_id
-%p
-  %strong= model_class.human_attribute_name(:start_date) + ':'
-  %br
-  = @cust_iti_request.start_date
-%p
-  %strong= model_class.human_attribute_name(:end_date) + ':'
-  %br
-  = @cust_iti_request.end_date
-%p
-  %strong= model_class.human_attribute_name(:no_of_adults) + ':'
-  %br
-  = @cust_iti_request.no_of_adults
-%p
-  %strong= model_class.human_attribute_name(:no_of_children) + ':'
-  %br
-  = @cust_iti_request.no_of_children
-
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), cust_iti_requests_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_cust_iti_request_path(@cust_iti_request), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), cust_iti_request_path(@cust_iti_request), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+.container
+  .row
+    /.span4
+    / = render :partial => 'shared/request_iti'
+    .span4.box
+      .title
+        Request Info
+      .content
+        - cust = @cust_iti_request
+        .activity-header
+          = "You have  requested a package for #{cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")}  from #{cust.start_date} to #{cust.end_date} as a #{cust.dest_type} destination for #{cust.vacation_type.vac_type}."
+          / =link_to "A D Vishnu Prasad" , "#"
+          / = "requested a package on #{cust.created_at.strftime("%d-%B-%Y - %I:%M %p") }"
+        %h4 Details
+        .item-details
+          %p
+            %b Destination Type
+            =cust.dest_type
+          %p
+            %b Destiantions
+            /=cust.destinations.compact
+            =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")
+          %p
+            %b Vacation Type
+            =cust.vacation_type.vac_type
+          %p
+            %b Start Date
+            =cust.start_date
+          %p
+            %b End Date
+            =cust.end_date || "NA"
+          %p
+            %b No of People
+            =cust.no_of_adults + cust.no_of_children
+            / =link_to "Request to All VC", '#', :class => ['btn btn-success']
+          %br      
+    .span8.box
+      .title
+        .icon-cogs
+        Assigned VC's for this request
+      .content
+        - unless cust.vc_assignments.empty?            
+          - cust.vc_assignments.map do |vc|
+            = vc.vacation_consultant.name
+            |
+            = vc.status
+            %br
+        -else
+          To assign the above request to specific vacation consultants, please click assign to see our panel of vacation consultants.
+          =link_to "/search_vcs?cust_req_id=#{cust.id}", :method => :get, :class => 'btn' do
+            Assign
+          %br
+#my-modal.modal.large.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Choose Vacation Consultant
+  .modal-body
+    .modal-rec-body
+    .modal-rec-body-results
+  .modal-footer
+    / = link_to "Done" , "#" , :class => 'btn btn-primary'
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close

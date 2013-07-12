@@ -64,12 +64,26 @@ class VacationConsultantsController < ApplicationController
   def search_vcs
     params[:keyword] ||= ''
     # @vcs = Customer.all
-    @vcs = VacationConsultant.search_me(params[:keyword]).results.to_a #searching customer for time-being
+    @vcs_solr_response = VacationConsultant.search_me(params[:keyword])
+    @vcs = @vcs_solr_response.results.to_a #searching customer for time-being
     # @vcs = VacationConsultant.where(:name => params[:keyword])
-    render :partial => 'search_vcs'
+    # render :partial => 'search_vcs'
     # respond_to do |format|
     #   format.text "SHow me"
     # end
+    @body_id = "list"
+    render :layout => 'unwinders'
+  end
+
+  def assign_vcs
+    p params
+    if params[:vc_ids].present?
+      params[:vc_ids].each do |vc|
+        VcAssignment.create(:vacation_consultant_id => vc, :cust_iti_request_id => params[:cust_req_id], :status => 'New')
+      end
+    end
+    # redirect_to '/unwinders/user'
+    render :text => 'success'
   end
 
   def search

@@ -1,0 +1,15 @@
+.box
+  .title
+    Request Package
+  .content
+    = simple_form_for @cust_iti_request, :html => { :class => 'form-horizontal' } do |f|
+      = f.input :dest_type, :collection => ["Single", "Multiple"]
+      = f.input :destinations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations",class: 'chzn-select' ,:multiple => true }
+      = f.association :vacation_type, :label_method => :vac_type
+      = f.input :start_date, :as => :date_picker
+      = f.input :end_date, :as => :date_picker
+      = f.input :no_of_adults
+      = f.input :no_of_children
+      / .form-actions
+      %center= f.button :submit, :value => "Request" , :class => 'btn-primary btn-small'
+      / = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_requests_path, :class => 'btn'
