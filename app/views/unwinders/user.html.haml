@@ -24,10 +24,11 @@
               =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
             %p
               %b Vacation Type
-              =cust.vacation_type.vac_type rescue 'NA'
+              - if !cust.vacation_type.nil?
+                =cust.vacation_type.vac_type rescue 'NA'
             %p
               %b Start Date
-              =cust.start_date
+              =cust.start_date || "NA"
             %p
               %b End Date
               =cust.end_date || "NA"
