@@ -4,7 +4,7 @@ FactoryGirl.define do
   factory :cust_iti_request do
     customer_id 1
     dest_type "MyString"
-    destinations "MyString"
+    destinations ["MyString","adsf"]
     vacation_type_id 1
     start_date "2013-07-04"
     end_date "2013-07-04"

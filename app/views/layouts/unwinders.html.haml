@@ -17,6 +17,9 @@
           %h2.branch_name A D Vishnu Prasad
       #submenu
         %ul
+          %li= link_to "Home", root_path
+          %li= link_to "User", user_unwinders_path
+          %li= link_to "VC", vc_unwinders_path(:id => 1)
           %li= link_to "Signin", "#"
           %li= link_to "Signup", "#"
           %li= link_to "Destinations", '#'

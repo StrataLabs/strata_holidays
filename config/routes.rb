@@ -19,7 +19,7 @@ StrataHolidays::Application.routes.draw do  devise_for :users
   end
 
   get 'get_cust_iti_request' => 'cust_iti_requests#get_cust_iti_request', :as => 'get_cust_iti_request'
-  get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant'
+  get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant', :as => 'vc_unwinders'
   post '/assign-vcs' => 'vacation_consultants#assign_vcs'
   # post '/search_vcs' => 'vacation_consultants#search_vcs', :as => 'search_vcs'
   # post '/search_vcs_form' => 'vacation_consultants#search', :as => 'display_vcs'

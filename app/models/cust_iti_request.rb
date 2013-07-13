@@ -3,5 +3,4 @@ class CustItiRequest < ActiveRecord::Base
   belongs_to :customer
   serialize :destinations
   belongs_to :vacation_type
-
 end

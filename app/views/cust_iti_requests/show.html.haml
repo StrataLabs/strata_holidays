@@ -19,7 +19,7 @@
           %p
             %b Destiantions
             /=cust.destinations.compact
-            =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")
+            =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
           %p
             %b Vacation Type
             =cust.vacation_type.vac_type

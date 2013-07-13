@@ -5,6 +5,7 @@
         %ul.nav
           %li.active=link_to "Strata Holidays", root_path
         %ul.nav.pull-right{:style => 'color:white'}
+          %li= link_to "Unwinders", unwinders_path
           %li.dropdown
             %a#dLabel.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
               Destination & POA
@@ -28,12 +29,13 @@
             %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
               %li= link_to "Cust Iti Header", cust_iti_headers_path
               %li= link_to "Cust Iti Details", cust_iti_details_path
-          %li= link_to "Iti Cust Dest Poa Details",iti_cust_dest_poa_details_path
+              %li= link_to "Iti Cust Dest Poa Details",iti_cust_dest_poa_details_path
           %li.dropdown
             %a#dLabel.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              Other Links
+              Cust & VC
               %b.caret
             %ul.dropdown-menu{"aria-labelledby" => "dLabel", :role => "menu"}
               %li=link_to "Customers", customers_path
+              %li=link_to "VC Registrations", vc_registrations_path
               %li=link_to "VC", vacation_consultants_path
               %li=link_to "Mapping Table", consultant_customer_destinations_path
