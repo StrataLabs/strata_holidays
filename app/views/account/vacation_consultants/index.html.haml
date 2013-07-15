@@ -1,0 +1,47 @@
+%h1 Vc Registrations
+%table.table
+  -VcRegistration.where(:status => 'New').order('created_at desc').each do |vc_reg|
+    %tr
+      %td= vc_reg.name
+      %td= vc_reg.email
+      %td= link_to "Approve", create_vc_path(:vc_reg_id => vc_reg.id), :class => 'btn btn-mini'
+    %br
+%hr
+- model_class = VacationConsultant
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
+=will_paginate(@vacation_consultants)
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:address_1)
+      %th= model_class.human_attribute_name(:address_2)
+      %th= model_class.human_attribute_name(:city)
+      %th= model_class.human_attribute_name(:state)
+      %th= model_class.human_attribute_name(:country)
+      %th= model_class.human_attribute_name(:lphone)
+      %th= model_class.human_attribute_name(:mphone)
+      %th= model_class.human_attribute_name(:email)
+      %th= model_class.human_attribute_name(:comments)
+      %th= model_class.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @vacation_consultants.each do |vacation_consultant|
+      %tr
+        %td= link_to vacation_consultant.id, vacation_consultant_path(vacation_consultant)
+        %td= vacation_consultant.name
+        %td= vacation_consultant.address_1
+        %td= vacation_consultant.address_2
+        %td= vacation_consultant.city
+        %td= vacation_consultant.state
+        %td= vacation_consultant.country
+        %td= vacation_consultant.lphone
+        %td= vacation_consultant.mphone
+        %td= vacation_consultant.email
+        %td= vacation_consultant.comments
+        %td=l vacation_consultant.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_vacation_consultant_path(vacation_consultant), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), vacation_consultant_path(vacation_consultant), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'

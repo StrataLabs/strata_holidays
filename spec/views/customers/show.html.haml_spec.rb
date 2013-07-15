@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "customers/show" do
+describe "account/customers/show" do
   before(:each) do
     @customer = assign(:customer, stub_model(Customer,
       :name => "Name",

@@ -18,7 +18,7 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe CustomersController do
+describe Account::CustomersController do
 
   # This should return the minimal set of attributes required to create a valid
   # Customer. As you add validations to Customer, be sure to
@@ -77,7 +77,7 @@ describe CustomersController do
 
       it "redirects to the created customer" do
         post :create, {:customer => valid_attributes}, valid_session
-        response.should redirect_to(Customer.last)
+        response.should redirect_to(account_customer_path(Customer.last))
       end
     end
 
@@ -119,7 +119,7 @@ describe CustomersController do
       it "redirects to the customer" do
         customer = Customer.create! valid_attributes
         put :update, {:id => customer.to_param, :customer => valid_attributes}, valid_session
-        response.should redirect_to(customer)
+        response.should redirect_to(account_customer_path(customer))
       end
     end
 
@@ -153,7 +153,7 @@ describe CustomersController do
     it "redirects to the customers list" do
       customer = Customer.create! valid_attributes
       delete :destroy, {:id => customer.to_param}, valid_session
-      response.should redirect_to(customers_url)
+      response.should redirect_to(account_customers_url)
     end
   end
 

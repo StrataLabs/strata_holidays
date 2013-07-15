@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "vacation_consultants/show" do
+describe "account/vacation_consultants/show" do
   before(:each) do
     @vacation_consultant = assign(:vacation_consultant, stub_model(VacationConsultant,
       :name => "Name",

@@ -1,0 +1,11 @@
+$(".modal-rec-body").html("<%= escape_javascript(render :partial => 'search_vcs_form')%>");
+
+$(document).ready(function() {
+  $("#search_vc_form").submit(function(event) {
+    $.post('/search_vcs', $(this).serialize(),
+      function(data, status, xhr){
+        $(".modal-rec-body-results").html(data);
+      });
+    event.preventDefault();
+    });
+  });

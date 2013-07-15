@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130712134125) do
+ActiveRecord::Schema.define(version: 20130715063108) do
 
   create_table "consultant_customer_destinations", force: true do |t|
     t.integer  "vacation_consultant_id"
@@ -270,7 +270,6 @@ ActiveRecord::Schema.define(version: 20130712134125) do
 
   create_table "vc_registrations", force: true do |t|
     t.string   "name"
-    t.string   "address"
     t.string   "city"
     t.string   "state"
     t.string   "preferred_neighborhood"
@@ -285,6 +284,8 @@ ActiveRecord::Schema.define(version: 20130712134125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status",                 default: "New"
+    t.string   "address_1"
+    t.string   "address_2"
   end
 
 end

@@ -4,31 +4,31 @@ describe CustomersController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/customers").should route_to("customers#index")
+      get("account/customers").should route_to("account/customers#index")
     end
 
     it "routes to #new" do
-      get("/customers/new").should route_to("customers#new")
+      get("account/customers/new").should route_to("account/customers#new")
     end
 
     it "routes to #show" do
-      get("/customers/1").should route_to("customers#show", :id => "1")
+      get("account/customers/1").should route_to("account/customers#show", :id => "1")
     end
 
     it "routes to #edit" do
-      get("/customers/1/edit").should route_to("customers#edit", :id => "1")
+      get("account/customers/1/edit").should route_to("account/customers#edit", :id => "1")
     end
 
     it "routes to #create" do
-      post("/customers").should route_to("customers#create")
+      post("account/customers").should route_to("account/customers#create")
     end
 
     it "routes to #update" do
-      put("/customers/1").should route_to("customers#update", :id => "1")
+      put("account/customers/1").should route_to("account/customers#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/customers/1").should route_to("customers#destroy", :id => "1")
+      delete("account/customers/1").should route_to("account/customers#destroy", :id => "1")
     end
 
   end

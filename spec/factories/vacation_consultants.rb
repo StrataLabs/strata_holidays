@@ -7,10 +7,14 @@ FactoryGirl.define do
     address_2 "MyString"
     city "MyString"
     state "MyString"
-    country "MyString"
+    preferred_neighborhood "MyString"
+    planning false
+    booking false
+    preferred_locations "MyString"
     lphone "MyString"
-    mphone "MyString"
+    mphone "1234567890"
     email "MyString"
     comments "MyString"
+    country "MyString"
   end
 end

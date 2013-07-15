@@ -20,7 +20,7 @@ class UnwindersController < ApplicationController
   #FIXME All this has to be moved to respective controllers once devise is ready
   def user
     @body_id = "list"
-    @cust_iti_request = CustItiRequest.new
+    @cust_iti_request = CustItiRequest.new(params[:cust_iti_request])
     render :layout => 'unwinders'
   end
 

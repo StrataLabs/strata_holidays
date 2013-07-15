@@ -6,7 +6,7 @@
     = stylesheet_link_tag "unwinders/application", :media => "all"
     / = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
-  %body{:id => "#{@body_id}", :style => 'padding-top: 0px;'}
+  %body{:id => "list", :style => 'padding-top: 0px;'}
     #banner
       %h1
         %a{:href => "/"} JustBooks
@@ -18,7 +18,7 @@
       #submenu
         %ul
           %li= link_to "Home", root_path
-          %li= link_to "User", user_unwinders_path
+          %li= link_to "User", my_activities_account_customers_path
           %li= link_to "VC", vc_unwinders_path(:id => 1)
           %li= link_to "Signin", "#"
           %li= link_to "Signup", "#"
@@ -26,6 +26,9 @@
           %li= link_to "About Us", '#'
           %li= link_to "Contact Us", '#'
     / = render :partial => 'flash', :object => flash
+    .container
+      - flash.each do |name, msg|
+        = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
     = yield
     %center#footer
       Strata Holidays &copy; 2013

@@ -2,8 +2,20 @@ StrataHolidays::Application.routes.draw do  devise_for :users
   resources :vc_registrations
   resources :cust_iti_requests
   resources :consultant_customer_destinations
-  resources :vacation_consultants
-  resources :customers
+  # resources :vacation_consultants
+  namespace 'account' do
+    resources :customers do
+      collection do
+        get 'my_activities'
+      end
+    end
+    resources :vacation_consultants do
+      collection do
+        get 'my_activities'
+      end
+    end
+  end
+  # resources :customers
   resources :iti_cust_dest_poa_details
   resources :iti_cust_dest_details
   resources :cust_iti_details

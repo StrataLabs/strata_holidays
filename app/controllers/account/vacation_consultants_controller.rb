@@ -1,4 +1,4 @@
-class VacationConsultantsController < ApplicationController
+class Account::VacationConsultantsController < ApplicationController
   before_action :set_vacation_consultant, only: [:show, :edit, :update, :destroy]
 
   # GET /vacation_consultants
@@ -39,7 +39,7 @@ class VacationConsultantsController < ApplicationController
 
     respond_to do |format|
       if @vacation_consultant.save!
-        format.html { redirect_to @vacation_consultant, notice: 'Vacation consultant was successfully created.' }
+        format.html { redirect_to account_vacation_consultant_path(@vacation_consultant), notice: 'Vacation consultant was successfully created.' }
         format.json { render action: 'show', status: :created, location: @vacation_consultant }
       else
         format.html { render action: 'new' }
@@ -53,7 +53,7 @@ class VacationConsultantsController < ApplicationController
   def update
     respond_to do |format|
       if @vacation_consultant.update(vacation_consultant_params)
-        format.html { redirect_to @vacation_consultant, notice: 'Vacation consultant was successfully updated.' }
+        format.html { redirect_to account_vacation_consultant_path(@vacation_consultant), notice: 'Vacation consultant was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -67,7 +67,7 @@ class VacationConsultantsController < ApplicationController
   def destroy
     @vacation_consultant.destroy
     respond_to do |format|
-      format.html { redirect_to vacation_consultants_url }
+      format.html { redirect_to account_vacation_consultants_url }
       format.json { head :no_content }
     end
   end

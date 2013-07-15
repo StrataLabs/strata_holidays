@@ -5,7 +5,7 @@ $('.select-vcs').on('click', function () {
     });
     $.post('/assign-vcs', {vc_ids: vc_ids, cust_req_id: $('.search_vc_table').attr("id")},
     function(data, status, xhr){
-      location.href = '/unwinders/user';
+      location.href = '/account/customers/my_activities';
         // $(".assigned-vcs").html(data);
     });
     return false;

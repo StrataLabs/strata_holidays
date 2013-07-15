@@ -18,12 +18,12 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe VacationConsultantsController do
+describe Account::VacationConsultantsController do
 
   # This should return the minimal set of attributes required to create a valid
   # VacationConsultant. As you add validations to VacationConsultant, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { FactoryGirl.build(:vacation_consultant).attributes }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -77,23 +77,7 @@ describe VacationConsultantsController do
 
       it "redirects to the created vacation_consultant" do
         post :create, {:vacation_consultant => valid_attributes}, valid_session
-        response.should redirect_to(VacationConsultant.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved vacation_consultant as @vacation_consultant" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        VacationConsultant.any_instance.stub(:save).and_return(false)
-        post :create, {:vacation_consultant => { "name" => "invalid value" }}, valid_session
-        assigns(:vacation_consultant).should be_a_new(VacationConsultant)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        VacationConsultant.any_instance.stub(:save).and_return(false)
-        post :create, {:vacation_consultant => { "name" => "invalid value" }}, valid_session
-        response.should render_template("new")
+        response.should redirect_to(account_vacation_consultant_path(VacationConsultant.last))
       end
     end
   end
@@ -119,7 +103,7 @@ describe VacationConsultantsController do
       it "redirects to the vacation_consultant" do
         vacation_consultant = VacationConsultant.create! valid_attributes
         put :update, {:id => vacation_consultant.to_param, :vacation_consultant => valid_attributes}, valid_session
-        response.should redirect_to(vacation_consultant)
+        response.should redirect_to(account_vacation_consultant_path(vacation_consultant))
       end
     end
 
@@ -153,7 +137,7 @@ describe VacationConsultantsController do
     it "redirects to the vacation_consultants list" do
       vacation_consultant = VacationConsultant.create! valid_attributes
       delete :destroy, {:id => vacation_consultant.to_param}, valid_session
-      response.should redirect_to(vacation_consultants_url)
+      response.should redirect_to(account_vacation_consultants_url)
     end
   end
 
