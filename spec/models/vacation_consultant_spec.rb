@@ -21,5 +21,14 @@ describe VacationConsultant do
         vc.should have(1).errors_on(:mphone)
       end
     end
+
+    context "build from vc registrations" do
+      it "should build vc from vc_registration data" do
+        vc_reg = FactoryGirl.create(:vc_registration)
+        vc = VacationConsultant.build_from_vc_reg(vc_reg)
+        vc.name.should == vc_reg.name
+        vc.mphone.should == vc_reg.mphone
+      end
+    end
   end
 end

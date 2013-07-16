@@ -6,7 +6,8 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:name)
-      %th= model_class.human_attribute_name(:address)
+      %th= model_class.human_attribute_name(:address_1)
+      %th= model_class.human_attribute_name(:address_2)
       %th= model_class.human_attribute_name(:city)
       %th= model_class.human_attribute_name(:state)
       %th= model_class.human_attribute_name(:preferred_neighborhood)
@@ -25,7 +26,8 @@
       %tr
         %td= link_to vc_registration.id, vc_registration_path(vc_registration)
         %td= vc_registration.name
-        %td= vc_registration.address
+        %td= vc_registration.address_1
+        %td= vc_registration.address_2
         %td= vc_registration.city
         %td= vc_registration.state
         %td= vc_registration.preferred_neighborhood

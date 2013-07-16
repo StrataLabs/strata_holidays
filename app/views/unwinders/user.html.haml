@@ -34,7 +34,13 @@
               =cust.end_date || "NA"
             %p
               %b No of People
-              =cust.no_of_adults + cust.no_of_children rescue 0
+              - if cust.no_of_children.present?
+                =cust.no_of_adults + cust.no_of_children
+              - else
+                =cust.no_of_adults
+            %p
+              %b Created At
+              =cust.created_at
               / =link_to "Request to All VC", '#', :class => ['btn btn-success']
             %br
             - unless cust.vc_assignments.empty?

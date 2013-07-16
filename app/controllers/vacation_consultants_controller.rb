@@ -8,8 +8,11 @@ class VacationConsultantsController < ApplicationController
     vc_reg = VcRegistration.find(params[:vc_reg_id])
     vc = VacationConsultant.build_from_vc_reg(vc_reg).save!
     vc_reg.status = "Accepted"
-    vc_reg.save!
-    redirect_to vacation_consultants_path
+    if vc_reg.save
+      redirect_to vacation_consultants_path
+    else
+      redirect_to vacation_consultants_path, :notice => "we are sorry something went wrong"
+    end
   end
 
   def index
