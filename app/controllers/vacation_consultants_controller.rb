@@ -38,7 +38,7 @@ class VacationConsultantsController < ApplicationController
     @vacation_consultant = VacationConsultant.new(vacation_consultant_params)
 
     respond_to do |format|
-      if @vacation_consultant.save
+      if @vacation_consultant.save!
         format.html { redirect_to @vacation_consultant, notice: 'Vacation consultant was successfully created.' }
         format.json { render action: 'show', status: :created, location: @vacation_consultant }
       else
@@ -119,6 +119,6 @@ class VacationConsultantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacation_consultant_params
-      params.require(:vacation_consultant).permit(:name, :address_1, :address_2, :city, :state, :country, :lphone, :mphone, :email, :comments)
+      params.require(:vacation_consultant).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :preferred_locations, :lphone, :mphone, :email, :comments, :country)
     end
 end

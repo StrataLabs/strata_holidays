@@ -69,6 +69,6 @@ class VcRegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vc_registration_params
-      params.require(:vc_registration).permit(:name, :address, :city, :state, :preferred_neighborhood, :planning, :booking, :preferred_locations, :lphone, :mphone, :email, :comments, :country)
+      params.require(:vc_registration).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :preferred_locations, :lphone, :mphone, :email, :comments, :country)
     end
 end

@@ -3,7 +3,8 @@
 FactoryGirl.define do
   factory :vc_registration do
     name "MyString"
-    address "MyString"
+    address_1 "MyString"
+    address_2 "MyString"
     city "MyString"
     state "MyString"
     preferred_neighborhood "MyString"
@@ -15,5 +16,6 @@ FactoryGirl.define do
     email "MyString"
     comments "MyString"
     country "MyString"
+    status "New"
   end
 end
