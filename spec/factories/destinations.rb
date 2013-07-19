@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :destination do
     name "MyString"
+    description "My Description"
   end
 end

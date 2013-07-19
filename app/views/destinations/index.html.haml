@@ -7,6 +7,7 @@
     %tr
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -14,6 +15,7 @@
       %tr
         %td= link_to destination.id, destination_path(destination)
         %td= destination.name
+        %td= truncate(destination.description, :length => 40)
         %td= destination.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(destination), :class => 'btn btn-mini'

@@ -7,7 +7,11 @@ StrataHolidays::Application.routes.draw do  devise_for :users
   resources :iti_cust_dest_poa_details
   resources :iti_cust_dest_details
   resources :cust_iti_details
-  resources :cust_iti_headers
+  resources :cust_iti_headers do
+    member do
+      get 'history'
+    end
+  end
   resources :dest_iti_details
   resources :dest_iti_headers
   resources :unwinders do

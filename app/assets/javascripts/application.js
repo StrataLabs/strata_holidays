@@ -17,6 +17,9 @@
 //= require turbolinks
 //= require chosen-jquery
 //= require_tree .
+jQuery(document).ready(function($) {
+$("#element").popover();
+});
 
 $(function() {
   $('#cust_iti_request_start_date').datepicker();
@@ -37,7 +40,14 @@ jQuery(document).ready(function($) {
         'automatic' : true
     });
 });
-
+jQuery(document).ready(function($) {
+$('[id^=history-poa]').contenthover({
+    effect:'slide',
+    slide_speed:300,
+    overlay_background:'#000',
+    overlay_opacity:0.8
+});
+});
 // $(function ()
 // {
 //   if (($("#slideshow > div").length) > 1)

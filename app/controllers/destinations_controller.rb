@@ -4,7 +4,7 @@ class DestinationsController < ApplicationController
   # GET /destinations
   # GET /destinations.json
   def index
-    @destinations = Destination.paginate(:page => params[:page])
+    @destinations = Destination.order('id desc').paginate(:page => params[:page])
   end
 
   # GET /destinations/1
@@ -69,6 +69,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:name)
+      params.require(:destination).permit(:name, :description, :image_url)
     end
 end

@@ -10,6 +10,7 @@ class CustItiHeadersController < ApplicationController
   # GET /cust_iti_headers/1
   # GET /cust_iti_headers/1.json
   def show
+    render :layout => 'unwinders'
   end
 
   # GET /cust_iti_headers/new
@@ -59,6 +60,11 @@ class CustItiHeadersController < ApplicationController
       format.html { redirect_to cust_iti_headers_url }
       format.json { head :no_content }
     end
+  end
+
+  def history
+    @cust_iti_header = CustItiHeader.find(params[:id])
+    render :layout => 'unwinders'
   end
 
   private

@@ -8,6 +8,9 @@ $(".assign-vc").on "click", ->
   $('#my-modal').modal 'show'
   $('#my-modal').modal({keyboard: true})
 
+$('#comment-section').on "click", ->
+  $('#comment-modal').modal 'show'
+
 $("#cust-request a").on "click", ->
   $('#my-vc-modal').modal 'show'
   $('#my-vc-modal').modal({keyboard: true})

@@ -1,0 +1,106 @@
+.container
+  .row-fluid
+    .well.span8
+      .history-large-pic
+        .history-image-info
+          .heading{:style => 'font-size:20px;padding-bottom:10px'}
+            Pondicherry
+          Pondicherry is the most popular tourist attraction in Kerala. A houseboat cruise in these backwaters is a delightful experience. Alappuzha is also the access point for Annual Nehru Trophy Boat Race, held on the Punnamada Lake, one of the most popular of the boat races in India.
+        .row.span4.offset4.history-image-info{:style => 'text-align:center'}
+          19-07-2013 to 23-07-2013
+        .row.span4.offset4.btn.btn-success.btn-large#comment-section
+          Trip Feedback ?
+    .span4.well
+      - ary = ["Destinations", "Poa", "Property"]
+      - 4.times do |s|
+        - if s.even?
+          = ary[Random.rand(3).to_i]
+        .row-fluid
+          .span6
+            %div{:id => "history-poa-"+Random.rand(100).to_s}
+              = link_to "#" do
+                = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
+            .contenthover{:id => "#{Random.rand(100)}"}
+              Poa Details with Time
+          .span6
+            #history-poa
+              = link_to "#" do
+                = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
+            .contenthover{:id => "#{Random.rand(100)}"}
+              Poa Details with Time
+        %br
+        - if s.even?
+          %hr
+  .row-fluid
+    .span12.well
+      / - @cust_iti_header.cust_iti_details.each_with_index do |details, index|
+      /   = "Day : #{details.dest_start_date}"
+      /   %br
+      %div{:style => 'font-size:20px;font-weight:bold'}Pondicherry
+      %a#element{"data-content" => "Comment Section", "data-original-title" => "Comments On Destination", "data-toggle" => "popover", :href => "#", :title => "", "data-remote" => true}
+        .icon-comments
+
+      .tabbable.tabs-left
+        %ul.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#lA"} Day 1
+          %li
+            %a{"data-toggle" => "tab", :href => "#lB"} Day 2
+          %li
+            %a{"data-toggle" => "tab", :href => "#lC"} Day 3
+        .tab-content
+          #lA.tab-pane.active
+            %p
+              The Royal Riveria(2011-07-05)
+            %div{:style => 'margin-left:100px'}
+              Kumarakom bird sanctuary(12:00 PM to 01:00 PM)
+              %br
+              %b Comments
+              %br
+              Best Season to view migrative birds is October to December
+              %hr
+              Pathiramanal Island(03:30 PM to 05:00 PM
+              %br
+              Comments
+
+          #lB.tab-pane
+            %p C7 hotel(2011-07-06)
+            %div{:style => 'margin-left:100px'}
+              Vembanad lake(11:30 AM to 12:45 PM)
+              %br
+              Comments
+              %hr
+              Aruvikuzzhi falls 02:30 PM to 03:30 PM
+              %br
+              Comments
+          #lC.tab-pane
+            %p Houseboat, Alleppey((2011-07-07))
+            %div{:style => 'margin-left:100px'}
+              Rajmalai Wildlife sanctuary(11:00 AM to 12:30 PM)
+              %br
+              Comments
+              %hr
+              Tea museum (02:00 PM  to 02:30 PM)
+              %br
+              Comments
+              %hr
+              Blossom park(03:00 PM  to 04:30 PM)
+              %br
+              Comments
+#comment-modal.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 How did you feel ?
+  .modal-body
+    .modal-rec-body
+      %form
+        What worked ?
+        %textarea{:rows => "3"}
+        %br
+        %br
+        What did not ?
+        %textarea{:rows => "3"}
+  .modal-footer
+    / = link_to "Done" , "#" , :class => 'btn btn-primary'
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Make History
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close

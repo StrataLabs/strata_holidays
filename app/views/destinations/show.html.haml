@@ -6,6 +6,9 @@
   %strong= model_class.human_attribute_name(:name) + ':'
   %br
   = @destination.name
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @destination.description
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), destinations_path, :class => 'btn'
