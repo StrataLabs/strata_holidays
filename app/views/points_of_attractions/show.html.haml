@@ -26,6 +26,13 @@
   %strong= model_class.human_attribute_name(:preferred_end_time) + ':'
   %br
   = @points_of_attraction.preferred_end_time
+%p
+  %strong= model_class.human_attribute_name(:available_images) + ':'
+  %br
+  = image_tag @points_of_attraction.image.url(:medium)
+  = image_tag @points_of_attraction.image.url(:square)
+  = image_tag @points_of_attraction.image.url(:thumb)
+  = image_tag @points_of_attraction.image.url(:thumbnail)
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), points_of_attractions_path, :class => 'btn'

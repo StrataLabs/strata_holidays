@@ -4,7 +4,7 @@ class PointsOfAttractionsController < ApplicationController
   # GET /points_of_attractions
   # GET /points_of_attractions.json
   def index
-    @points_of_attractions = PointsOfAttraction.paginate(:page => params[:page])
+    @points_of_attractions = PointsOfAttraction.order('id asc').paginate(:page => params[:page])
   end
 
   # GET /points_of_attractions/1
@@ -70,6 +70,6 @@ class PointsOfAttractionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def points_of_attraction_params
       params.require(:points_of_attraction).permit(:destination_id, :poa_type_id, :name, :preferred_start_time,
-      :preferred_end_time, :comments)
+      :preferred_end_time, :comments, :image)
     end
 end

@@ -6,10 +6,17 @@
   %strong= model_class.human_attribute_name(:name) + ':'
   %br
   = @destination.name
+  %br
   %strong= model_class.human_attribute_name(:description) + ':'
   %br
   = @destination.description
-
+  %br
+  %strong= "Available Images:"
+  %br
+  = image_tag @destination.image.url(:medium)
+  = image_tag @destination.image.url(:square)
+  = image_tag @destination.image.url(:thumb)
+  = image_tag @destination.image.url(:thumbnail)
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), destinations_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'
