@@ -1,4 +1,6 @@
 StrataHolidays::Application.routes.draw do  devise_for :users
+
+  get 'itinerary' => 'static_pages#itinerary'
   resources :vc_registrations
   resources :cust_iti_requests
   resources :consultant_customer_destinations

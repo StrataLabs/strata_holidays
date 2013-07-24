@@ -1,0 +1,11 @@
+%table
+  - @cust_dest_poa_det.each do |day, record|
+    %tr
+      %td
+        Day:
+        = day
+    - record.each do |iti_cust_dest_poa_detail|
+      %tr
+        %td= iti_cust_dest_poa_detail.points_of_attraction.name
+        %td= iti_cust_dest_poa_detail.preferred_time_of_arrival.strftime("%I:%M %p")
+        %td= iti_cust_dest_poa_detail.preferred_time_of_departure.strftime("%I:%M %p")

@@ -8,6 +8,7 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:name)
       %th= model_class.human_attribute_name(:description)
+      %th= model_class.human_attribute_name(:image_url)
       %th= model_class.human_attribute_name(:created_at)
       %th=t '.actions', :default => t("helpers.actions")
   %tbody
@@ -16,9 +17,11 @@
         %td= link_to destination.id, destination_path(destination)
         %td= destination.name
         %td= truncate(destination.description, :length => 40)
+        %td= image_tag destination.image.url(:thumb)
         %td= destination.created_at
         %td
           = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(destination), :class => 'btn btn-mini'
           = link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(destination), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
 = link_to t('.new', :default => t("helpers.links.new")), new_destination_path, :class => 'btn btn-primary'
+

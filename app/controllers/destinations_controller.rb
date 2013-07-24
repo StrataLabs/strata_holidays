@@ -25,7 +25,10 @@ class DestinationsController < ApplicationController
   # POST /destinations.json
   def create
     @destination = Destination.new(destination_params)
-
+    # uploader = FileUploader.new
+    # # p extn = File.extname(params[:destination][:image_url].original_filename)
+    # uploader.store!(params[:destination][:image_url])
+    # uploader.url.present? ? @destination.image_url = uploader.url : @destination.image_url  = nil
     respond_to do |format|
       if @destination.save
         format.html { redirect_to @destination, notice: 'Destination was successfully created.' }
@@ -41,6 +44,11 @@ class DestinationsController < ApplicationController
   # PATCH/PUT /destinations/1.json
   def update
     respond_to do |format|
+      # uploader = FileUploader.new
+      # # p extn = File.extname(params[:destination][:image_url].original_filename)
+      # uploader.store!(params[:destination][:image_url])
+      # p uploader.url
+      # uploader.url.present? ? params[:destination][:image_url] = uploader.url : params[:destination][:image_url] = nil
       if @destination.update(destination_params)
         format.html { redirect_to @destination, notice: 'Destination was successfully updated.' }
         format.json { head :no_content }
@@ -69,6 +77,6 @@ class DestinationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def destination_params
-      params.require(:destination).permit(:name, :description, :image_url)
+      params.require(:destination).permit(:name, :description, :image)
     end
 end

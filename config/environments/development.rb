@@ -28,4 +28,22 @@ StrataHolidays::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = false
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_permissions => {
+      :thumbn => :public_read,
+      :small => :public_read,
+      :medium => :public_read,
+      :large => :public_read,
+      :small_download => :public_read,
+      :original => :public_read,
+      :square => :public_read
+    },
+    :s3_credentials => {
+      :bucket => ENV['aws_bucket'.upcase],
+      :access_key_id => ENV['aws_access_key_id'.upcase],
+      :secret_access_key => ENV['aws_secret_access_key'.upcase]
+    }
+  }
 end

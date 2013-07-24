@@ -121,3 +121,12 @@ gem "chosen-rails", "~> 0.10.0"
 #sunspot
 gem "sunspot_rails", "~> 2.0.0"
 gem "sunspot_solr", "~> 2.0.0"
+
+#aws
+# gem "aws-s3", "~> 0.6.3"
+# gem "carrierwave", "~> 0.9.0"
+# gem "fog", "~> 1.14.0"
+
+#image upload
+gem "paperclip", "~> 3.5.0"
+gem "aws-sdk", "~> 1.13.0"
