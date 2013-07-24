@@ -19,7 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe PropertiesController do
-
+  login_user
   # This should return the minimal set of attributes required to create a valid
   # Property. As you add validations to Property, be sure to
   # adjust the attributes here as well.

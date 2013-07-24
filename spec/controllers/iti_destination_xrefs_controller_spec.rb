@@ -19,7 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe ItiDestinationXrefsController do
-
+  login_user
   # This should return the minimal set of attributes required to create a valid
   # ItiDestinationXref. As you add validations to ItiDestinationXref, be sure to
   # adjust the attributes here as well.

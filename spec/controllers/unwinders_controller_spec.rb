@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe UnwindersController do
-
+  login_user
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'

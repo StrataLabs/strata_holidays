@@ -19,4 +19,5 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe ItiCustDestPoaDetailsController do
+  login_user
 end

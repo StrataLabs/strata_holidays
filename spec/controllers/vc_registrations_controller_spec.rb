@@ -19,7 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe VcRegistrationsController do
-
+  login_user
   # This should return the minimal set of attributes required to create a valid
   # VcRegistration. As you add validations to VcRegistration, be sure to
   # adjust the attributes here as well.

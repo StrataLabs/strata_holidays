@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "PointsOfAttractions" do
   describe "GET /points_of_attractions" do
     it "works! (now write some real specs)" do
+      sign_in_as_a_valid_user
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
       get points_of_attractions_path
       response.status.should be(200)
