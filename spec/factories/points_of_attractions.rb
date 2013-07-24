@@ -5,6 +5,7 @@ FactoryGirl.define do
     destination_id 1
     poa_type_id 1
     name "MyString"
+    description "MyString"
     comments "MyString"
   end
 end

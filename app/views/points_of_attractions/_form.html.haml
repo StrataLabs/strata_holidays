@@ -1,6 +1,7 @@
 = simple_form_for @points_of_attraction, :html => { :multipart => true, :class => 'form-horizontal' } do |f|
   = f.input :destination_id , :collection => build_destination_options, prompt: "Select Destination"
   = f.input :name
+  = f.input :description
   = f.association :poa_type, :collection => build_poa_type_options, prompt: "Select Type"
   = f.input :preferred_start_time
   = f.input :preferred_end_time

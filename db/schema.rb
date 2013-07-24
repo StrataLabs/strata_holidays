@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130724111215) do
+ActiveRecord::Schema.define(version: 20130724144724) do
 
   create_table "consultant_customer_destinations", force: true do |t|
     t.integer  "vacation_consultant_id"
@@ -201,6 +201,7 @@ ActiveRecord::Schema.define(version: 20130724111215) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "description"
   end
 
   create_table "properties", force: true do |t|

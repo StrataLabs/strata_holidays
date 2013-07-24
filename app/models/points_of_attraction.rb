@@ -3,7 +3,7 @@ class PointsOfAttraction < ActiveRecord::Base
   belongs_to :poa_type
   has_many :dest_iti_details
 
-  validates_presence_of :destination_id, :poa_type_id, :name
+  validates_presence_of :destination_id, :poa_type_id, :name, :description
   validates :name, length: {minimum:3, maximum: 80}
   has_attached_file :image, styles: {
     thumb: '100x100>',

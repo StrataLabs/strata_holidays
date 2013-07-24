@@ -11,6 +11,10 @@
   %br
   = @points_of_attraction.name
 %p
+  %strong= model_class.human_attribute_name(:description) + ':'
+  %br
+  = @points_of_attraction.description
+%p
   %strong= model_class.human_attribute_name(:type_id) + ':'
   %br
   = @points_of_attraction.poa_type_id

@@ -70,6 +70,6 @@ class PointsOfAttractionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def points_of_attraction_params
       params.require(:points_of_attraction).permit(:destination_id, :poa_type_id, :name, :preferred_start_time,
-      :preferred_end_time, :comments, :image)
+      :preferred_end_time, :comments, :image, :description)
     end
 end

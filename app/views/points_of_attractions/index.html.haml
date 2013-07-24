@@ -8,6 +8,7 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:destination_id)
       %th= model_class.human_attribute_name(:name)
+      %th= model_class.human_attribute_name(:description)
       %th= model_class.human_attribute_name(:poa_type_id)
       %th= model_class.human_attribute_name(:preffered_start_time)
       %th= model_class.human_attribute_name(:preffered_end_time)
@@ -20,6 +21,7 @@
         %td= link_to points_of_attraction.id, points_of_attraction_path(points_of_attraction)
         %td= points_of_attraction.destination.name rescue ''
         %td= points_of_attraction.name
+        %td= truncate(points_of_attraction.description, :length => 30)
         %td= points_of_attraction.poa_type.description rescue ''
         %td= points_of_attraction.preferred_start_time.strftime("%I:%M %p") rescue 'NA'
         %td= points_of_attraction.preferred_end_time.strftime("%I:%M %p") rescue 'NA'
@@ -30,3 +32,4 @@
           = link_to t('.destroy', :default => t("helpers.links.destroy")), points_of_attraction_path(points_of_attraction), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
 
 = link_to t('.new', :default => t("helpers.links.new")), new_points_of_attraction_path, :class => 'btn btn-primary'
+
