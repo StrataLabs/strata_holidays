@@ -27,6 +27,11 @@
   %br
   = @iti_cust_dest_poa_detail.comments
 
+= link_to "Back to Itinerary", '#'
+%br
+= nested_comments @comments
+= render "comments/form"
+
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), iti_cust_dest_poa_details_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_iti_cust_dest_poa_detail_path(@iti_cust_dest_poa_detail), :class => 'btn'

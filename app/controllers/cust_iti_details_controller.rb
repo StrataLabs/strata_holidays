@@ -1,4 +1,5 @@
 class CustItiDetailsController < ApplicationController
+  include Commentable
   before_action :set_cust_iti_detail, only: [:show, :edit, :update, :destroy]
 
   # GET /cust_iti_details

@@ -1,11 +1,33 @@
-%table
-  - @cust_dest_poa_det.each do |day, record|
-    %tr
-      %td
-        Day:
-        = day
-    - record.each do |iti_cust_dest_poa_detail|
-      %tr
-        %td= iti_cust_dest_poa_detail.points_of_attraction.name
-        %td= iti_cust_dest_poa_detail.preferred_time_of_arrival.strftime("%I:%M %p")
-        %td= iti_cust_dest_poa_detail.preferred_time_of_departure.strftime("%I:%M %p")
+/ %table
+/   - @cust_dest_poa_det.each do |day, record|
+/     %tr
+/       %td
+/         Day:
+/         = day
+/     - record.each do |iti_cust_dest_poa_detail|
+/       %tr
+/         %td= iti_cust_dest_poa_detail.points_of_attraction.name
+/         %td= iti_cust_dest_poa_detail.preferred_time_of_arrival.strftime("%I:%M %p")
+/         %td= iti_cust_dest_poa_detail.preferred_time_of_departure.strftime("%I:%M %p")
+- @cust_iti_details.each do |details|
+  .span2
+    = details.property.name
+    %br
+    = image_tag "unwinders/default.jpg"
+  .row
+    %br
+    .span10
+      %br
+      - details.iti_cust_dest_poa_details.each do |poa_details|
+        .span2
+          = link_to  poa_details do
+            = poa_details.points_of_attraction.name
+            %br
+            = image_tag "unwinders/default.jpg"
+            .clear
+            = poa_details.preferred_time_of_arrival.strftime("%I:%M %p").to_s + "-" + poa_details.preferred_time_of_departure.strftime("%I:%M %p").to_s
+          = nested_comments poa_details.comments
+      .span2
+        = nested_comments details.comments
+  %br
+  %br

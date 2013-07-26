@@ -26,6 +26,9 @@
   %strong= model_class.human_attribute_name(:property_id) + ':'
   %br
   = @cust_iti_detail.property_id
+%br
+= nested_comments @comments
+= render "comments/form"
 
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), cust_iti_details_path, :class => 'btn'

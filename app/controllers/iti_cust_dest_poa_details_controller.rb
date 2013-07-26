@@ -1,4 +1,5 @@
 class ItiCustDestPoaDetailsController < ApplicationController
+  include Commentable
   before_action :set_iti_cust_dest_poa_detail, only: [:show, :edit, :update, :destroy]
 
   # GET /iti_cust_dest_poa_details

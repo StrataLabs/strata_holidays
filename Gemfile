@@ -78,6 +78,9 @@ group :development, :test do
 end
 
 group :development do
+  #ER Diagram
+  gem "rails-erd", "~> 1.1.0"
+
   #Guard Goodies
   gem "guard-bundler", "~> 1.0.0"
   gem "guard-rspec", "~> 3.0.2"
@@ -130,3 +133,6 @@ gem "sunspot_solr", "~> 2.0.0"
 #image upload
 gem "paperclip", "~> 3.5.0"
 gem "aws-sdk", "~> 1.13.0"
+
+#comment-reply
+gem "ancestry", "~> 2.0.0"
