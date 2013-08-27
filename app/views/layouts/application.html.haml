@@ -6,6 +6,8 @@
     = javascript_include_tag "application"
     = stylesheet_link_tag "unwinders/application", :media => "all"
     = csrf_meta_tags
+    #slb-widget{:license_key=>"205109058"}
+      =javascript_include_tag 'https://s3.amazonaws.com/dev.justbooksclc.com/sd_widget/slb-widget.js'
   %body
     = render 'layouts/header'
     .container.well{:style => 'min-height:500px'}
