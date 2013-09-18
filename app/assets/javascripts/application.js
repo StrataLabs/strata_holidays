@@ -25,6 +25,15 @@ $(function() {
   $('#cust_iti_request_start_date').datepicker();
   $('#cust_iti_request_end_date').datepicker();
 });
+
+
+$(function() {
+  $("#current_user_requests .pagination a").on("click", function() {
+    $.getScript(this.href);
+    return false;
+  });
+});
+
 $('.dropdown-toggle').dropdown();
 
 jQuery(document).ready(function($) {
@@ -48,6 +57,8 @@ $('[id^=history-poa]').contenthover({
     overlay_opacity:0.8
 });
 });
+
+
 // $(function ()
 // {
 //   if (($("#slideshow > div").length) > 1)

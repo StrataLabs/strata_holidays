@@ -1,6 +1,7 @@
 class VacationConsultant < ActiveRecord::Base
   has_many :vc_assignments
   has_many :consultant_customer_destinations
+  belongs_to :user
   attr_accessor :status
   validates_presence_of ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations"]
   validate :check_mobile_no

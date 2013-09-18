@@ -1,5 +1,6 @@
 class Customer < ActiveRecord::Base
   has_many :cust_iti_headers
+  belongs_to :user
   include PgSearch
   multisearchable :against => [:name]
   pg_search_scope :search_by_name, :against => :name

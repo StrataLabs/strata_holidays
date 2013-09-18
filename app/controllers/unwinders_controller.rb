@@ -19,9 +19,16 @@ class UnwindersController < ApplicationController
 
   #FIXME All this has to be moved to respective controllers once devise is ready
   def user
+    @current_user_requests = CustItiRequest.where(:customer_id => current_user.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
+    vcs = VacationConsultant.all
+    @vcs = vcs.sort_by{rand}[0..3]
+    p @vcs
     @body_id = "list"
     @cust_iti_request = CustItiRequest.new
-    render :layout => 'unwinders'
+    respond_to do |format|
+      format.js
+      format.html { render :layout => 'unwinders' }
+    end
   end
 
   def vacation_consultant
