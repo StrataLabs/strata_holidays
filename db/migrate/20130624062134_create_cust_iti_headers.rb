@@ -9,7 +9,7 @@ class CreateCustItiHeaders < ActiveRecord::Migration
       t.string :seasons
       t.integer :duration
       t.integer :no_of_adults
-      t.string :no_of_children
+      t.integer :no_of_children
 
       t.timestamps
     end
