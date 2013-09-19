@@ -1,35 +1,35 @@
-!!!
 %html
   %head
-    %title Strata Holidays
     = stylesheet_link_tag "application", :media => "all" if @body_id != "home"
     = stylesheet_link_tag "unwinders/application", :media => "all"
-    / = stylesheet_link_tag "application", :media => "all"
     = csrf_meta_tags
-  %body{:id => "list", :style => 'padding-top: 0px;background-image:url("/assets/unwinders/background_pic.jpg");background-attachment:fixed;background-repeat:no-repeat;background-size:100%'}
-    #banner
-      %h1
-        %a{:href => "/"} JustBooks
-      #menu
-        #search
-          / %input{:name => "search", :type => "text"}/
-        .container
-          %h2.branch_name A D Vishnu Prasad
-      #submenu
-        %ul
-          %li= link_to "Home", root_path
-          %li= link_to "User", user_unwinders_path
-          %li= link_to "VC", vc_unwinders_path(:id => 1)
-          %li= link_to "Signin", "#"
-          %li= link_to "Signup", "#"
-          %li= link_to "Destinations", '#'
-          %li= link_to "About Us", '#'
-          %li= link_to "Contact Us", '#'
-    / = render :partial => 'flash', :object => flash
-    = yield
-    %center#footer
-      Strata Holidays &copy; 2013
-      = javascript_include_tag "application"
+  %body{:id => "list", :style => 'padding-top: 0px;background:#FFCC00'}
+    .container
+      #banner
+        %h1
+          %a{:href => "/"} JustBooks
+        #menu
+          #search
+            / %input{:name => "search", :type => "text"}/
+          .container
+            %h2.branch_name
+              = current_user.name
+        #submenu
+          %ul
+            %li= link_to "Home", root_path
+            %li= link_to "User", user_unwinders_path
+            %li= link_to "VC", vc_unwinders_path(:id => 1)
+            %li= link_to "Signin", "#"
+            %li= link_to "Signup", "#"
+            %li= link_to "Destinations", '#'
+            %li= link_to "About Us", '#'
+            %li= link_to "Contact Us", '#'
+        }
+      / = render :partial => 'flash', :object => flash
+      = yield
+      %center#footer
+        Strata Holidays &copy; 2013
+        = javascript_include_tag "application"
 / :javascript
 /   Sessionapp.ChartData["#{"infovis"}"] = #{raw generate_jit_tree().to_json};
 / = javascript_tag :defer => 'defer' do

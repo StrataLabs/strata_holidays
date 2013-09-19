@@ -17,16 +17,15 @@
 }
 
 .box {
--moz-box-shadow: 0 0 5px #888;
--webkit-box-shadow: 0 0 5px#888;
-
-border-bottom: 2px solid #eee;
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px#888;
+  border-bottom: 2px solid #eee;
 }
 
 .box .content{
   padding: 6px;
   background: #F0F0F0;
-  opacity: 0.9;
+  color: black;
 }
 
 .box .title{
@@ -142,7 +141,8 @@ padding-right: 5px;
   box-shadow: 1px 1px 1px 1px #888888;
   padding: 5px
 }
-.container
+.vc_details
 {
-  background: "#{asset_path('unwinders/background_pic.jpg')}";
+  text-align: center;
+  background-color: gray;
 }

@@ -1,40 +1,16 @@
-.container{:style => 'opacity:1.6'}
+#header-image
   .row
     .span4
       = render :partial => 'shared/request_iti'
-    .span8.box
-      #current_user_requests
-        = render :partial => 'shared/current_user_requests'
-  .row
-    %br
-    .span12.box{:style => 'padding-bottom:10px'}
-      .title
-        Top Vacation Consultants
-      .content
-        - 2.times do
-          - @vcs.each do |cust|
-            .span3.box{:style => 'margin-left:15px !important'}
-              .row
-                .span1{:style => 'padding-top:5px'}
-                  .vc_image{:style => 'margin-left:10px !important'}
-                    %img.imgborder{:src => "#{asset_path('unwinders/divya.jpg')}"}
-                .span2{:style => 'padding-top:15px'}
-                  %b{:style => "font-size:20px"} Divya
-                  %br
-                  Bangalore
-                  %br
-              .row
-                %br
-                .span3{:style => 'background:#F0F0F0'}
-                  .span1{:style => 'margin-left:5px !important'}
-                    %b Top Destination
-                    %br
-                    %center Kodai
-                  .span1{:style => 'margin-left:5px !important'}
-                    %b Rating
-                    %br
-                    %center 5
-                  .span1{:style => 'margin-left:5px !important'}
-                    %b Trips Planned
-                    %br
-                    %center 20
+    .span7.well.hide
+      %h1
+        Strata Holidays
+#filler{:style => 'height:50px;background:black'}
+.row
+  .span12#main-content
+    .row
+      .span8
+        #current_user_requests
+          = render :partial => 'shared/current_user_requests'
+      .span3
+        = render :partial => 'shared/top_vc'

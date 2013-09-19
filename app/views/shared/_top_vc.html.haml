@@ -1,0 +1,34 @@
+.box
+  .title
+    Top Vacation Consultants
+  .content
+    - 2.times do
+      - @vcs.each do |vc|
+        .box{:style => 'background:white'}
+          .row
+            .span1{:style => 'padding-top:5px;padding-left:20px'}
+              .vc_image.imgborder
+                =image_tag("#{asset_path("unwinders/#{vc.name.downcase}.jpg")}", :onerror => "this.src= '/assets/unwinders/default.jpg';")
+            .span1{:style => 'padding-top:15px;color:black'}
+              %b{:style => "font-size:20px"}
+                = vc.name
+              %br
+                = vc.city
+              %br
+          %br
+          .vc_details
+            .row
+              .span3
+                .span1{:style => 'margin-left:5px !important'}
+                  %b Top Destination
+                  %br
+                  %center Kodai
+                .span1{:style => 'margin-left:5px !important'}
+                  %b Rating
+                  %br
+                  %center 5
+                .span1{:style => 'margin-left:3px !important'}
+                  %b Trips Planned
+                  %br
+                  %center 20
+        %br
