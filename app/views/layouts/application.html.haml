@@ -1,17 +1,16 @@
 !!!
 %html
   %head
-    %title StrataHolidays
+    %title Unwinders
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = stylesheet_link_tag "unwinders/application", :media => "all"
     = csrf_meta_tags
-    #slb-widget{:license_key=>"205109058"}
-      =javascript_include_tag 'https://s3.amazonaws.com/dev.justbooksclc.com/sd_widget/slb-widget.js'
-  %body
-    = render 'layouts/header'
-    .container.well{:style => 'min-height:500px'}
-      - flash.each do |name, msg|
-        = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
-      = yield
-    = render 'layouts/footer'
+  %body{:style => 'padding-top: 0px;background:#1f1b10'}
+    #banner
+      %h1
+    /#home-page-logo
+    - flash.each do |name, msg|
+      = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
+    = yield
+/     = render 'layouts/footer'

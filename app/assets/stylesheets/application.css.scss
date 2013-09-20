@@ -71,3 +71,34 @@
   margin-right: 5px;
   padding-right: 5px;
 }
+
+#cover-image
+{
+  height: 750px;
+  margin-top: -170px;
+  background: image-url('unwinders/pic1.jpg') no-repeat;
+  background-size: cover;
+}
+
+#root-image
+{
+  height: 450px;
+  background: image-url('unwinders/b3.jpg') no-repeat;
+  background-size: 100%;
+}
+
+#home-page-logo
+{
+  display: block;
+  position: relative;
+  background: transparent image-url('unwinders/logo_2.png') center center no-repeat;
+  width: 320px;
+  height: 145px;
+  float: left;
+  z-index: 20;
+  text-indent: -1000em;
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
+  }
+}

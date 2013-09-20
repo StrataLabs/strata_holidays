@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/bootstrap
-//= require turbolinks
 //= require chosen-jquery
 //= require_tree .
 jQuery(document).ready(function($) {

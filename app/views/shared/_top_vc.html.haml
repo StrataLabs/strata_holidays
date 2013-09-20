@@ -3,7 +3,7 @@
     Top Vacation Consultants
   .content
     - 2.times do
-      - @vcs.each do |vc|
+      - VacationConsultant.all.each do |vc|
         .box{:style => 'background:white'}
           .row
             .span1{:style => 'padding-top:5px;padding-left:20px'}

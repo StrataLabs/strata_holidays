@@ -5,7 +5,7 @@ html{padding-top: 0;}
   position: relative;
   width: 100%;
   margin: 0; padding: 40px 0;
-  background: #1f1b20;
+  background: $back-color;
 
   h1{
     display: block;
@@ -26,7 +26,7 @@ html{padding-top: 0;}
   h2{
     display: block;
     position: relative;
-    color: #FFCC00;
+    color: $secondary-color;
     font-weight: 100;
     font-size: 30px;
     line-height: 42px;
@@ -40,7 +40,7 @@ html{padding-top: 0;}
     position: relative;
     padding: 0;
     margin: -104px 0 0 0;
-    background: $secondary-color;
+    background: $back-color;
     color: $white;
     z-index: 10;
 
@@ -214,7 +214,7 @@ html{padding-top: 0;}
         border-right: solid 1px $gray;
 
         &:last-child{border-right: none;}
-        a{display: block; padding: 0 10px; font-size: 13px; color: $white;}
+        a{display: block; padding: 0 10px; font-size: 13px; color:$secondary-color;}
       }
     }
   }

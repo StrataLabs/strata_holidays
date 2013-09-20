@@ -3,7 +3,7 @@
   position: relative;
   clear: both;
   padding: 20px;
-  background: #1f1b20;
+  background: $secondary-color;
   border-top: solid 1px $gray-xlight;
   @include clearfix;
 

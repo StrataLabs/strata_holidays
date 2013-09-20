@@ -1,5 +1,7 @@
-StrataHolidays::Application.routes.draw do  devise_for :users
-
+StrataHolidays::Application.routes.draw do
+  devise_for :users do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   get 'itinerary' => 'static_pages#itinerary'
   resources :vc_registrations
   resources :cust_iti_requests
@@ -28,6 +30,7 @@ StrataHolidays::Application.routes.draw do  devise_for :users
       get 'user'
     end
   end
+
 
   get 'get_cust_iti_request' => 'cust_iti_requests#get_cust_iti_request', :as => 'get_cust_iti_request'
   get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant', :as => 'vc_unwinders'

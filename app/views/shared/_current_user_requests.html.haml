@@ -1,4 +1,4 @@
-.box
+.box{:style => 'margin-left:80px'}
   .title
     My Activities
   .content
@@ -54,10 +54,3 @@
             Assign
         %br
       %hr
-:javascript
-  $(function() {
-    $("#current_user_requests .pagination a").on("click", function() {
-      $.getScript(this.href);
-      return false;
-    });
-  });
