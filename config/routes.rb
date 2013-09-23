@@ -1,4 +1,6 @@
 StrataHolidays::Application.routes.draw do
+  resources :testimonials
+
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

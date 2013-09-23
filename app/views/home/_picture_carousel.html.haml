@@ -1,0 +1,28 @@
+.box
+  .content{:style => 'background:#ffeb99'}
+    #myCarousel.carousel.slide
+      %ol.carousel-indicators
+        %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+        %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+      / Carousel items
+      .carousel-inner
+        .active.item
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/points_of_attractions/images/000/000/001/thumb/amritsar.jpg?1379423772'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/047/thumb/Yercaud-Lake.jpg?1375795511'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/046/thumb/charminar.jpg?1375795237'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/045/thumb/M_Id_342579_Tiger.jpg?1375795065'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/044/thumb/Victoria_Memorial_Kolkata_panorama.jpg?1375794857'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/043/thumb/abschnitt_66378_3.jpg?1375794513'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/042/thumb/Switzerland_Lucerne.jpg?1375794268'}
+        .item
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/041/thumb/Christchurch_Square_(Christchurch__New_Zealand).jpg?1375793859'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/040/thumb/Wanaka-20.jpg?1375793293'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/039/thumb/n-calendar-38-521.jpg?1375792869'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/037/thumb/paris.jpg?1375702808'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/035/thumb/maldives.jpg?1375701742'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/036/thumb/burj_khalifa_aka_burj_dubai-wide.jpg?1375702496'}
+          %img{:src => 'http://dev.justbooksclc.com.s3.amazonaws.com/strata_holidays/destinations/images/000/000/030/thumb/srinagar.jpg?1375431348'}
+      / Carousel nav
+      %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
+      %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;

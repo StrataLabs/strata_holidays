@@ -57,7 +57,9 @@ $('[id^=history-poa]').contenthover({
 });
 });
 
-
+$('.carousel').carousel({
+  interval: 20
+})
 // $(function ()
 // {
 //   if (($("#slideshow > div").length) > 1)

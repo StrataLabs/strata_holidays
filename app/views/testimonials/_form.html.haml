@@ -1,0 +1,10 @@
+= simple_form_for(@testimonial) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :vacation_consultant_id, collection: VacationConsultant.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select VC", :id => 'select_consultant', :class => 'chzn-select'}
+    = f.input :content, :allow_blank => false
+    = f.input :customer_id,  collection: Customer.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Customer", :id => 'select_customer', :class => 'chzn-select'}
+
+  .form-actions
+    = f.button :submit

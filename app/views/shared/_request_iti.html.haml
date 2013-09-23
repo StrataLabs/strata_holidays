@@ -2,7 +2,7 @@
   .title
     Request Package
   .content
-    = simple_form_for @cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal' } do |f|
+    = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal'}) do |f|
       = f.input :customer_id ,:input_html => { :value => current_user.id } , :as => 'hidden'
       = f.input :dest_type, :collection => ["Single", "Multiple"]
       = f.association :vacation_type, :label_method => :vac_type, :input_html => {:type => 'select'}
@@ -13,4 +13,3 @@
       = f.input :no_of_children
       / .form-actions
       %center= f.button :submit, :value => "Request" , :class => 'btn-success btn-medium', :id => 'cust_iti_request_submit'
-      / = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_requests_path, :class => 'btn'

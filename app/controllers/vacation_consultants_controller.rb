@@ -24,6 +24,13 @@ class VacationConsultantsController < ApplicationController
   # GET /vacation_consultants/1
   # GET /vacation_consultants/1.json
   def show
+    p "Hi"
+    if params[:id].present?
+      @vc = VacationConsultant.find(params[:id])
+      @vc_assignments = @vc.vc_assignments
+      render :layout => 'unwinders'
+    else
+    end
   end
 
   # GET /vacation_consultants/new

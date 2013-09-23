@@ -1,21 +1,17 @@
 %ul.plans
   %li.lite
-    = link_to "Details", '#'
     %strong=DestItiHeader.find(@dest_headers[3][:dest_iti_header_id]).destination.name
     =@dest_headers[3][:count]
     trips
   %li.basic
-    = link_to "Details", '#'
     %strong=DestItiHeader.find(@dest_headers[2][:dest_iti_header_id]).destination.name
     =@dest_headers[2][:count]
     trips
   %li.regular
-    = link_to "Details", '#'
     %strong=DestItiHeader.find(@dest_headers[1][:dest_iti_header_id]).destination.name
     =@dest_headers[1][:count]
     trips
   %li.avid
-    = link_to "Details", '#'
     %strong=DestItiHeader.find(@dest_headers[0][:dest_iti_header_id]).destination.name
     =@dest_headers[0][:count]
     trips

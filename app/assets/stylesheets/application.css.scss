@@ -82,9 +82,9 @@
 
 #root-image
 {
-  height: 450px;
-  background: image-url('unwinders/b3.jpg') no-repeat;
-  background-size: 100%;
+  height: 500px;
+  background: image-url('unwinders/b1.jpg') no-repeat;
+  padding-left:10px;
 }
 
 #home-page-logo
@@ -101,4 +101,43 @@
   @media screen and (max-width: 600px) {
     margin: 0;
   }
+}
+
+.dest-list{
+  display: inline-block;
+  position: relative;
+  top: 0; right: 20px;
+  line-height: 14px;
+  padding: 10px 0 0 0;
+  color:black;
+
+  ul{
+    display: block; margin: 0; padding: 0;
+
+    li{
+      display: block;
+      float: left;
+      border-right: solid 1px black;
+
+      &:last-child{border-right: none;}
+      a{display: block; padding: 0 10px; font-size: 13px; color:black;}
+    }
+  }
+}
+
+#myCarousel
+{
+  img{
+    height: 90px;
+    margin-left: 20px;
+    display: inline;
+  }
+}
+.vc_image{
+  width: 56px;
+}
+.my-table-striped{
+  tr{
+      background-color:#ffeb99;
+    }
 }

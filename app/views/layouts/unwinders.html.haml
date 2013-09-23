@@ -13,16 +13,13 @@
             / %input{:name => "search", :type => "text"}/
           .container
             %h2.branch_name
-              = current_user.name
+              = current_user.name rescue ""
         #submenu
           %ul
             %li= link_to "Home", root_path
-            %li= link_to "User", user_unwinders_path
+            %li= link_to "Profile", user_unwinders_path
             %li= link_to "VC", vc_unwinders_path(:id => 1)
             %li= link_to "Sign Out", destroy_user_session_path
-            %li= link_to "Signin", "#"
-            %li= link_to "Signup", "#"
-            %li= link_to "Destinations", '#'
             %li= link_to "About Us", '#'
             %li= link_to "Contact Us", '#'
         }

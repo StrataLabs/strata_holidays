@@ -1,46 +1,100 @@
-.container
-  .row
-    .span4.box
-      .title
-        Newly Assigned Requests
-        .icon-envelope-alt.pull-right
-      .content#cust-request
-        - @vc_assignments.where(:status => 'New').each do |vc_assign|
-          .icon-fighter-jet
-          New Request received from
-          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
-            %b
-              = vc_assign.cust_iti_request.customer.name
-            for
-            %b
-              = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
-          %hr
+.container{:style => 'background:#f7f7f7;padding:0px'}
+  .action
+    .span2{:style => 'border-right:1px solid;border-color:#bbb; padding-right:25px;height:250px'}
+      =image_tag("#{asset_path("unwinders/vc.png")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';")
+    .span3
+      #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
+        = @vc.name
+      %br
+      #city{:style => 'font-size:15px;color:black'}
+        = @vc.city
+      %br
+      .vc-hr
+      %br
+        Preferred Neighborhoods  :
+        = @vc.preferred_neighborhood
+      %br
+        Booking:
+        -if @vc.booking?
+          Yes
+        -else
+          No
+      %br
+        Planning:
+        -if @vc.booking?
+          Yes
+        -else
+          No
 
-    .span4.box
-      .title
-        In Progress
-        .icon-beaker.pull-right
-      .content
-        - @vc_assignments.where(:status => 'in_process').each do |vc_assign|
-          .icon-fighter-jet
-          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
-            %b
-              = vc_assign.cust_iti_request.customer.name
-            for
-            %b
-              = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
-          request is in process
-          %hr
-    .span4.box
-      .title
-        Completed
-        .icon-check.pull-right
-#my-vc-modal.modal.hide.fade{"tabindex" => "-1"}
-  .modal-header
-    %a.close{"data-dismiss" => "modal"} x
-    %h3 Choose Vacation Consultant
-  .modal-body
-    .modal-vc-rec-body
-  .modal-footer
-    /= link_to "Done" , edit_vc_assignment(:status => 'in_process') , :class => 'btn btn-primary', "data-dismiss" => "modal"
-    %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+    .span5.pull-right{:style => 'padding-right:5px'}
+      = render 'top_destinations'
+  .row
+    .span6.box{:style => 'margin-top:15px;margin-left:60px'}
+      .title{:style => 'background:#ffcc11;font-size:12pt'}
+        Customer Testimonials
+      .content{:style => 'background:#fff8dd'}
+        -if @vc.testimonials.present?
+          -@vc.testimonials.each do |t|
+            %blockquote
+              %p
+                = t.content
+        -else
+          No Testimonials to show
+  / %p.intro There were several Mahars first, and then at least twenty awe-inspiring pterodactyls—thipdars, they are called within Pellucidar.
+  / = render 'top_destinations'
+  / .map
+  /   #inner-details{:style => 'display:none'}
+  /   #infovis
+  /   map
+  / .refer
+  /   Testimonials
+  / .info
+  /   = render 'iti_in_progress'
+  / .newsletter
+  /   Campaign
+/ .container
+/   .row
+/     .span4.box
+/       .title
+/         Newly Assigned Requests
+/         .icon-envelope-alt.pull-right
+/       .content#cust-request
+/         - @vc_assignments.where(:status => 'New').each do |vc_assign|
+/           .icon-fighter-jet
+/           New Request received from
+/           = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+/             %b
+/               = vc_assign.cust_iti_request.customer.name
+/             for
+/             %b
+/               = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+/           %hr
+
+/     .span4.box
+/       .title
+/         In Progress
+/         .icon-beaker.pull-right
+/       .content
+/         - @vc_assignments.where(:status => 'in_process').each do |vc_assign|
+/           .icon-fighter-jet
+/           = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+/             %b
+/               = vc_assign.cust_iti_request.customer.name
+/             for
+/             %b
+/               = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+/           request is in process
+/           %hr
+/     .span4.box
+/       .title
+/         Completed
+/         .icon-check.pull-right
+/ #my-vc-modal.modal.hide.fade{"tabindex" => "-1"}
+/   .modal-header
+/     %a.close{"data-dismiss" => "modal"} x
+/     %h3 Choose Vacation Consultant
+/   .modal-body
+/     .modal-vc-rec-body
+/   .modal-footer
+/     /= link_to "Done" , edit_vc_assignment(:status => 'in_process') , :class => 'btn btn-primary', "data-dismiss" => "modal"
+/     %a.btn{"data-dismiss" => "modal", :href => "#"} Close

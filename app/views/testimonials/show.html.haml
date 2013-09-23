@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Vacation consultant:
+  = @testimonial.vacation_consultant_id
+%p
+  %b Content:
+  = @testimonial.content
+%p
+  %b Customer:
+  = @testimonial.customer_id
+
+= link_to 'Edit', edit_testimonial_path(@testimonial)
+\|
+= link_to 'Back', testimonials_path

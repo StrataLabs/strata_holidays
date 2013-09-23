@@ -1,5 +1,9 @@
-#root-image
-#vcs-page
-  = render :partial => 'vcs_page'
-#current-packages
-  = render :partial => 'ongoing_packages'
+.container
+  #root-image
+  #filler.filler-div{:style => 'font-weight:bold;text-align:center;color:black;font-size:13pt'}
+    %br
+    Meet our Vacation Consultants
+  #vcs-page
+    = render :partial => 'vcs_page'
+  #current-packages
+    = render :partial => 'picture_carousel'

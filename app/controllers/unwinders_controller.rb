@@ -32,6 +32,11 @@ class UnwindersController < ApplicationController
   end
 
   def vacation_consultant
+    @body_id = "list"
+    dest = DestItiDetail.group(:dest_iti_header_id)
+                        .select(:dest_iti_header_id, 'count(dest_iti_header_id) as count')
+                        .collect{|result| {:dest_iti_header_id => result.dest_iti_header_id, :count => result.count}}
+    @dest_headers = dest.sort_by{|d| d[:count]}.reverse!.first(4)
     if params[:id].present?
       @vc = VacationConsultant.find(params[:id])
       @vc_assignments = @vc.vc_assignments
