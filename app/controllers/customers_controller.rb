@@ -10,6 +10,10 @@ class CustomersController < ApplicationController
   # GET /customers/1
   # GET /customers/1.json
   def show
+    id = params[:id]
+    @customer = Customer.find(id) unless id.nil?
+    @current_user_requests = CustItiRequest.where(:customer_id => current_user.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
+    render :layout => 'unwinders'
   end
 
   # GET /customers/new

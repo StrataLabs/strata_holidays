@@ -2,6 +2,7 @@
   %head
     = stylesheet_link_tag "application", :media => "all" if @body_id != "home"
     = stylesheet_link_tag "unwinders/application", :media => "all"
+    = javascript_include_tag "application"
     = csrf_meta_tags
   %body{:id => "list", :style => 'padding-top: 0px;background:#1f1b10'}
     .container
@@ -9,25 +10,28 @@
         %h1
           %a{:href => "/"} JustBooks
         #menu
-          #search
-            / %input{:name => "search", :type => "text"}/
           .container
             %h2.branch_name
               = current_user.name rescue ""
         #submenu
           %ul
-            %li= link_to "Home", root_path
-            %li= link_to "Profile", user_unwinders_path
-            %li= link_to "VC", vc_unwinders_path(:id => 1)
-            %li= link_to "Sign Out", destroy_user_session_path
+            - if current_user
+              %li= link_to "Home", user_unwinders_path
+            - else
+              %li= link_to "Home", '#'
+            /%li= link_to "VC", vc_unwinders_path(:id => 1)
             %li= link_to "About Us", '#'
             %li= link_to "Contact Us", '#'
-        }
+            - if current_user
+              - if current_user.user_type == User::CUSTOMER
+                %li= link_to "Profile", customer_path(:id => current_user.customer.id)
+                %li= link_to "Sign Out", destroy_user_session_path
+            - else
+              %li= link_to "Sign In", user_session_path
       / = render :partial => 'flash', :object => flash
       = yield
       %center#footer
         Strata Holidays &copy; 2013
-        = javascript_include_tag "application"
 / :javascript
 /   Sessionapp.ChartData["#{"infovis"}"] = #{raw generate_jit_tree().to_json};
 / = javascript_tag :defer => 'defer' do

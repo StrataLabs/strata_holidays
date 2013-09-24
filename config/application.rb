@@ -23,5 +23,12 @@ module StrataHolidays
     config.assets.initialize_on_precompile = false
     # config.action_view.field_error_proc = Proc.new { |html_tag, instance|   "#{html_tag}".html_safe }
     # config.serve_static_assets = true
+    config.to_prepare do
+    Devise::SessionsController.layout "home"
+    Devise::RegistrationsController.layout "home"
+    Devise::ConfirmationsController.layout "home"
+    #Devise::UnlocksController.layout "your_layout_name"
+    #Devise::PasswordsController.layout "your_layout_name"
+end
   end
 end

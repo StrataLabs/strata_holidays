@@ -110,11 +110,15 @@ body#list{
     }
   }
 
-  .map, .info, .refer, .newsletter{
+  .info, .refer, .newsletter{
     @include box-shadow(0 0 6px rgba($black, 0.2));
-    height: 250px;
     overflow: hidden;
     margin: 20px 0;
+  }
+
+  .map{
+    height: 300px;
+    width: 500px;
   }
 
   .map, .info{

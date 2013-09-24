@@ -1,0 +1,19 @@
+.container{:style=> 'padding-left:0px'}
+  .row
+    .span12
+      #cover-image
+        .row
+          .span3.box{:style => 'margin-top:100px;margin-left:450px;background:#F0F0F0'}
+            .title{:style => 'font-weight:bold;font-size:14pt'}
+              Sign up
+            .content
+              = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+                = f.error_notification
+                .form-inputs
+                  = f.input :name, :required => true, :autofocus => true
+                  = f.input :email, :required => true
+                  = f.input :password, :required => true
+                  = f.input :password_confirmation, :required => true
+                .form-actions
+                  = f.button :submit, "Sign up"
+              = render "devise/shared/links"

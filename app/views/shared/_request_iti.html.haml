@@ -7,8 +7,8 @@
       = f.input :dest_type, :collection => ["Single", "Multiple"]
       = f.association :vacation_type, :label_method => :vac_type, :input_html => {:type => 'select'}
       = f.input :destinations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations", :id => 'select_destination', class: 'chzn-select' ,:multiple => true }
-      = f.input :start_date, :as => :date_picker
-      = f.input :end_date, :as => :date_picker
+      /= f.input :start_date, :as => :date_picker
+      /= f.input :end_date, :as => :date_picker
       = f.input :no_of_adults
       = f.input :no_of_children
       / .form-actions

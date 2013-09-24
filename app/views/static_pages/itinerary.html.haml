@@ -19,14 +19,15 @@
     .span10
       %br
       - details.iti_cust_dest_poa_details.each do |poa_details|
-        .span2
-          = link_to  poa_details do
-            = poa_details.points_of_attraction.name
-            %br
-            = image_tag "unwinders/default.jpg"
-            .clear
-            = poa_details.preferred_time_of_arrival.strftime("%I:%M %p").to_s + "-" + poa_details.preferred_time_of_departure.strftime("%I:%M %p").to_s
-          = nested_comments poa_details.comments
+        - if poa_details.points_of_attraction.present?
+          .span2
+            = link_to  poa_details do
+              = poa_details.points_of_attraction.name
+              %br
+              = image_tag poa_details.points_of_attraction.image.url(:thumb)
+              .clear
+              = poa_details.preferred_time_of_arrival.strftime("%I:%M %p").to_s + "-" + poa_details.preferred_time_of_departure.strftime("%I:%M %p").to_s
+            = nested_comments poa_details.comments
       .span2
         = nested_comments details.comments
   %br

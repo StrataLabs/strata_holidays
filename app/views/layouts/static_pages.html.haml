@@ -1,0 +1,26 @@
+%html
+  %head
+    = stylesheet_link_tag "application", :media => "all" if @body_id != "home"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    = render 'layouts/header'
+    = yield
+  %center#footer
+    Strata Holidays &copy; 2013
+/ :javascript
+/   Sessionapp.ChartData["#{"infovis"}"] = #{raw generate_jit_tree().to_json};
+/ = javascript_tag :defer => 'defer' do
+/   $(document).ready(function () {
+/   JitTree.showJit();
+/   });
+#my-modal.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Choose Vacation Consultant
+  .modal-body
+    .modal-rec-body
+    .modal-rec-body-results
+  .modal-footer
+    / = link_to "Done" , "#" , :class => 'btn btn-primary'
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close

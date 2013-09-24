@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     "/unwinders/user"
   end
 
-  def after_sign_out_path_for(resource)
-    "/users/sign_in"
-  end
+  # def after_sign_out_path_for(resource)
+  #   "/home/sign_in"
+  # end
 end

@@ -14,4 +14,9 @@ class Customer < ActiveRecord::Base
       fulltext query
     end
   end
+
+  def self.build(params)
+    new(:name => params[:name], :user_id => params[:id],
+      :email => params[:email])
+  end
 end

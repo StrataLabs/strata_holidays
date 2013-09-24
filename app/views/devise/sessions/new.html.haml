@@ -1,17 +1,11 @@
-/ :javascript
-/   Sessionapp.ChartData["#{"infovis"}"] = #{raw generate_jit_tree().to_json};
-/ = javascript_tag :defer => 'defer' do
-/   $(document).ready(function () {
-/   JitTree.showJit();
-/   });
-/ #inner-details{:style => 'display:none'}
-/ #infovis
-.container
+.container{:style=> 'padding-left:0px'}
   .row
     .span12
       #cover-image
         .row
           .span3.box{:style => 'margin-top:300px;margin-left:450px;background:#F0F0F0'}
+            - flash.each do |name, msg|
+              = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert',:style => 'margin-bottom:0px' if msg.is_a?(String)
             .title{:style => 'font-weight:bold;font-size:14pt'}
               Sign in
             .content
@@ -24,4 +18,6 @@
                 = check_box_tag 'user[remember_me]'
                 = label_tag 'user[remember_me]', 'Remember me'
                 %button.btn-primary Sign in
-                = link_to "Forgot your password?", new_password_path('user')
+                %br
+              = render "devise/shared/links"
+
