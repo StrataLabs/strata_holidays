@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :authenticate_admin_user
   def new
     @parent_id = params.delete(:parent_id)
     @commentable = find_commentable

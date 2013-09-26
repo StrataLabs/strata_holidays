@@ -2,30 +2,29 @@
   .title
     Top Vacation Consultants
   .content
-    - 2.times do
-      - VacationConsultant.all.each do |vc|
-        .box{:style => 'background:white'}
-          .row
-            .span1{:style => 'padding-top:5px;padding-left:20px'}
-              .vc_image.imgborder
-                =image_tag("#{asset_path("unwinders/#{vc.name.downcase}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';")
-            .span1{:style => 'padding-top:15px;color:black'}
-              %b{:style => "font-size:20px"}
-                = vc.name
-              %br
-                = vc.city
-              %br
-          %br
-          .vc_details
-            .row
-              .span3
-                %table.table.table-condensed
-                  %tr
-                    %th Top Destination
-                    %th Rating
-                    %th Trips Planned
-                  %tr
-                    %td Kodai
-                    %td 5
-                    %td 20
+    - @vcs.each do |vc|
+      .box{:style => 'background:white'}
+        .row
+          .span1{:style => 'padding-top:5px;padding-left:20px'}
+            .vc_image.imgborder
+              =image_tag("#{asset_path("unwinders/#{vc.name.downcase}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';")
+          .span1{:style => 'padding-top:15px;color:black'}
+            %b{:style => "font-size:20px"}
+              = link_to "#{vc.name}", vc_unwinders_path(:id => "#{vc.id}")
+            %br
+              = vc.city
+            %br
         %br
+        .vc_details
+          .row
+            .span3
+              %table.table.table-condensed
+                %tr
+                  %th Top Destination
+                  %th Rating
+                  %th Trips Planned
+                %tr
+                  %td Kodai
+                  %td 5
+                  %td 20
+      %br

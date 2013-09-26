@@ -1,7 +1,7 @@
 class CustItiDetailsController < ApplicationController
   include Commentable
   before_action :set_cust_iti_detail, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /cust_iti_details
   # GET /cust_iti_details.json
   def index

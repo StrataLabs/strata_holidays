@@ -1,6 +1,6 @@
 class TestimonialsController < ApplicationController
   before_action :set_testimonial, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /testimonials
   # GET /testimonials.json
   def index

@@ -1,6 +1,7 @@
 class PointsOfAttractionsController < ApplicationController
   before_action :set_points_of_attraction, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user, except: [:show]
+  layout "unwinders"
   # GET /points_of_attractions
   # GET /points_of_attractions.json
   def index

@@ -1,5 +1,6 @@
 class VacationConsultantsController < ApplicationController
   before_action :set_vacation_consultant, only: [:show, :edit, :update, :destroy]
+  before_filter :confirm_user_type!
 
   # GET /vacation_consultants
   # GET /vacation_consultants.json
@@ -24,7 +25,6 @@ class VacationConsultantsController < ApplicationController
   # GET /vacation_consultants/1
   # GET /vacation_consultants/1.json
   def show
-    p "Hi"
     if params[:id].present?
       @vc = VacationConsultant.find(params[:id])
       @vc_assignments = @vc.vc_assignments
@@ -119,6 +119,16 @@ class VacationConsultantsController < ApplicationController
     vc.status = new_status
     vc.save
     redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
+  end
+
+  def confirm_user_type!
+    if current_user.user_type != User::VC
+      flash[:error] = "Not authorized to view this page"
+      respond_to do |format|
+        format.html {redirect_to user_unwinders_path}
+        format.xml
+      end
+    end
   end
 
   private

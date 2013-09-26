@@ -1,6 +1,6 @@
 class ItiDestinationXrefsController < ApplicationController
   before_action :set_iti_destination_xref, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /iti_destination_xrefs
   # GET /iti_destination_xrefs.json
   def index

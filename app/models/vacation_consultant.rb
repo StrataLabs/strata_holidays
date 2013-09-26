@@ -2,7 +2,7 @@ class VacationConsultant < ActiveRecord::Base
   has_many :vc_assignments
   has_many :consultant_customer_destinations
   has_many :testimonials
-  belongs_to :user
+  belongs_to :user, :autosave => true
   attr_accessor :status
   validates_presence_of ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations"]
   validate :check_mobile_no
@@ -40,6 +40,7 @@ class VacationConsultant < ActiveRecord::Base
   def self.build_from_vc_reg(vc_reg)
     vc_reg = vc_reg.attributes.delete_if {|k,v| k =="id" }
     vc = VacationConsultant.new(vc_reg)
+    vc.user = User.build(vc_reg)
     vc.created_at = Time.zone.now
     vc.updated_at = Time.zone.now
     vc

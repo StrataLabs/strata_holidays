@@ -1,6 +1,6 @@
 class VcRegistrationsController < ApplicationController
   before_action :set_vc_registration, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user, only: [:show, :edit, :update, :destroy]
   # GET /vc_registrations
   # GET /vc_registrations.json
   def index

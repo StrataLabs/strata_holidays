@@ -43,14 +43,11 @@
     /   = @customer.comments
 
     .form-actions
-      = link_to t('.back', :default => t("helpers.links.back")), customers_path, :class => 'btn'
       = link_to t('.edit', :default => t("helpers.links.edit")), edit_customer_path(@customer), :class => 'btn'
-      = link_to t('.destroy', :default => t("helpers.links.destroy")), customer_path(@customer), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
-  .row
-    .span12#main-content
-      .row
-        .span11{:style => 'margin-right:20px'}
-          .current_user_requests
-            = render :partial => 'shared/current_user_requests'
+      = link_to "Change password", edit_user_registration_path
+    .row
+      .span11
+        .current_user_requests{:style => 'margin-right:20px'}
+          = render :partial => 'shared/current_user_requests'
 
 

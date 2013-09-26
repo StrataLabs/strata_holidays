@@ -1,6 +1,6 @@
 class VacationTypesController < ApplicationController
   before_action :set_vacation_type, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /vacation_types
   # GET /vacation_types.json
   def index

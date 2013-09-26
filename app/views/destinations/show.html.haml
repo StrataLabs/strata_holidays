@@ -1,23 +1,77 @@
-- model_class = Destination
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
+%link{:href => "http://fonts.googleapis.com/css?family=Kaushan+Script", :rel => "stylesheet", :type => "text/css"}
+- pic_url = @destination.image.url
+.container.dest-bg{:style => 'padding-left:0px;padding-right:0px'}
+	.container{:style => 'padding-bottom:30px;padding-left:0px;padding-right:0px'}
+		.row{:style => 'padding:0px'}
+			.span5{:style => 'margin-left:50px'}
+				.dest-header
+					.polaroid
+						%img{:src => @destination.image.url(:medium)}
+							%p
+								= @destination.name
+			.span6
+				.well{:style => 'background:white;opacity:0.7;padding:10px;width:620px;min-height:385px'}
+					.dest-description
+						%p
+							= @destination.description
+					%br
+					.vc-hr
+					%br
+					.carousel-header
+						Points of Attraction in
+						= "#{@destination.name}"
+					%br
+					#myCarousel.carousel.slide
+						/ Carousel items
+						.carousel-inner
+							- destination_array = @destination.points_of_attractions.each_slice(3).to_a
+							- destination_array.each_with_index do |p,index|
+								-if index == 0
+									.active.item
+										- p.each do |p1|
+											%center.car-component
+												%a{:href => points_of_attraction_path(:id => p1.id)}
+													%img{:src => "#{p1.image.url(:thumb)}"}
+												%p
+													= p1.name
+								-else
+									.item
+										- p.each do |p1|
+											.car-component
+												%a{:href => points_of_attraction_path(:id => p1.id)}
+													%img{:src => "#{p1.image.url(:thumb)}"}
+												%p
+													= p1.name
+						%a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
+						%a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;
+		%br
+		.row{:style => 'margin-left:30px;'}
+			-if current_user.admin?
+				= link_to "See all Destinations", destinations_path, :class => 'btn'
+				= link_to t('.new', :default => t("helpers.links.new")), new_destination_path, :class => 'btn'
+				= link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'
+				= link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(@destination), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
 
-%p
-  %strong= model_class.human_attribute_name(:name) + ':'
-  %br
-  = @destination.name
-  %br
-  %strong= model_class.human_attribute_name(:description) + ':'
-  %br
-  = @destination.description
-  %br
-  %strong= "Available Images:"
-  %br
-  = image_tag @destination.image.url(:medium)
-  = image_tag @destination.image.url(:square)
-  = image_tag @destination.image.url(:thumb)
-  = image_tag @destination.image.url(:thumbnail)
-.form-actions
-  = link_to t('.back', :default => t("helpers.links.back")), destinations_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(@destination), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+
+
+/ - model_class = Destination
+/ .dest-header
+/   %h1=t '.title', :default => model_class.model_name.human.titleize
+
+/ %p
+/   %strong= model_class.human_attribute_name(:name) + ':'
+/   %br
+/   = @destination.name
+/   %br
+/   %strong= model_class.human_attribute_name(:description) + ':'
+/   %br
+/   = @destination.description
+/   %br
+/   %strong= "Available Images:"
+/   %br
+/   .polaroid
+/     %img{:src => @destination.image.url(:medium)}
+/   /= image_tag @destination.image.url(:medium)
+/   /= image_tag @destination.image.url(:square)
+/   /= image_tag @destination.image.url(:thumb)
+/   /= image_tag @destination.image.url(:thumbnail)

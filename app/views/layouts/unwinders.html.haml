@@ -20,16 +20,20 @@
             - else
               %li= link_to "Home", '#'
             /%li= link_to "VC", vc_unwinders_path(:id => 1)
-            %li= link_to "About Us", '#'
-            %li= link_to "Contact Us", '#'
             - if current_user
               - if current_user.user_type == User::CUSTOMER
                 %li= link_to "Profile", customer_path(:id => current_user.customer.id)
-                %li= link_to "Sign Out", destroy_user_session_path
+              - elsif current_user.user_type == User::VC
+                %li= link_to "Profile", vacation_consultant_path(:id => current_user.vacation_consultant.id)
+              %li= link_to "Sign Out", destroy_user_session_path
             - else
               %li= link_to "Sign In", user_session_path
-      / = render :partial => 'flash', :object => flash
-      = yield
+              %li= link_to "Sign up", user_session_path
+            %li= link_to "About Us", '#'
+            %li= link_to "Contact Us", '#'
+      /= render :partial => 'flash', :object => flash
+      .container{:style => 'background:#fff;padding:0px'}
+        = yield
       %center#footer
         Strata Holidays &copy; 2013
 / :javascript

@@ -1,6 +1,6 @@
 class DestItiDetailsController < ApplicationController
   before_action :set_dest_iti_detail, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /dest_iti_details
   # GET /dest_iti_details.json
   def index

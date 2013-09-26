@@ -1,95 +1,115 @@
-.container
-  .row
-    .span4.box
-      .title
-        Newly Assigned Requests
-        .icon-envelope-alt.pull-right
-      .content#cust-request
-        - @vc_assignments.where(:status => 'New').each do |vc_assign|
-          .icon-fighter-jet
-          New Request received from
-          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
-            %b
-              = vc_assign.cust_iti_request.customer.name
-            for
-            %b
-              = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
-          %hr
+/ .container
+/   .row
+/     .span4.box
+/       .title
+/         Newly Assigned Requests
+/         .icon-envelope-alt.pull-right
+/       .content#cust-request
+/         - @vc_assignments.where(:status => 'New').each do |vc_assign|
+/           .icon-fighter-jet
+/           New Request received from
+/           = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+/             %b
+/               = vc_assign.cust_iti_request.customer.name
+/             for
+/             %b
+/               = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+/           %hr
 
-    .span4.box
-      .title
-        In Progress
-        .icon-beaker.pull-right
-      .content
-        - @vc_assignments.where(:status => 'in_process').each do |vc_assign|
-          .icon-fighter-jet
-          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
-            %b
-              = vc_assign.cust_iti_request.customer.name
-            for
-            %b
-              = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
-          request is in process
-          %hr
-    .span4.box
-      .title
-        Completed
-        .icon-check.pull-right
-#my-vc-modal.modal.hide.fade{"tabindex" => "-1"}
-  .modal-header
-    %a.close{"data-dismiss" => "modal"} x
-    %h3 Choose Vacation Consultant
-  .modal-body
-    .modal-vc-rec-body
-  .modal-footer
-    /= link_to "Done" , edit_vc_assignment(:status => 'in_process') , :class => 'btn btn-primary', "data-dismiss" => "modal"
-    %a.btn{"data-dismiss" => "modal", :href => "#"} Close
-/ - model_class = VacationConsultant
-/ .page-header
-/   %h1=t '.title', :default => model_class.model_name.human.titleize
+/     .span4.box
+/       .title
+/         In Progress
+/         .icon-beaker.pull-right
+/       .content
+/         - @vc_assignments.where(:status => 'in_process').each do |vc_assign|
+/           .icon-fighter-jet
+/           = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+/             %b
+/               = vc_assign.cust_iti_request.customer.name
+/             for
+/             %b
+/               = vc_assign.cust_iti_request.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+/           request is in process
+/           %hr
+/     .span4.box
+/       .title
+/         Completed
+/         .icon-check.pull-right
+/ #my-vc-modal.modal.hide.fade{"tabindex" => "-1"}
+/   .modal-header
+/     %a.close{"data-dismiss" => "modal"} x
+/     %h3 Choose Vacation Consultant
+/   .modal-body
+/     .modal-vc-rec-body
+/   .modal-footer
+/     /= link_to "Done" , edit_vc_assignment(:status => 'in_process') , :class => 'btn btn-primary', "data-dismiss" => "modal"
+/     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+.container{:style => 'background:#f0f0f0;padding:0px'}
+  - model_class = VacationConsultant
+  #profile{:style => 'padding-left:20px;padding-top:80px'}
+    %p
+      %strong= model_class.human_attribute_name(:name) + ':'
+      %br
+      = @vacation_consultant.name
+    %p
+      %strong= model_class.human_attribute_name(:address_1) + ':'
+      %br
+      = @vacation_consultant.address_1
+    %p
+      %strong= model_class.human_attribute_name(:address_2) + ':'
+      %br
+      = @vacation_consultant.address_2
+    %p
+      %strong= model_class.human_attribute_name(:city) + ':'
+      %br
+      = @vacation_consultant.city
+    %p
+      %strong= model_class.human_attribute_name(:state) + ':'
+      %br
+      = @vacation_consultant.state
+    %p
+      %strong= model_class.human_attribute_name(:country) + ':'
+      %br
+      = @vacation_consultant.country
+    %p
+      %strong= model_class.human_attribute_name(:lphone) + ':'
+      %br
+      = @vacation_consultant.lphone
+    %p
+      %strong= model_class.human_attribute_name(:mphone) + ':'
+      %br
+      = @vacation_consultant.mphone
+    %p
+      %strong= model_class.human_attribute_name(:email) + ':'
+      %br
+      = @vacation_consultant.email
+    %p
+      %strong= model_class.human_attribute_name(:planning) + ':'
+      %br
+      -if @vacation_consultant.planning
+        Yes
+      -else
+        No
+    %p
+      %strong= model_class.human_attribute_name(:booking) + ':'
+      %br
+      -if @vacation_consultant.booking
+        Yes
+      -else
+        No
+    %p
+      %strong= model_class.human_attribute_name(:preferred_neighborhood) + ':'
+      %br
+      = @vacation_consultant.preferred_neighborhood
+    %p
+      %strong= model_class.human_attribute_name(:preferred_locations) + ':'
+      %br
+      = @vacation_consultant.preferred_locations
+    %p
+      %strong= model_class.human_attribute_name(:comments) + ':'
+      %br
+      = @vacation_consultant.comments
 
-/ %p
-/   %strong= model_class.human_attribute_name(:name) + ':'
-/   %br
-/   = @vacation_consultant.name
-/ %p
-/   %strong= model_class.human_attribute_name(:address_1) + ':'
-/   %br
-/   = @vacation_consultant.address_1
-/ %p
-/   %strong= model_class.human_attribute_name(:address_2) + ':'
-/   %br
-/   = @vacation_consultant.address_2
-/ %p
-/   %strong= model_class.human_attribute_name(:city) + ':'
-/   %br
-/   = @vacation_consultant.city
-/ %p
-/   %strong= model_class.human_attribute_name(:state) + ':'
-/   %br
-/   = @vacation_consultant.state
-/ %p
-/   %strong= model_class.human_attribute_name(:country) + ':'
-/   %br
-/   = @vacation_consultant.country
-/ %p
-/   %strong= model_class.human_attribute_name(:lphone) + ':'
-/   %br
-/   = @vacation_consultant.lphone
-/ %p
-/   %strong= model_class.human_attribute_name(:mphone) + ':'
-/   %br
-/   = @vacation_consultant.mphone
-/ %p
-/   %strong= model_class.human_attribute_name(:email) + ':'
-/   %br
-/   = @vacation_consultant.email
-/ %p
-/   %strong= model_class.human_attribute_name(:comments) + ':'
-/   %br
-/   = @vacation_consultant.comments
-
-/ .form-actions
-/   = link_to t('.back', :default => t("helpers.links.back")), vacation_consultants_path, :class => 'btn'
-/   = link_to t('.edit', :default => t("helpers.links.edit")), edit_vacation_consultant_path(@vacation_consultant), :class => 'btn'
-/   = link_to t('.destroy', :default => t("helpers.links.destroy")), vacation_consultant_path(@vacation_consultant), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+    .form-actions
+      = link_to t('.edit', :default => t("helpers.links.edit")), edit_vacation_consultant_path(@vacation_consultant), :class => 'btn'
+      = link_to "Change password", edit_user_registration_path

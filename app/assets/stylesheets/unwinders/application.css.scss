@@ -139,6 +139,7 @@ padding-right: 5px;
 .imgborder
 {
   -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
+  -moz-box-shadow: drop-shadow(2px 2px 2px rgba(0,0,0,0.5));
 }
 .vc_details
 {

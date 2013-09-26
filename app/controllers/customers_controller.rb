@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_filter :confirm_user_type!
 
   # GET /customers
   # GET /customers.json
@@ -62,6 +63,16 @@ class CustomersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to customers_url }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm_user_type!
+    if current_user.user_type != User::CUSTOMER
+      flash[:error] = "Not authorized to view this page"
+      respond_to do |format|
+        format.html {redirect_to user_unwinders_path}
+        format.xml
+      end
     end
   end
 

@@ -1,7 +1,7 @@
 class ItiCustDestPoaDetailsController < ApplicationController
   include Commentable
   before_action :set_iti_cust_dest_poa_detail, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /iti_cust_dest_poa_details
   # GET /iti_cust_dest_poa_details.json
   def index

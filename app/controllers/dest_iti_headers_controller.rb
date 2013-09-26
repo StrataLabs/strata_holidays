@@ -1,6 +1,6 @@
 class DestItiHeadersController < ApplicationController
   before_action :set_dest_iti_header, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /dest_iti_headers
   # GET /dest_iti_headers.json
   def index

@@ -1,16 +1,20 @@
-#header-image
-  .row
-    .span4
-      = render :partial => 'shared/request_iti'
-    .span7
-      %h1
-        Strata Holidays
-#filler.filler-div
-.row
-  .span12#main-content
+- if current_user.user_type == User::CUSTOMER
+  #header-image
     .row
-      .span8
-        .current_user_requests
-          = render :partial => 'shared/current_user_requests'
-      .span3
-        = render :partial => 'shared/top_vc'
+      .span4
+        = render :partial => 'shared/request_iti'
+      .span7
+        %h1
+          Strata Holidays
+  #filler.filler-div
+  .row
+    .span12#main-content
+      .row
+        .span8
+          .current_user_requests
+            = render :partial => 'shared/current_user_requests'
+        .span3
+          = render :partial => 'shared/top_vc'
+- elsif current_user.user_type == User::VC
+  = render :partial => 'shared/vc_profile'
+-else

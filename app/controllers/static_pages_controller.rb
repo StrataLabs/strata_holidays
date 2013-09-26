@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
   end
 
   def admin
-    p @cust_iti_details = CustItiHeader.find(1).cust_iti_details
+    authenticate_admin_user
   end
 end
 

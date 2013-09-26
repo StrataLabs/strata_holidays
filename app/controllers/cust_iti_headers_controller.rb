@@ -1,6 +1,6 @@
 class CustItiHeadersController < ApplicationController
   before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index

@@ -1,6 +1,6 @@
 class PoaTypesController < ApplicationController
   before_action :set_poa_type, only: [:show, :edit, :update, :destroy]
-
+  before_filter :authenticate_admin_user
   # GET /poa_types
   # GET /poa_types.json
   def index
