@@ -13,7 +13,7 @@ class CustomersController < ApplicationController
   def show
     id = params[:id]
     @customer = Customer.find(id) unless id.nil?
-    @current_user_requests = CustItiRequest.where(:customer_id => current_user.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
+    @current_user_requests = CustItiRequest.where(:customer_id => current_user.customer.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
     render :layout => 'unwinders'
   end
 
@@ -67,7 +67,7 @@ class CustomersController < ApplicationController
   end
 
   def confirm_user_type!
-    if current_user.user_type != User::CUSTOMER
+    if current_user.user_type == User::VC
       flash[:error] = "Not authorized to view this page"
       respond_to do |format|
         format.html {redirect_to user_unwinders_path}

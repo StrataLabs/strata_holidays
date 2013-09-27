@@ -1,6 +1,6 @@
 class DestinationsController < ApplicationController
   before_action :set_destination, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin_user, except: [:show]
+  before_filter :authenticate_admin_user, except: [:show, :index]
   layout "unwinders"
   # GET /destinations
   # GET /destinations.json

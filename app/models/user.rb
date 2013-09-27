@@ -19,6 +19,12 @@ class User < ActiveRecord::Base
     self.save
   end
 
+  def self.build_user_for_customer(params)
+    password = "abcd1234"
+    new(:name => params[:name], :email => params[:email], :password => password,
+        :password_confirmation => password, :user_type => "C")
+  end
+
   def self.build(params)
     #password = Devise.friendly_token.first(8)
     password = "abcd1234"

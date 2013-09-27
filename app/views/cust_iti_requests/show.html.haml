@@ -1,52 +1,49 @@
-.container
-  .row
-    /.span4
-    / = render :partial => 'shared/request_iti'
-    .span4.box
-      .title
-        Request Info
-      .content
-        - cust = @cust_iti_request
-        .activity-header
-          = "You have  requested a package for #{cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")}  from #{cust.start_date} to #{cust.end_date} as a #{cust.dest_type} destination for #{cust.vacation_type.vac_type}."
-          / =link_to "A D Vishnu Prasad" , "#"
-          / = "requested a package on #{cust.created_at.strftime("%d-%B-%Y - %I:%M %p") }"
-        %h4 Details
-        .item-details
-          %p
-            %b Destination Type
-            =cust.dest_type
-          %p
-            %b Destiantions
-            /=cust.destinations.compact
-            =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
-          %p
-            %b Vacation Type
-            =cust.vacation_type.vac_type
-          %p
-            %b Start Date
-            =cust.start_date
-          %p
-            %b End Date
-            =cust.end_date || "NA"
-          %p
-            %b No of People
-            =cust.no_of_adults + cust.no_of_children
-            / =link_to "Request to All VC", '#', :class => ['btn btn-success']
+.row
+  .span4.box
+    .title
+      Request Info
+    .content
+      - cust = @cust_iti_request
+      .activity-header
+        = "You have  requested a package for #{cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ")}  from #{cust.start_date} to #{cust.end_date} as a #{cust.dest_type} destination for #{cust.vacation_type.vac_type}."
+        / =link_to "A D Vishnu Prasad" , "#"
+        / = "requested a package on #{cust.created_at.strftime("%d-%B-%Y - %I:%M %p") }"
+      %h4 Details
+      .item-details
+        %p
+          %b Destination Type
+          =cust.dest_type
+        %p
+          %b Destiantions
+          /=cust.destinations.compact
+          =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
+        %p
+          %b Vacation Type
+          =cust.vacation_type.vac_type
+        %p
+          %b Start Date
+          =cust.start_date
+        %p
+          %b End Date
+          =cust.end_date || "NA"
+        %p
+          %b No of People
+          =cust.no_of_adults + cust.no_of_children
+          / =link_to "Request to All VC", '#', :class => ['btn btn-success']
+        %br
+  .span8.box
+    .title
+      .icon-cogs
+      Assigned VC's for this request
+    .content
+      - unless cust.vc_assignments.empty?
+        - cust.vc_assignments.map do |vc|
+          = vc.vacation_consultant.name
+          |
+          = vc.status
           %br
-    .span8.box
-      .title
-        .icon-cogs
-        Assigned VC's for this request
-      .content
-        - unless cust.vc_assignments.empty?
-          - cust.vc_assignments.map do |vc|
-            = vc.vacation_consultant.name
-            |
-            = vc.status
-            %br
-        -else
-          To assign the above request to specific vacation consultants, please click assign to see our panel of vacation consultants.
-          =link_to "/search_vcs?cust_req_id=#{cust.id}", :method => :get, :class => 'btn' do
-            Assign
-          %br
+      -else
+        To assign the above request to specific vacation consultants, please click assign to see our panel of vacation consultants.
+        =link_to "/search_vcs?cust_req_id=#{cust.id}", :method => :get, :class => 'btn' do
+          Assign
+        %br

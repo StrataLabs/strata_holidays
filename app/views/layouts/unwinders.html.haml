@@ -1,3 +1,4 @@
+!!!
 %html
   %head
     = stylesheet_link_tag "application", :media => "all" if @body_id != "home"
@@ -32,7 +33,7 @@
             %li= link_to "About Us", '#'
             %li= link_to "Contact Us", '#'
       /= render :partial => 'flash', :object => flash
-      .container{:style => 'background:#fff;padding:0px'}
+      .container{:style => 'background:#fff;padding:0px;min-height:550px'}
         = yield
       %center#footer
         Strata Holidays &copy; 2013
@@ -52,3 +53,12 @@
   .modal-footer
     / = link_to "Done" , "#" , :class => 'btn btn-primary'
     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+
+:css
+  .container.dest-bg{
+    background-image: url("#{@pic_url}");
+    padding-left:0px;
+    padding-right:0px;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }

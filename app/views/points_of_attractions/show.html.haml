@@ -1,16 +1,17 @@
 - destination = @points_of_attraction.destination
+- @pic_url = destination.points_of_attractions.first.image.url
 %link{:href => "http://fonts.googleapis.com/css?family=Kaushan+Script", :rel => "stylesheet", :type => "text/css"}
 .container.dest-bg{:style => 'padding-left:0px;padding-right:0px'}
   .container{:style => 'padding-bottom:30px;padding-left:0px;padding-right:0px'}
-    .row{:style => 'padding:0px'}
-      .span5{:style => 'margin-left:50px'}
+    .row
+      .span6
         .dest-header
           .polaroid
             %img{:src => @points_of_attraction.image.url}
             %p
               = @points_of_attraction.name
       .span6
-        .well{:style => 'background:white;opacity:0.7;padding:10px;width:620px;height:auto'}
+        .description-body{:style => 'background:white;opacity:0.7;margin-right:10px;padding:10px;min-height:385px'}
           .dest-description
             %p
               = @points_of_attraction.description
@@ -24,12 +25,13 @@
                 %p
                   = destination.name
     %br
-    .row{:style => 'margin-left:30px;'}
-      -if current_user.admin?
-        = link_to "See all POAs", destinations_path, :class => 'btn'
-        = link_to t('.new', :default => t("helpers.links.new")), new_points_of_attraction_path, :class => 'btn'
-        = link_to t('.edit', :default => t("helpers.links.edit")), edit_points_of_attraction_path(@points_of_attraction), :class => 'btn'
-        = link_to t('.destroy', :default => t("helpers.links.destroy")), points_of_attraction_path(@points_of_attraction), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+    .row
+      .span12
+        -if current_user.admin?
+          = link_to "See all POAs", destinations_path, :class => 'btn'
+          = link_to t('.new', :default => t("helpers.links.new")), new_points_of_attraction_path, :class => 'btn'
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_points_of_attraction_path(@points_of_attraction), :class => 'btn'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), points_of_attraction_path(@points_of_attraction), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
 
 
 

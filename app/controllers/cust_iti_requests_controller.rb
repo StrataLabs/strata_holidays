@@ -1,6 +1,5 @@
 class CustItiRequestsController < ApplicationController
   before_action :set_cust_iti_request, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin_user
   # GET /cust_iti_requests
   # GET /cust_iti_requests.json
   def index

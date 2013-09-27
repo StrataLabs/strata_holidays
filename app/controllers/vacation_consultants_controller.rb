@@ -1,6 +1,6 @@
 class VacationConsultantsController < ApplicationController
   before_action :set_vacation_consultant, only: [:show, :edit, :update, :destroy]
-  before_filter :confirm_user_type!
+  before_filter :confirm_user_type!, only: [:create, :create_vc, :new, :edit, :update, :destroy, :index, :show]
 
   # GET /vacation_consultants
   # GET /vacation_consultants.json
@@ -122,7 +122,7 @@ class VacationConsultantsController < ApplicationController
   end
 
   def confirm_user_type!
-    if current_user.user_type != User::VC
+    if current_user.user_type == User::CUSTOMER
       flash[:error] = "Not authorized to view this page"
       respond_to do |format|
         format.html {redirect_to user_unwinders_path}
