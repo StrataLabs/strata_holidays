@@ -33,7 +33,7 @@
 												%a{:href => points_of_attraction_path(:id => p1.id)}
 													%img{:src => "#{p1.image.url(:thumb)}"}
 												%p
-													= p1.name
+													= p1.name.truncate(25)
 								-else
 									.item
 										- p.each do |p1|
@@ -41,7 +41,7 @@
 												%a{:href => points_of_attraction_path(:id => p1.id)}
 													%img{:src => "#{p1.image.url(:thumb)}"}
 												%p
-													= p1.name
+													= p1.name.truncate(25)
 						%a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
 						%a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;
 		%br

@@ -11,7 +11,7 @@
         %h1
           %a{:href => "/"} JustBooks
         #menu
-          .container
+          .container{:style => 'min-height:48px'}
             %h2.branch_name
               = current_user.name rescue ""
         #submenu
