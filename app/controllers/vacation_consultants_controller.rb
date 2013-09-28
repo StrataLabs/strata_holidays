@@ -1,6 +1,7 @@
 class VacationConsultantsController < ApplicationController
   before_action :set_vacation_consultant, only: [:show, :edit, :update, :destroy]
-  before_filter :confirm_user_type!, only: [:create, :create_vc, :new, :edit, :update, :destroy, :index, :show]
+  before_filter :authenticate_admin_user, only: [:create, :create_vc, :new, :destroy, :index]
+  before_filter :confirm_user_type!, only: [:edit, :update, :show]
 
   # GET /vacation_consultants
   # GET /vacation_consultants.json

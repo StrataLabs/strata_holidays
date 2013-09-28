@@ -10,8 +10,12 @@ task :build_user_record_for_customers => :environment do
       else
         c.user = u
       end
-      c.user.save!
-      c.save!
+      begin
+        c.user.save!
+        c.save!
+      rescue => ex
+        Rails.logger.error ex.message
+      end
     end
   end
 end
