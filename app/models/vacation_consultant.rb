@@ -2,6 +2,7 @@ class VacationConsultant < ActiveRecord::Base
   has_many :vc_assignments
   has_many :consultant_customer_destinations
   has_many :testimonials
+  has_and_belongs_to_many :destinations
   belongs_to :user, :autosave => true
   attr_accessor :status
   validates_presence_of ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations"]

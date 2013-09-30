@@ -1,3 +1,13 @@
+%h1 Pending VC Registrations
+%table.table
+  -VcRegistration.where(:status => 'New').order('created_at desc').each do |vc_reg|
+    %tr
+      %td= vc_reg.name
+      %td= vc_reg.email
+      %td= link_to "Approve", create_vc_path(:vc_reg_id => vc_reg.id), :class => 'btn btn-mini'
+      %td= link_to "Decline", vc_registration_path(:id => vc_reg.id), :method => :delete, :class => 'btn btn-mini'
+    %br
+%hr
 - model_class = VcRegistration
 .page-header
   %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize

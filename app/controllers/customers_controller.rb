@@ -1,12 +1,12 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
-  before_filter :confirm_user_type!, only: [:show, :edit, :update]
+  before_filter :confirm_user_type!, only: [:show, :edit, :update, :search_vcs, :assign_vcs]
   before_filter :authenticate_admin_user, except: [:show, :edit, :update]
 
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.paginate(:page => params[:page])
+    @customers = Customer.paginate(:page => params[:page] || 1)
   end
 
   # GET /customers/1
@@ -68,9 +68,16 @@ class CustomersController < ApplicationController
   end
 
   def confirm_user_type!
-    if current_user.user_type == User::VC
+    if current_user
+      if current_user.user_type == User::VC
+        respond_to do |format|
+          format.html {redirect_to user_unwinders_path}
+          format.xml
+        end
+      end
+    else
       respond_to do |format|
-        format.html {redirect_to user_unwinders_path}
+        format.html {redirect_to user_session_path}
         format.xml
       end
     end

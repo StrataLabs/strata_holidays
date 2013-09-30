@@ -1,6 +1,6 @@
 class VcRegistrationsController < ApplicationController
   before_action :set_vc_registration, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin_user, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin_user, only: [:edit, :update, :destroy]
   # GET /vc_registrations
   # GET /vc_registrations.json
   def index
@@ -24,8 +24,10 @@ class VcRegistrationsController < ApplicationController
   # POST /vc_registrations
   # POST /vc_registrations.json
   def create
+    unless params[:vc_registration][:preferred_locations].nil?
+      params[:vc_registration][:preferred_locations].reject! { |c| c.empty? }
+    end
     @vc_registration = VcRegistration.new(vc_registration_params)
-
     respond_to do |format|
       if @vc_registration.save
         format.html { redirect_to @vc_registration, notice: 'Vc registration was successfully created.' }
@@ -40,6 +42,9 @@ class VcRegistrationsController < ApplicationController
   # PATCH/PUT /vc_registrations/1
   # PATCH/PUT /vc_registrations/1.json
   def update
+    unless params[:vc_registration][:preferred_locations].nil?
+      params[:vc_registration][:preferred_locations].reject! { |c| c.empty? }
+    end
     respond_to do |format|
       if @vc_registration.update(vc_registration_params)
         format.html { redirect_to @vc_registration, notice: 'Vc registration was successfully updated.' }
@@ -69,6 +74,6 @@ class VcRegistrationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vc_registration_params
-      params.require(:vc_registration).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :preferred_locations, :lphone, :mphone, :email, :comments, :country)
+      params.require(:vc_registration).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :lphone, :mphone, :email, :comments, :country, :preferred_locations => [])
     end
 end

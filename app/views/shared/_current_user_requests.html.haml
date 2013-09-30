@@ -39,9 +39,9 @@
           / =link_to "Request to All VC", '#', :class => ['btn btn-success']
         %br
         - unless cust.vc_assignments.empty?
-          %p Assigned VC's for this request
+          %p Assigned VCs for this request
           - cust.vc_assignments.map do |vc|
-            = link_to "#{vc.vacation_consultant.name}", vacation_consultant_path(vc.vacation_consultant)
+            = link_to "#{vc.vacation_consultant.name}", vc_unwinders_path(vc.vacation_consultant)
             |
           .pull-right
             = link_to "Click here for more info", cust_iti_request_path(:id => cust.id), :id => 'vc-assignment-info'

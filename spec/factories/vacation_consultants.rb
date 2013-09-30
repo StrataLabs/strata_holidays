@@ -13,7 +13,7 @@ FactoryGirl.define do
     preferred_locations "MyString"
     lphone "MyString"
     mphone "1234567890"
-    email "MyString"
+    sequence(:email) {|n| "vc#{n}@example.com"}
     comments "MyString"
     country "MyString"
   end

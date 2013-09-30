@@ -12,5 +12,6 @@ FactoryGirl.define do
     mphone "MyString"
     email "MyString"
     comments "MyString"
+    user_id 1
   end
 end
