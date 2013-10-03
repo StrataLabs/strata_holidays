@@ -6,10 +6,10 @@ describe VacationConsultant do
     it { should have_many :consultant_customer_destinations}
   end
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:vacation_consultant) }
-      all_coulmns = ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations"]
-      all_coulmns.each do |column|
+      all_columns = ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations"]
+      all_columns.each do |column|
         it { should validate_presence_of column }
       end
     end
@@ -28,6 +28,7 @@ describe VacationConsultant do
         vc = VacationConsultant.build_from_vc_reg(vc_reg)
         vc.name.should == vc_reg.name
         vc.mphone.should == vc_reg.mphone
+        vc.user.should be_valid
       end
     end
   end

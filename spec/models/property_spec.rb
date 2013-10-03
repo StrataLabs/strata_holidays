@@ -5,7 +5,7 @@ describe Property do
     context "association" do
       it {should belong_to :destination}
     end
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:property) }
       it { should validate_presence_of :destination_id }
       it { should validate_presence_of :name }

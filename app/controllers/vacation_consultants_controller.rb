@@ -1,7 +1,7 @@
 class VacationConsultantsController < ApplicationController
   before_action :set_vacation_consultant, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin_user, only: [:create, :create_vc, :new, :destroy, :index]
-  before_filter :confirm_user_type!, only: [:edit, :update, :show]
+  before_filter :confirm_user_type, only: [:edit, :update, :show]
   before_filter :confirm_customer_user, only: [:search_vcs, :assign_vcs]
 
   # GET /vacation_consultants
@@ -63,6 +63,9 @@ class VacationConsultantsController < ApplicationController
   # PATCH/PUT /vacation_consultants/1
   # PATCH/PUT /vacation_consultants/1.json
   def update
+    unless params[:vacation_consultant][:preferred_locations].nil?
+      params[:vacation_consultant][:preferred_locations].reject! { |c| c.empty? }
+    end
     respond_to do |format|
       if @vacation_consultant.update(vacation_consultant_params)
         format.html { redirect_to @vacation_consultant, notice: 'Vacation consultant was successfully updated.' }
@@ -114,15 +117,15 @@ class VacationConsultantsController < ApplicationController
     end
   end
 
-  def edit_vc_assignment
-    new_status = params[:status]
-    vc = VcAssignment.find(params[:vc_assign_id])
-    vc.status = new_status
-    vc.save
-    redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
-  end
+  # def edit_vc_assignment
+  #   new_status = params[:status]
+  #   vc = VcAssignment.find(params[:vc_assign_id])
+  #   vc.status = new_status
+  #   vc.save
+  #   redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
+  # end
 
-  def confirm_user_type!
+  def confirm_user_type
     if current_user
       if current_user.user_type == User::CUSTOMER
         respond_to do |format|
@@ -163,6 +166,6 @@ class VacationConsultantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacation_consultant_params
-      params.require(:vacation_consultant).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :preferred_locations, :lphone, :mphone, :email, :comments, :country)
+      params.require(:vacation_consultant).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :lphone, :mphone, :email, :comments, :country, :preferred_locations => [])
     end
 end

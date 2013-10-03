@@ -8,7 +8,7 @@ describe CustItiDetail do
     it { should have_many :iti_cust_dest_poa_details }
   end
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:cust_iti_detail) }
       all_coulmns = CustItiDetail.column_names - ["id"] - ["created_at"] - ["updated_at"]
       all_coulmns.each do |column|

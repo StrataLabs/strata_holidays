@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   validate :presence_of_name
-  has_one :customer, :dependent => :destroy
+  has_one :customer, :dependent => :destroy, :autosave => true
   has_one :vacation_consultant, :autosave => true
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

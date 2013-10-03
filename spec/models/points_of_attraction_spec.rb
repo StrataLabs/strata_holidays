@@ -5,7 +5,7 @@ describe PointsOfAttraction do
     it { should belong_to :destination }
   end
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:points_of_attraction) }
       it { should validate_presence_of :name }
       it { should validate_presence_of :destination_id }

@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe VcRegistration do
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:vc_registration) }
       all_coulmns = ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations", "status"]
       all_coulmns.each do |column|

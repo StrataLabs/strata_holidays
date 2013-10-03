@@ -1,6 +1,6 @@
 class DestItiDetailsController < ApplicationController
   before_action :set_dest_iti_detail, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin_user
+  before_filter :confirm_user_type
   # GET /dest_iti_details
   # GET /dest_iti_details.json
   def index
@@ -58,6 +58,23 @@ class DestItiDetailsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to dest_iti_details_url }
       format.json { head :no_content }
+    end
+  end
+
+  def confirm_user_type
+    if current_user
+      if current_user.user_type == User::CUSTOMER
+        flash[:error] = "Not authorized to view this page"
+        respond_to do |format|
+          format.html {redirect_to user_unwinders_path}
+          format.xml
+        end
+      end
+    else
+      respond_to do |format|
+        format.html {redirect_to user_session_path}
+        format.xml
+      end
     end
   end
 

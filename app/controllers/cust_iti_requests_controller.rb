@@ -27,8 +27,7 @@ class CustItiRequestsController < ApplicationController
     unless params[:cust_iti_request][:destinations].nil?
       params[:cust_iti_request][:destinations].reject! { |c| c.empty? }
     end
-    p params
-    p @cust_iti_request = CustItiRequest.new(cust_iti_request_params)
+    @cust_iti_request = CustItiRequest.new(cust_iti_request_params)
     respond_to do |format|
       if @cust_iti_request.save
         format.html { redirect_to @cust_iti_request, notice: 'Cust iti request was successfully created.' }

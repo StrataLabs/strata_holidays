@@ -15,12 +15,14 @@ describe VacationConsultantsController do
     User.delete_all
     Customer.delete_all
     VacationConsultant.delete_all
+    CustItiRequest.delete_all
+    VcAssignment.delete_all
   end
 
 
   context "GET index" do
 
-    it "does not access" do
+    it "does not allow access without logging in" do
       sign_out @user
       get :index
       response.should redirect_to(user_session_path)
@@ -46,7 +48,7 @@ describe VacationConsultantsController do
   end
 
   context "GET show" do
-    it "does not access" do
+    it "does not allow access without logging in" do
       sign_out @user
       get :show, {:id => @user.vacation_consultant.to_param}
       response.should redirect_to(user_session_path)
@@ -75,7 +77,7 @@ describe VacationConsultantsController do
   end
 
   context "DELETE destroy" do
-    it "does not allow" do
+    it "does not allow access without logging in" do
       sign_out @user
       delete :destroy, {:id => @user.vacation_consultant.to_param}
       response.should redirect_to(user_session_path)
@@ -109,7 +111,7 @@ describe VacationConsultantsController do
       @vc_reg = FactoryGirl.create(:vc_registration)
     end
 
-    it "does not access" do
+    it "does not allow access without logging in" do
       sign_out @user
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       response.should redirect_to(user_session_path)
@@ -131,6 +133,82 @@ describe VacationConsultantsController do
       sign_in @user
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       @vc_reg.reload.status.should == "Accepted"
+    end
+  end
+
+  context "GET search_vcs" do
+    before(:each) do
+      @cust_iti_req = FactoryGirl.create(:cust_iti_request, :customer_id => @user.id)
+    end
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :search_vcs, {:cust_req_id => @cust_iti_req.id.to_param}
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows customer " do
+      sign_in @user
+      get :search_vcs
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = 'C'
+      @user.save
+      @user.vacation_consultant.index!
+      sign_out @user
+      sign_in @user
+      get :search_vcs
+      assigns(:vcs).should eq([@user.vacation_consultant])
+    end
+
+    it "allows admin" do
+      @user.user_type = 'A'
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :search_vcs
+      assigns(:vcs).should eq([@user.vacation_consultant])
+      get :search_vcs, {:keyword => "myname"}
+      assigns(:vcs).should == []
+    end
+  end
+
+  context "GET assign_vcs" do
+    before(:each) do
+      sign_out @user
+      vc1 = FactoryGirl.create(:vacation_consultant)
+      @user1 = FactoryGirl.create(:user, :user_type => "V")
+      vc1.user = @user1
+      vc1.save
+      sign_in @user1
+      @cust_iti_req = FactoryGirl.create(:cust_iti_request, :customer_id => @user1.id)
+    end
+
+    it "does not allow access without logging in" do
+      sign_out @user1
+      get :assign_vcs, {:cust_req_id => @cust_iti_req.to_param, :vc_ids => [@user1.vacation_consultant.id.to_param]}
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows customer and admin" do
+      sign_in @user1
+      get :assign_vcs, {:cust_req_id => @cust_iti_req.to_param, :vc_ids => [@user1.vacation_consultant.id.to_param]}
+      response.should redirect_to(user_unwinders_path)
+      @user1.user_type = 'C'
+      @user1.save
+      sign_out @user1
+      sign_in @user1
+      get :assign_vcs, {:cust_req_id => @cust_iti_req.to_param, :vc_ids => [@user1.vacation_consultant.id.to_param]}
+      vc_assignment = VcAssignment.last
+      vc_assignment.cust_iti_request_id.should == @cust_iti_req.id
+      vc_assignment.vacation_consultant_id.should == @user1.vacation_consultant.id
+      @user1.user_type = 'A'
+      @user1.save
+      sign_out @user1
+      sign_in @user1
+      get :assign_vcs, {:cust_req_id => @cust_iti_req.to_param, :vc_ids => [@user1.vacation_consultant.id.to_param]}
+      vc_assignment = VcAssignment.last
+      vc_assignment.cust_iti_request_id.should == @cust_iti_req.id
+      vc_assignment.vacation_consultant_id.should == @user1.vacation_consultant.id
     end
   end
 end

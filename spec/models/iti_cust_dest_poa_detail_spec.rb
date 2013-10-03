@@ -7,7 +7,7 @@ describe ItiCustDestPoaDetail do
     it { should belong_to :points_of_attraction }
   end
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:iti_cust_dest_poa_detail) }
       all_coulmns = ItiCustDestPoaDetail.column_names - ["id"] - ["created_at"] - ["updated_at"] - ["comments"]
       all_coulmns.each do |column|

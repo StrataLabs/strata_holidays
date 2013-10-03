@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe ItiDestinationXref do
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:iti_destination_xref) }
       it { should validate_presence_of :iti_header_id  }
       it { should validate_presence_of :destination_id }

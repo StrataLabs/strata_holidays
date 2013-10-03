@@ -6,7 +6,7 @@ describe CustItiHeader do
     it { should have_many :cust_iti_details }
   end
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:cust_iti_header) }
       all_coulmns = CustItiHeader.column_names - ["id"] - ["created_at"] - ["updated_at"]
       all_coulmns.each do |column|

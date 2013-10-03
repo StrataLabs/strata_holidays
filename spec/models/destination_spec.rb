@@ -6,7 +6,7 @@ describe Destination do
   end
 
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:destination) }
       it { should validate_presence_of :name }
       it { should validate_presence_of :description }

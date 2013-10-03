@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe PoaType do
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:poa_type) }
       it { should validate_presence_of :description }
       it { should validate_presence_of :time_can_be_spent }

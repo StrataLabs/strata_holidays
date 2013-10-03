@@ -11,7 +11,7 @@
   = f.input :planning
   = f.input :booking
   = f.input :preferred_neighborhood, :as => :text
-  = f.input :preferred_locations, :as => :text
+  = f.input :preferred_locations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations", class: 'chzn-select' ,:multiple => true }
   = f.input :comments, :as => :text
   .form-actions
     = f.button :submit, :class => 'btn-primary'

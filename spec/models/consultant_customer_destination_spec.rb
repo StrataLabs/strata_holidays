@@ -8,7 +8,7 @@ describe ConsultantCustomerDestination do
   end
 
   context "validation" do
-    context "presense" do
+    context "presence" do
       subject { FactoryGirl.create(:consultant_customer_destination) }
       it { should validate_presence_of :vacation_consultant_id }
       it { should validate_presence_of :customer_id }
