@@ -36,12 +36,6 @@ jQuery(document).ready(function($) {
 $("#element").popover();
 });
 
-$(function() {
-  $('#cust_iti_request_start_date').datepicker();
-  $('#cust_iti_request_end_date').datepicker();
-});
-
-
 // $(function() {
 //   $(".current_user_requests .pagination a").on("click", function() {
 //     $.getScript(this.href);

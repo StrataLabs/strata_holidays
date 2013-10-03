@@ -14,7 +14,7 @@
           %b Destination Type
           =cust.dest_type
         %p
-          %b Destiantions
+          %b Destinations
           /=cust.destinations.compact
           =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
         %p
@@ -22,10 +22,10 @@
           =cust.vacation_type.vac_type
         %p
           %b Start Date
-          =cust.start_date
+          =cust.start_date.strftime("%d-%b-%y")
         %p
           %b End Date
-          =cust.end_date || "NA"
+          =cust.end_date.strftime("%d-%b-%y") || "NA"
         %p
           %b No of People
           =cust.no_of_adults + cust.no_of_children

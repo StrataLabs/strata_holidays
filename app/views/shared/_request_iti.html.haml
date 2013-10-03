@@ -2,7 +2,7 @@
   .title
     Request Package
   .content
-    = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal'}) do |f|
+    = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
       /= f.input :customer_id ,:input_html => { :value => current_user.customer.id } , :as => 'hidden'
       = f.input :dest_type, :collection => ["Single", "Multiple"]
       = f.association :vacation_type, :label_method => :vac_type, :input_html => {:type => 'select'}

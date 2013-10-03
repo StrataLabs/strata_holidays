@@ -158,7 +158,18 @@ padding-right: 5px;
   height: 25px;
   background: $white;
 }
-
+.filler-div-home{
+ font-weight:bold;
+ text-align:center;
+ color:black;
+ font-size:13pt;
+ padding-bottom:14px;
+ margin-top:0px;
+ line-height:11px;
+ padding-bottom:4px;
+ background:#f1f1f0;
+ height:25px;
+}
 .home-box {
   background: $back-color;
   -webkit-box-shadow: 0 0 5px#888;

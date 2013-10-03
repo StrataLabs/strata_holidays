@@ -1,57 +1,81 @@
+%title
+  Unwinders
+  |
+  = @destination.name
 %link{:href => "http://fonts.googleapis.com/css?family=Kaushan+Script", :rel => "stylesheet", :type => "text/css"}
-- @pic_url = @destination.points_of_attractions.first.image.url
 .container.dest-bg
-	.container{:style => 'padding-bottom:30px;padding-left:0px;padding-right:0px'}
-		.row
-			.span6
-				.dest-header
-					.polaroid
-						%img{:src => @destination.image.url}
-							%p
-								= @destination.name
-			.span6
-				.description-body{:style => 'background:white;opacity:0.7;margin-right:10px;padding:10px;min-height:400px'}
-					.dest-description
-						%p
-							= @destination.description
-					%br
-					.vc-hr
-					%br
-					.carousel-header
-						Points of Attraction in
-						= "#{@destination.name}"
-					%br
-					#myCarousel.carousel.slide
-						/ Carousel items
-						.carousel-inner
-							- destination_array = @destination.points_of_attractions.each_slice(3).to_a
-							- destination_array.each_with_index do |p,index|
-								-if index == 0
-									.active.item
-										- p.each do |p1|
-											%center.car-component
-												%a{:href => points_of_attraction_path(:id => p1.id)}
-													%img{:src => "#{p1.image.url(:thumb)}"}
-												%p
-													= p1.name.truncate(25)
-								-else
-									.item
-										- p.each do |p1|
-											.car-component
-												%a{:href => points_of_attraction_path(:id => p1.id)}
-													%img{:src => "#{p1.image.url(:thumb)}"}
-												%p
-													= p1.name.truncate(25)
-						%a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
-						%a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;
-		%br
-		.row
-			.span12
-				-if current_user && current_user.admin?
-					= link_to "See all Destinations", destinations_path, :class => 'btn'
-					= link_to t('.new', :default => t("helpers.links.new")), new_destination_path, :class => 'btn'
-					= link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'
-					= link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(@destination), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
+  .container{:style => 'padding-bottom:30px;padding-left:0px;padding-right:0px'}
+    - @pic_url = @destination.points_of_attractions.first.image.url
+    .row
+      .span6
+        .dest-header
+          .polaroid
+            %img{:src => @destination.image.url}
+              %p
+                = @destination.name
+      .span6
+        .description-body{:style => 'background:white;opacity:0.7;margin-right:10px;padding:10px;min-height:400px'}
+          .wishlist-btn.pull-right
+            -if current_user
+              = link_to "Add to Wishlist", "#", :class => 'btn btn-primary'
+          %br
+          .dest-description
+            %p
+              = @destination.description
+          %br
+          .vc-hr
+          %br
+          .carousel-header
+            Points of Attraction in
+            = "#{@destination.name}"
+          %br
+          #myCarousel.carousel.slide
+            / Carousel items
+            .carousel-inner
+              - destination_array = @destination.points_of_attractions.each_slice(3).to_a
+              - destination_array.each_with_index do |p,index|
+                -if index == 0
+                  .active.item
+                    - p.each do |p1|
+                      %center.car-component
+                        %a{:href => points_of_attraction_path(:id => p1.id)}
+                          %img{:src => "#{p1.image.url(:thumb)}"}
+                        %p
+                          = p1.name.truncate(25)
+                -else
+                  .item
+                    - p.each do |p1|
+                      .car-component
+                        %a{:href => points_of_attraction_path(:id => p1.id)}
+                          %img{:src => "#{p1.image.url(:thumb)}"}
+                        %p
+                          = p1.name.truncate(25)
+            %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"} &lsaquo;
+            %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"} &rsaquo;
+    %br
+.row
+  .span12
+    .box{:style => 'color:black;font-size:13pt;margin-left:10px;text-align:center'}
+      .title
+        Consultants available for
+        = "#{@destination.name}"
+      .row.content{:style => 'margin-left:0px;'}
+        -@vcs.each do |vc|
+          .span2.box
+            .vc_image1.imgborder
+              = image_tag("#{asset_path("unwinders/divya.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :class => 'img-circle')
+            %br
+            %b{:style => "font-size:20px  "}
+              = link_to "#{vc.name}", vc_unwinders_path(:id => "#{vc.id}")
+            %br
+              = vc.city
+.row
+  .span12
+    -if current_user && current_user.admin?
+      = link_to "See all Destinations", destinations_path, :class => 'btn'
+      = link_to t('.new', :default => t("helpers.links.new")), new_destination_path, :class => 'btn'
+      = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'
+      = link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(@destination), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
 
 
 

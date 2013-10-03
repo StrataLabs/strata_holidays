@@ -44,6 +44,10 @@
 /   .modal-footer
 /     /= link_to "Done" , edit_vc_assignment(:status => 'in_process') , :class => 'btn btn-primary', "data-dismiss" => "modal"
 /     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+%title
+  Unwinders
+  |
+  = "#{@vacation_consultant.name}"
 .container{:style => 'background:#f0f0f0;padding:0px'}
   - model_class = VacationConsultant
   #profile{:style => 'padding-left:20px;padding-top:80px'}

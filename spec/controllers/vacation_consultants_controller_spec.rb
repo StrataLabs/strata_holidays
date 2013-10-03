@@ -5,7 +5,8 @@ describe VacationConsultantsController do
     solr_setup
   end
   before(:each) do
-    vc = FactoryGirl.create(:vacation_consultant)
+    @destination = FactoryGirl.create(:destination)
+    vc = FactoryGirl.create(:vacation_consultant, :preferred_locations => [@destination.id.to_s])
     @user = FactoryGirl.create(:user, :user_type => "V")
     vc.user = @user
     vc.save
@@ -133,6 +134,73 @@ describe VacationConsultantsController do
       sign_in @user
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       @vc_reg.reload.status.should == "Accepted"
+      VacationConsultant.last.destinations.first.id = @destination.id
+    end
+  end
+
+  context "POST update" do
+    before(:each) do
+      @d1 = FactoryGirl.create(:destination)
+      @d2 = FactoryGirl.create(:destination)
+      @vac_con = FactoryGirl.create(:vacation_consultant, :preferred_locations => [@d1.id.to_s,@d2.id.to_s])
+    end
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      post :update, :id => @vac_con.to_param
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows VC and admin" do
+      sign_in @user
+      @vac_con.destinations.count.should == 2
+      @vac_con.preferred_locations = [@destination.id.to_s]
+      post :update,{:id => @vac_con.id, :vacation_consultant => {
+        :name => @vac_con.name,
+        :address_1 => @vac_con.address_1,
+        :address_2 => @vac_con.address_2,
+        :city => @vac_con.city,
+        :state => @vac_con.state,
+        :preferred_neighborhood => @vac_con.preferred_neighborhood,
+        :planning => @vac_con.planning,
+        :booking => @vac_con.booking,
+        :preferred_locations  => [@destination.id.to_s],
+        :lphone => @vac_con.lphone,
+        :mphone => @vac_con.mphone,
+        :email => @vac_con.email,
+        :comments => @vac_con.comments,
+        :country => @vac_con.country
+         }}
+      @vac_con.destinations.count.should == 1
+      @vac_con.destinations.first.id.should == @destination.id
+      @user.user_type = 'C'
+      @user.save
+      sign_out @user
+      sign_in @user
+      post :update, {:id => @vac_con.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = 'A'
+      @user.save
+      sign_out @user
+      sign_in @user
+      @vac_con.destinations.count.should == 1
+      post :update,{:id => @vac_con.id, :vacation_consultant => {
+        :name => @vac_con.name,
+        :address_1 => @vac_con.address_1,
+        :address_2 => @vac_con.address_2,
+        :city => @vac_con.city,
+        :state => @vac_con.state,
+        :preferred_neighborhood => @vac_con.preferred_neighborhood,
+        :planning => @vac_con.planning,
+        :booking => @vac_con.booking,
+        :preferred_locations  => [@destination.id.to_s,@d1.id.to_s,@d2.id.to_s],
+        :lphone => @vac_con.lphone,
+        :mphone => @vac_con.mphone,
+        :email => @vac_con.email,
+        :comments => @vac_con.comments,
+        :country => @vac_con.country
+         }}
+      @vac_con.destinations.count.should == 3
     end
   end
 

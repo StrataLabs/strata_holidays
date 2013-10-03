@@ -27,6 +27,7 @@ class CustItiRequestsController < ApplicationController
     unless params[:cust_iti_request][:destinations].nil?
       params[:cust_iti_request][:destinations].reject! { |c| c.empty? }
     end
+    params[:cust_iti_request][:no_of_children] = 0 unless params[:cust_iti_request][:no_of_children].present?
     @cust_iti_request = CustItiRequest.new(cust_iti_request_params)
     respond_to do |format|
       if @cust_iti_request.save

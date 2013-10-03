@@ -15,6 +15,7 @@ class VcRegistrationsController < ApplicationController
   # GET /vc_registrations/new
   def new
     @vc_registration = VcRegistration.new
+    render :layout => 'unwinders'
   end
 
   # GET /vc_registrations/1/edit
@@ -37,6 +38,7 @@ class VcRegistrationsController < ApplicationController
         format.json { render json: @vc_registration.errors, status: :unprocessable_entity }
       end
     end
+    render :layout => 'unwinders'
   end
 
   # PATCH/PUT /vc_registrations/1

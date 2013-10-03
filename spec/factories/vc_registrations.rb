@@ -10,7 +10,7 @@ FactoryGirl.define do
     preferred_neighborhood "MyString"
     planning false
     booking false
-    preferred_locations "MyString"
+    preferred_locations ["1","2","3","4"]
     lphone "MyString"
     mphone "1234567890"
     sequence(:email) {|n| "person#{n}@example.com"}

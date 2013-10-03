@@ -11,6 +11,8 @@ class DestinationsController < ApplicationController
   # GET /destinations/1
   # GET /destinations/1.json
   def show
+    @vcs = @destination.vacation_consultants
+    @vcs = VacationConsultant.all.sort_by{rand}[0..2] if !@vcs.present?
   end
 
   # GET /destinations/new
