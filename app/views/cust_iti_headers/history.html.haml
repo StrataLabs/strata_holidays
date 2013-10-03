@@ -1,15 +1,19 @@
+%title
+  Unwinders | History
 .container
   .row-fluid
     .well.span8
       .history-large-pic
         .history-image-info
           .heading{:style => 'font-size:20px;padding-bottom:10px'}
-            Pondicherry
-          Pondicherry is the most popular tourist attraction in Kerala. A houseboat cruise in these backwaters is a delightful experience. Alappuzha is also the access point for Annual Nehru Trophy Boat Race, held on the Punnamada Lake, one of the most popular of the boat races in India.
+            = @cust_iti_header.cust_iti_details.first.destination.name
+          = @cust_iti_header.cust_iti_details.first.destination.description
         .row.span4.offset4.history-image-info{:style => 'text-align:center'}
-          19-07-2013 to 23-07-2013
+          = @cust_iti_header.trip_start_date.strftime("%d-%m-%y")
+          to
+          = @cust_iti_header.trip_end_date.strftime("%d-%m-%y")
         .row.span4.offset4.btn.btn-success.btn-large#comment-section
-          Trip Feedback ?
+          Trip Feedback?
     .span4.well
       - ary = ["Destinations", "Poa", "Property"]
       - 4.times do |s|
@@ -36,18 +40,19 @@
       / - @cust_iti_header.cust_iti_details.each_with_index do |details, index|
       /   = "Day : #{details.dest_start_date}"
       /   %br
-      %div{:style => 'font-size:20px;font-weight:bold'}Pondicherry
+      %div{:style => 'font-size:20px;font-weight:bold'}
+        = @cust_iti_header.cust_iti_details.first.destination.name
       %a#element{"data-content" => "Comment Section", "data-original-title" => "Comments On Destination", "data-toggle" => "popover", :href => "#", :title => "", "data-remote" => true}
         .icon-comments
 
       .tabbable.tabs-left
         %ul.nav.nav-tabs
           %li.active
-            %a{"data-toggle" => "tab", :href => "#lA"} Day 1
+            %a{"data-toggle" => "tab", :href => "#lA"} Destination 1
           %li
-            %a{"data-toggle" => "tab", :href => "#lB"} Day 2
+            %a{"data-toggle" => "tab", :href => "#lB"} Destination 2
           %li
-            %a{"data-toggle" => "tab", :href => "#lC"} Day 3
+            %a{"data-toggle" => "tab", :href => "#lC"} Destination 3
         .tab-content
           #lA.tab-pane.active
             %p
