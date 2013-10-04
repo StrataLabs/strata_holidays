@@ -76,27 +76,3 @@
       = link_to t('.new', :default => t("helpers.links.new")), new_destination_path, :class => 'btn'
       = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'
       = link_to t('.destroy', :default => t("helpers.links.destroy")), destination_path(@destination), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'
-
-
-
-/ - model_class = Destination
-/ .dest-header
-/   %h1=t '.title', :default => model_class.model_name.human.titleize
-
-/ %p
-/   %strong= model_class.human_attribute_name(:name) + ':'
-/   %br
-/   = @destination.name
-/   %br
-/   %strong= model_class.human_attribute_name(:description) + ':'
-/   %br
-/   = @destination.description
-/   %br
-/   %strong= "Available Images:"
-/   %br
-/   .polaroid
-/     %img{:src => @destination.image.url(:medium)}
-/   /= image_tag @destination.image.url(:medium)
-/   /= image_tag @destination.image.url(:square)
-/   /= image_tag @destination.image.url(:thumb)
-/   /= image_tag @destination.image.url(:thumbnail)

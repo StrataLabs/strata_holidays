@@ -1,97 +1,151 @@
 %title
   Unwinders | History
-.container
-  .row-fluid
-    .well.span8
-      .history-large-pic
-        .history-image-info
-          .heading{:style => 'font-size:20px;padding-bottom:10px'}
-            = @cust_iti_header.cust_iti_details.first.destination.name
-          = @cust_iti_header.cust_iti_details.first.destination.description
-        .row.span4.offset4.history-image-info{:style => 'text-align:center'}
-          = @cust_iti_header.trip_start_date.strftime("%d-%m-%y")
-          to
-          = @cust_iti_header.trip_end_date.strftime("%d-%m-%y")
-        .row.span4.offset4.btn.btn-success.btn-large#comment-section
-          Trip Feedback?
-    .span4.well
-      - ary = ["Destinations", "Poa", "Property"]
-      - 4.times do |s|
-        - if s.even?
-          = ary[Random.rand(3).to_i]
-        .row-fluid
-          .span6
-            %div{:id => "history-poa-"+Random.rand(100).to_s}
-              = link_to "#" do
-                = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
-            .contenthover{:id => "#{Random.rand(100)}"}
-              Poa Details with Time
-          .span6
-            #history-poa
-              = link_to "#" do
-                = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
-            .contenthover{:id => "#{Random.rand(100)}"}
-              Poa Details with Time
-        %br
-        - if s.even?
-          %hr
-  .row-fluid
-    .span12.well
-      / - @cust_iti_header.cust_iti_details.each_with_index do |details, index|
-      /   = "Day : #{details.dest_start_date}"
-      /   %br
-      %div{:style => 'font-size:20px;font-weight:bold'}
-        = @cust_iti_header.cust_iti_details.first.destination.name
-      %a#element{"data-content" => "Comment Section", "data-original-title" => "Comments On Destination", "data-toggle" => "popover", :href => "#", :title => "", "data-remote" => true}
-        .icon-comments
+.tabbable
+  / Only required for left/right tabs
+  - details = @cust_iti_header.cust_iti_details
+  %ul.nav.nav-tabs
+    -details.each_with_index do |d,index|
+      -if index == 0
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab_#{index}"}
+            = d.destination.name
+      -else
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab_#{index}"}
+            = d.destination.name
+  .tab-content
+    -details.each_with_index do |d,index|
+      -if index == 0
+        %div{:id => "tab_#{index}", :class => "tab-pane active"}
+          .container
+            .row-fluid
+              .well.span6.history-large-pic{:style => "background-image:url(#{d.destination.image.url});background-size:auto;background-repeat:no-repeat;"}
+                .history-image-info
+                  .heading{:style => 'font-size:20px;padding-bottom:10px'}
+                    = d.destination.name
+                  = d.destination.description
+                .row.span4.offset4.history-image-info{:style => 'text-align:center'}
+                  = @cust_iti_header.trip_start_date.strftime("%d-%m-%y")
+                  to
+                  = @cust_iti_header.trip_end_date.strftime("%d-%m-%y")
+                .row.span4.offset4.btn.btn-success.btn-large#comment-section
+                  Trip Feedback?
+              .span4.well
+                - ary = ["Destinations", "Poa", "Property"]
+                - 4.times do |s|
+                  - if s.even?
+                    = ary[Random.rand(3).to_i]
+                  .row-fluid
+                    .span6
+                      %div{:id => "history-poa-"+Random.rand(100).to_s}
+                        = link_to "#" do
+                          = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
+                      .contenthover{:id => "#{Random.rand(100)}"}
+                        Poa Details with Time
+                    .span6
+                      #history-poa
+                        = link_to "#" do
+                          = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
+                      .contenthover{:id => "#{Random.rand(100)}"}
+                        Poa Details with Time
+                  %br
+                  - if s.even?
+                    %hr
+      -else
+        %div{:id => "tab_#{index}", :class => "tab-pane"}
+          .container
+            .row-fluid
+              .well.span6.history-large-pic{:style => "background:transparent;background-image:url(#{d.destination.image.url});background-size:cover;background-repeat:no-repeat;"}
+                .history-image-info
+                  .heading{:style => 'font-size:20px;padding-bottom:10px'}
+                    = d.destination.name
+                  = d.destination.description
+                .row.span4.offset4.history-image-info{:style => 'text-align:center'}
+                  = @cust_iti_header.trip_start_date.strftime("%d-%m-%y")
+                  to
+                  = @cust_iti_header.trip_end_date.strftime("%d-%m-%y")
+                .row.span4.offset4.btn.btn-success.btn-large#comment-section
+                  Trip Feedback?
+              .well.span4
+                - ary = ["Destinations", "Poa", "Property"]
+                - 4.times do |s|
+                  - if s.even?
+                    = ary[Random.rand(3).to_i]
+                  .row-fluid
+                    .span6
+                      %div{:id => "history-poa-"+Random.rand(100).to_s}
+                        = link_to "#" do
+                          = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
+                      .contenthover{:id => "#{Random.rand(100)}"}
+                        Poa Details with Time
+                    .span6
+                      #history-poa
+                        = link_to "#" do
+                          = image_tag("unwinders/pondi/#{Random.rand(7)+1}.jpg", size: "160x90")
+                      .contenthover{:id => "#{Random.rand(100)}"}
+                        Poa Details with Time
+                  %br
+                  - if s.even?
+                    %hr
 
-      .tabbable.tabs-left
-        %ul.nav.nav-tabs
-          %li.active
-            %a{"data-toggle" => "tab", :href => "#lA"} Destination 1
-          %li
-            %a{"data-toggle" => "tab", :href => "#lB"} Destination 2
-          %li
-            %a{"data-toggle" => "tab", :href => "#lC"} Destination 3
-        .tab-content
-          #lA.tab-pane.active
-            %p
-              The Royal Riveria(2011-07-05)
-            %div{:style => 'margin-left:100px'}
-              Kumarakom bird sanctuary(12:00 PM to 01:00 PM)
-              %br
-              %b Comments
-              %br
-              Best Season to view migrative birds is October to December
-              %hr
-              Pathiramanal Island(03:30 PM to 05:00 PM
-              %br
-              Comments
+.row-fluid
+  .span12.well
+    / - @cust_iti_header.cust_iti_details.each_with_index do |details, index|
+    /   = "Day : #{details.dest_start_date}"
+    /   %br
+    %div{:style => 'font-size:20px;font-weight:bold'}
+      = @cust_iti_header.cust_iti_details.first.destination.name
+    %a#element{"data-content" => "Comment Section", "data-original-title" => "Comments On Destination", "data-toggle" => "popover", :href => "#", :title => "", "data-remote" => true}
+      .icon-comments
 
-          #lB.tab-pane
-            %p C7 hotel(2011-07-06)
-            %div{:style => 'margin-left:100px'}
-              Vembanad lake(11:30 AM to 12:45 PM)
-              %br
-              Comments
-              %hr
-              Aruvikuzzhi falls 02:30 PM to 03:30 PM
-              %br
-              Comments
-          #lC.tab-pane
-            %p Houseboat, Alleppey((2011-07-07))
-            %div{:style => 'margin-left:100px'}
-              Rajmalai Wildlife sanctuary(11:00 AM to 12:30 PM)
-              %br
-              Comments
-              %hr
-              Tea museum (02:00 PM  to 02:30 PM)
-              %br
-              Comments
-              %hr
-              Blossom park(03:00 PM  to 04:30 PM)
-              %br
-              Comments
+    .tabbable.tabs-left
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#lA"} Destination 1
+        %li
+          %a{"data-toggle" => "tab", :href => "#lB"} Destination 2
+        %li
+          %a{"data-toggle" => "tab", :href => "#lC"} Destination 3
+      .tab-content
+        #lA.tab-pane.active
+          %p
+            The Royal Riveria(2011-07-05)
+          %div{:style => 'margin-left:100px'}
+            Kumarakom bird sanctuary(12:00 PM to 01:00 PM)
+            %br
+            %b Comments
+            %br
+            Best Season to view migrative birds is October to December
+            %hr
+            Pathiramanal Island(03:30 PM to 05:00 PM
+            %br
+            Comments
+
+        #lB.tab-pane
+          %p C7 hotel(2011-07-06)
+          %div{:style => 'margin-left:100px'}
+            Vembanad lake(11:30 AM to 12:45 PM)
+            %br
+            Comments
+            %hr
+            Aruvikuzzhi falls 02:30 PM to 03:30 PM
+            %br
+            Comments
+        #lC.tab-pane
+          %p Houseboat, Alleppey(2011-07-07)
+          %div{:style => 'margin-left:100px'}
+            Rajmalai Wildlife sanctuary(11:00 AM to 12:30 PM)
+            %br
+            Comments
+            %hr
+            Tea museum (02:00 PM  to 02:30 PM)
+            %br
+            Comments
+            %hr
+            Blossom park(03:00 PM  to 04:30 PM)
+            %br
+            Comments
+
 #comment-modal.modal.hide.fade{"tabindex" => "-1"}
   .modal-header
     %a.close{"data-dismiss" => "modal"} x
