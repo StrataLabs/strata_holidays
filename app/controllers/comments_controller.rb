@@ -11,12 +11,18 @@ class CommentsController < ApplicationController
   def create
     @commentable = find_commentable
     # allow_comments_params(comment_params)
+    @index = params[:index]
     @comment = @commentable.comments.build(params.require(:comment).permit(:parent_id, :content))
     if @comment.save
+      @comments = @commentable.comments
       flash[:notice] = "Successfully created comment."
-      redirect_to @commentable
+      #redirect_to @commentable
     else
       flash[:error] = "Error adding comment."
+    end
+    respond_to do |format|
+      format.js
+      format.xml {render :xml => @commentable.to_xml , :status => :ok}
     end
   end
 

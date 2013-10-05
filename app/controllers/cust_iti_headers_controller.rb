@@ -1,4 +1,5 @@
 class CustItiHeadersController < ApplicationController
+  include Commentable
   before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy]
   before_filter :confirm_user_type, except: [:history]
   # GET /cust_iti_headers

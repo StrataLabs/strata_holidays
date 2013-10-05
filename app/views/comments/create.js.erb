@@ -1,0 +1,2 @@
+$("#<%= "comments_#{params[:index]}" %>").html('<b> Please wait </b>');
+$("#<%= "comments_#{params[:index]}" %>").html('<%= escape_javascript(render :partial => "cust_iti_headers/comments_section" , :locals => { :comments => @comments})%>');

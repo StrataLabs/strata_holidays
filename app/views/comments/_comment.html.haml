@@ -1,8 +1,12 @@
-.media-body
+.media-body{:style => 'color:black'}
   / %h4.media-heading Anonymous User
-  %i= comment.created_at.strftime('%b %d, %Y at %H:%M')
-  %p= simple_format comment.content
-  .actions{:style => 'margin-left:20px'}
-    %b Reply
-    / = link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment)
-    = nested_comments comment.children
+  #comment-content{:style => 'font-size:15px;font-family:sans serif;padding-left:20px'}
+    = simple_format comment.content
+  #comment-time.pull-right{:style => 'font-size:10px;color:gray'}
+    = comment.created_at.strftime('%b %d, %Y at %I:%M%p')
+  %br
+  .vc-hr
+  / .actions{:style => 'margin-left:20px'}
+  /   %b Reply
+  /   / = link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment)
+  /   = nested_comments comment.children
