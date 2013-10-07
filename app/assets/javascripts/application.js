@@ -31,6 +31,12 @@ jQuery(document).ready(function($) {
     });
 });
 // select-all-vcs
+jQuery(document).ready(function($) {
+  $('.comment-section').on('click', function(){
+    alert("hi");
+    $('#comment-modal').modal("show");
+  });
+});
 
 jQuery(document).ready(function($) {
 $("#element").popover();
