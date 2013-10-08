@@ -35,6 +35,7 @@ StrataHolidays::Application.routes.draw do
   end
 
   get 'get_cust_iti_request' => 'cust_iti_requests#get_cust_iti_request', :as => 'get_cust_iti_request'
+  post 'cust_iti_details/customer_feedback/' => 'cust_iti_details#customer_feedback'
   get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant', :as => 'vc_unwinders'
   post '/assign-vcs' => 'vacation_consultants#assign_vcs'
   # post '/search_vcs' => 'vacation_consultants#search_vcs', :as => 'search_vcs'

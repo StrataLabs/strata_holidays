@@ -3,9 +3,9 @@
 #history-tabs
   .tabbable
     / Only required for left/right tabs
-    - details = @cust_iti_header.cust_iti_details
+    - @details = @cust_iti_header.cust_iti_details
     %ul.nav.nav-tabs
-      -details.each_with_index do |d,index|
+      -@details.each_with_index do |d,index|
         -if index == 0
           %li.active
             %a{"data-toggle" => "tab", :href => "#tab_#{index}", :style => 'width:200px;text-align:center;font-weight:bold;font-size:14pt;', :class => 'custom-tabs'}
@@ -15,7 +15,7 @@
             %a{"data-toggle" => "tab", :href => "#tab_#{index}", :style => 'width:200px;text-align:center;font-weight:bold;font-size:14pt', :class => 'custom-tabs'}
               = d.destination.name
     .tab-content
-      -details.each_with_index do |d,index|
+      -@details.each_with_index do |d,index|
         -@comments = d.comments
         -if index == 0
           %div{:id => "tab_#{index}", :class => "tab-pane active"}
@@ -31,6 +31,7 @@
                     to
                     = d.dest_end_date.strftime("%d-%m-%y")
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
+                    - @d = d
                     Trip Feedback?
                 .well.span5
                   %p
@@ -75,6 +76,7 @@
                     to
                     = d.dest_end_date.strftime("%d-%m-%y")
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
+                    - @d = d
                     Trip Feedback?
                 .well.span5
                   %p
@@ -105,20 +107,39 @@
                   - @commentable = d
                   - @comment = Comment.new
                   = render :partial => "comments/form", :locals => {:index => index}
+/ #comment-modal.modal.hide.fade{"tabindex" => "-1"}
+/   .modal-header
+/     %a.close{"data-dismiss" => "modal"} x
+/     %h3 How did you feel?
+/   .modal-body
+/     .modal-rec-body
+/       %form
+/         What worked ?
+/         %textarea{:rows => "3"}
+/         %br
+/         %br
+/         What did not ?
+/         %textarea{:rows => "3"}
+/   .modal-footer
+/     / = link_to "Done" , "#" , :class => 'btn btn-primary'
+/     %a.btn{"data-dismiss" => "modal", :href => "#"} Make History
+/     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+
 #comment-modal.modal.hide.fade{"tabindex" => "-1"}
   .modal-header
     %a.close{"data-dismiss" => "modal"} x
-    %h3 How did you feel ?
+    %h3 How did you feel?
   .modal-body
     .modal-rec-body
-      %form
-        What worked ?
-        %textarea{:rows => "3"}
-        %br
-        %br
-        What did not ?
-        %textarea{:rows => "3"}
-  .modal-footer
-    / = link_to "Done" , "#" , :class => 'btn btn-primary'
-    %a.btn{"data-dismiss" => "modal", :href => "#"} Make History
-    %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+      = form_tag "/cust_iti_details/customer_feedback" , :html => {:class =>'form-horizontal' } do
+        = label_tag "Select Destination"
+        = select_tag :cust_iti_detail_id, options_for_select(@details.collect{ |b| [b.destination.name, b.id] })
+        = label_tag "What worked?"
+        = text_area_tag :positive_comments
+        = label_tag "What didn't?"
+        = text_area_tag :negative_comments
+        = label_tag "How can it be better?"
+        = text_area_tag :suggestions
+        .modal-footer
+          = submit_tag "Submit Feedback", :class => 'btn btn-primary'
+          %a.btn{"data-dismiss" => "modal", :href => "#"} Close

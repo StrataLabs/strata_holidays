@@ -63,6 +63,19 @@ class CustItiDetailsController < ApplicationController
     end
   end
 
+  def customer_feedback
+    @cust_iti_detail = CustItiDetail.find(params[:cust_iti_detail_id])
+    cust_iti_header_id = @cust_iti_detail.cust_iti_header.id
+    if @cust_iti_detail.customer_feedback.nil?
+      @cust_iti_detail.customer_feedback = CustomerFeedback.build(params)
+      if @cust_iti_detail.save
+        redirect_to "/cust_iti_headers/#{cust_iti_header_id}/history", :notice => "Thank you for your valuable feedback!"
+      end
+    else
+      redirect_to "/cust_iti_headers/#{cust_iti_header_id}/history", :notice => "Feedback already submitted for this destination."
+    end
+  end
+
   def confirm_user_type
     if current_user
       if current_user.user_type == User::CUSTOMER

@@ -30,10 +30,14 @@ jQuery(document).ready(function($) {
       return false;
     });
 });
-// select-all-vcs
+
+window.setInterval(function(){
+   $('.alert').fadeOut();
+ }, 5000);
+
+
 jQuery(document).ready(function($) {
   $('.comment-section').on('click', function(){
-    alert("hi");
     $('#comment-modal').modal("show");
   });
 });

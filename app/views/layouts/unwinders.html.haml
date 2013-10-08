@@ -7,6 +7,8 @@
     = csrf_meta_tags
   %body{:id => "list", :style => 'padding-top: 0px;background:#1f1b10'}
     .container
+      - flash.each do |name, msg|
+        = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert' if msg.is_a?(String)
       #banner
         %h1
           %a{:href => "/"} JustBooks
