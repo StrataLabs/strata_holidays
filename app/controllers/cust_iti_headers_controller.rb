@@ -1,5 +1,4 @@
 class CustItiHeadersController < ApplicationController
-  include Commentable
   before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy]
   before_filter :confirm_user_type, except: [:history]
   # GET /cust_iti_headers
@@ -93,6 +92,6 @@ class CustItiHeadersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cust_iti_header_params
-      params.require(:cust_iti_header).permit(:cust_iti_name, :customer_id, :iti_type, :vacation_type_id, :trip_start_date, :trip_end_date, :seasons, :duration, :no_of_adults, :no_of_children)
+      params.require(:cust_iti_header).permit(:cust_iti_name, :customer_id, :iti_type, :vacation_type_id, :trip_start_date, :trip_end_date, :seasons, :duration, :no_of_adults, :no_of_children, trip_images_attributes: [:id, :caption, :image] )
     end
 end

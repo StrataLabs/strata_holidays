@@ -1,6 +1,6 @@
 %title
   Unwinders | History
-#history-tabs
+#history-tabs{:style => 'padding-bottom:80px'}
   .tabbable
     / Only required for left/right tabs
     - @details = @cust_iti_header.cust_iti_details
@@ -21,7 +21,7 @@
           %div{:id => "tab_#{index}", :class => "tab-pane active"}
             .container
               .row-fluid{:style => 'margin-top:20px'}
-                .well.span6.history-large-pic{:style => "background-image:url(#{d.destination.image.url});background-size:cover;background-repeat:no-repeat;padding-left:0px;padding-right:0px;padding-bottom:20px;border:5px solid white"}
+                .well.span6.history-large-pic{:style => "background-image:url(#{d.destination.image.url});background-size:cover;background-repeat:no-repeat;padding-left:0px;padding-right:0px;padding-bottom:20px;border:5px solid white;"}
                   .history-image-info
                     .heading{:style => 'font-size:20px;padding-bottom:10px'}
                       = d.destination.name
@@ -33,7 +33,7 @@
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
                     - @d = d
                     Trip Feedback?
-                .well.span5
+                .well.span5.right-panel
                   %p
                     %b{:style => 'color:#0A9B10;font-size:16pt' }
                       .icon-home.icon-large
@@ -78,7 +78,7 @@
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
                     - @d = d
                     Trip Feedback?
-                .well.span5
+                .well.span5.right-panel
                   %p
                     %b{:style => 'color:#0A9B10;font-size:16pt' }
                       .icon-home.icon-large
@@ -107,23 +107,46 @@
                   - @commentable = d
                   - @comment = Comment.new
                   = render :partial => "comments/form", :locals => {:index => index}
-/ #comment-modal.modal.hide.fade{"tabindex" => "-1"}
-/   .modal-header
-/     %a.close{"data-dismiss" => "modal"} x
-/     %h3 How did you feel?
-/   .modal-body
-/     .modal-rec-body
-/       %form
-/         What worked ?
-/         %textarea{:rows => "3"}
-/         %br
-/         %br
-/         What did not ?
-/         %textarea{:rows => "3"}
-/   .modal-footer
-/     / = link_to "Done" , "#" , :class => 'btn btn-primary'
-/     %a.btn{"data-dismiss" => "modal", :href => "#"} Make History
-/     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+  .picture-corner
+    .row
+      .span8
+        #camera-image{:style => 'color:#27689b;font-size:34pt;font-weight:bold'}
+          %img{:src => '/assets/unwinders/picture_corner.png', :style => 'height:100px;margin-top:20px;margin-left:20px;margin-right:20px'} Picture Perfect
+      .span2
+        #new-photo.pull-right{:style => 'margin-top:50px'}
+          .icon-camera
+            = link_to "Add photo", "#"
+    .row
+      #trip-images
+        .portfolio
+          %ul#grid
+            - @cust_iti_header.trip_images.each do |im|
+              %li
+                %a{:href => "#{im.image.url}", :rel => "facebox"}
+                  %img{:src => "#{im.image.url(:square)}"}
+                  - if im.caption.present?
+                    .speech-bubble.hide
+                      = im.caption
+
+
+#add-image-modal.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Add a new photo
+  .modal-body
+    .modal-rec-body
+      - @cust_iti_header.trip_images.build
+      = simple_form_for @cust_iti_header, :html => { :multipart => true, :class => 'form-horizontal' } do |f|
+        - f.fields_for :trip_images do |builder|
+          = ""
+          - if builder.object.new_record?
+            = builder.label :caption, "Image Caption"
+            = builder.text_field :caption
+            = builder.label :image, "Image File"
+            = builder.file_field :image
+            .modal-footer
+              = f.submit "Add", :class => 'btn btn-primary'
+              = link_to t('.cancel', :default => t("helpers.links.cancel")), destinations_path, :class => 'btn'
 
 #comment-modal.modal.hide.fade{"tabindex" => "-1"}
   .modal-header

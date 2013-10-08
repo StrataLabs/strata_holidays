@@ -16,6 +16,7 @@
 //= require twitter/bootstrap
 //= require chosen-jquery
 //= require_tree .
+//= require jquery.facebox
 jQuery(document).ready(function($) {
   $('.select-vcs').on('click', function() {
       var vc_ids = [];
@@ -31,6 +32,10 @@ jQuery(document).ready(function($) {
     });
 });
 
+jQuery(document).ready(function($) {
+  $('a[rel*=facebox]').facebox()
+})
+
 window.setInterval(function(){
    $('.alert').fadeOut();
  }, 5000);
@@ -43,8 +48,23 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
+  $('#new-photo').on('click', function(){
+    $('#add-image-modal').modal("show");
+  });
+});
+
+jQuery(document).ready(function($) {
 $("#element").popover();
 });
+
+// jQuery(document).ready(function($){
+//       $('.trip-image').click(function(){
+//               alert("sdgfg");
+//            $(this).css('width', function(_ , cur){
+//                 return cur === '200px' ? '100%' : '200px'
+//           });
+//       });
+//   });
 
 // $(function() {
 //   $(".current_user_requests .pagination a").on("click", function() {

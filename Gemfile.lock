@@ -143,6 +143,9 @@ GEM
     eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    facebox-rails (0.2.0)
+      railties (>= 3.0, < 5.0)
+      thor (>= 0.14, < 2.0)
     factory_girl (4.2.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (4.2.1)
@@ -362,6 +365,7 @@ DEPENDENCIES
   coveralls
   debugger
   devise (~> 3.0.0.rc)
+  facebox-rails
   factory_girl_rails (~> 4.0)
   growl (~> 1.0.3)
   guard-bundler (~> 1.0.0)

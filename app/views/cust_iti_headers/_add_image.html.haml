@@ -1,0 +1,10 @@
+= simple_form_for @cust_iti_header, :html => { :multipart => true, :class => 'form-horizontal' } do |f|
+  - f.fields_for :trip_images do |builder|
+    - if builder.object.new_record?
+      = builder.label :caption, "Image Caption"
+      = builder.text_field :caption
+      = builder.label :photo, "Image File"
+      = builder.file_field :photo
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), destinations_path, :class => 'btn'

@@ -245,5 +245,66 @@ form textarea{
   .tab-content{
     overflow:hidden;
   }
+}
 
+ul#grid {
+  padding: 0;
+  list-style: none;
+  margin: 20px auto 0;
+  width: 1000px;
+  }
+
+#grid li {
+  float: left;
+  padding: 0;
+  margin: 0 5px 10px 5px;
+  }
+
+#grid li a {
+  display: block;
+  }
+
+#grid li img {
+  background-color: white;
+  padding: 7px; margin: 0;
+  border: 1px dotted #58595b;
+  width: 200px;
+  height: 200px;
+  }
+#grid li
+  {
+  .speech-bubble {
+    background-color: $black;
+    border: 1px solid #c8c8c8;
+    border-radius: 5px;
+    width: 110px;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    color: $white;
+    font-weight:bold;
+    display:none;
+  }
+}
+#grid li a:hover img + .speech-bubble {
+opacity:0.7; filter:alpha(opacity=70);
+display:block;
+}
+
+@font-face {
+    font-family:'GraublauWeb';
+    src: url(fonts/GraublauWeb.eot);
+    src: url(fonts/GraublauWeb.otf) format("opentype");
+}
+
+#facebox .image{
+  width: 800px !important;
+  img{
+    width:800px !important;
+  }
+}
+
+.right-panel{
+  height:400px;
+  overflow:auto;
 }
