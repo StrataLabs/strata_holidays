@@ -33,7 +33,7 @@
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
                     - @d = d
                     Trip Feedback?
-                .well.span5.right-panel
+                .well.span5
                   %p
                     %b{:style => 'color:#0A9B10;font-size:16pt' }
                       .icon-home.icon-large
@@ -78,7 +78,7 @@
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
                     - @d = d
                     Trip Feedback?
-                .well.span5.right-panel
+                .well.span5
                   %p
                     %b{:style => 'color:#0A9B10;font-size:16pt' }
                       .icon-home.icon-large
@@ -111,7 +111,7 @@
     .row
       .span8
         #camera-image{:style => 'color:#27689b;font-size:34pt;font-weight:bold'}
-          %img{:src => '/assets/unwinders/picture_corner.png', :style => 'height:100px;margin-top:20px;margin-left:20px;margin-right:20px'} Picture Perfect
+          %img{:src => "#{asset_path("unwinders/picture_corner.png")}", :style => 'height:100px;margin-top:20px;margin-left:20px;margin-right:20px'} Picture Perfect
       .span2
         #new-photo.pull-right{:style => 'margin-top:50px'}
           .icon-camera
