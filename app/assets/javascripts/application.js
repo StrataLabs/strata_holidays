@@ -57,14 +57,39 @@ jQuery(document).ready(function($) {
 $("#element").popover();
 });
 
-// jQuery(document).ready(function($){
-//       $('.trip-image').click(function(){
-//               alert("sdgfg");
-//            $(this).css('width', function(_ , cur){
-//                 return cur === '200px' ? '100%' : '200px'
-//           });
-//       });
-//   });
+jQuery(document).ready(function($) {
+$(".show-more a").on("click", function() {
+    var $link = $(this);
+    var $content = $link.parent().prev("div.text-content");
+    var linkText = $link.text().toUpperCase();
+
+    switchClasses($content);
+
+    $link.text(getShowLinkText(linkText));
+
+    return false;
+});
+
+function switchClasses($content){
+    if($content.hasClass("short-text")){
+        $content.switchClass("short-text", "full-text", 400);
+    } else {
+        $content.switchClass("full-text", "short-text", 400);
+    }
+}
+
+function getShowLinkText(currentText){
+    var newText = '';
+
+    if (currentText === "SEE MORE/ADD COMMENTS") {
+        newText = "See less";
+    } else {
+        newText = "See more/Add comments";
+    }
+
+    return newText;
+}
+});
 
 // $(function() {
 //   $(".current_user_requests .pagination a").on("click", function() {

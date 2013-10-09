@@ -33,35 +33,38 @@
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
                     - @d = d
                     Trip Feedback?
-                .well.span5
-                  %p
-                    %b{:style => 'color:#0A9B10;font-size:16pt' }
-                      .icon-home.icon-large
-                        = d.property.name
-                  %div
-                    - poa_details = d.iti_cust_dest_poa_details
-                    - poa_details.each do |detail|
-                      -if detail.points_of_attraction
-                        .icon-star.icon-small
-                          %b{:style => 'font-size:11pt'}
-                            = detail.points_of_attraction.name
-                        %rm{:style => 'font-size:7pt'}
-                          (
-                          = detail.preferred_time_of_arrival.strftime("%I:%M %p")
-                          to
-                          = detail.preferred_time_of_departure.strftime("%I:%M %p")
-                          )
-                        %br
-                        %p
-                          = detail.points_of_attraction.description
-                        %br
-                  .vc-hr
-                  %br
-                  %div{:id => "comments_#{index}"}
-                    = render :partial => "comments_section", :locals => { :comments => @comments}
-                  - @commentable = d
-                  - @comment = Comment.new
-                  = render :partial => "comments/form", :locals => {:index => index}
+                .well.span5.text-container
+                  .text-content.short-text
+                    %p
+                      %b{:style => 'color:#0A9B10;font-size:16pt' }
+                        .icon-home.icon-large
+                          = d.property.name
+                    %div
+                      - poa_details = d.iti_cust_dest_poa_details
+                      - poa_details.each do |detail|
+                        -if detail.points_of_attraction
+                          .icon-star.icon-small
+                            %b{:style => 'font-size:11pt'}
+                              = detail.points_of_attraction.name
+                          %rm{:style => 'font-size:7pt'}
+                            (
+                            = detail.preferred_time_of_arrival.strftime("%I:%M %p")
+                            to
+                            = detail.preferred_time_of_departure.strftime("%I:%M %p")
+                            )
+                          %br
+                          %p
+                            = detail.points_of_attraction.description
+                          %br
+                    .vc-hr
+                    %br
+                    %div{:id => "comments_#{index}"}
+                      = render :partial => "comments_section", :locals => { :comments => @comments}
+                    - @commentable = d
+                    - @comment = Comment.new
+                    = render :partial => "comments/form", :locals => {:index => index}
+                  .show-more
+                    %a{:href => "#"} See more/Add comments
         -else
           %div{:id => "tab_#{index}", :class => "tab-pane"}
             .container
@@ -78,35 +81,38 @@
                   .row.span4.offset4.btn.btn-success.btn-large.comment-section
                     - @d = d
                     Trip Feedback?
-                .well.span5
-                  %p
-                    %b{:style => 'color:#0A9B10;font-size:16pt' }
-                      .icon-home.icon-large
-                        = d.property.name
-                  %div
-                    - poa_details = d.iti_cust_dest_poa_details
-                    - poa_details.each do |detail|
-                      -if detail.points_of_attraction
-                        .icon-star.icon-small
-                          %b{:style => 'font-size:11pt'}
-                            = detail.points_of_attraction.name
-                        %rm{:style => 'font-size:7pt'}
-                          (
-                          = detail.preferred_time_of_arrival.strftime("%I:%M %p")
-                          to
-                          = detail.preferred_time_of_departure.strftime("%I:%M %p")
-                          )
-                        %br
-                        %p
-                          = detail.points_of_attraction.description
-                        %br
-                  .vc-hr
-                  %br
-                  %div{:id => "comments_#{index}"}
-                    = render :partial => "comments_section", :locals => { :comments => @comments}
-                  - @commentable = d
-                  - @comment = Comment.new
-                  = render :partial => "comments/form", :locals => {:index => index}
+                .well.span5.text-container
+                  .text-content.short-text
+                    %p
+                      %b{:style => 'color:#0A9B10;font-size:16pt' }
+                        .icon-home.icon-large
+                          = d.property.name
+                    %div
+                      - poa_details = d.iti_cust_dest_poa_details
+                      - poa_details.each do |detail|
+                        -if detail.points_of_attraction
+                          .icon-star.icon-small
+                            %b{:style => 'font-size:11pt'}
+                              = detail.points_of_attraction.name
+                          %rm{:style => 'font-size:7pt'}
+                            (
+                            = detail.preferred_time_of_arrival.strftime("%I:%M %p")
+                            to
+                            = detail.preferred_time_of_departure.strftime("%I:%M %p")
+                            )
+                          %br
+                          %p
+                            = detail.points_of_attraction.description
+                          %br
+                    .vc-hr
+                    %br
+                    %div{:id => "comments_#{index}"}
+                      = render :partial => "comments_section", :locals => { :comments => @comments}
+                    - @commentable = d
+                    - @comment = Comment.new
+                    = render :partial => "comments/form", :locals => {:index => index}
+                  .show-more
+                    %a{:href => "#"} See more/Add comments
   .picture-corner
     .row
       .span8
