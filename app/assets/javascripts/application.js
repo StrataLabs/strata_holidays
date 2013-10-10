@@ -62,10 +62,15 @@ $(".show-more a").on("click", function() {
     var $link = $(this);
     var $content = $link.parent().prev("div.text-content");
     var linkText = $link.text().toUpperCase();
-
     switchClasses($content);
 
     $link.text(getShowLinkText(linkText));
+
+    if (linkText === "SEE MORE/ADD COMMENTS"){
+      $('html,body').animate({scrollTop: +450},'slow');
+    } else{
+      $('html,body').animate({scrollTop: '0px'},'slow');
+    }
 
     return false;
 });

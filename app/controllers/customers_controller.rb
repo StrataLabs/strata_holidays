@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy]
+  before_action :set_customer, only: [:show, :edit, :update, :destroy, :history]
   before_filter :confirm_user_type!, only: [:show, :edit, :update, :search_vcs, :assign_vcs]
-  before_filter :authenticate_admin_user, except: [:show, :edit, :update]
+  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history]
 
   # GET /customers
   # GET /customers.json
@@ -25,6 +25,7 @@ class CustomersController < ApplicationController
 
   # GET /customers/1/edit
   def edit
+    render :layout => 'unwinders'
   end
 
   # POST /customers
@@ -81,6 +82,11 @@ class CustomersController < ApplicationController
         format.xml
       end
     end
+  end
+
+  def history
+    p @cust_iti_headers = @customer.cust_iti_headers
+    render :layout => 'unwinders'
   end
 
   private

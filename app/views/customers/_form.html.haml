@@ -7,8 +7,7 @@
   = f.input :country
   = f.input :lphone
   = f.input :mphone
-  = f.input :email
   = f.input :comments, :as => :text
-  .form-actions
-    = f.button :submit, :class => 'btn-primary'
+  .form-actions{:style => 'background:white'}
+    = f.button :submit, "Update Information", :class => 'btn-info'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), customer_path(:id => @customer.id), :class => 'btn'

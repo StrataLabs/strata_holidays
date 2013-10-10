@@ -112,7 +112,7 @@
                     - @comment = Comment.new
                     = render :partial => "comments/form", :locals => {:index => index}
                   .show-more
-                    %a{:href => "#"} See more/Add comments
+                    %a{:href => "#show-more-div"} See more/Add comments
   .picture-corner
     .row
       .span8
@@ -125,7 +125,7 @@
     .row
       #trip-images
         .portfolio
-          %ul#grid
+          %ul.grid
             - @cust_iti_header.trip_images.each do |im|
               %li
                 %a{:href => "#{im.image.url}", :rel => "facebox"}
@@ -160,9 +160,9 @@
     %h3 How did you feel?
   .modal-body
     .modal-rec-body
-      = form_tag "/cust_iti_details/customer_feedback" , :html => {:class =>'form-horizontal' } do
+      = form_tag customer_feedback_cust_iti_detail_path, :html => {:class =>'form-horizontal' } do
         = label_tag "Select Destination"
-        = select_tag :cust_iti_detail_id, options_for_select(@details.collect{ |b| [b.destination.name, b.id] })
+        = select_tag :id, options_for_select(@details.collect{ |b| [b.destination.name, b.id] })
         = label_tag "What worked?"
         = text_area_tag :positive_comments
         = label_tag "What didn't?"

@@ -1,7 +1,7 @@
 class CustItiDetailsController < ApplicationController
   include Commentable
   before_action :set_cust_iti_detail, only: [:show, :edit, :update, :destroy]
-  before_filter :confirm_user_type
+  before_filter :confirm_user_type, :except => [:customer_feedback]
   # GET /cust_iti_details
   # GET /cust_iti_details.json
   def index
@@ -64,7 +64,7 @@ class CustItiDetailsController < ApplicationController
   end
 
   def customer_feedback
-    @cust_iti_detail = CustItiDetail.find(params[:cust_iti_detail_id])
+    @cust_iti_detail = CustItiDetail.find(params[:id])
     cust_iti_header_id = @cust_iti_detail.cust_iti_header.id
     if @cust_iti_detail.customer_feedback.nil?
       @cust_iti_detail.customer_feedback = CustomerFeedback.build(params)

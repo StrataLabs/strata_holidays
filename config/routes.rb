@@ -10,13 +10,20 @@ StrataHolidays::Application.routes.draw do
   resources :cust_iti_requests
   resources :consultant_customer_destinations
   resources :vacation_consultants
-  resources :customers
+  resources :customers do
+    member do
+      get 'history'
+    end
+  end
   resources :iti_cust_dest_poa_details do
     resources :comments
   end
   resources :iti_cust_dest_details
   resources :cust_iti_details do
     resources :comments
+    member do
+      post 'customer_feedback'
+    end
   end
 
   resources :cust_iti_headers do
@@ -35,7 +42,7 @@ StrataHolidays::Application.routes.draw do
   end
 
   get 'get_cust_iti_request' => 'cust_iti_requests#get_cust_iti_request', :as => 'get_cust_iti_request'
-  post 'cust_iti_details/customer_feedback/' => 'cust_iti_details#customer_feedback'
+  #post 'cust_iti_details/customer_feedback/' => 'cust_iti_details#customer_feedback'
   get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant', :as => 'vc_unwinders'
   post '/assign-vcs' => 'vacation_consultants#assign_vcs'
   # post '/search_vcs' => 'vacation_consultants#search_vcs', :as => 'search_vcs'

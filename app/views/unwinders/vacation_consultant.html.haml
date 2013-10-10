@@ -2,7 +2,7 @@
   Unwinders
   |
   = "#{@vc.name}"
-.container{:style => 'background:#fffcee;padding:0px'}
+.container{:style => 'background:white;padding:0px'}
   .action
     .span2{:style => 'border-right:1px solid;border-color:#bbb; padding-right:25px;height:250px'}
       =image_tag("#{asset_path("unwinders/vc.png")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';")
@@ -10,8 +10,14 @@
       #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
         = @vc.name
       %br
-      #city{:style => 'font-size:15px;color:black'}
-        = @vc.city
+        = "As a vacation consultant, #{@vc.name} living in #{@vc.city}, is happy to engage with customers living in neighborhoods #{@vc.preferred_neighborhood} of Bangalore to offer planning & booking services. Of the destinations that #{@vc.name} has planned, the popular ones have been"
+        - l = @vc.preferred_locations.length
+        - @vc.preferred_locations.each_with_index do |d,k|
+          = Destination.find(d.to_i).name
+          - if k == (l-1)
+            = "."
+          - else
+            = ","
       %br
       .vc-hr
       %br
@@ -29,7 +35,6 @@
           Yes
         -else
           No
-
     .span5.pull-right{:style => 'padding-right:5px'}
       = render 'top_destinations'
   .row

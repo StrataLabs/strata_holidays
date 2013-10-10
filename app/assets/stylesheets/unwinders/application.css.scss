@@ -247,31 +247,31 @@ form textarea{
   }
 }
 
-ul#grid {
+ul.grid {
   padding: 0;
   list-style: none;
   margin: 20px auto 0;
   width: 1000px;
   }
 
-#grid li {
+.grid li {
   float: left;
   padding: 0;
   margin: 0 5px 10px 5px;
   }
 
-#grid li a {
+.grid li a {
   display: block;
   }
 
-#grid li img {
+.grid li img {
   background-color: white;
   padding: 7px; margin: 0;
   border: 1px dotted #58595b;
   width: 200px;
   height: 200px;
   }
-#grid li
+.grid li
   {
   .speech-bubble {
     background-color: $black;
@@ -286,7 +286,7 @@ ul#grid {
     display:none;
   }
 }
-#grid li a:hover img + .speech-bubble {
+.grid li a:hover img + .speech-bubble {
 opacity:0.7; filter:alpha(opacity=70);
 display:block;
 }
@@ -312,4 +312,82 @@ display:block;
 
 .full-text{
   height: auto;
+}
+
+#profile{
+  .personal-info-header{
+    font-size:20px;
+    color:#37404e;
+  }
+}
+.account-info{
+  list-style: none;
+  margin-top: 40px;
+  padding: 0px;
+  font-size:16px;
+  li{
+    clear: both;
+  }
+  label{
+    width: 230px;
+    font-weight: bold;
+    line-height: 25px;
+    font-size:16px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+ul.navigation-panel{
+  list-style:none;
+  a {
+    font-size:12pt;
+  }
+  li{
+    padding:6px;
+  }
+  li.active{
+    background-color:#efefef;
+    a{
+      color:#666666;
+      font-weight:bold;
+    }
+  }
+}
+
+ul.navigation {
+  position: fixed;
+  margin: 0px;
+  padding: 0px;
+  top: 100px;
+  left: 0px;
+  list-style: none;
+  z-index:9999;
+}
+
+ul.navigation li {
+    width: 55px;
+}
+ul.navigation li a.active {
+    background-color:#FFCC11;
+}
+ul.navigation li a {
+    cursor:pointer;
+    display: block;
+    width: 55px;
+    height: 70px;
+    background-color:white;
+    background-repeat:no-repeat;
+    background-position:center center;
+    border:1px solid black;
+    -moz-border-radius:0px 10px 10px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    &:hover{
+      background-color:#FFCC11;
+    }
 }
