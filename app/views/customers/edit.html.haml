@@ -9,7 +9,7 @@
   %li
     %a{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => customer_path(current_user.customer)}
   %li
-    %a{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat"}
+    %a{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => package_requests_customer_path(current_user.customer)}
   %li
     %a{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => history_customer_path(current_user.customer)}
   %li

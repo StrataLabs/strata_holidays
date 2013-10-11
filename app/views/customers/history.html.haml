@@ -8,7 +8,7 @@
   %li
     %a{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => customer_path(current_user.customer)}
   %li
-    %a{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat"}
+    %a{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => package_requests_customer_path(current_user.customer)}
   %li
     %a.active{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
   %li
@@ -28,7 +28,19 @@
   .portfolio
     %ul.grid
       - @cust_iti_headers.each do |h|
-        %li.well{:style => "background-image:url(#{h.cust_iti_details.last.destination.image.url(:square)});width:200px;height:200px;opacity:0.8"}
+        %li
           %a{:href => history_cust_iti_header_path(:id => h.id)}
-            = h.cust_iti_name
-
+            .img-with-text
+              %img{:src => "#{h.cust_iti_details.last.destination.image.url(:square) rescue nil}", :alt => "No image"}
+              %p
+                - last_index = h.cust_iti_details.length - 1
+                - h.cust_iti_details.each_with_index do |d, ind|
+                  - unless (ind == last_index)
+                    = d.destination.name
+                    \-
+                  - else
+                    = d.destination.name
+                %br
+                = h.trip_start_date.strftime("%d-%m-%y")
+                to
+                = h.trip_end_date.strftime("%d-%m-%y")

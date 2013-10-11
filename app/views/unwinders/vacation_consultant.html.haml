@@ -5,7 +5,7 @@
 .container{:style => 'background:white;padding:0px'}
   .action
     .span2{:style => 'border-right:1px solid;border-color:#bbb; padding-right:25px;height:250px'}
-      =image_tag("#{asset_path("unwinders/vc.png")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';")
+      =image_tag("#{asset_path("unwinders/vc_#{@vc.id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:150px;height:200px;', :class => 'img-polaroid')
     .span3
       #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
         = @vc.name

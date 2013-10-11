@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy, :history]
-  before_filter :confirm_user_type!, only: [:show, :edit, :update, :search_vcs, :assign_vcs]
-  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history]
+  before_action :set_customer, only: [:show, :edit, :update, :destroy, :history, :package_requests]
+  before_filter :confirm_user_type!, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :history, :package_requests]
+  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history, :package_requests]
 
   # GET /customers
   # GET /customers.json
@@ -85,7 +85,12 @@ class CustomersController < ApplicationController
   end
 
   def history
-    p @cust_iti_headers = @customer.cust_iti_headers
+    @cust_iti_headers = @customer.cust_iti_headers
+    render :layout => 'unwinders'
+  end
+
+  def package_requests
+    @current_user_requests = CustItiRequest.where(:customer_id => current_user.customer.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
     render :layout => 'unwinders'
   end
 

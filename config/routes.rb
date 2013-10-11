@@ -13,6 +13,7 @@ StrataHolidays::Application.routes.draw do
   resources :customers do
     member do
       get 'history'
+      get 'package_requests'
     end
   end
   resources :iti_cust_dest_poa_details do
