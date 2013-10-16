@@ -75,6 +75,37 @@ $(".show-more a").on("click", function() {
     return false;
 });
 
+jQuery(document).ready(function($) {
+
+$("#personal-information .proceed").on("click", function() {
+    var div_id = document.getElementById("progress-bar").style.width = "66%";
+    $('#personal-information').hide(300);
+    $('#professional-details').show(300);
+    return false;
+});
+
+$("#professional-details .proceed").on("click", function() {
+    var div_id = document.getElementById("progress-bar").style.width = "100%";
+    $('#professional-details').hide(300);
+    $('#contact-information').show(300);
+    return false;
+});
+
+$("#professional-details .back").on("click", function() {
+    var div_id = document.getElementById("progress-bar").style.width = "33%";
+    $('#professional-details').hide(300);
+    $('#personal-information').show(300);
+    return false;
+});
+
+$("#contact-information .back").on("click", function() {
+    var div_id = document.getElementById("progress-bar").style.width = "66%";
+    $('#contact-information').hide(300);
+    $('#professional-details').show(300);
+    return false;
+});
+});
+
 function switchClasses($content){
     if($content.hasClass("short-text")){
         $content.switchClass("short-text", "full-text", 400);

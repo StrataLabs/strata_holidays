@@ -4,7 +4,7 @@ class PropertiesController < ApplicationController
   # GET /properties
   # GET /properties.json
   def index
-    @properties = Property.paginate(:page => params[:page])
+    @properties = Property.order('id Asc').paginate(:page => params[:page])
   end
 
   # GET /properties/1
@@ -69,6 +69,6 @@ class PropertiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def property_params
-      params.require(:property).permit(:destination_id, :name, :property_type, :official_rating, :customer_rating, :restaurant, :pool, :fun_zone, :comments)
+      params.require(:property).permit(:destination_id, :name, :property_type, :official_rating, :customer_rating, :restaurant, :pool, :fun_zone, :comments, :image)
     end
 end

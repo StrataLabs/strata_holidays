@@ -15,8 +15,10 @@
       %th= model_class.human_attribute_name(:pool)
       %th= model_class.human_attribute_name(:fun_zone)
       %th= model_class.human_attribute_name(:comments)
+      %th= model_class.human_attribute_name(:image)
       %th= model_class.human_attribute_name(:created_at)
-      %th=t '.actions', :default => t("helpers.actions")
+      - if current_user && current_user.user_type == User::ADMIN
+        %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @properties.each do |property|
       %tr
@@ -31,8 +33,10 @@
         %td= property.fun_zone
         %td= property.comments
         %td= property.created_at
-        %td
-          = link_to t('.edit', :default => t("helpers.links.edit")), edit_property_path(property), :class => 'btn btn-mini'
-          = link_to t('.destroy', :default => t("helpers.links.destroy")), property_path(property), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
-
-= link_to t('.new', :default => t("helpers.links.new")), new_property_path, :class => 'btn btn-primary'
+        %td= image_tag property.image.url(:thumb)
+        - if current_user && current_user.user_type == User::ADMIN
+          %td
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_property_path(property), :class => 'btn btn-mini'
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), property_path(property), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-mini btn-danger'
+- if current_user && current_user.user_type == User::ADMIN
+  = link_to t('.new', :default => t("helpers.links.new")), new_property_path, :class => 'btn btn-primary'

@@ -4,60 +4,52 @@
   = "#{@vc.name}"
 .container{:style => 'background:white;padding:0px'}
   .action
-    .span2{:style => 'border-right:1px solid;border-color:#bbb; padding-right:25px;height:250px'}
+    .span2
       =image_tag("#{asset_path("unwinders/vc_#{@vc.id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:150px;height:200px;', :class => 'img-polaroid')
     .span3
       #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
         = @vc.name
-      %br
+      %p{:style => 'text-align:justify'}
         = "As a vacation consultant, #{@vc.name} living in #{@vc.city}, is happy to engage with customers living in neighborhoods #{@vc.preferred_neighborhood} of Bangalore to offer planning & booking services. Of the destinations that #{@vc.name} has planned, the popular ones have been"
         - l = @vc.preferred_locations.length
         - @vc.preferred_locations.each_with_index do |d,k|
-          = Destination.find(d.to_i).name
-          - if k == (l-1)
-            = "."
-          - else
-            = ","
-      %br
-      .vc-hr
-      %br
-        Preferred Neighborhoods  :
-        = @vc.preferred_neighborhood
-      %br
-        Booking:
-        -if @vc.booking?
-          Yes
-        -else
-          No
-      %br
-        Planning:
-        -if @vc.booking?
-          Yes
-        -else
-          No
+          - a = ","
+          = "#{Destination.find(d.to_i).name}#{a}"
+          / - if k == (l-1)
+
+          / - else
+          /   ,
     .span5.pull-right{:style => 'padding-right:5px'}
       = render 'top_destinations'
   .row
-    .span6.box{:style => 'margin-top:15px;margin-left:100px;'}
-      .title{:style => 'background:#ffcc11;font-size:12pt'}
-        Customer Testimonials
-      .content{:style => 'background:#fff1bb;min-height:290px'}
-        -if @vc.testimonials.present?
-          -@vc.testimonials.each do |t|
-            %blockquote
-              %p
-                = t.content
-            #quote-by{:style => 'padding-left:350px;margin-top:-50px'}
-              \-
-              = Customer.find(t.customer_id).name
-        -else
-          No Testimonials to show
-    .map.box{:style => 'margin-top:15px;margin-left:60px;padding-bottom:40px;margin-bottom:30px'}
-      .title{:style => 'background:#ffcc11;font-size:12pt'}
-        See Points of Attraction in Destinations
-      .content{:style => 'background:#fff1bb'}
-        #inner-details{:style => 'display:none'}
-        #infovis{:style => 'height:290px'}
+    .span6
+      .box{:style => 'margin-top:15px;margin-left:25px;margin-bottom:20px'}
+        .title{:style => 'background:#ffcc11;font-size:12pt'}
+          Customer Testimonials
+        .content{:style => 'background:white;min-height:290px'}
+          -if @vc.testimonials.present?
+            -@vc.testimonials.each do |t|
+              %blockquote
+                %p{:style => 'font-size:13px;color:black;margin-top:-10px;font-family: arial helvetica'}
+                  = t.content
+              - if t.customer_id.present?
+                #quote-by.pull-right
+                  \-
+                  = Customer.find(t.customer_id).name
+              %br
+          -else
+            No Testimonials to show
+    .span6{:style => 'width:550px'}
+      .box{:style => 'margin-top:15px;margin-bottom:20px'}
+        .title{:style => 'background:#ffcc11;font-size:12pt'}
+          Campaigns
+        .content{:style => 'background:white;min-height:290px'}
+    / .map.box{:style => 'margin-top:15px;margin-left:60px;padding-bottom:40px;margin-bottom:30px'}
+    /   .title{:style => 'background:#ffcc11;font-size:12pt'}
+    /     See Points of Attraction in Destinations
+    /   .content{:style => 'background:#fff1bb'}
+    /     #inner-details{:style => 'display:none'}
+    /     #infovis{:style => 'height:290px'}
 
 :javascript
   $(document).ready(function ()

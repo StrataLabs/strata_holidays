@@ -1,17 +1,30 @@
 %ul.plans
   %li.lite
-    %strong=DestItiHeader.find(@dest_headers[3][:dest_iti_header_id]).destination.name
-    =@dest_headers[3][:count]
-    trips
+    %strong Switzerland
+    2 trips
   %li.basic
-    %strong=DestItiHeader.find(@dest_headers[2][:dest_iti_header_id]).destination.name
-    =@dest_headers[2][:count]
-    trips
+    %strong Paris
+    4 trips
   %li.regular
-    %strong=DestItiHeader.find(@dest_headers[1][:dest_iti_header_id]).destination.name
-    =@dest_headers[1][:count]
-    trips
+    %strong Mauritius
+    4 trips
   %li.avid
-    %strong=DestItiHeader.find(@dest_headers[0][:dest_iti_header_id]).destination.name
-    =@dest_headers[0][:count]
-    trips
+    %strong Andaman
+    6 trips
+/ %ul.plans
+/   %li.lite
+/     %strong=DestItiHeader.find(@dest_headers[3][:dest_iti_header_id]).destination.name
+/     =@dest_headers[3][:count]
+/     trips
+/   %li.basic
+/     %strong=DestItiHeader.find(@dest_headers[2][:dest_iti_header_id]).destination.name
+/     =@dest_headers[2][:count]
+/     trips
+/   %li.regular
+/     %strong=DestItiHeader.find(@dest_headers[1][:dest_iti_header_id]).destination.name
+/     =@dest_headers[1][:count]
+/     trips
+/   %li.avid
+/     %strong=DestItiHeader.find(@dest_headers[0][:dest_iti_header_id]).destination.name
+/     =@dest_headers[0][:count]
+/     trips

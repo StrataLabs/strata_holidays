@@ -1,18 +1,36 @@
-= simple_form_for @vc_registration, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :name
-  = f.input :address_1, :as => :text
-  = f.input :address_2, :as => :text
-  = f.input :city
-  = f.input :state
-  = f.input :country
-  = f.input :comments, :as => :text
-  = f.input :preferred_neighborhood, :as => :text
-  = f.input :planning
-  = f.input :booking
-  = f.input :preferred_locations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations", class: 'chzn-select' ,:multiple => true }
-  = f.input :lphone
-  = f.input :mphone
-  = f.input :email
-  .form-actions
-    = f.button :submit, "Register", :class => 'btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), vc_registrations_path, :class => 'btn'
+.row
+  .span10.offset1
+    .progress.progress-striped
+      #progress-bar.bar{:style => "width: 33%;"}
+.container{:style => 'padding:0px;'}
+  .span5.offset3
+    = simple_form_for @vc_registration, :html => { :class => 'form-horizontal' } do |f|
+      #personal-information
+        %h2 Personal Information
+        = f.input :name
+        = f.input :address_1, :as => :text
+        = f.input :address_2, :as => :text
+        = f.input :city
+        = f.input :state
+        = f.input :country
+        .form-actions
+          %a.btn{:href => '#', :class => 'btn btn-primary proceed'} Proceed
+      #professional-details{:style => 'display:none'}
+        %h2 Professional Details
+        = f.input :preferred_neighborhood, :as => :text
+        = f.input :planning
+        = f.input :booking
+        = f.input :preferred_locations,  collection: Destination.all, :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations", class: 'chzn-select' ,:multiple => true }
+        = f.input :comments, :as => :text
+        .form-actions
+          %a.btn{:href => '#', :class => 'btn btn-primary proceed'} Proceed
+          %a.btn{:href => '#', :class => 'btn back'} Back
+      #contact-information{:style => 'display:none'}
+        %h2 Contact Information
+        = f.input :lphone
+        = f.input :mphone
+        = f.input :email
+        .form-actions
+          = f.button :submit, "Register", :class => 'btn-primary'
+          = link_to t('.cancel', :default => t("helpers.links.cancel")), root_path, :class => 'btn'
+          %a.btn{:href => '#', :class => 'btn back'} Back

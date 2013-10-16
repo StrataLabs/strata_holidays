@@ -193,30 +193,6 @@ padding-right: 5px;
   padding-top: 5px;
   padding-left: 10px;
 }
-blockquote {
-    padding-top: 20px;
-    overflow: hidden;
-    font-size: 18px;
-    line-height: 150%;
-    color: $black;
-}
-blockquote:before {
-    display: block;
-    float: left;
-    margin: 10px 15px 0 0;
-    font-size: 100px;
-    content: open-quote;
-    color: #bababa;
-    text-shadow: 0 1px 1px #909090;
-}
-blockquote:after {
-    display: block;
-    float: right;
-    margin: 10px 15px 0 0;
-    font-size: 100px;
-    content: close-quote;
-    color: #bababa;
-    text-shadow: 0 1px 1px #909090;}
 
 .nav{
   border-bottom:0px;
