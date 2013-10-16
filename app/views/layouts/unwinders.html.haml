@@ -5,7 +5,7 @@
     = stylesheet_link_tag "unwinders/application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body{:id => "list", :style => 'padding-top: 0px;background:#1f1b10'}
+  %body{:id => "list", :style => 'padding-top: 0px;background:#1f1b20'}
     .container
       - flash.each do |name, msg|
         = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert', :style => 'margin-bottom:0px' if msg.is_a?(String)
