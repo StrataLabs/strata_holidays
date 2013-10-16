@@ -9,7 +9,7 @@
     .span3
       #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
         = @vc.name
-      %p{:style => 'text-align:justify'}
+      %p.vc-bio{:style => 'text-align:justify'}
         = "As a vacation consultant, #{@vc.name} living in #{@vc.city}, is happy to engage with customers living in neighborhoods #{@vc.preferred_neighborhood} of Bangalore to offer planning & booking services. Of the destinations that #{@vc.name} has planned, the popular ones have been"
         - l = @vc.preferred_locations.length
         - @vc.preferred_locations.each_with_index do |d,k|
@@ -22,7 +22,7 @@
 
           / - else
           /   ,
-    .span5.pull-right{:style => 'padding-right:5px'}
+    .span5.pull-right{:style => 'padding-right:10px'}
       = render 'top_destinations'
   .row
     .span6
@@ -33,10 +33,10 @@
           -if @vc.testimonials.present?
             -@vc.testimonials.each do |t|
               %blockquote
-                %p{:style => 'font-size:13px;color:black;margin-top:-10px;font-family: arial helvetica'}
+                %p.vc-bio{:style => 'font-size:13px;color:black;margin-top:-10px'}
                   = t.content
               - if t.customer_id.present?
-                #quote-by.pull-right
+                #quote-by.vc-bio.pull-right
                   \-
                   = Customer.find(t.customer_id).name
               %br

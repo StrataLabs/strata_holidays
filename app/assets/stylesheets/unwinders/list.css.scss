@@ -37,7 +37,7 @@ body#list{
     }
 
     ul.plans{
-      margin: 0; padding: 0;
+      margin-top:40px;
 
       @media screen and (min-width: 900px) {
         //@include span-columns(5 omega);
@@ -59,7 +59,7 @@ body#list{
         font-size: 16px;
         line-height: 40px;
         text-align: right;
-
+        padding-right: 5px;
         @media screen and (max-width: 600px) { font-size: 13px; }
 
         a{
