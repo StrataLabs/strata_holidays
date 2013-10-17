@@ -34,7 +34,7 @@ class CustItiRequestsController < ApplicationController
         format.html { redirect_to @cust_iti_request, notice: 'Cust iti request was successfully created.' }
         format.json { render action: 'show', status: :created, location: @cust_iti_request }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', :layout => 'unwinders' }
         # format.html { redirect_to user_unwinders_path(:cust_iti_request => @cust_iti_request.attributes), notice: 'Cust iti request was successfully created.' }
         format.json { render json: @cust_iti_request.errors, status: :unprocessable_entity }
       end
@@ -71,6 +71,37 @@ class CustItiRequestsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def request_cart
+    session[:request]= [] if session[:request].nil?
+    if params[:destination_id]
+        @destination = Destination.find(params[:destination_id])
+        session[:request] << { :destination_id => @destination.id }
+        session[:request] = session[:request].uniq
+        logger.info "session => #{session[:request].uniq}"
+        @customer_id = params[:customer_id]
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def remove_session
+    session[:request].delete_if{|key| key[:destination_id].to_s==params[:destination_id].to_s}
+    render :partial => 'layouts/requests_cart'
+  end
+
+  def request_from_cart
+    @cust_iti_request = CustItiRequest.new
+    destinations = []
+    if session[:request] && session[:request].count > 0
+      session[:request].each do |d|
+        destinations << d[:destination_id].to_s
+      end
+    end
+    @cust_iti_request.destinations = destinations
+    render :layout => 'unwinders'
   end
 
   private

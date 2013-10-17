@@ -1,0 +1,7 @@
+.requests_cart
+  = link_to '/show_requests_cart', :remote => true, :id => "show_cart" do
+    %table{:border => "0px", :cellpadding => "0px", :cellspacing => "0px"}
+      %tr
+        %td
+          .icon-shopping-cart.icon-large
+            = "(" + "#{ session[:request] ? session[:request].count : 0 }" + ")"

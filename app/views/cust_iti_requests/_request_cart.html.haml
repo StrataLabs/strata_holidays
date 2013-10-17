@@ -1,0 +1,21 @@
+-if session[:request].count > 0
+  .row
+    .span5
+      %table.table.table-striped
+        %tr
+          %th
+          %th Destination
+          %th
+        - session[:request].each do |destination|
+          - destination_object = Destination.find(destination[:destination_id])
+          %tr
+            %td
+              .image_holder_small
+                %img{:src => "#{destination_object.image.url(:thumb)}"}
+            %td
+              = link_to destination_object.name , destination_path(destination_object)
+            %td
+              .remove
+                = link_to "Remove" , "#" , :destination_id => destination[:destination_id]
+- else
+  %h3 Your cart is empty. Please add destinations by clicking "Request Package"

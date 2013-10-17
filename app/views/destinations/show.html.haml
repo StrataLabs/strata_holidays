@@ -16,8 +16,8 @@
       .span6
         .description-body{:style => 'background:white;opacity:0.7;margin-right:10px;padding:10px;min-height:400px'}
           .wishlist-btn.pull-right
-            -if current_user
-              = link_to "Add to Wishlist", "#", :class => 'btn btn-primary'
+            -if current_user && current_user.user_type == User::CUSTOMER
+              = link_to "Request package", request_cart_cust_iti_requests_path({:destination_id => @destination.id, :customer_id => current_user.customer.id}), :class => 'btn btn-primary', :remote => true, :id => 'btn-request-now'
           %br
           .dest-description
             %p

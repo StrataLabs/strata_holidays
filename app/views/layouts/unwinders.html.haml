@@ -11,30 +11,34 @@
         = content_tag :div, msg.html_safe, :id => "flash_#{name}", :class => 'alert', :style => 'margin-bottom:0px' if msg.is_a?(String)
       #banner
         %h1
-          %a{:href => "/"} JustBooks
+          %a{:href => root_path}
+            %img{:src => "#{asset_path("unwinders/logo_2.png")}"}
         #menu
           .container{:style => 'min-height:42px'}
             %h2.branch_name
               = current_user.name rescue ""
-      /   #submenu
-      /     %ul
-      /       - if current_user
-      /         %li= link_to "Home", user_unwinders_path
-      /       - else
-      /         %li= link_to "Home", root_path
-      /       /%li= link_to "VC", vc_unwinders_path(:id => 1)
-      /       - if current_user
-      /         - if current_user.user_type == User::CUSTOMER
-      /           %li= link_to "Profile", customer_path(:id => current_user.customer.id)
-      /         - elsif current_user.user_type == User::VC
-      /           %li= link_to "Profile", vacation_consultant_path(:id => current_user.vacation_consultant.id)
-      /         %li= link_to "Sign Out", destroy_user_session_path
-      /       - else
-      /         %li= link_to "Sign In", user_session_path
-      /         %li= link_to "Sign up", user_session_path
-      /       /%li= link_to "About Us", '#'
-      /       /%li= link_to "Contact Us", '#'
-      / /= render :partial => 'flash', :object => flash
+        #submenu
+          %ul
+            - if current_user
+              %li= link_to "Home", user_unwinders_path
+            - else
+              %li= link_to "Home", root_path
+            /%li= link_to "VC", vc_unwinders_path(:id => 1)
+            - if current_user
+              - if current_user.user_type == User::CUSTOMER
+                %li= link_to "Profile", customer_path(:id => current_user.customer.id)
+              - elsif current_user.user_type == User::VC
+                %li= link_to "Profile", vacation_consultant_path(:id => current_user.vacation_consultant.id)
+              %li= link_to "Sign Out", destroy_user_session_path
+            - else
+              %li= link_to "Sign In", user_session_path
+              %li= link_to "Sign up", user_session_path
+              /%li= link_to "About Us", '#'
+              /%li= link_to "Contact Us", '#'
+            - if current_user
+              %li
+                = render :partial => 'layouts/requests_cart'
+              /= render :partial => 'flash', :object => flash
       .container{:style => 'background:#fff;padding:0px;min-height:550px'}
         = yield
       %center#footer
@@ -54,6 +58,17 @@
     .modal-rec-body-results
   .modal-footer
     / = link_to "Done" , "#" , :class => 'btn btn-primary'
+    %a.btn{"data-dismiss" => "modal", :href => "#"} Close
+
+#my-modal1.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Destinations Cart
+  .modal-body
+    .modal-rec-body
+    .modal-rec-body-results
+  .modal-footer
+    = link_to "Request Package" , "/request_from_cart" , :class => 'btn btn-primary'
     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
 
 :css

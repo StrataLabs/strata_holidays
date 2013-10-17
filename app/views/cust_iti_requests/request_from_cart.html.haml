@@ -1,7 +1,9 @@
-.box
-  .title
-    Request Package
-  .content
+%title
+  Request Package
+.container{:style => 'padding:0px'}
+  #please{:style => 'color:black;font-size:20pt;margin-top:40px;margin-bottom:40px'}
+    Please fill in some additional details
+  .well.span5.offset3
     = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
       = f.input :customer_id ,:input_html => { :value => current_user.customer.id } , :as => 'hidden'
       = f.input :dest_type, :collection => ["Single", "Multiple"]

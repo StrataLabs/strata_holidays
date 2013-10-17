@@ -1,12 +1,12 @@
-= simple_form_for @cust_iti_request, :html => { :class => 'form-horizontal' } do |f|
-  = f.input :customer_id
-  = f.input :dest_type
-  = f.input :destinations
-  = f.input :vacation_type_id
-  = f.input :start_date
-  = f.input :end_date
-  = f.input :no_of_adults
-  = f.input :no_of_children
-  .form-actions
-    = f.button :submit, :class => 'btn-primary'
-    = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_requests_path, :class => 'btn'
+.well.span5.offset3
+  = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
+    = f.input :customer_id ,:input_html => { :value => current_user.customer.id } , :as => 'hidden'
+    = f.input :dest_type, :collection => ["Single", "Multiple"]
+    = f.association :vacation_type, :label_method => :vac_type, :input_html => {:type => 'select'}
+  = f.input :destinations,  collection: Destination.all.order(:name), :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations", :id => 'select_destination', class: 'chzn-select' ,:multiple => true }
+    = f.input :start_date, :as => :date_picker
+    = f.input :end_date, :as => :date_picker
+    = f.input :no_of_adults
+    = f.input :no_of_children
+    / .form-actions
+    %center= f.button :submit, :class => 'btn-success btn-medium', :id => 'cust_iti_request_submit'

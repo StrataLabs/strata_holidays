@@ -34,11 +34,11 @@ class VcRegistrationsController < ApplicationController
         format.html { redirect_to @vc_registration, notice: 'Vc registration was successfully created.' }
         format.json { render action: 'show', status: :created, location: @vc_registration }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'new', layout: 'unwinders' }
         format.json { render json: @vc_registration.errors, status: :unprocessable_entity }
       end
     end
-    render :layout => 'unwinders'
+    # render :layout => 'unwinders'
   end
 
   # PATCH/PUT /vc_registrations/1

@@ -106,9 +106,10 @@ class VacationConsultantsController < ApplicationController
       params[:vc_ids].each do |vc|
         VcAssignment.create(:vacation_consultant_id => vc, :cust_iti_request_id => params[:cust_req_id], :status => 'New')
       end
+      session[:request].clear
+      render :partial => 'layouts/requests_cart'
     end
     # redirect_to '/unwinders/user'
-    render :text => 'success'
   end
 
   def search

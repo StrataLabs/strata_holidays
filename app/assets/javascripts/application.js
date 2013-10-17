@@ -106,6 +106,14 @@ $("#contact-information .back").on("click", function() {
 });
 });
 
+jQuery(document).ready(function($) {
+  $("#btn-request-now").on('click', function(){
+    $("#my-modal1").modal('show');
+    $(".modal-rec-body").html("<h3>Loading. Please wait... </h3>");
+  });
+
+});
+
 function switchClasses($content){
     if($content.hasClass("short-text")){
         $content.switchClass("short-text", "full-text", 400);
