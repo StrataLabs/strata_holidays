@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
   layout "static_pages"
   include Commentable
   def itinerary
-    @cust_iti_details = CustItiHeader.find(1).cust_iti_details
+    @cust_iti_details = CustItiHeader.all.first.cust_iti_details
       # @cust_dest = {}
       # @cust_dest_poa = []
       # @cust_iti_header.cust_iti_details

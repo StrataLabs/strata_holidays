@@ -8,9 +8,9 @@
   %li
     %a{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => customer_path(current_user.customer)}
   %li
-    %a{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
+    %a.active{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
   %li
-    %a.active{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => history_customer_path(current_user.customer)}
+    %a{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => history_customer_path(current_user.customer)}
   %li
     %a{:title => "Edit Info", :style => "background-image:url(#{asset_path("unwinders/edit_info.jpg")});background-size:100%;background-repeat:no-repeat", :href => edit_customer_path(current_user.customer)}
 .container{:style => 'padding:0px'}
@@ -33,7 +33,7 @@
                   %b Destination Type
                   =cust.dest_type
                 %p
-                  %b Destiantions
+                  %b Destinations
                   /=cust.destinations.compact
                   =cust.destinations.reject(&:empty?).map {|s| Destination.find(s).name}.compact.join(", ") rescue 'NA'
                 %p

@@ -1,6 +1,6 @@
 class VcRegistrationsController < ApplicationController
   before_action :set_vc_registration, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_admin_user, only: [:edit, :update, :destroy]
+  before_filter :authenticate_admin_user, only: [:edit, :update, :destroy, :index]
   # GET /vc_registrations
   # GET /vc_registrations.json
   def index
@@ -10,6 +10,7 @@ class VcRegistrationsController < ApplicationController
   # GET /vc_registrations/1
   # GET /vc_registrations/1.json
   def show
+    render :layout => 'unwinders'
   end
 
   # GET /vc_registrations/new

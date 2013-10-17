@@ -19,142 +19,125 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe VacationTypesController do
-  login_user
-  # This should return the minimal set of attributes required to create a valid
-  # VacationType. As you add validations to VacationType, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) { { "vac_type" => "MyString" } }
+    before(:each) do
+    @vacation_type = FactoryGirl.create(:vacation_type)
+    @user = FactoryGirl.create(:user, :user_type => User::CUSTOMER)
+    sign_in @user
+  end
+  after(:all) do
+    User.delete_all
+  end
 
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # VacationTypesController. Be sure to keep this updated too.
-  let(:valid_session) { {} }
+  context "GET index" do
 
-  describe "GET index" do
-    it "assigns all vacation_types as @vacation_types" do
-      vacation_type = VacationType.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:vacation_types).should eq([vacation_type])
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :index
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows only admin" do
+      sign_in @user
+      get :index
+      assigns(:vacation_types).should == nil
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :index
+      assigns(:vacation_types).should == nil
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = 'A'
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :index
+      assigns(:vacation_types).should eq([@vacation_type])
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested vacation_type as @vacation_type" do
-      vacation_type = VacationType.create! valid_attributes
-      get :show, {:id => vacation_type.to_param}, valid_session
-      assigns(:vacation_type).should eq(vacation_type)
+  context "GET show" do
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :show, {:id => @vacation_type.to_param}
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows only admin" do
+      sign_in @user
+      get :show, {:id => @vacation_type.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :show, {:id => @vacation_type.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = 'A'
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :show, {:id => @vacation_type.to_param}
+      assigns(:vacation_type).should eq(@vacation_type)
     end
   end
 
-  describe "GET new" do
-    it "assigns a new vacation_type as @vacation_type" do
-      get :new, {}, valid_session
-      assigns(:vacation_type).should be_a_new(VacationType)
+  context "POST create" do
+    before(:each) do
+      @vacation_type_params = {
+        :vac_type => "CustomType"
+      }
+    end
+    it "does not allow access without logging in" do
+      sign_out @user
+      post :create, {:vacation_type => @vacation_type_params}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin" do
+      sign_in @user
+      post :create, {:vacation_type => @vacation_type_params}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      post :create, {:vacation_type => @vacation_type_params}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::ADMIN
+      @user.save
+      sign_out @user
+      sign_in @user
+      post :create, {:vacation_type => @vacation_type_params}
+      assigns(:vacation_type).should be_a(VacationType)
+      VacationType.last.vac_type == "CustomType"
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested vacation_type as @vacation_type" do
-      vacation_type = VacationType.create! valid_attributes
-      get :edit, {:id => vacation_type.to_param}, valid_session
-      assigns(:vacation_type).should eq(vacation_type)
+  context "DELETE destroy" do
+    it "does not allow access without logging in" do
+      sign_out @user
+      delete :destroy, {:id => @vacation_type.to_param}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin" do
+      sign_in @user
+      delete :destroy, {:id => @vacation_type.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      delete :destroy, {:id => @vacation_type.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::ADMIN
+      @user.save
+      sign_out @user
+      sign_in @user
+      delete :destroy, {:id => @vacation_type.to_param}
+      response.should redirect_to(vacation_types_path)
+      VacationType.all.should == []
     end
   end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new VacationType" do
-        expect {
-          post :create, {:vacation_type => valid_attributes}, valid_session
-        }.to change(VacationType, :count).by(1)
-      end
-
-      it "assigns a newly created vacation_type as @vacation_type" do
-        post :create, {:vacation_type => valid_attributes}, valid_session
-        assigns(:vacation_type).should be_a(VacationType)
-        assigns(:vacation_type).should be_persisted
-      end
-
-      it "redirects to the created vacation_type" do
-        post :create, {:vacation_type => valid_attributes}, valid_session
-        response.should redirect_to(VacationType.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved vacation_type as @vacation_type" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        VacationType.any_instance.stub(:save).and_return(false)
-        post :create, {:vacation_type => { "vac_type" => "invalid value" }}, valid_session
-        assigns(:vacation_type).should be_a_new(VacationType)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        VacationType.any_instance.stub(:save).and_return(false)
-        post :create, {:vacation_type => { "vac_type" => "invalid value" }}, valid_session
-        response.should render_template("new")
-      end
-    end
-  end
-
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested vacation_type" do
-        vacation_type = VacationType.create! valid_attributes
-        # Assuming there are no other vacation_types in the database, this
-        # specifies that the VacationType created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        VacationType.any_instance.should_receive(:update).with({ "vac_type" => "MyString" })
-        put :update, {:id => vacation_type.to_param, :vacation_type => { "vac_type" => "MyString" }}, valid_session
-      end
-
-      it "assigns the requested vacation_type as @vacation_type" do
-        vacation_type = VacationType.create! valid_attributes
-        put :update, {:id => vacation_type.to_param, :vacation_type => valid_attributes}, valid_session
-        assigns(:vacation_type).should eq(vacation_type)
-      end
-
-      it "redirects to the vacation_type" do
-        vacation_type = VacationType.create! valid_attributes
-        put :update, {:id => vacation_type.to_param, :vacation_type => valid_attributes}, valid_session
-        response.should redirect_to(vacation_type)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the vacation_type as @vacation_type" do
-        vacation_type = VacationType.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        VacationType.any_instance.stub(:save).and_return(false)
-        put :update, {:id => vacation_type.to_param, :vacation_type => { "vac_type" => "invalid value" }}, valid_session
-        assigns(:vacation_type).should eq(vacation_type)
-      end
-
-      it "re-renders the 'edit' template" do
-        vacation_type = VacationType.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        VacationType.any_instance.stub(:save).and_return(false)
-        put :update, {:id => vacation_type.to_param, :vacation_type => { "vac_type" => "invalid value" }}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
-
-  describe "DELETE destroy" do
-    it "destroys the requested vacation_type" do
-      vacation_type = VacationType.create! valid_attributes
-      expect {
-        delete :destroy, {:id => vacation_type.to_param}, valid_session
-      }.to change(VacationType, :count).by(-1)
-    end
-
-    it "redirects to the vacation_types list" do
-      vacation_type = VacationType.create! valid_attributes
-      delete :destroy, {:id => vacation_type.to_param}, valid_session
-      response.should redirect_to(vacation_types_url)
-    end
-  end
-
 end

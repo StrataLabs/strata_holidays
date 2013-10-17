@@ -14,10 +14,7 @@ describe VacationConsultantsController do
   end
   after(:all) do
     User.delete_all
-    Customer.delete_all
-    VacationConsultant.delete_all
-    CustItiRequest.delete_all
-    VcAssignment.delete_all
+    Testimonial.delete_all
   end
 
 
