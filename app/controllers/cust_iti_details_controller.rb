@@ -64,15 +64,24 @@ class CustItiDetailsController < ApplicationController
   end
 
   def customer_feedback
-    @cust_iti_detail = CustItiDetail.find(params[:id])
-    cust_iti_header_id = @cust_iti_detail.cust_iti_header.id
-    if @cust_iti_detail.customer_feedback.nil?
-      @cust_iti_detail.customer_feedback = CustomerFeedback.build(params)
-      if @cust_iti_detail.save
-        redirect_to "/cust_iti_headers/#{cust_iti_header_id}/history", :notice => "Thank you for your valuable feedback!"
+    if current_user
+      @cust_iti_detail = CustItiDetail.find(params[:id])
+      cust_iti_header = @cust_iti_detail.cust_iti_header
+      if current_user.user_type == User::CUSTOMER
+        if cust_iti_header.customer_id != current_user.customer.id
+          redirect_to user_unwinders_path
+        end
+      end
+      if @cust_iti_detail.customer_feedback.nil?
+        @cust_iti_detail.customer_feedback = CustomerFeedback.build(params)
+        if @cust_iti_detail.save
+          redirect_to "/cust_iti_headers/#{cust_iti_header.id}/history", :notice => "Thank you for your valuable feedback!"
+        end
+      else
+        redirect_to "/cust_iti_headers/#{cust_iti_header.id}/history", :notice => "Feedback already submitted for this destination."
       end
     else
-      redirect_to "/cust_iti_headers/#{cust_iti_header_id}/history", :notice => "Feedback already submitted for this destination."
+      redirect_to user_session_path
     end
   end
 

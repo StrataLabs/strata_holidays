@@ -9,8 +9,8 @@ describe ItiCustDestPoaDetail do
   context "validation" do
     context "presence" do
       subject { FactoryGirl.create(:iti_cust_dest_poa_detail) }
-      all_coulmns = ItiCustDestPoaDetail.column_names - ["id"] - ["created_at"] - ["updated_at"] - ["comments"]
-      all_coulmns.each do |column|
+      all_columns = ItiCustDestPoaDetail.column_names - ["id"] - ["created_at"] - ["updated_at"] - ["comments"]
+      all_columns.each do |column|
         it { should validate_presence_of column }
       end
     end

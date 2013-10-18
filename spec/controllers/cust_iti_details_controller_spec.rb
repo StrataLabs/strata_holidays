@@ -91,4 +91,44 @@ describe CustItiDetailsController do
       CustItiDetail.all.should == []
     end
   end
+
+  context "Customer Feedback" do
+    before(:each) do
+      @user1 = FactoryGirl.create(:user)
+      cust_iti_header = FactoryGirl.create(:cust_iti_header)
+      @cust_iti_detail2 = FactoryGirl.create(:cust_iti_detail, :cust_iti_header_id => cust_iti_header.id)
+    end
+    it "does not allow access without logging in" do
+      sign_out @user1
+      post :customer_feedback, { :id => @cust_iti_detail2.id }
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows everyone" do
+      sign_in @user1
+      post :customer_feedback, { :id => @cust_iti_detail2.id }
+      CustomerFeedback.last.cust_iti_detail_id.should eq(@cust_iti_detail2.id)
+      flash[:notice].should == "Thank you for your valuable feedback!"
+      @user1.user_type = User::VC
+      @user1.save
+      sign_out @user1
+      sign_in @user1
+      post :customer_feedback, { :id => @cust_iti_detail2.id }
+      flash[:notice].should == "Feedback already submitted for this destination."
+      CustomerFeedback.delete_all
+      post :customer_feedback, { :id => @cust_iti_detail2.id }
+      CustomerFeedback.last.cust_iti_detail_id.should eq(@cust_iti_detail2.id)
+      flash[:notice].should == "Thank you for your valuable feedback!"
+      @user1.user_type = 'A'
+      @user1.save
+      sign_out @user1
+      sign_in @user1
+      post :customer_feedback, { :id => @cust_iti_detail2.id }
+      flash[:notice].should == "Feedback already submitted for this destination."
+      CustomerFeedback.delete_all
+      post :customer_feedback, { :id => @cust_iti_detail2.id }
+      CustomerFeedback.last.cust_iti_detail_id.should eq(@cust_iti_detail2.id)
+      flash[:notice].should == "Thank you for your valuable feedback!"
+    end
+  end
 end

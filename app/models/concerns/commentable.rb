@@ -8,7 +8,6 @@ module Commentable
   end
 
   def comments
-    p params
     @commentable = find_commentable
     @comments = @commentable.comments(:order => :created_at)
     @comment = Comment.new

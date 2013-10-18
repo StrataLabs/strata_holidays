@@ -9,11 +9,11 @@ StrataHolidays::Application.routes.draw do
   resources :vc_registrations
 
   get '/remove_session_destination' => 'cust_iti_requests#remove_session'
-  get '/show_requests_cart' => "cust_iti_requests#request_cart", defaults: {formats: "js"}
+  get '/show_requests_cart' => "cust_iti_requests#request_cart", defaults: {format: "js"}
   get '/request_from_cart' => "cust_iti_requests#request_from_cart"
   resources :cust_iti_requests do
     collection do
-      get :request_cart
+      get :request_cart, defaults: {format: "js"}
     end
   end
   resources :consultant_customer_destinations

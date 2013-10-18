@@ -8,6 +8,5 @@ FactoryGirl.define do
     points_of_attraction_id 1
     preferred_time_of_arrival "2013-06-25 15:02:55"
     preferred_time_of_departure "2013-06-25 15:02:55"
-    comments "MyString"
   end
 end

@@ -1,7 +1,205 @@
 require 'spec_helper'
 
 describe CustItiRequestsController do
-  pending "add some examples to (or delete) #{__FILE__}"
+    before(:each) do
+    @cust_iti_request = FactoryGirl.create(:cust_iti_request)
+    @user = FactoryGirl.create(:user, :user_type => User::CUSTOMER)
+    sign_in @user
+  end
+  after(:all) do
+    User.delete_all
+    Destination.delete_all
+    CustItiRequest.delete_all
+  end
+
+  context "GET index" do
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :index
+      response.should redirect_to(user_session_path)
+    end
+
+    it "allows only admin" do
+      sign_in @user
+      get :index
+      assigns(:cust_iti_requests).should == nil
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :index
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = 'A'
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :index
+      assigns(:cust_iti_requests).should eq([@cust_iti_request])
+    end
+  end
+
+  context "GET show" do
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :show, {:id => @cust_iti_request.to_param}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin and Customer" do
+      sign_in @user
+      get :show, {:id => @cust_iti_request.to_param}
+      assigns(:cust_iti_request).should eq(@cust_iti_request)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :show, {:id => @cust_iti_request.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::ADMIN
+      @user.save
+      sign_out @user
+      sign_in @user
+      get :show, {:id => @cust_iti_request.to_param}
+      assigns(:cust_iti_request).should eq(@cust_iti_request)
+    end
+  end
+
+  context "POST create" do
+    before(:each) do
+      @customer = FactoryGirl.create(:customer)
+      @cust_iti_request_params = {
+        :customer_id => 1,
+        :dest_type => "MyString",
+        :destinations => ["1","2"],
+        :vacation_type_id => 1,
+        :start_date => "2013-07-04",
+        :end_date => "2013-07-04",
+        :no_of_adults => 1,
+        :no_of_children => 1
+      }
+    end
+    it "does not allow access without logging in" do
+      sign_out @user
+      post :create, {:cust_iti_request => @cust_iti_request_params}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin and Customer" do
+      sign_in @user
+      post :create, {:cust_iti_request => @cust_iti_request_params}
+      assigns(:cust_iti_request).should be_a(CustItiRequest)
+      CustItiRequest.last.customer_id.should == @customer.id
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      post :create, {:cust_iti_request => @cust_iti_request_params}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::ADMIN
+      @user.save
+      sign_out @user
+      sign_in @user
+      post :create, {:cust_iti_request => @cust_iti_request_params}
+      assigns(:cust_iti_request).should be_a(CustItiRequest)
+      CustItiRequest.last.customer_id.should == @customer.id
+    end
+  end
+
+  context "DELETE destroy" do
+    it "does not allow access without logging in" do
+      sign_out @user
+      delete :destroy, {:id => @cust_iti_request.to_param}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin" do
+      sign_in @user
+      delete :destroy, {:id => @cust_iti_request.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::VC
+      @user.save
+      sign_out @user
+      sign_in @user
+      delete :destroy, {:id => @cust_iti_request.to_param}
+      response.should redirect_to(user_unwinders_path)
+      @user.user_type = User::ADMIN
+      @user.save
+      sign_out @user
+      sign_in @user
+      delete :destroy, {:id => @cust_iti_request.to_param}
+      response.should redirect_to(cust_iti_requests_path)
+      CustItiRequest.all.should == []
+    end
+  end
+
+  context "GET request_cart" do
+    before(:each) do
+      @destination = FactoryGirl.create(:destination)
+      @destination2 = FactoryGirl.create(:destination)
+    end
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :request_cart, {:destination_id => @destination.id}
+      response.should redirect_to(user_session_path)
+    end
+    it "adds destination to cart" do
+      sign_in @user
+      get :request_cart, {:destination_id => @destination.id, :format => 'js'}
+      session[:request].should include({:destination_id => @destination.id})
+      session[:request].count.should == 1
+      get :request_cart, {:destination_id => @destination.id, :format => 'js'}
+      session[:request].count.should == 1
+      get :request_cart, {:destination_id => @destination2.id, :format => 'js'}
+      session[:request].should include({:destination_id => @destination2.id})
+      session[:request].count.should == 2
+    end
+  end
+
+  context "GET remove_session" do
+    before(:each) do
+      @destination = FactoryGirl.create(:destination)
+      @destination2 = FactoryGirl.create(:destination)
+    end
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :request_cart, {:destination_id => @destination.id}
+      response.should redirect_to(user_session_path)
+    end
+    it "removes destination from cart" do
+      sign_in @user
+      get :request_cart, {:destination_id => @destination.id, :format => 'js'}
+      get :request_cart, {:destination_id => @destination2.id, :format => 'js'}
+      session[:request].count.should == 2
+      get :remove_session, {:destination_id => @destination.id, :format => 'js'}
+      session[:request].should include({:destination_id => @destination2.id})
+      session[:request].count.should == 1
+      get :remove_session, {:destination_id => @destination2.id, :format => 'js'}
+      session[:request].count.should == 0
+    end
+  end
+
+  context "GET request_from_cart" do
+    before(:each) do
+      @destination = FactoryGirl.create(:destination)
+      @destination2 = FactoryGirl.create(:destination)
+    end
+
+    it "does not allow access without logging in" do
+      sign_out @user
+      get :request_from_cart, {:destination_id => @destination.id}
+      response.should redirect_to(user_session_path)
+    end
+    it "removes destination from cart" do
+      sign_in @user
+      get :request_cart, {:destination_id => @destination.id, :format => 'js'}
+      get :request_cart, {:destination_id => @destination2.id, :format => 'js'}
+      session[:request].count.should == 2
+      get :request_from_cart
+      assigns[:cust_iti_request].destinations.should include(@destination.id.to_s)
+      assigns[:cust_iti_request].destinations.should include(@destination2.id.to_s)
+    end
+  end
 end
 
 
