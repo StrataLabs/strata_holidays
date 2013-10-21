@@ -3,16 +3,5 @@
   |
   Edit
 - model_class = Customer
-%ul.navigation
-  %li
-    %a{:title => "Home", :style => "background-image:url(#{asset_path("unwinders/home.jpg")});background-size:100%;background-repeat:no-repeat", :href => user_unwinders_path}
-  %li
-    %a{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => customer_path(current_user.customer)}
-  %li
-    %a{:title => "Requests", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => package_requests_customer_path(current_user.customer)}
-  %li
-    %a{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => history_customer_path(current_user.customer)}
-  %li
-    %a.active{:title => "Edit Info", :style => "background-image:url(#{asset_path("unwinders/edit_info.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
 #edit-form.span6.offset3
   = render :partial => "form"

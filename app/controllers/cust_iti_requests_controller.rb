@@ -1,6 +1,7 @@
 class CustItiRequestsController < ApplicationController
   before_action :set_cust_iti_request, only: [:show, :edit, :update, :destroy]
-  before_filter :confirm_user_type, except: [:index, :destroy]
+  before_filter :confirm_user_type_is_customer, except: [:index, :destroy, :get_cust_iti_request]
+  before_filter :confirm_user_type_is_vc, only: [:get_cust_iti_request]
   before_filter :authenticate_admin_user, only: [:index, :destroy]
   # GET /cust_iti_requests
   # GET /cust_iti_requests.json
@@ -21,6 +22,7 @@ class CustItiRequestsController < ApplicationController
 
   # GET /cust_iti_requests/1/edit
   def edit
+    render :layout => 'unwinders'
   end
 
   # POST /cust_iti_requests
@@ -105,23 +107,6 @@ class CustItiRequestsController < ApplicationController
     end
     @cust_iti_request.destinations = destinations
     render :layout => 'unwinders'
-  end
-
-  def confirm_user_type
-    if current_user
-      if current_user.user_type == User::VC
-        flash[:error] = "Not authorized to view this page"
-        respond_to do |format|
-          format.html {redirect_to user_unwinders_path}
-          format.xml
-        end
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to user_session_path}
-        format.xml
-      end
-    end
   end
 
   private

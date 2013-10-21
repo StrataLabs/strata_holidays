@@ -15,6 +15,8 @@
 //= require jquery.ui.all
 //= require twitter/bootstrap
 //= require chosen-jquery
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
 //= require jquery.facebox
 jQuery(document).ready(function($) {
@@ -135,12 +137,14 @@ function getShowLinkText(currentText){
 }
 });
 
-// $(function() {
-//   $(".current_user_requests .pagination a").on("click", function() {
-//     $.getScript(this.href);
-//     return false;
-//   });
-// });
+jQuery(document).ready(function($) {
+  $(function() {
+    $(".current_user_requests .pagination a").on("click", function() {
+      $.get(this.href, null, null, "script");
+      return false;
+    });
+  });
+});
 
 $('.dropdown-toggle').dropdown();
 

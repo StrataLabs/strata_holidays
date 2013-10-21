@@ -1,5 +1,21 @@
+%title
+  Your Request | Unwinders
+%div{:style => 'margin-bottom:50px'}
+  .wizard-steps
+    .completed-step
+      %a{:href => edit_cust_iti_request_path(:id => @cust_iti_request.id)}
+        %span 1
+        Request Package
+    .active-step
+      %a{:href => "#step-two"}
+        %span 2
+        Summary
+    %div
+      %a{:href => "#"}
+        %span 3
+        Assign Consultants
 .row
-  .span4.box
+  .span4.box{:style => 'margin-left:80px'}
     .title
       Request Info
     .content
@@ -31,17 +47,22 @@
           =cust.no_of_adults + cust.no_of_children
           / =link_to "Request to All VC", '#', :class => ['btn btn-success']
         %br
-  .span8.box
+  .span7.box
     .title
       .icon-cogs
       Assigned VC's for this request
     .content
       - unless cust.vc_assignments.empty?
-        - cust.vc_assignments.map do |vc|
-          = vc.vacation_consultant.name
-          |
-          = vc.status
-          %br
+        .row-fluid
+          .span8
+            - cust.vc_assignments.map do |vc|
+              = vc.vacation_consultant.name
+              |
+              = vc.status
+              %br
+          .span4
+            #assign-more.pull-right
+              = link_to "Assign to more Consultants","/search_vcs?cust_req_id=#{cust.id}", :method => :get
       -else
         To assign the above request to specific vacation consultants, please click assign to see our panel of vacation consultants.
         =link_to "/search_vcs?cust_req_id=#{cust.id}", :method => :get, :class => 'btn' do

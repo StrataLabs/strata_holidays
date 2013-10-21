@@ -23,10 +23,16 @@
             =cust.vacation_type.vac_type rescue 'NA'
         %p
           %b Start Date
-          =cust.start_date.strftime("%d-%m-%y") || "NA"
+          - if cust.start_date?
+            =cust.start_date.strftime("%d-%m-%y")
+          - else
+            = "NA"
         %p
           %b End Date
-          =cust.end_date.strftime("%d-%m-%y") || "NA"
+          - if cust.end_date?
+            =cust.end_date.strftime("%d-%m-%y")
+          - else
+            = "NA"
         %p
           %b No of People
           - if cust.no_of_children.present?

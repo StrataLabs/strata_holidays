@@ -28,7 +28,7 @@ module StrataHolidays
     Devise::RegistrationsController.layout "home"
     Devise::ConfirmationsController.layout "home"
     #Devise::UnlocksController.layout "your_layout_name"
-    #Devise::PasswordsController.layout "your_layout_name"
+    Devise::PasswordsController.layout "unwinders"
 end
   end
 end

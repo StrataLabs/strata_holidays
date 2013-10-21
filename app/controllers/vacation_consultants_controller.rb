@@ -1,8 +1,8 @@
 class VacationConsultantsController < ApplicationController
   before_action :set_vacation_consultant, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_admin_user, only: [:create, :create_vc, :new, :destroy, :index]
-  before_filter :confirm_user_type, only: [:edit, :update, :show]
-  before_filter :confirm_customer_user, only: [:search_vcs, :assign_vcs]
+  before_filter :confirm_user_type_is_vc, only: [:edit, :update, :show]
+  before_filter :confirm_user_type_is_customer, only: [:search_vcs, :assign_vcs]
 
   # GET /vacation_consultants
   # GET /vacation_consultants.json
@@ -125,39 +125,6 @@ class VacationConsultantsController < ApplicationController
   #   vc.save
   #   redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
   # end
-
-  def confirm_user_type
-    if current_user
-      if current_user.user_type == User::CUSTOMER
-        respond_to do |format|
-          format.html {redirect_to user_unwinders_path}
-          format.xml
-        end
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to user_session_path}
-        format.xml
-      end
-    end
-  end
-
-  def confirm_customer_user
-    if current_user
-      if current_user.user_type == User::VC
-        respond_to do |format|
-          format.html {redirect_to user_unwinders_path}
-          format.xml
-        end
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to user_session_path}
-        format.xml
-      end
-    end
-  end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.

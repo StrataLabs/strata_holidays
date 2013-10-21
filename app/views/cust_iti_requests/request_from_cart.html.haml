@@ -1,7 +1,20 @@
 %title
   Request Package
 .container{:style => 'padding:0px'}
-  #please{:style => 'color:black;font-size:20pt;margin-top:40px;margin-bottom:40px'}
+  .wizard-steps
+    .active-step
+      %a{:href => '#'}
+        %span 1
+        Request Package
+    %div
+      %a{:href => "#step-two"}
+        %span 2
+        Summary
+    %div
+      %a{:href => "#"}
+        %span 3
+        Assign Consultants
+  #please{:style => 'color:black;font-size:12pt;margin-top:50px;margin-bottom:10px;text-align:center'}
     Please fill in some additional details
   .well.span5.offset3
     = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|

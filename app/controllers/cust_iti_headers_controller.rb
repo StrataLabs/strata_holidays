@@ -1,6 +1,7 @@
 class CustItiHeadersController < ApplicationController
   before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy]
-  before_filter :confirm_user_type, except: [:history]
+  before_filter :confirm_user_type_is_vc, except: [:history, :update]
+  before_filter :confirm_user_type_is_customer, only: [:history]
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index
@@ -65,23 +66,6 @@ class CustItiHeadersController < ApplicationController
   def history
     @cust_iti_header = CustItiHeader.find(params[:id])
     render :layout => 'unwinders'
-  end
-
-  def confirm_user_type
-    if current_user
-      if current_user.user_type == User::CUSTOMER
-        flash[:error] = "Not authorized to view this page"
-        respond_to do |format|
-          format.html {redirect_to user_unwinders_path}
-          format.xml
-        end
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to user_session_path}
-        format.xml
-      end
-    end
   end
 
   private

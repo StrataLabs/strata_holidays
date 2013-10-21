@@ -1,1 +1,2 @@
-$('.current_user_requests').html("<%= escape_javascript(render :partial => 'shared/current_user_requests') %>");
+$(".current_user_requests").html('<%= escape_javascript(render(:partial => "shared/current_user_requests")) %>');
+$('.pagination a').attr('data-remote', 'true');

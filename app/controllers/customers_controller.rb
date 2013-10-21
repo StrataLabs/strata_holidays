@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy, :history, :package_requests]
-  before_filter :confirm_user_type!, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :history, :package_requests]
+  before_filter :confirm_user_type_is_customer, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :history, :package_requests]
   before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history, :package_requests]
 
   # GET /customers
@@ -15,7 +15,11 @@ class CustomersController < ApplicationController
     id = params[:id]
     @customer = Customer.find(id) unless id.nil?
     @current_user_requests = CustItiRequest.where(:customer_id => current_user.customer.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
-    render :layout => 'unwinders'
+    @cust_iti_headers = @customer.cust_iti_headers
+    respond_to do |format|
+      format.js
+      format.html { render :layout => 'unwinders' }
+    end
   end
 
   # GET /customers/new
@@ -66,32 +70,6 @@ class CustomersController < ApplicationController
       format.html { redirect_to customers_url }
       format.json { head :no_content }
     end
-  end
-
-  def confirm_user_type!
-    if current_user
-      if current_user.user_type == User::VC
-        respond_to do |format|
-          format.html {redirect_to user_unwinders_path}
-          format.xml
-        end
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to user_session_path}
-        format.xml
-      end
-    end
-  end
-
-  def history
-    @cust_iti_headers = @customer.cust_iti_headers
-    render :layout => 'unwinders'
-  end
-
-  def package_requests
-    @current_user_requests = CustItiRequest.where(:customer_id => current_user.customer.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
-    render :layout => 'unwinders'
   end
 
   private

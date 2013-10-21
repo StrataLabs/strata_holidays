@@ -152,7 +152,7 @@
             = builder.file_field :image
             .modal-footer
               = f.submit "Add", :class => 'btn btn-primary'
-              %a.close{"data-dismiss" => "modal"} Cancel
+              %a.btn{"data-dismiss" => "modal", :href => "#"} Cancel
 
 #comment-modal.modal.hide.fade{"tabindex" => "-1"}
   .modal-header

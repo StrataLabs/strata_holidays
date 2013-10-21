@@ -1,8 +1,19 @@
 %title
   Unwinders | Pick your planner
-= content_for :menu do
-  .container
-    %h2.branch_name A D Vishnu Prasad
+%div{:style => 'margin-bottom:50px'}
+  .wizard-steps
+    .completed-step
+      %a{:href => edit_cust_iti_request_path(:id => params[:cust_req_id])}
+        %span 1
+        Request Package
+    .completed-step
+      %a{:href => cust_iti_request_path(:id => params[:cust_req_id])}
+        %span 2
+        Summary
+    .active-step
+      %a{:href => "#"}
+        %span 3
+        Assign Consultants
 %center.span3.well
   %form.form-horizontal{:id => 'search_vc_form'}
     .control-group

@@ -1,4 +1,17 @@
-- model_class = CustItiRequest
-.page-header
-  %h1 Request Package
+%title
+  Request Package
+.container{:style => 'padding:0px'}
+  .wizard-steps
+    .active-step
+      %a{:href => "#"}
+        %span 1
+        Request Package
+    %div
+      %a{:href => "#step-two"}
+        %span 2
+        Summary
+    %div
+      %a{:href => "#"}
+        %span 3
+        Assign Consultants
 = render :partial => "form"

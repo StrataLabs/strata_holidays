@@ -34,6 +34,39 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def confirm_user_type_is_vc
+    if current_user
+      if current_user.user_type == User::CUSTOMER
+        flash[:error] = "Not authorized to view this page"
+        respond_to do |format|
+          format.html {redirect_to user_unwinders_path}
+          format.xml
+        end
+      end
+    else
+      respond_to do |format|
+        format.html {redirect_to user_session_path}
+        format.xml
+      end
+    end
+  end
+
+  def confirm_user_type_is_customer
+    if current_user
+      if current_user.user_type == User::VC
+        flash[:error] = "Not authorized to view this page"
+        respond_to do |format|
+          format.html {redirect_to user_unwinders_path}
+          format.xml
+        end
+      end
+    else
+      respond_to do |format|
+        format.html {redirect_to user_session_path}
+        format.xml
+      end
+    end
+  end
   # def after_sign_out_path_for(resource)
   #   "/home/sign_in"
   # end

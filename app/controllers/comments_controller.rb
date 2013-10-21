@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :confirm_user_type!
+  before_filter :confirm_user_type_is_customer
   def new
     @parent_id = params.delete(:parent_id)
     @commentable = find_commentable
@@ -23,22 +23,6 @@ class CommentsController < ApplicationController
     respond_to do |format|
       format.js
       format.xml {render :xml => @commentable.to_xml , :status => :ok}
-    end
-  end
-
-  def confirm_user_type!
-    if current_user
-      if current_user.user_type == User::VC
-        respond_to do |format|
-          format.html {redirect_to user_unwinders_path}
-          format.xml
-        end
-      end
-    else
-      respond_to do |format|
-        format.html {redirect_to user_session_path}
-        format.xml
-      end
     end
   end
 
