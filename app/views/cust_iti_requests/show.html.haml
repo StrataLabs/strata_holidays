@@ -1,13 +1,13 @@
 %title
   Your Request | Unwinders
-%div{:style => 'margin-bottom:50px'}
+%div{:style => 'margin-bottom:50px;margin-left:330px'}
   .wizard-steps
     .completed-step
       %a{:href => edit_cust_iti_request_path(:id => @cust_iti_request.id)}
         %span 1
         Request Package
     .active-step
-      %a{:href => "#step-two"}
+      %a{:href => "#"}
         %span 2
         Summary
     %div
@@ -38,13 +38,19 @@
           =cust.vacation_type.vac_type
         %p
           %b Start Date
-          =cust.start_date.strftime("%d-%b-%y")
+          - if cust.start_date
+            =cust.start_date.strftime("%d-%b-%y")
+          -else
+            = "NA"
         %p
           %b End Date
-          =cust.end_date.strftime("%d-%b-%y") || "NA"
+          - if cust.end_date
+            =cust.end_date.strftime("%d-%b-%y")
+          -else
+            = "NA"
         %p
           %b No of People
-          =cust.no_of_adults + cust.no_of_children
+          =cust.no_of_adults + cust.no_of_children rescue "NA"
           / =link_to "Request to All VC", '#', :class => ['btn btn-success']
         %br
   .span7.box

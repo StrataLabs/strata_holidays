@@ -1,5 +1,6 @@
 class Customer < ActiveRecord::Base
   has_many :cust_iti_headers
+  has_many :wish_list_items
   belongs_to :user
   validates_presence_of :user_id
   validates_uniqueness_of :user_id

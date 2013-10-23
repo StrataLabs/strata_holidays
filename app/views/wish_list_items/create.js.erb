@@ -1,0 +1,23 @@
+$(".modal-rec-body").html("<%= escape_javascript(render :partial => 'cust_iti_requests/request_cart' , :locals => { :destination => @destination , :customer_id => @customer_id }) %>");
+$(".requests_cart").html('<%= escape_javascript(render :partial => "layouts/requests_cart")%>')
+var rowCount = $('.modal-rec-body tr').length;
+
+$(document).ready(function () {
+  $(".remove a").click(function(event) {
+    var href = $(this).attr('href');
+    var destination_id = $(this).attr('wish_list_item_id');
+    $.get('/remove_from_wishlist?id='+destination_id,
+      function(data) {
+        $(".requests_cart").html(data)
+        return false;
+      });
+    $(this).closest("tr").fadeOut("slow",function() { $(this).remove(); }); // remove row
+    rowCountRemove = $('.modal-rec-body tr').length;
+    if(rowCountRemove <= 2)
+      {
+        $(".modal-rec-body").html('<h3>Request cart is empty.Please add destinations by clicking "Request Package"</h3>');
+      }
+    return false; // prevents default behavior
+   });
+   $("#my-modal1").modal('show');
+});

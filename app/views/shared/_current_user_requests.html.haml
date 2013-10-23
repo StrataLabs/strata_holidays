@@ -36,9 +36,9 @@
         %p
           %b No of People
           - if cust.no_of_children.present?
-            =cust.no_of_adults + cust.no_of_children
+            =cust.no_of_adults + cust.no_of_children rescue "NA"
           - else
-            =cust.no_of_adults
+            =cust.no_of_adults rescue "NA"
         %p
           %b Created At
           =cust.created_at

@@ -1,4 +1,4 @@
--if session[:request].count > 0
+-if current_user.customer.wish_list_items.present?
   .row
     .span5
       %table.table.table-striped
@@ -6,7 +6,8 @@
           %th
           %th Destination
           %th
-        - session[:request].each do |destination|
+        -customer = current_user.customer
+        - customer.wish_list_items.each do |destination|
           - destination_object = Destination.find(destination[:destination_id])
           %tr
             %td
@@ -16,6 +17,6 @@
               = link_to destination_object.name , destination_path(destination_object)
             %td
               .remove
-                = link_to "Remove" , "#" , :destination_id => destination[:destination_id]
+                = link_to "Remove" , "#" , :wish_list_item_id => destination[:id]
 - else
   %h3 Your cart is empty. Please add destinations by clicking "Request Package"

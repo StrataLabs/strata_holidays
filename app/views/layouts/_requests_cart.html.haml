@@ -1,5 +1,5 @@
 .requests_cart
-  = link_to '/show_requests_cart', :remote => true, :id => "show_cart" do
+  = link_to customer_path(:id => current_user.customer.id), :id => "show_cart" do
     %table{:border => "0px", :cellpadding => "0px", :cellspacing => "0px"}
       %tr
         %td

@@ -20,3 +20,6 @@
 - elsif current_user.user_type == User::VC
   = render :partial => 'shared/vc_profile'
 -else
+  .span6.offset3
+    .well{:style => 'margin-top:20px;text-align:center'}
+      = link_to "Admin Page", "/admin"

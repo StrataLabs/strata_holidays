@@ -40,9 +40,9 @@
         %span
           &nbsp;
           - if cust.no_of_children.present?
-            =cust.no_of_adults + cust.no_of_children
+            =cust.no_of_adults + cust.no_of_children rescue "NA"
           - else
-            =cust.no_of_adults
+            =cust.no_of_adults rescue "NA"
       %li
         %label Created At
         %span

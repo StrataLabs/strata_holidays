@@ -108,6 +108,7 @@ class VacationConsultantsController < ApplicationController
       end
       session[:request].clear if session[:request]
       render :partial => 'layouts/requests_cart'
+      flash[:notice] = "Request assigned successfully."
     end
     # redirect_to '/unwinders/user'
   end
@@ -118,13 +119,13 @@ class VacationConsultantsController < ApplicationController
     end
   end
 
-  # def edit_vc_assignment
-  #   new_status = params[:status]
-  #   vc = VcAssignment.find(params[:vc_assign_id])
-  #   vc.status = new_status
-  #   vc.save
-  #   redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
-  # end
+  def edit_vc_assignment
+    new_status = params[:status]
+    vc = VcAssignment.find(params[:vc_assign_id])
+    vc.status = new_status
+    vc.save
+    redirect_to "/unwinders/vacation_consultant/#{vc.vacation_consultant.id}"
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

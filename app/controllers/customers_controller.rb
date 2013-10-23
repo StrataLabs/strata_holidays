@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy, :history, :package_requests]
-  before_filter :confirm_user_type_is_customer, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :history, :package_requests]
-  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history, :package_requests]
+  before_filter :confirm_user_type_is_customer, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :history, :package_requests, :add_to_wishlist]
+  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history, :package_requests, :add_to_wishlist]
 
   # GET /customers
   # GET /customers.json
@@ -81,5 +81,9 @@ class CustomersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_params
       params.require(:customer).permit(:name, :address_1, :address_2, :city, :state, :country, :lphone, :mphone, :email, :comments)
+    end
+
+    def wish_list_item_params
+      params.permit(:customer_id, :destination_id)
     end
 end

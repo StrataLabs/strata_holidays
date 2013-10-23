@@ -16,10 +16,11 @@
         Newly Assigned Requests
         .icon-envelope-alt.pull-right
       .content#cust-request
+        - p @vc_assignments
         - @vc_assignments.where(:status => 'New').each do |vc_assign|
           .icon-fighter-jet
           New Request received from
-          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true, :class => "get_cust_iti_request" do
             %b
               = vc_assign.cust_iti_request.customer.name
             for
@@ -33,7 +34,7 @@
       .content
         - @vc_assignments.where(:status => 'in_process').each do |vc_assign|
           .icon-fighter-jet
-          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true do
+          = link_to get_cust_iti_request_path(:id => vc_assign.cust_iti_request.id, :vc_assign_id => vc_assign.id) , :remote => true, :class => "get_cust_iti_request" do
             %b
               = vc_assign.cust_iti_request.customer.name
             for
@@ -48,7 +49,7 @@
 #my-vc-modal.modal.hide.fade{"tabindex" => "-1"}
   .modal-header
     %a.close{"data-dismiss" => "modal"} x
-    %h3 Choose Vacation Consultant
+    %h3 Request Summary
   .modal-body
     .modal-vc-rec-body
   .modal-footer

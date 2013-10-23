@@ -1,0 +1,17 @@
+%h1 Listing wish_list_items
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @wish_list_items.each do |wish_list_item|
+    %tr
+      %td= link_to 'Show', wish_list_item
+      %td= link_to 'Edit', edit_wish_list_item_path(wish_list_item)
+      %td= link_to 'Destroy', wish_list_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Wish list item', new_wish_list_item_path

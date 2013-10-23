@@ -32,8 +32,8 @@
         %td= property.pool
         %td= property.fun_zone
         %td= property.comments
-        %td= property.created_at
         %td= image_tag property.image.url(:thumb)
+        %td= property.created_at
         - if current_user && current_user.user_type == User::ADMIN
           %td
             = link_to t('.edit', :default => t("helpers.links.edit")), edit_property_path(property), :class => 'btn btn-mini'

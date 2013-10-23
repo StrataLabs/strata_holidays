@@ -1,17 +1,18 @@
 %title
   Edit Package
 .container{:style => 'padding:0px'}
-  .wizard-steps
-    .active-step
-      %a{:href => "#"}
-        %span 1
-        Request Package
-    %div
-      %a{:href => "#step-two"}
-        %span 2
-        Summary
-    %div
-      %a{:href => "#"}
-        %span 3
-        Assign Consultants
+  .span5.offset3
+    .wizard-steps
+      .active-step
+        %a{:href => "#"}
+          %span 1
+          Request Package
+      %div
+        %a{:href => "#"}
+          %span 2
+          Summary
+      %div
+        %a{:href => "#"}
+          %span 3
+          Assign Consultants
 = render :partial => "form"

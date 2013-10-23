@@ -18,6 +18,7 @@ class CustItiRequestsController < ApplicationController
   # GET /cust_iti_requests/new
   def new
     @cust_iti_request = CustItiRequest.new
+    render :layout => 'unwinders'
   end
 
   # GET /cust_iti_requests/1/edit
@@ -53,7 +54,7 @@ class CustItiRequestsController < ApplicationController
         format.html { redirect_to @cust_iti_request, notice: 'Cust iti request was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'edit', layout: 'unwinders' }
         format.json { render json: @cust_iti_request.errors, status: :unprocessable_entity }
       end
     end

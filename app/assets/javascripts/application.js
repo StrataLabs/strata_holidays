@@ -50,6 +50,12 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
+  $('.get_cust_iti_request').on('click', function(){
+    $('#my-vc-modal').modal("show");
+  });
+});
+
+jQuery(document).ready(function($) {
   $('#new-photo').on('click', function(){
     $('#add-image-modal').modal("show");
   });

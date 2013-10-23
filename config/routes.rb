@@ -7,8 +7,9 @@ StrataHolidays::Application.routes.draw do
   get 'itinerary' => 'static_pages#itinerary'
   get 'admin' => 'static_pages#admin'
   resources :vc_registrations
+  resources :wish_list_items
 
-  get '/remove_session_destination' => 'cust_iti_requests#remove_session'
+  get '/remove_from_wishlist' => 'wish_list_items#destroy'
   get '/show_requests_cart' => "cust_iti_requests#request_cart", defaults: {format: "js"}
   get '/request_from_cart' => "cust_iti_requests#request_from_cart"
   resources :cust_iti_requests do
@@ -18,12 +19,7 @@ StrataHolidays::Application.routes.draw do
   end
   resources :consultant_customer_destinations
   resources :vacation_consultants
-  resources :customers do
-    member do
-      get 'history'
-      get 'package_requests'
-    end
-  end
+  resources :customers
   resources :iti_cust_dest_poa_details do
     resources :comments
   end
