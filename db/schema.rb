@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015065239) do
+ActiveRecord::Schema.define(version: 20131024113535) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -276,6 +276,18 @@ ActiveRecord::Schema.define(version: 20131015065239) do
     t.datetime "image_updated_at"
   end
 
+  create_table "user_responses", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "contact_no"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "no_of_adults"
+    t.integer  "no_of_children"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -348,6 +360,13 @@ ActiveRecord::Schema.define(version: 20131015065239) do
     t.string   "status",                 default: "New"
     t.string   "address_1"
     t.string   "address_2"
+  end
+
+  create_table "wish_list_items", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "destination_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

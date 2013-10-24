@@ -1,0 +1,51 @@
+#response-form.span5
+  .b-form
+    = form_for(@user_response, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
+      .textfield.active
+        %i.icon-user
+        %input.text{:autocomplete => "off", :name => "user[name]", :placeholder => "Your name", :size => "24", :type => "text"}
+          %em.required required
+      .textfield
+        %i.icon-envelope
+        %input.text{:autocomplete => "off", :email => "user[email]", :placeholder => "Your email", :size => "24", :type => "text"}
+          %em.required required
+      .textfield
+        %i.icon-signal
+        %input.text{:autocomplete => "off", :contact_no => "user[contact_no]", :placeholder => "Your Contact No.", :size => "24", :type => "text"}
+          %em.required required
+      .textfield
+        %i.icon-calendar
+        %input.text{:autocomplete => "off", :start_date => "user[start_date]", :placeholder => "Start Date (dd-mm-yy)", :size => "24", :type => "text", :as => :date_picker}
+          %em.required required
+      .textfield
+        %i.icon-calendar
+        %input.text{:autocomplete => "off", :end_date => "user[end_date]", :placeholder => "End Date DD-MM-YY", :size => "24", :type => "text", :as => :date_picker}
+          %em.required required
+      .textfield
+        %i.icon-globe
+        %input.text{:autocomplete => "off", :no_of_adults => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text", :as => :date_picker}
+          %em.required required
+      .textfield
+        %i.icon-flag
+        %input.text{:autocomplete => "off", :no_of_children => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text", :as => :date_picker}
+          %em.required required
+      / %br
+      / = f.text_field :email, :placeholder => "Email"
+      / %br
+      / = f.text_field :contact_no, :placeholder => "Contact No."
+      / %br
+      / = f.text_field :start_date, :as => :date_picker, :placeholder => "Start Date"
+      / %br
+      / = f.text_field :end_date, :as => :date_picker, :placeholder => "End Date"
+      / %br
+      / = f.text_field :no_of_adults, :placeholder => "No. of adults"
+      / %br
+      / = f.text_field :no_of_children, :placeholder => "No. of children"
+      / / .form-actions
+      %center
+        = f.button :submit, :value => "Request" , :class => 'btn btn-success btn-medium btn-block'
+/ %h1 New user_response
+
+/ = render 'form'
+
+/ = link_to 'Back', user_responses_path

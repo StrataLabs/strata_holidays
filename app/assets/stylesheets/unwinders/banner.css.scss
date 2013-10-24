@@ -219,3 +219,29 @@ html{padding-top: 0;}
     }
   }
 }
+
+
+#banner1{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0px;
+  margin: 0;
+  background: $back-color;
+
+  h1{
+    display: block;
+    position: relative;
+    background: transparent image-url('unwinders/logo_2.png') center center no-repeat;
+    width: 320px;
+    height: 145px;
+    float: left;
+    z-index: 20;
+    margin: 0px; padding: 0;
+    text-indent: -1000em;
+
+    @media screen and (max-width: 600px) {
+      margin: 0;
+    }
+  }
+}

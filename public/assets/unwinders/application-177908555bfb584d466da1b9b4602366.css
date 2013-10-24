@@ -1,0 +1,2028 @@
+/* normalize.css v1.1.0 | MIT License | git.io/normalize */
+/* normalize.css v1.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 20, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/* line 28, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/* line 39, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* line 46, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+[hidden] {
+  display: none; }
+
+/* normalize.css v1.1.0 | Base | MIT License | git.io/normalize */
+/* line 13, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 30, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/* line 37, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+body {
+  margin: 0; }
+
+/* normalize.css v1.1.0 | Links | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
+a:focus {
+  outline: thin dotted; }
+
+/* line 16, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* normalize.css v1.1.0 | Typography | MIT License | git.io/normalize */
+/* line 13, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* line 19, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+/* line 24, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+/* line 29, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+/* line 34, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+/* line 39, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0; }
+
+/* line 47, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 54, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/* line 59, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+blockquote {
+  margin: 1em 40px; }
+
+/* line 66, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+dfn {
+  font-style: italic; }
+
+/* line 73, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/* line 81, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/* line 90, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+p,
+pre {
+  margin: 1em 0; }
+
+/* line 100, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/* line 110, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/* line 118, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/* line 127, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+q {
+  quotes: none; }
+
+/* line 132, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/* line 140, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+small {
+  font-size: 80%; }
+
+/* line 147, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 154, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+sup {
+  top: -0.5em; }
+
+/* line 158, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 11, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+/* line 15, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+dd {
+  margin: 0 0 0 40px; }
+
+/* line 23, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
+/* line 30, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* normalize.css v1.1.0 | Embedded Content | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/* line 18, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* normalize.css v1.1.0 | Figures | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_figures.scss */
+figure {
+  margin: 0; }
+
+/* normalize.css v1.1.0 | Forms | MIT License | git.io/normalize */
+/* line 10, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+form {
+  margin: 0; }
+
+/* line 17, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/* line 30, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px; }
+
+/* line 49, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+/* line 63, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+input {
+  line-height: normal; }
+
+/* line 73, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+select {
+  text-transform: none; }
+
+/* line 90, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible; }
+
+/* line 101, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/* line 113, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px; }
+
+/* line 126, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* line 137, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* line 144, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* line 152, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/* normalize.css v1.1.0 | Tables | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 35, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/colors.css.scss */
+html, body {
+  color: #666666;
+  background: white; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS76F-webfont.eot);
+  src: url(/images/fonts/PTS76F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS76F-webfont.woff) format("woff"), url(/images/fonts/PTS76F-webfont.ttf) format("truetype"), url(/images/fonts/PTS76F-webfont.svg#PTSansBoldItalic) format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS75F-webfont.eot);
+  src: url(/images/fonts/PTS75F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS75F-webfont.woff) format("woff"), url(/images/fonts/PTS75F-webfont.ttf) format("truetype"), url(/images/fonts/PTS75F-webfont.svg#PTSansBold) format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS56F-webfont.eot);
+  src: url(/images/fonts/PTS56F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS56F-webfont.woff) format("woff"), url(/images/fonts/PTS56F-webfont.ttf) format("truetype"), url(/images/fonts/PTS56F-webfont.svg#PTSansItalic) format("svg");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS55F-webfont.eot);
+  src: url(/images/fonts/PTS55F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS55F-webfont.woff) format("woff"), url(/images/fonts/PTS55F-webfont.ttf) format("truetype"), url(/images/fonts/PTS55F-webfont.svg#PTSansRegular) format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/SourceSansPro-ExtraLight-webfont.eot);
+  src: url(/images/fonts/SourceSansPro-ExtraLight-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/SourceSansPro-ExtraLight-webfont.woff) format("woff"), url(/images/fonts/SourceSansPro-ExtraLight-webfont.ttf) format("truetype"), url(/images/fonts/SourceSansPro-ExtraLight-webfont.svg#SourceSansProExtraLight) format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/SourceSansPro-Light-webfont.eot);
+  src: url(/images/fonts/SourceSansPro-Light-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/SourceSansPro-Light-webfont.woff) format("woff"), url(/images/fonts/SourceSansPro-Light-webfont.ttf) format("truetype"), url(/images/fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight) format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+/* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+html, body, input, select, textarea {
+  font-family: 'PTSans', sans; }
+
+/* line 75, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h1 {
+  font-weight: 100; }
+
+/* line 76, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h2 {
+  font-weight: 300; }
+
+/* line 78, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+html, body {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px; }
+
+/* line 84, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h1, h2, h3, h4 {
+  margin: 10px 0 4px 0;
+  color: #666666;
+  font-weight: 700; }
+
+/* line 86, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h2 {
+  font-size: 18px; }
+
+/* line 87, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h3 {
+  font-size: 16px; }
+
+/* line 88, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h4 {
+  font-size: 13px; }
+
+/* line 91, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h2, header h3 {
+  color: #2d3681; }
+/* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h2 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px; }
+/* line 93, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h4 {
+  font-weight: 400; }
+/* line 94, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h4 a {
+  font-weight: 700; }
+
+/* line 97, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+form h2 {
+  color: #2d3681;
+  font-weight: 300;
+  font-size: 24px;
+  padding-bottom: 4px;
+  border-bottom: solid 1px #eeeeee; }
+
+/* line 106, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] h2, div[role="complementary"] h3, div[role="complementary"] h4 {
+  color: #666666;
+  margin: 8px 10px 4px 10px; }
+/* line 107, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] div {
+  margin: 4px 10px; }
+  /* line 109, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+  div[role="complementary"] div h2, div[role="complementary"] div h3, div[role="complementary"] div h4 {
+    margin: 4px 0; }
+/* line 111, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  border-bottom: solid 1px #cccccc; }
+/* line 112, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] h3 {
+  font-size: 15px; }
+
+/* line 115, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+a {
+  color: #2d3681;
+  text-decoration: none; }
+
+/* line 6, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/grid.css.scss */
+div#page, div.container {
+  *zoom: 1;
+  max-width: 1180px;
+  _width: 1180px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 38, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  div#page:after, div.container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url(/images/font/fontawesome-webfont.eot);
+  src: url(/images/font/fontawesome-webfont.eot?#iefix) format("eot"), url(/images/font/fontawesome-webfont.woff) format("woff"), url(/images/font/fontawesome-webfont.ttf) format("truetype"), url(/images/font/fontawesome-webfont.svg#FontAwesome) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "SSStandard";
+  src: url(/assets/fonts/ss-standard.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+form {
+  overflow: hidden;
+  *zoom: 1;
+  padding-bottom: 20px; }
+  /* line 4, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form label {
+    display: block;
+    font-weight: 600; }
+  /* line 11, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form input[type="text"],
+  form input[type="password"],
+  form input[type="search"],
+  form input[type="email"],
+  form select,
+  form textarea {
+    border: solid 1px #cccccc;
+    resize: none; }
+  /* line 16, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form textarea {
+    height: 160px; }
+  /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form #content h2, form #content fieldset {
+    margin: 10px 20px; }
+  /* line 20, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form #content div {
+    margin: 0; }
+  /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form fieldset {
+    clear: both;
+    margin: 10px 0;
+    padding: 10px 0;
+    border: none;
+    border-bottom: solid 1px #eeeeee; }
+    /* line 30, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div {
+      width: 50%;
+      float: left;
+      position: relative;
+      margin: 0;
+      padding-bottom: 30px; }
+      /* line 41, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div input[type="text"],
+      form fieldset div input[type="password"],
+      form fieldset div input[type="search"],
+      form fieldset div input[type="email"],
+      form fieldset div select {
+        width: 96%; }
+      /* line 46, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.checkbox input {
+        display: inline; }
+      /* line 47, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.checkbox label {
+        display: inline; }
+      /* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.date {
+        width: 25%; }
+        /* line 53, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.date input {
+          width: 92%; }
+      /* line 56, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.text_area {
+        width: 100%; }
+        /* line 59, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.text_area textarea {
+          width: 98%;
+          height: 200px; }
+      /* line 62, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div span.hint {
+        display: block;
+        position: absolute;
+        bottom: 12px;
+        font-style: italic;
+        font-size: 12px; }
+    /* line 71, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.user_type {
+      overflow: hidden;
+      padding-bottom: 30px; }
+      /* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.user_type label {
+        display: inline; }
+    /* line 77, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.tags {
+      height: 100px;
+      position: relative; }
+      /* line 80, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags .tags_clear {
+        clear: both;
+        width: 100%;
+        height: 0px; }
+      /* line 81, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags .not_valid {
+        background: #FBD8DB !important;
+        color: #90111A !important; }
+      /* line 83, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags div {
+        margin: 0;
+        padding: 0; }
+      /* line 85, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags li {
+        display: block;
+        list-style: none;
+        float: left;
+        padding: 0 5px;
+        margin: 4px 4px 0 0;
+        background: #eeeeee;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        cursor: pointer; }
+        /* line 95, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags li:hover {
+          background: #666666;
+          color: white; }
+      /* line 98, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags div.categorized-tags {
+        display: block;
+        float: left;
+        width: 40px;
+        position: static;
+        padding: 0;
+        margin: 0; }
+        /* line 106, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags div.categorized-tags span {
+          display: block;
+          width: 24px;
+          height: 24px;
+          line-height: 28px;
+          padding: 0;
+          margin-left: 6px;
+          background: #666666;
+          text-align: center;
+          color: white;
+          font-size: 30px;
+          font-weight: bold;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          border-radius: 4px;
+          cursor: pointer; }
+        /* line 123, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags div.categorized-tags ul {
+          display: none;
+          position: absolute;
+          width: 100%;
+          height: 160px;
+          overflow: auto;
+          top: -160px;
+          left: 1%;
+          z-index: 20;
+          padding: 1%;
+          background: white;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          border-radius: 4px; }
+        /* line 138, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags div.categorized-tags.active ul {
+          display: block; }
+  /* line 143, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div#errorExplanation, form div#error_explanation {
+    padding: 1px;
+    color: #cc0000;
+    background: #ffffee;
+    font-weight: 600; }
+    /* line 149, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form div#errorExplanation h2, form div#error_explanation h2 {
+      display: none; }
+  /* line 152, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form fieldset div.field_with_errors {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    /* line 161, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.field_with_errors input[type="text"],
+    form fieldset div.field_with_errors input[type="password"],
+    form fieldset div.field_with_errors input[type="search"],
+    form fieldset div.field_with_errors input[type="email"],
+    form fieldset div.field_with_errors textarea,
+    form fieldset div.field_with_errors select,
+    form fieldset div.field_with_errors div.tagsinput {
+      border: solid 1px #cc0000; }
+    /* line 165, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.field_with_errors label {
+      color: #cc0000; }
+  /* line 168, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form p.form-actions {
+    clear: both;
+    overflow: hidden;
+    *zoom: 1; }
+  /* line 171, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div.sidebar h2 {
+    padding-top: 8px; }
+  /* line 172, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  /* line 173, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div.sidebar input {
+    width: 90%; }
+
+/* line 177, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+div.tagsinput {
+  border: 1px solid #CCC;
+  background: #FFF;
+  overflow-y: auto; }
+  /* line 182, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  div.tagsinput span.tag {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    position: relative;
+    margin: 4px 0 0 4px;
+    padding: 0 0 0 4px;
+    line-height: 24px;
+    height: 24px;
+    font-weight: 600;
+    background: #f7f7f7;
+    color: #666666;
+    border: solid 1px #eeeeee; }
+    /* line 197, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    div.tagsinput span.tag span {
+      display: inline-block;
+      height: 24px;
+      line-height: 24px;
+      float: left; }
+    /* line 204, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    div.tagsinput span.tag a {
+      float: right;
+      padding: 0;
+      margin: 0; }
+  /* line 207, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  div.tagsinput input {
+    width: 80px;
+    margin: 4px 0 0 4px;
+    padding: 4px;
+    border: none; }
+  /* line 214, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  div.tagsinput div {
+    display: block;
+    float: left; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+html {
+  padding-top: 0; }
+
+/* line 3, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+#banner {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 40px 0;
+  background: #ffcc11; }
+  /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner h1 {
+    display: block;
+    position: relative;
+    background: transparent url(/assets/unwinders/logo_2.png) center center no-repeat;
+    width: 320px;
+    height: 145px;
+    float: left;
+    z-index: 20;
+    margin: -42px 0 0 0;
+    padding: 0;
+    text-indent: -1000em; }
+    @media screen and (max-width: 600px) {
+      /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner h1 {
+        margin: 0; } }
+  /* line 26, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner h2 {
+    display: block;
+    position: relative;
+    color: #1f1b20;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 42px;
+    padding: 6px 0 0 0;
+    margin: 0;
+    text-align: center; }
+  /* line 38, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner #menu {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: -104px 0 0 0;
+    background: #ffcc11;
+    color: white;
+    z-index: 10;
+    font-weight: 100;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 48px;
+    float: left;
+    width: 100%; }
+    @media screen and (max-width: 600px) {
+      /* line 38, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu {
+        margin: 20px 0 0 0; } }
+    /* line 58, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+    #banner #menu div#search {
+      display: block;
+      float: right;
+      width: 200px;
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      margin: 9px 10px 0 0;
+      padding: 0;
+      background: white;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      -o-border-radius: 15px;
+      border-radius: 15px; }
+      /* line 68, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu div#search:after {
+        content: "\1F50E";
+        font-family: "SSStandard";
+        display: block;
+        float: right;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 36px;
+        text-align: center;
+        background: transparent;
+        color: #cccccc; }
+      /* line 81, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu div#search input {
+        background: transparent;
+        border: transparent;
+        display: block;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        -webkit-border-radius: 0 15px 15px 0;
+        -moz-border-radius: 0 15px 15px 0;
+        -ms-border-radius: 0 15px 15px 0;
+        -o-border-radius: 0 15px 15px 0;
+        border-radius: 0 15px 15px 0; }
+    /* line 93, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+    #banner #menu ul#filters {
+      display: block;
+      margin: 0 0 0 320px;
+      padding: 0;
+      font-weight: 100;
+      font-size: 24px;
+      text-transform: uppercase;
+      line-height: 48px; }
+      @media screen and (max-width: 600px) {
+        /* line 93, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters {
+          margin: 0; } }
+      /* line 105, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu ul#filters li {
+        display: block;
+        float: left;
+        position: relative; }
+        /* line 110, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li.instructions {
+          background: transparent;
+          margin: -36px -300px 0 0;
+          width: 300px;
+          font-size: 13px;
+          font-weight: 400;
+          color: #888888; }
+        /* line 121, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li.list {
+          margin-right: 40px; }
+        /* line 125, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li span.label {
+          display: block;
+          float: left;
+          background: transparent;
+          width: auto;
+          padding-right: 10px;
+          width: 80px;
+          text-align: right; }
+        /* line 135, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li span.prompt {
+          display: block;
+          position: relative;
+          float: left;
+          width: 200px;
+          padding: 0 0 0 12px;
+          background: rgba(0, 0, 0, 0.1);
+          cursor: pointer; }
+          /* line 144, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+          #banner #menu ul#filters li span.prompt:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            right: 12px;
+            top: 18px;
+            border-top: solid 10px rgba(0, 0, 0, 0.5);
+            border-right: solid 6px transparent;
+            border-left: solid 6px transparent; }
+        /* line 162, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li ul {
+          display: block;
+          position: absolute;
+          top: 48px;
+          left: -1000em;
+          margin: 0 0 0 90px;
+          padding: 0;
+          width: 212px;
+          height: auto;
+          max-height: 420px;
+          overflow-y: auto;
+          background: white;
+          color: #1f1b20;
+          z-index: 100;
+          -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+          /* line 3, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/mixins.css.scss */
+          html.ie8 #banner #menu ul#filters li ul {
+            outline: solid 1px #cccccc; }
+          /* line 178, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+          #banner #menu ul#filters li ul li {
+            width: 90%;
+            height: auto;
+            padding: 0 5%;
+            margin: 0;
+            line-height: 30px;
+            font-size: 20px;
+            text-transform: lowercase;
+            background: transparent; }
+            /* line 188, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+            #banner #menu ul#filters li ul li:hover {
+              background: rgba(0, 0, 0, 0.1);
+              cursor: pointer; }
+        /* line 195, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li:hover ul, #banner #menu ul#filters li.hover ul {
+          left: auto; }
+  /* line 201, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner #submenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    line-height: 14px;
+    padding: 10px 0 0 0; }
+    /* line 208, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+    #banner #submenu ul {
+      display: block;
+      margin: 0;
+      padding: 0; }
+      /* line 211, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #submenu ul li {
+        display: block;
+        float: left;
+        border-right: solid 1px #888888; }
+        /* line 216, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #submenu ul li:last-child {
+          border-right: none; }
+        /* line 217, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #submenu ul li a {
+          display: block;
+          padding: 0 10px;
+          font-size: 13px;
+          color: #1f1b20; }
+
+/* line 224, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+#banner1 {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0px;
+  margin: 0;
+  background: #ffcc11; }
+  /* line 232, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner1 h1 {
+    display: block;
+    position: relative;
+    background: transparent url(/assets/unwinders/logo_2.png) center center no-repeat;
+    width: 320px;
+    height: 145px;
+    float: left;
+    z-index: 20;
+    margin: 0px;
+    padding: 0;
+    text-indent: -1000em; }
+    @media screen and (max-width: 600px) {
+      /* line 232, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner1 h1 {
+        margin: 0; } }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+#footer {
+  display: block;
+  position: relative;
+  clear: both;
+  padding: 20px;
+  background: #1f1b20;
+  border-top: solid 1px #eeeeee;
+  overflow: hidden;
+  *zoom: 1; }
+  /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+  #footer ul.navigation {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0; }
+    /* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+    #footer ul.navigation li {
+      list-style: none; }
+  /* line 17, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+  #footer div.contact {
+    display: block;
+    float: right;
+    text-align: right;
+    margin: 0;
+    padding: 0; }
+    /* line 21, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+    #footer div.contact p {
+      margin: 0 0 4px 0; }
+      /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+      #footer div.contact p strong {
+        display: block; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+div.home {
+  display: block;
+  margin: -20px 20px 20px 20px;
+  overflow: hidden;
+  *zoom: 1;
+  clear: both; }
+
+/* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+div.ad, ul.branch-list li {
+  display: block;
+  float: left;
+  height: 300px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0.3%; }
+  /* line 17, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  div.ad a, div.ad a:hover, ul.branch-list li a, ul.branch-list li a:hover {
+    font-color: #666666;
+    border: none; }
+  @media screen and (min-width: 1200px) {
+    /* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    div.ad, ul.branch-list li {
+      width: 13.6%; } }
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    /* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    div.ad, ul.branch-list li {
+      width: 19.4%; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    div.ad, ul.branch-list li {
+      width: 32.7%; } }
+
+@media screen and (min-width: 600px) {
+  /* line 33, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  div.ad {
+    display: block;
+    float: left;
+    height: 300px;
+    background: transparent url(/assets/unwinders/ad-1.jpg) center center no-repeat; }
+
+  /* line 40, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  ul.branch-list {
+    display: inline;
+    margin: 0;
+    padding: 0; }
+    /* line 46, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li.branch {
+      -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+      /* line 49, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.branch div {
+        padding: 6px;
+        font-size: 12px;
+        line-height: 14px; }
+        /* line 52, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+        ul.branch-list li.branch div h3 {
+          font-size: 12px;
+          line-height: 16px;
+          padding: 0;
+          margin: 0; }
+    /* line 60, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li.quote {
+      font-size: 22px;
+      line-height: 30px;
+      text-align: center;
+      height: 300px; }
+      /* line 66, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.quote p, ul.branch-list li.quote h3 {
+        font-weight: 300;
+        padding: 30px 20px;
+        color: #cccccc; }
+      /* line 72, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.quote h3 {
+        padding: 50px 20px;
+        font-size: 48px;
+        line-height: 60px;
+        font-weight: 100; }
+    /* line 81, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li img {
+      width: 100%; } }
+@media screen and (max-width: 600px) {
+  /* line 88, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  div.ad {
+    display: none; }
+
+  /* line 89, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  ul.branch-list {
+    margin: 0;
+    padding: 0;
+    display: block; }
+    /* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li {
+      display: block;
+      margin: 0.3%;
+      padding: 0;
+      width: 49%;
+      height: auto;
+      border: solid 0.2% #eeeeee; }
+      /* line 98, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li img {
+        width: 100%; }
+      /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li div {
+        display: block; }
+        /* line 103, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+        ul.branch-list li div h3 {
+          margin: 0 0 20px 0;
+          font-weight: normal;
+          font-size: 13px; }
+        /* line 104, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+        ul.branch-list li div p {
+          display: none; }
+      /* line 107, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.quote {
+        display: none; } }
+/* line 2, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .action {
+  display: block;
+  background: #d9eefd;
+  margin: 0 0 20px 0; }
+  /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+  body#transaction .action .container {
+    overflow: hidden;
+    clear: both; }
+    @media screen and (min-width: 600px) {
+      /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .container {
+        height: 240px; } }
+    @media screen and (min-width: 900px) {
+      /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .container {
+        background: #d9eefd url(/images/microsites/ad-1.jpg) 30px 0 no-repeat; } }
+  /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+  body#transaction .action .intro {
+    clear: both;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .intro {
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 300; } }
+    @media screen and (min-width: 600px) and (max-width: 900px) {
+      /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .intro {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+        width: 49.15254%;
+        float: left;
+        margin-right: 1.69492%;
+        display: inline; } }
+    @media screen and (min-width: 900px) {
+      /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .intro {
+        font-size: 30px;
+        font-weight: 100;
+        line-height: 40px;
+        width: 49.15254%;
+        float: left;
+        margin-right: 1.69492%;
+        display: inline;
+        padding-left: 16.94915%; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 45, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .action form {
+      width: 49.15254%;
+      float: right;
+      margin-right: 0;
+      *margin-left: -20px;
+      display: inline; } }
+  @media screen and (min-width: 900px) {
+    /* line 45, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .action form {
+      width: 32.20339%;
+      float: right;
+      margin-right: 0;
+      *margin-left: -20px;
+      display: inline; } }
+  /* line 58, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+  body#transaction .action form fieldset {
+    width: 100%;
+    padding: 0;
+    margin: 20px 0 0 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+    border: none; }
+    /* line 65, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .action form fieldset div {
+      width: 100%;
+      margin: 0 0 10px 0;
+      padding: 0; }
+      /* line 70, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action form fieldset div label {
+        display: block;
+        float: left;
+        text-align: right;
+        width: 30%;
+        padding-right: 2%;
+        font-weight: 300;
+        line-height: 36px; }
+      /* line 80, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action form fieldset div input {
+        display: block;
+        float: right;
+        width: 65%;
+        font-size: 18px;
+        line-height: 36px;
+        padding: 0 6px; }
+      /* line 89, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action form fieldset div.form-actions input {
+        background: rgba(0, 0, 0, 0.2);
+        color: black;
+        text-shadow: none; }
+/* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map, body#transaction .photo, body#transaction .newsletter {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  @media screen and (min-width: 900px) {
+    /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .map, body#transaction .photo, body#transaction .newsletter {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; }
+      /* line 184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/susy-1.0.9/sass/susy/_grid.scss */
+      body#transaction .map:nth-child(3n), body#transaction .photo:nth-child(3n), body#transaction .newsletter:nth-child(3n) {
+        float: right;
+        margin-right: 0; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .map, body#transaction .photo, body#transaction .newsletter {
+      width: 49.15254%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; }
+      /* line 184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/susy-1.0.9/sass/susy/_grid.scss */
+      body#transaction .map:nth-child(2n), body#transaction .photo:nth-child(2n), body#transaction .newsletter:nth-child(2n) {
+        float: right;
+        margin-right: 0; } }
+/* line 119, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map iframe {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  padding: 0; }
+/* line 126, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map a {
+  display: block;
+  float: right;
+  margin: 0;
+  padding: 4px 10px;
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  -ms-border-radius: 0 0 0 4px;
+  -o-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  background: #888888;
+  color: white; }
+/* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map p {
+  padding: 4px 10px;
+  margin: 0; }
+/* line 138, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .photo img {
+  display: block;
+  width: 100%; }
+/* line 142, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .newsletter img {
+  display: block;
+  float: left;
+  margin-right: 6px; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+body#list {
+  background-color: #fafafa; }
+  /* line 3, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .control-group {
+    margin-bottom: 10px; }
+  /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .form-horizontal .control-label {
+    width: 90px; }
+  /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .form-horizontal .controls {
+    margin-left: 125px; }
+  /* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .action {
+    display: block;
+    clear: both;
+    overflow: hidden; }
+    /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .action img {
+      display: block;
+      float: right;
+      margin: 20px 0 20px 20px; }
+      @media screen and (min-width: 900px) {
+        /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action img {
+          height: 120px;
+          box-shadow: 0px 1px 3px #424641; } }
+      @media screen and (max-width: 900px) {
+        /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action img {
+          width: 100%;
+          margin-top: 10px; } }
+    /* line 39, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .action ul.plans {
+      margin-top: 40px; }
+      /* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+      body#list .action ul.plans li {
+        display: block;
+        float: right;
+        clear: both;
+        width: 100%;
+        list-style: none;
+        margin: 0 0 2px 0;
+        background: #cccccc;
+        color: white;
+        font-size: 16px;
+        line-height: 40px;
+        text-align: right;
+        padding-right: 5px; }
+        @media screen and (max-width: 600px) {
+          /* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+          body#list .action ul.plans li {
+            font-size: 13px; } }
+        /* line 65, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li a {
+          display: block;
+          float: right;
+          color: white;
+          background: rgba(0, 0, 0, 0.1);
+          padding: 0 12px;
+          margin-left: 8px;
+          text-transform: lowercase; }
+          /* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+          body#list .action ul.plans li a:after {
+            content: " \00bb"; }
+          /* line 75, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+          body#list .action ul.plans li a:hover {
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            color: black; }
+        /* line 78, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li strong {
+          display: block;
+          float: left;
+          font-size: 28px;
+          font-weight: 100;
+          line-height: 36px;
+          padding: 4px 6px 0 6px; }
+          @media screen and (max-width: 600px) {
+            /* line 78, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+            body#list .action ul.plans li strong {
+              font-size: 21px; } }
+        /* line 89, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.lite {
+          width: 70%;
+          background: #56a9f5; }
+        /* line 90, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.basic {
+          width: 80%;
+          background: #7ac943; }
+        /* line 91, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.regular {
+          width: 90%;
+          background: #ec9138; }
+        /* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.avid {
+          background: #e64437; }
+    /* line 96, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .action p.intro {
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 40px;
+      text-align: center; }
+      @media screen and (min-width: 900px) {
+        /* line 96, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action p.intro {
+          width: 40.67797%;
+          float: left;
+          margin-right: 1.69492%;
+          display: inline;
+          padding-left: 16.94915%; } }
+      @media screen and (max-width: 900px) {
+        /* line 96, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action p.intro {
+          width: 100%;
+          float: left;
+          margin-right: 1.69492%;
+          display: inline; } }
+  /* line 113, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .info, body#list .refer, body#list .newsletter {
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px 0; }
+  /* line 119, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map {
+    height: 300px;
+    width: 500px; }
+  @media screen and (min-width: 900px) {
+    /* line 124, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .map, body#list .info {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 124, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .map, body#list .info {
+      width: 66.10169%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; } }
+  @media screen and (min-width: 900px) {
+    /* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .refer, body#list .newsletter {
+      width: 15.25424%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; }
+      /* line 184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/susy-1.0.9/sass/susy/_grid.scss */
+      body#list .refer:nth-child(5), body#list .newsletter:nth-child(5) {
+        float: right;
+        margin-right: 0; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .refer, body#list .newsletter {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline;
+      float: right;
+      margin-right: 0;
+      *margin-left: -20px;
+      display: inline; } }
+  /* line 147, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .refer h3, body#list .info h3 {
+    margin: 10px 6px 0 6px;
+    font-size: 13px; }
+  /* line 148, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .refer p, body#list .info p {
+    margin: 0 6px 6px 6px; }
+  /* line 152, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map iframe {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    padding: 0; }
+  /* line 159, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map a {
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 4px 10px;
+    -webkit-border-radius: 0 0 0 4px;
+    -moz-border-radius: 0 0 0 4px;
+    -ms-border-radius: 0 0 0 4px;
+    -o-border-radius: 0 0 0 4px;
+    border-radius: 0 0 0 4px;
+    background: #888888;
+    color: white; }
+  /* line 167, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map p {
+    padding: 4px 10px;
+    margin: 0; }
+  /* line 171, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .photo img {
+    display: block;
+    width: 100%; }
+  /* line 175, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .newsletter img {
+    display: block;
+    float: left;
+    margin-right: 6px; }
+
+/* Basic jQuery Slider essential styles */
+/* line 4, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: none; }
+
+/* line 5, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+li.bjqs-slide {
+  position: absolute;
+  display: none; }
+
+/* line 6, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 9999; }
+
+/* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li a {
+  position: absolute; }
+
+/* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li.bjqs-next a {
+  right: 0; }
+
+/* line 9, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li a {
+  display: block;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  text-decoration: none; }
+
+/* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li a:hover {
+  background: #000;
+  color: #fff; }
+
+/* line 11, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li.bjqs-prev a {
+  left: 0; }
+
+/* line 12, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+
+/* line 13, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers.h-centered {
+  text-align: center; }
+
+/* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers li {
+  display: inline; }
+
+/* line 15, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers li a {
+  display: inline-block; }
+
+/* line 16, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+p.bjqs-caption {
+  display: block;
+  width: 96%;
+  margin: 0;
+  padding: 2%;
+  position: absolute;
+  bottom: 0; }
+
+/* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.modal.large {
+  width: 60%;
+  /* respsonsive width */
+  margin-left: -30%;
+  /* width/2) */ }
+
+/* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.box {
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+  border-bottom: 2px solid #eee; }
+
+/* line 26, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.box .content {
+  padding: 6px;
+  background: #F0F0F0;
+  color: black; }
+
+/* line 32, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.box .title {
+  color: black;
+  text-align: center;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e5e5e5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+  /* IE6-9 */
+  height: auto;
+  position: relative;
+  padding: 10px;
+  border-bottom: 2px solid #eee; }
+
+/* line 49, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.item-details {
+  clear: both;
+  overflow: hidden;
+  margin: 10px; }
+
+/* line 55, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.item-details p {
+  clear: both;
+  display: block;
+  line-height: 25px;
+  margin: 5px;
+  border-bottom: 1px dotted #bcbcbc; }
+
+/* line 63, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.item-details p b {
+  font-weight: bold;
+  color: #999;
+  background: #f2f2f2;
+  width: 170px;
+  text-align: right;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  padding-right: 5px; }
+
+/* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.order-package {
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0px 0 0 0;
+  padding: 0;
+  border: solid 2px #eeeedd;
+  overflow: hidden; }
+  /* line 83, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .order-package .header {
+    padding: 6px;
+    color: black;
+    background: #FECC00;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: solid 1.5px #eeeeee; }
+  /* line 91, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .order-package .content {
+    padding: 10px; }
+
+/* line 97, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.thumb-container {
+  text-align: center;
+  margin-bottom: 3px; }
+  /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail {
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, 0.1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, 0.1);
+    box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, 0.1);
+    overflow: hidden; }
+  /* line 106, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.large {
+    height: 180px;
+    width: 125px; }
+    /* line 109, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.large img {
+      height: 180px;
+      max-height: 200px;
+      max-width: 125px; }
+  /* line 115, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.medium {
+    height: 150px;
+    width: 100px; }
+    /* line 118, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.medium img {
+      max-height: 150px;
+      max-width: 100px; }
+  /* line 123, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.small {
+    height: 100px;
+    width: 75px; }
+    /* line 126, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.small img {
+      max-height: 100px;
+      max-width: 75px; }
+  /* line 131, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.people {
+    height: 100px;
+    width: 100px; }
+    /* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.people img {
+      max-height: 100px;
+      max-width: 100px; }
+
+/* line 141, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.imgborder {
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  -moz-box-shadow: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); }
+
+/* line 146, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc_details {
+  text-align: center;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e5e5e5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  /* W3C */ }
+
+/* line 157, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.filler-div {
+  height: 25px;
+  background: white; }
+
+/* line 161, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.filler-div-home {
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  font-size: 13pt;
+  padding-bottom: 14px;
+  margin-top: 0px;
+  line-height: 11px;
+  padding-bottom: 4px;
+  background: #f1f1f0;
+  height: 25px; }
+
+/* line 173, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.home-box {
+  background: #ffcc11;
+  -webkit-box-shadow: 0 0 5px #888888;
+  border-bottom: 2px solid #eee; }
+
+/* line 179, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc-hr {
+  background-color: #cccccc;
+  height: 1px;
+  margin: 0px; }
+
+/* line 185, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.info-line1 {
+  font-size: 15pt;
+  text-align: center;
+  padding-top: 10px; }
+
+/* line 191, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.info-line2 {
+  font-size: 12pt;
+  padding-top: 5px;
+  padding-left: 10px; }
+
+/* line 197, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.nav {
+  border-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 25px; }
+
+/* line 202, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.tab-pane {
+  background-color: #27689b;
+  color: black; }
+
+/* line 207, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+form textarea {
+  height: 50px;
+  width: 300px; }
+
+/* line 215, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#history-tabs .nav-tabs li.active .custom-tabs {
+  color: white;
+  background-color: #27689b; }
+/* line 221, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#history-tabs .tab-content {
+  overflow: hidden; }
+
+/* line 226, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.grid {
+  padding: 0;
+  list-style: none;
+  margin: 20px auto 0;
+  width: 1000px; }
+
+/* line 233, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li {
+  float: left;
+  padding: 0;
+  margin: 0 5px 10px 5px; }
+
+/* line 239, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li a {
+  display: block; }
+
+/* line 243, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li img {
+  background-color: white;
+  padding: 7px;
+  margin: 0;
+  border: 1px dotted #58595b;
+  width: 200px;
+  height: 200px; }
+
+/* line 252, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li .speech-bubble {
+  background-color: black;
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  width: 110px;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  display: none; }
+
+/* line 265, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li a:hover img + .speech-bubble {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: block; }
+
+@font-face {
+  font-family: 'GraublauWeb';
+  src: url(fonts/GraublauWeb.eot);
+  src: url(fonts/GraublauWeb.otf) format("opentype"); }
+
+/* line 276, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#facebox .image {
+  width: 800px !important; }
+  /* line 278, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  #facebox .image img {
+    width: 800px !important; }
+
+/* line 283, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.short-text {
+  overflow: hidden;
+  height: 322px;
+  border-bottom: 20px solid #f5f5f5; }
+
+/* line 289, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.full-text {
+  height: auto; }
+
+/* line 294, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#profile .personal-info-header {
+  font-size: 20px;
+  color: #37404e; }
+
+/* line 299, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.account-info {
+  list-style: none;
+  margin-top: 40px;
+  padding: 0px;
+  font-size: 16px; }
+  /* line 304, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .account-info li {
+    clear: both; }
+  /* line 307, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .account-info label {
+    width: 230px;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 16px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding-left: 5px; }
+
+/* line 319, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation-panel {
+  list-style: none; }
+  /* line 321, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation-panel a {
+    font-size: 12pt; }
+  /* line 324, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation-panel li {
+    padding: 6px; }
+  /* line 327, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation-panel li.active {
+    background-color: #efefef; }
+    /* line 329, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    ul.navigation-panel li.active a {
+      color: #666666;
+      font-weight: bold; }
+
+/* line 336, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation {
+  position: fixed;
+  margin: 0px;
+  padding: 0px;
+  top: 100px;
+  left: 0px;
+  list-style: none;
+  z-index: 9999; }
+
+/* line 346, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation li {
+  width: 55px; }
+
+/* line 349, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation li a.active {
+  background-color: #FFCC11; }
+
+/* line 352, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation li a {
+  cursor: pointer;
+  display: block;
+  width: 55px;
+  height: 70px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 1px solid black;
+  -moz-border-radius: 0px 10px 10px 0px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -khtml-border-bottom-right-radius: 10px;
+  -khtml-border-top-right-radius: 10px; }
+  /* line 366, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation li a:hover {
+    background-color: #FFCC11; }
+
+/* line 371, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc-bio {
+  font-family: "Open Sans" sans-serif; }
+
+/* line 375, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form {
+  background-color: #fff;
+  padding: 10px 20px 20px 20px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  position: relative;
+  z-index: 10;
+  color: #000; }
+
+/* line 391, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .textfield {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  color: #999;
+  width: 80%; }
+
+/* line 401, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form [class^="icon-"] {
+  top: 13px;
+  left: 5px;
+  color: inherit;
+  position: absolute;
+  z-index: 1;
+  font-size: 21px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  vertical-align: text-top; }
+
+/* line 415, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form input.text {
+  width: 100%;
+  padding: 15px 10px 15px 32px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 300;
+  -webkit-transition-property: border, color;
+  -moz-transition-property: border, color;
+  -o-transition-property: border, color;
+  transition-property: border, color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  font-size: 16px; }
+
+/* line 433, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form input.text:focus {
+  border-color: #1bc4a3; }
+
+/* line 437, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .textfield.active {
+  color: #1bc4a3; }
+
+/* line 441, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .required {
+  top: 19px;
+  right: 0;
+  color: #ddd;
+  position: absolute;
+  z-index: 1;
+  font-size: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-transform: uppercase; }
+
+/* line 457, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.fieldset {
+  border: 0px;
+  margin: 0px;
+  padding: 0px; }
+
+/* line 463, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#response-form {
+  position: absolute;
+  top: 300px; }
