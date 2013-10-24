@@ -1,0 +1,25 @@
+-if current_user.customer.wish_list_items.present?
+  .row
+    .span5
+      %table.table.table-striped
+        %tr
+          %th
+          %th
+          %th Destination
+          %th
+        -customer = current_user.customer
+        - customer.wish_list_items.each do |destination|
+          - destination_object = Destination.find(destination[:destination_id])
+          %tr{:id => "#{destination_object}"}
+            %td.cb
+              %input{:type => "checkbox", :value => "#{destination_object.id}"}/
+            %td
+              .image_holder_small
+                %img{:src => "#{destination_object.image.url(:thumb)}"}
+            %td
+              = link_to destination_object.name , destination_path(destination_object)
+            %td
+              .remove
+                = link_to "Remove" , "#" , :wish_list_item_id => destination[:id]
+- else
+  %h3 Your cart is empty. Please add destinations by clicking "Request Package"

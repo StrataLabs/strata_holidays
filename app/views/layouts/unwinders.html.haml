@@ -63,12 +63,12 @@
 #my-modal1.modal.hide.fade{"tabindex" => "-1"}
   .modal-header
     %a.close{"data-dismiss" => "modal"} x
-    %h3 Destinations Cart
+    %h3 Wishlist
   .modal-body
     .modal-rec-body
     .modal-rec-body-results
   .modal-footer
-    = link_to "Request Package" , "/request_from_cart" , :class => 'btn btn-primary'
+    = link_to "Request Package" , "/request_from_cart", :class => ['btn btn-primary', '', 'select-destinations']
     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
 
 :css

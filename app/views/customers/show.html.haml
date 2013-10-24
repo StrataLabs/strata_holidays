@@ -16,7 +16,7 @@
 #customer-profile
   - model_class = Customer
   .row
-    #profile.span7.offset2{:style => 'padding:20px;background:white'}
+    #profile.span7{:style => 'padding:20px;background:white'}
       %h2 Personal Information
       %ul.account-info
         %li
@@ -62,11 +62,24 @@
       %br
       %div.pull-left
         Click any field to edit
-  .row
+    #wishlist.span4{:style => 'padding:20px;background:white'}
+      %h2 Wishlist
+      %ul.account-info
+        %table.table.table-striped
+          - @customer.wish_list_items.each do |wish|
+            - destination_object = Destination.find(wish.destination_id)
+            %tr
+              %td
+                .image_holder_small
+                  %img{:src => "#{destination_object.image.url(:thumb)}"}
+              %td
+                = link_to destination_object.name , destination_path(destination_object)
+              %td
+                .remove
+                  = link_to "Remove" , "#" , :wish_list_item_id => wish[:id]
     .current_user_requests
       = render :partial => 'current_requests'
-  .row
-    #header-history.span7.offset2{:style => 'padding:20px;background:white'}
+    #header-history.span7{:style => 'padding:20px;background:white'}
       %h2 History
       - if !@cust_iti_headers.present?
         .well{:style => 'margin-top:20px;text-align:center'}

@@ -49,6 +49,12 @@ class WishListItemsController < ApplicationController
     render :partial => 'layouts/requests_cart'
   end
 
+  def show_cart
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wish_list_item

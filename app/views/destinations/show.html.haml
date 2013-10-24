@@ -10,14 +10,15 @@
       .span6
         .dest-header
           .polaroid
-            %img{:src => @destination.image.url}
-              %p
-                = @destination.name
+            .wrapper.item
+              %button.add-to-cart
+                -if current_user && current_user.user_type == User::CUSTOMER
+                  = link_to "Add to Wishlist", wish_list_items_path(:destination_id => @destination.id, :customer_id => current_user.customer.id), :method => :post,:remote => true
+              %img{:src => @destination.image.url}
+                %p
+                  = @destination.name
       .span6
-        .description-body{:style => 'background:white;opacity:0.7;margin-right:10px;padding:10px;min-height:400px'}
-          .wishlist-btn.pull-right
-            -if current_user && current_user.user_type == User::CUSTOMER
-              = link_to "Add to Wishlist", wish_list_items_path(:destination_id => @destination.id, :customer_id => current_user.customer.id), :method => :post, :class => 'btn btn-primary', :remote => true, :id => 'btn-request-now'
+        .description-body{:style => 'background:white;opacity:0.9;margin-right:10px;padding:10px;min-height:400px'}
           %br
           .dest-description
             %p

@@ -1,7 +1,7 @@
 %title
   Request Package
 .container{:style => 'padding:0px'}
-  .span5.offset3
+  .span5.offset3{:style => 'margin-top:-50px'}
     .wizard-steps
       .active-step
         %a{:href => '#'}
@@ -17,12 +17,13 @@
           Assign Consultants
     #please{:style => 'color:black;font-size:12pt;margin-top:50px;margin-bottom:10px;text-align:center'}
       Please fill in some additional details
-    .well
-      = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
+    .well{:style => 'margin-bottom:80px'}
+      = simple_form_for(@cust_iti_request, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px;overflow:visible'}) do |f|
         = f.input :customer_id ,:input_html => { :value => current_user.customer.id } , :as => 'hidden'
         = f.input :dest_type, :collection => ["Single", "Multiple"]
         = f.association :vacation_type, :label_method => :vac_type, :input_html => {:type => 'select'}
         = f.input :destinations,  collection: Destination.all.order(:name), :allow_blank => false, input_html: { "data-placeholder"=>"Select Destinations", :id => 'select_destination', class: 'chzn-select' ,:multiple => true }
+        = link_to "Choose from wish list", "/show_requests_cart", :remote => true, :style => 'float:right'
         = f.input :start_date, :as => :date_picker
         = f.input :end_date, :as => :date_picker
         = f.input :no_of_adults

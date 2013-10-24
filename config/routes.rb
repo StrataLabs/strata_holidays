@@ -10,7 +10,7 @@ StrataHolidays::Application.routes.draw do
   resources :wish_list_items
 
   get '/remove_from_wishlist' => 'wish_list_items#destroy'
-  get '/show_requests_cart' => "cust_iti_requests#request_cart", defaults: {format: "js"}
+  get '/show_requests_cart' => "wish_list_items#show_cart", defaults: {format: "js"}
   get '/request_from_cart' => "cust_iti_requests#request_from_cart"
   resources :cust_iti_requests do
     collection do

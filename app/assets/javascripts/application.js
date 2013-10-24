@@ -35,6 +35,20 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
+  $('.select-destinations').on('click', function() {
+      var vc_ids = [];
+      $('.search_vc_table tr').filter(':has(:checkbox:checked)').each(function() {
+        vc_ids.push($(this).attr("id"));
+      });
+      $.post('/assign-vcs', {vc_ids: vc_ids, cust_req_id: $('.search_vc_table').attr("id")},
+      function(data, status, xhr){
+        location.href = '/unwinders/user';
+          // $(".assigned-vcs").html(data);
+      });
+      return false;
+    });
+});
+jQuery(document).ready(function($) {
   $('a[rel*=facebox]').facebox()
 })
 
@@ -174,6 +188,40 @@ $('[id^=history-poa]').contenthover({
     overlay_background:'#000',
     overlay_opacity:0.8
 });
+});
+jQuery(document).ready(function($) {
+  $('.add-to-cart').on('click', function () {
+    var cart = $('.shopping-cart');
+    var imgtodrag = $(this).parent('.item').find("img").eq(0);
+    if (imgtodrag) {
+        var imgclone = imgtodrag.clone()
+            .offset({
+            top: imgtodrag.offset().top,
+            left: imgtodrag.offset().left
+        })
+            .css({
+            'opacity': '0.5',
+                'position': 'absolute',
+                'height': '150px',
+                'width': '150px',
+                'z-index': '100'
+        })
+            .appendTo($('body'))
+            .animate({
+            'top': cart.offset().top + 10,
+                'left': cart.offset().left + 10,
+                'width': 75,
+                'height': 75
+        }, 1000, 'easeInOutExpo');
+
+        imgclone.animate({
+            'width': 0,
+                'height': 0
+        }, function () {
+            $(this).detach()
+        });
+    }
+  });
 });
 
 $(document).ready(function(){
