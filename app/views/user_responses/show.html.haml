@@ -1,6 +1,42 @@
-%p#notice= notice
-
-
-= link_to 'Edit', edit_user_response_path(@user_response)
-\|
-= link_to 'Back', user_responses_path
+.container{:style => 'background:white;min-height:550px'}
+  .show-request
+    %h1 Request
+    %ul
+      %li.label Name
+      %span
+        &nbsp
+        =@user_response.name
+      %br
+      %li.label Email
+      %span
+        &nbsp
+        =@user_response.email
+      %br
+      %li.label Contact No.
+      %span
+        &nbsp
+        =@user_response.contact_no
+      %br
+      %li.label Start Date
+      %span
+        &nbsp
+        =@user_response.start_date
+      %br
+      %li.label End Date
+      %span
+        &nbsp
+        =@user_response.end_date
+      %br
+      %li.label No. of Adults
+      %span
+        &nbsp
+        =@user_response.no_of_adults
+      %br
+      %li.label No. of Children
+      %span
+        &nbsp
+        =@user_response.no_of_children
+      %br
+    = link_to 'Edit', edit_user_response_path(@user_response)
+    \|
+    = link_to 'Back', user_responses_path

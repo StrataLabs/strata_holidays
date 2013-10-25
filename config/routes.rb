@@ -44,6 +44,8 @@ StrataHolidays::Application.routes.draw do
 
   # get 'get_cust_iti_request' => 'cust_iti_requests#get_cust_iti_request', :as => 'get_cust_iti_request'
   get 'unwinders/vacation_consultant/:id' , to: 'unwinders#vacation_consultant', :as => 'vc_unwinders'
+  get '/mauritius' => 'user_responses#new'
+  post '/mauritius' => 'user_responses#create'
   resources :user_responses
   # post '/assign-vcs' => 'vacation_consultants#assign_vcs'
   # get 'edit_vc_assignment' => 'vacation_consultants#edit_vc_assignment'

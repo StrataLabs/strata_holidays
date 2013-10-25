@@ -8,12 +8,14 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require bootstrap_and_overrides
+ *= require_self
+ *= require font-awesome
  *= require custom_css
  *= require jquery.ui.all
  *= require jquery.facebox
  *= require chosen
+ *= require validationEngine.jquery
  */
 
 .contenthover { padding:20px 20px 10px 20px;cursor: pointer; }
@@ -272,3 +274,5 @@
   text-align: center;
   width: 216px;
 }
+
+.formError{margin-left: 150px!important;}

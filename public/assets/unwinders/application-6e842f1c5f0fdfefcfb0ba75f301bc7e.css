@@ -1,0 +1,3881 @@
+/* normalize.css v1.1.0 | MIT License | git.io/normalize */
+/* normalize.css v1.1.0 | HTML5 Display Definitions | MIT License | git.io/normalize */
+/* line 20, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/* line 28, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1; }
+
+/* line 39, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/* line 46, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_html5.scss */
+[hidden] {
+  display: none; }
+
+/* normalize.css v1.1.0 | Base | MIT License | git.io/normalize */
+/* line 13, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+html {
+  font-size: 100%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* line 30, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+html,
+button,
+input,
+select,
+textarea {
+  font-family: sans-serif; }
+
+/* line 37, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_base.scss */
+body {
+  margin: 0; }
+
+/* normalize.css v1.1.0 | Links | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
+a:focus {
+  outline: thin dotted; }
+
+/* line 16, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_links.scss */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* normalize.css v1.1.0 | Typography | MIT License | git.io/normalize */
+/* line 13, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* line 19, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0; }
+
+/* line 24, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h3 {
+  font-size: 1.17em;
+  margin: 1em 0; }
+
+/* line 29, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0; }
+
+/* line 34, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h5 {
+  font-size: 0.83em;
+  margin: 1.67em 0; }
+
+/* line 39, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+h6 {
+  font-size: 0.67em;
+  margin: 2.33em 0; }
+
+/* line 47, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/* line 54, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+b,
+strong {
+  font-weight: bold; }
+
+/* line 59, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+blockquote {
+  margin: 1em 40px; }
+
+/* line 66, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+dfn {
+  font-style: italic; }
+
+/* line 73, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/* line 81, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/* line 90, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+p,
+pre {
+  margin: 1em 0; }
+
+/* line 100, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  _font-family: 'courier new', monospace;
+  font-size: 1em; }
+
+/* line 110, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
+
+/* line 118, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/* line 127, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+q {
+  quotes: none; }
+
+/* line 132, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+/* line 140, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+small {
+  font-size: 80%; }
+
+/* line 147, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+/* line 154, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+sup {
+  top: -0.5em; }
+
+/* line 158, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_typography.scss */
+sub {
+  bottom: -0.25em; }
+
+/* line 11, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+dl,
+menu,
+ol,
+ul {
+  margin: 1em 0; }
+
+/* line 15, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+dd {
+  margin: 0 0 0 40px; }
+
+/* line 23, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+menu,
+ol,
+ul {
+  padding: 0 0 0 40px; }
+
+/* line 30, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_lists.scss */
+nav ul,
+nav ol {
+  list-style: none;
+  list-style-image: none; }
+
+/* normalize.css v1.1.0 | Embedded Content | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic; }
+
+/* line 18, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_embeds.scss */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* normalize.css v1.1.0 | Figures | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_figures.scss */
+figure {
+  margin: 0; }
+
+/* normalize.css v1.1.0 | Forms | MIT License | git.io/normalize */
+/* line 10, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+form {
+  margin: 0; }
+
+/* line 17, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/* line 30, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+legend {
+  border: 0;
+  padding: 0;
+  white-space: normal;
+  *margin-left: -7px; }
+
+/* line 49, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  *vertical-align: middle; }
+
+/* line 63, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+input {
+  line-height: normal; }
+
+/* line 73, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+select {
+  text-transform: none; }
+
+/* line 90, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+  *overflow: visible; }
+
+/* line 101, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/* line 113, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+  *height: 13px;
+  *width: 13px; }
+
+/* line 126, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box; }
+
+/* line 137, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/* line 144, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/* line 152, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_forms.scss */
+textarea {
+  overflow: auto;
+  vertical-align: top; }
+
+/* normalize.css v1.1.0 | Tables | MIT License | git.io/normalize */
+/* line 9, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-normalize-1.4.3/stylesheets/normalize/_tables.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 35, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/colors.css.scss */
+html, body {
+  color: #666666;
+  background: white; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS76F-webfont.eot);
+  src: url(/images/fonts/PTS76F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS76F-webfont.woff) format("woff"), url(/images/fonts/PTS76F-webfont.ttf) format("truetype"), url(/images/fonts/PTS76F-webfont.svg#PTSansBoldItalic) format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS75F-webfont.eot);
+  src: url(/images/fonts/PTS75F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS75F-webfont.woff) format("woff"), url(/images/fonts/PTS75F-webfont.ttf) format("truetype"), url(/images/fonts/PTS75F-webfont.svg#PTSansBold) format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS56F-webfont.eot);
+  src: url(/images/fonts/PTS56F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS56F-webfont.woff) format("woff"), url(/images/fonts/PTS56F-webfont.ttf) format("truetype"), url(/images/fonts/PTS56F-webfont.svg#PTSansItalic) format("svg");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/PTS55F-webfont.eot);
+  src: url(/images/fonts/PTS55F-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/PTS55F-webfont.woff) format("woff"), url(/images/fonts/PTS55F-webfont.ttf) format("truetype"), url(/images/fonts/PTS55F-webfont.svg#PTSansRegular) format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/SourceSansPro-ExtraLight-webfont.eot);
+  src: url(/images/fonts/SourceSansPro-ExtraLight-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/SourceSansPro-ExtraLight-webfont.woff) format("woff"), url(/images/fonts/SourceSansPro-ExtraLight-webfont.ttf) format("truetype"), url(/images/fonts/SourceSansPro-ExtraLight-webfont.svg#SourceSansProExtraLight) format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'PTSans';
+  src: url(/images/fonts/SourceSansPro-Light-webfont.eot);
+  src: url(/images/fonts/SourceSansPro-Light-webfont.eot?#iefix) format("embedded-opentype"), url(/assets/fonts/SourceSansPro-Light-webfont.woff) format("woff"), url(/images/fonts/SourceSansPro-Light-webfont.ttf) format("truetype"), url(/images/fonts/SourceSansPro-Light-webfont.svg#SourceSansProLight) format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+/* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+html, body, input, select, textarea {
+  font-family: 'PTSans', sans; }
+
+/* line 75, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h1 {
+  font-weight: 100; }
+
+/* line 76, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h2 {
+  font-weight: 300; }
+
+/* line 78, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+html, body {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px; }
+
+/* line 84, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h1, h2, h3, h4 {
+  margin: 10px 0 4px 0;
+  color: #666666;
+  font-weight: 700; }
+
+/* line 86, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h2 {
+  font-size: 18px; }
+
+/* line 87, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h3 {
+  font-size: 16px; }
+
+/* line 88, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+h4 {
+  font-size: 13px; }
+
+/* line 91, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h2, header h3 {
+  color: #2d3681; }
+/* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h2 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px; }
+/* line 93, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h4 {
+  font-weight: 400; }
+/* line 94, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+header h4 a {
+  font-weight: 700; }
+
+/* line 97, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+form h2 {
+  color: #2d3681;
+  font-weight: 300;
+  font-size: 24px;
+  padding-bottom: 4px;
+  border-bottom: solid 1px #eeeeee; }
+
+/* line 106, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] h2, div[role="complementary"] h3, div[role="complementary"] h4 {
+  color: #666666;
+  margin: 8px 10px 4px 10px; }
+/* line 107, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] div {
+  margin: 4px 10px; }
+  /* line 109, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+  div[role="complementary"] div h2, div[role="complementary"] div h3, div[role="complementary"] div h4 {
+    margin: 4px 0; }
+/* line 111, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] h2 {
+  text-transform: uppercase;
+  font-weight: 300;
+  border-bottom: solid 1px #cccccc; }
+/* line 112, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+div[role="complementary"] h3 {
+  font-size: 15px; }
+
+/* line 115, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/typography.css.scss */
+a {
+  color: #2d3681;
+  text-decoration: none; }
+
+/* line 6, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/grid.css.scss */
+div#page, div.container {
+  *zoom: 1;
+  max-width: 1180px;
+  _width: 1180px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto; }
+  /* line 38, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+  div#page:after, div.container:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+@font-face {
+  font-family: "FontAwesome";
+  src: url(/images/font/fontawesome-webfont.eot);
+  src: url(/images/font/fontawesome-webfont.eot?#iefix) format("eot"), url(/images/font/fontawesome-webfont.woff) format("woff"), url(/images/font/fontawesome-webfont.ttf) format("truetype"), url(/images/font/fontawesome-webfont.svg#FontAwesome) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "SSStandard";
+  src: url(/assets/fonts/ss-standard.woff) format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+form {
+  overflow: hidden;
+  *zoom: 1;
+  padding-bottom: 20px; }
+  /* line 4, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form label {
+    display: block;
+    font-weight: 600; }
+  /* line 11, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form input[type="text"],
+  form input[type="password"],
+  form input[type="search"],
+  form input[type="email"],
+  form select,
+  form textarea {
+    border: solid 1px #cccccc;
+    resize: none; }
+  /* line 16, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form textarea {
+    height: 160px; }
+  /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form #content h2, form #content fieldset {
+    margin: 10px 20px; }
+  /* line 20, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form #content div {
+    margin: 0; }
+  /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form fieldset {
+    clear: both;
+    margin: 10px 0;
+    padding: 10px 0;
+    border: none;
+    border-bottom: solid 1px #eeeeee; }
+    /* line 30, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div {
+      width: 50%;
+      float: left;
+      position: relative;
+      margin: 0;
+      padding-bottom: 30px; }
+      /* line 41, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div input[type="text"],
+      form fieldset div input[type="password"],
+      form fieldset div input[type="search"],
+      form fieldset div input[type="email"],
+      form fieldset div select {
+        width: 96%; }
+      /* line 46, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.checkbox input {
+        display: inline; }
+      /* line 47, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.checkbox label {
+        display: inline; }
+      /* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.date {
+        width: 25%; }
+        /* line 53, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.date input {
+          width: 92%; }
+      /* line 56, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.text_area {
+        width: 100%; }
+        /* line 59, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.text_area textarea {
+          width: 98%;
+          height: 200px; }
+      /* line 62, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div span.hint {
+        display: block;
+        position: absolute;
+        bottom: 12px;
+        font-style: italic;
+        font-size: 12px; }
+    /* line 71, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.user_type {
+      overflow: hidden;
+      padding-bottom: 30px; }
+      /* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.user_type label {
+        display: inline; }
+    /* line 77, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.tags {
+      height: 100px;
+      position: relative; }
+      /* line 80, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags .tags_clear {
+        clear: both;
+        width: 100%;
+        height: 0px; }
+      /* line 81, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags .not_valid {
+        background: #FBD8DB !important;
+        color: #90111A !important; }
+      /* line 83, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags div {
+        margin: 0;
+        padding: 0; }
+      /* line 85, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags li {
+        display: block;
+        list-style: none;
+        float: left;
+        padding: 0 5px;
+        margin: 4px 4px 0 0;
+        background: #eeeeee;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        cursor: pointer; }
+        /* line 95, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags li:hover {
+          background: #666666;
+          color: white; }
+      /* line 98, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+      form fieldset div.tags div.categorized-tags {
+        display: block;
+        float: left;
+        width: 40px;
+        position: static;
+        padding: 0;
+        margin: 0; }
+        /* line 106, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags div.categorized-tags span {
+          display: block;
+          width: 24px;
+          height: 24px;
+          line-height: 28px;
+          padding: 0;
+          margin-left: 6px;
+          background: #666666;
+          text-align: center;
+          color: white;
+          font-size: 30px;
+          font-weight: bold;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          border-radius: 4px;
+          cursor: pointer; }
+        /* line 123, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags div.categorized-tags ul {
+          display: none;
+          position: absolute;
+          width: 100%;
+          height: 160px;
+          overflow: auto;
+          top: -160px;
+          left: 1%;
+          z-index: 20;
+          padding: 1%;
+          background: white;
+          -webkit-border-radius: 4px;
+          -moz-border-radius: 4px;
+          -ms-border-radius: 4px;
+          -o-border-radius: 4px;
+          border-radius: 4px; }
+        /* line 138, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+        form fieldset div.tags div.categorized-tags.active ul {
+          display: block; }
+  /* line 143, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div#errorExplanation, form div#error_explanation {
+    padding: 1px;
+    color: #cc0000;
+    background: #ffffee;
+    font-weight: 600; }
+    /* line 149, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form div#errorExplanation h2, form div#error_explanation h2 {
+      display: none; }
+  /* line 152, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form fieldset div.field_with_errors {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%; }
+    /* line 161, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.field_with_errors input[type="text"],
+    form fieldset div.field_with_errors input[type="password"],
+    form fieldset div.field_with_errors input[type="search"],
+    form fieldset div.field_with_errors input[type="email"],
+    form fieldset div.field_with_errors textarea,
+    form fieldset div.field_with_errors select,
+    form fieldset div.field_with_errors div.tagsinput {
+      border: solid 1px #cc0000; }
+    /* line 165, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    form fieldset div.field_with_errors label {
+      color: #cc0000; }
+  /* line 168, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form p.form-actions {
+    clear: both;
+    overflow: hidden;
+    *zoom: 1; }
+  /* line 171, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div.sidebar h2 {
+    padding-top: 8px; }
+  /* line 172, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  /* line 173, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  form div.sidebar input {
+    width: 90%; }
+
+/* line 177, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+div.tagsinput {
+  border: 1px solid #CCC;
+  background: #FFF;
+  overflow-y: auto; }
+  /* line 182, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  div.tagsinput span.tag {
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    display: block;
+    float: left;
+    position: relative;
+    margin: 4px 0 0 4px;
+    padding: 0 0 0 4px;
+    line-height: 24px;
+    height: 24px;
+    font-weight: 600;
+    background: #f7f7f7;
+    color: #666666;
+    border: solid 1px #eeeeee; }
+    /* line 197, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    div.tagsinput span.tag span {
+      display: inline-block;
+      height: 24px;
+      line-height: 24px;
+      float: left; }
+    /* line 204, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+    div.tagsinput span.tag a {
+      float: right;
+      padding: 0;
+      margin: 0; }
+  /* line 207, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  div.tagsinput input {
+    width: 80px;
+    margin: 4px 0 0 4px;
+    padding: 4px;
+    border: none; }
+  /* line 214, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/forms.css.scss */
+  div.tagsinput div {
+    display: block;
+    float: left; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+html {
+  padding-top: 0; }
+
+/* line 3, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+#banner {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 40px 0;
+  background: #ffcc11; }
+  /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner h1 {
+    display: block;
+    position: relative;
+    background: transparent url(/assets/unwinders/logo_2.png) center center no-repeat;
+    width: 320px;
+    height: 145px;
+    float: left;
+    z-index: 20;
+    margin: -42px 0 0 0;
+    padding: 0;
+    text-indent: -1000em; }
+    @media screen and (max-width: 600px) {
+      /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner h1 {
+        margin: 0; } }
+  /* line 26, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner h2 {
+    display: block;
+    position: relative;
+    color: #1f1b20;
+    font-weight: 100;
+    font-size: 30px;
+    line-height: 42px;
+    padding: 6px 0 0 0;
+    margin: 0;
+    text-align: center; }
+  /* line 38, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner #menu {
+    display: block;
+    position: relative;
+    padding: 0;
+    margin: -104px 0 0 0;
+    background: #ffcc11;
+    color: white;
+    z-index: 10;
+    font-weight: 100;
+    font-size: 24px;
+    text-transform: uppercase;
+    line-height: 48px;
+    float: left;
+    width: 100%; }
+    @media screen and (max-width: 600px) {
+      /* line 38, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu {
+        margin: 20px 0 0 0; } }
+    /* line 58, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+    #banner #menu div#search {
+      display: block;
+      float: right;
+      width: 200px;
+      height: 30px;
+      line-height: 30px;
+      overflow: hidden;
+      margin: 9px 10px 0 0;
+      padding: 0;
+      background: white;
+      -webkit-border-radius: 15px;
+      -moz-border-radius: 15px;
+      -ms-border-radius: 15px;
+      -o-border-radius: 15px;
+      border-radius: 15px; }
+      /* line 68, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu div#search:after {
+        content: "\1F50E";
+        font-family: "SSStandard";
+        display: block;
+        float: right;
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 36px;
+        text-align: center;
+        background: transparent;
+        color: #cccccc; }
+      /* line 81, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu div#search input {
+        background: transparent;
+        border: transparent;
+        display: block;
+        float: left;
+        height: 30px;
+        line-height: 30px;
+        -webkit-border-radius: 0 15px 15px 0;
+        -moz-border-radius: 0 15px 15px 0;
+        -ms-border-radius: 0 15px 15px 0;
+        -o-border-radius: 0 15px 15px 0;
+        border-radius: 0 15px 15px 0; }
+    /* line 93, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+    #banner #menu ul#filters {
+      display: block;
+      margin: 0 0 0 320px;
+      padding: 0;
+      font-weight: 100;
+      font-size: 24px;
+      text-transform: uppercase;
+      line-height: 48px; }
+      @media screen and (max-width: 600px) {
+        /* line 93, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters {
+          margin: 0; } }
+      /* line 105, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #menu ul#filters li {
+        display: block;
+        float: left;
+        position: relative; }
+        /* line 110, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li.instructions {
+          background: transparent;
+          margin: -36px -300px 0 0;
+          width: 300px;
+          font-size: 13px;
+          font-weight: 400;
+          color: #888888; }
+        /* line 121, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li.list {
+          margin-right: 40px; }
+        /* line 125, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li span.label {
+          display: block;
+          float: left;
+          background: transparent;
+          width: auto;
+          padding-right: 10px;
+          width: 80px;
+          text-align: right; }
+        /* line 135, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li span.prompt {
+          display: block;
+          position: relative;
+          float: left;
+          width: 200px;
+          padding: 0 0 0 12px;
+          background: rgba(0, 0, 0, 0.1);
+          cursor: pointer; }
+          /* line 144, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+          #banner #menu ul#filters li span.prompt:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            right: 12px;
+            top: 18px;
+            border-top: solid 10px rgba(0, 0, 0, 0.5);
+            border-right: solid 6px transparent;
+            border-left: solid 6px transparent; }
+        /* line 162, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li ul {
+          display: block;
+          position: absolute;
+          top: 48px;
+          left: -1000em;
+          margin: 0 0 0 90px;
+          padding: 0;
+          width: 212px;
+          height: auto;
+          max-height: 420px;
+          overflow-y: auto;
+          background: white;
+          color: #1f1b20;
+          z-index: 100;
+          -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.4); }
+          /* line 3, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/base/mixins.css.scss */
+          html.ie8 #banner #menu ul#filters li ul {
+            outline: solid 1px #cccccc; }
+          /* line 178, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+          #banner #menu ul#filters li ul li {
+            width: 90%;
+            height: auto;
+            padding: 0 5%;
+            margin: 0;
+            line-height: 30px;
+            font-size: 20px;
+            text-transform: lowercase;
+            background: transparent; }
+            /* line 188, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+            #banner #menu ul#filters li ul li:hover {
+              background: rgba(0, 0, 0, 0.1);
+              cursor: pointer; }
+        /* line 195, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #menu ul#filters li:hover ul, #banner #menu ul#filters li.hover ul {
+          left: auto; }
+  /* line 201, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner #submenu {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    line-height: 14px;
+    padding: 10px 0 0 0; }
+    /* line 208, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+    #banner #submenu ul {
+      display: block;
+      margin: 0;
+      padding: 0; }
+      /* line 211, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner #submenu ul li {
+        display: block;
+        float: left;
+        border-right: solid 1px #888888; }
+        /* line 216, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #submenu ul li:last-child {
+          border-right: none; }
+        /* line 217, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+        #banner #submenu ul li a {
+          display: block;
+          padding: 0 10px;
+          font-size: 13px;
+          color: #1f1b20; }
+
+/* line 224, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+#banner1 {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 0px;
+  margin: 0;
+  background: #ffcc11; }
+  /* line 232, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+  #banner1 h1 {
+    display: block;
+    position: relative;
+    background: transparent url(/assets/unwinders/logo_2.png) center center no-repeat;
+    width: 320px;
+    height: 145px;
+    float: left;
+    z-index: 20;
+    margin: 0px;
+    padding: 0;
+    text-indent: -1000em; }
+    @media screen and (max-width: 600px) {
+      /* line 232, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/banner.css.scss */
+      #banner1 h1 {
+        margin: 0; } }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+#footer {
+  display: block;
+  position: relative;
+  clear: both;
+  padding: 20px;
+  background: #1f1b20;
+  border-top: solid 1px #eeeeee;
+  overflow: hidden;
+  *zoom: 1; }
+  /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+  #footer ul.navigation {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0; }
+    /* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+    #footer ul.navigation li {
+      list-style: none; }
+  /* line 17, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+  #footer div.contact {
+    display: block;
+    float: right;
+    text-align: right;
+    margin: 0;
+    padding: 0; }
+    /* line 21, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+    #footer div.contact p {
+      margin: 0 0 4px 0; }
+      /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/footer.css.scss */
+      #footer div.contact p strong {
+        display: block; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+div.home {
+  display: block;
+  margin: -20px 20px 20px 20px;
+  overflow: hidden;
+  *zoom: 1;
+  clear: both; }
+
+/* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+div.ad, ul.branch-list li {
+  display: block;
+  float: left;
+  height: 300px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0.3%; }
+  /* line 17, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  div.ad a, div.ad a:hover, ul.branch-list li a, ul.branch-list li a:hover {
+    font-color: #666666;
+    border: none; }
+  @media screen and (min-width: 1200px) {
+    /* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    div.ad, ul.branch-list li {
+      width: 13.6%; } }
+  @media screen and (min-width: 900px) and (max-width: 1200px) {
+    /* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    div.ad, ul.branch-list li {
+      width: 19.4%; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    div.ad, ul.branch-list li {
+      width: 32.7%; } }
+
+@media screen and (min-width: 600px) {
+  /* line 33, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  div.ad {
+    display: block;
+    float: left;
+    height: 300px;
+    background: transparent url(/assets/unwinders/ad-1.jpg) center center no-repeat; }
+
+  /* line 40, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  ul.branch-list {
+    display: inline;
+    margin: 0;
+    padding: 0; }
+    /* line 46, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li.branch {
+      -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.2); }
+      /* line 49, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.branch div {
+        padding: 6px;
+        font-size: 12px;
+        line-height: 14px; }
+        /* line 52, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+        ul.branch-list li.branch div h3 {
+          font-size: 12px;
+          line-height: 16px;
+          padding: 0;
+          margin: 0; }
+    /* line 60, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li.quote {
+      font-size: 22px;
+      line-height: 30px;
+      text-align: center;
+      height: 300px; }
+      /* line 66, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.quote p, ul.branch-list li.quote h3 {
+        font-weight: 300;
+        padding: 30px 20px;
+        color: #cccccc; }
+      /* line 72, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.quote h3 {
+        padding: 50px 20px;
+        font-size: 48px;
+        line-height: 60px;
+        font-weight: 100; }
+    /* line 81, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li img {
+      width: 100%; } }
+@media screen and (max-width: 600px) {
+  /* line 88, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  div.ad {
+    display: none; }
+
+  /* line 89, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+  ul.branch-list {
+    margin: 0;
+    padding: 0;
+    display: block; }
+    /* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+    ul.branch-list li {
+      display: block;
+      margin: 0.3%;
+      padding: 0;
+      width: 49%;
+      height: auto;
+      border: solid 0.2% #eeeeee; }
+      /* line 98, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li img {
+        width: 100%; }
+      /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li div {
+        display: block; }
+        /* line 103, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+        ul.branch-list li div h3 {
+          margin: 0 0 20px 0;
+          font-weight: normal;
+          font-size: 13px; }
+        /* line 104, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+        ul.branch-list li div p {
+          display: none; }
+      /* line 107, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/home.css.scss */
+      ul.branch-list li.quote {
+        display: none; } }
+/* line 2, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .action {
+  display: block;
+  background: #d9eefd;
+  margin: 0 0 20px 0; }
+  /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+  body#transaction .action .container {
+    overflow: hidden;
+    clear: both; }
+    @media screen and (min-width: 600px) {
+      /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .container {
+        height: 240px; } }
+    @media screen and (min-width: 900px) {
+      /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .container {
+        background: #d9eefd url(/images/microsites/ad-1.jpg) 30px 0 no-repeat; } }
+  /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+  body#transaction .action .intro {
+    clear: both;
+    text-align: center; }
+    @media screen and (max-width: 600px) {
+      /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .intro {
+        font-size: 18px;
+        line-height: 21px;
+        font-weight: 300; } }
+    @media screen and (min-width: 600px) and (max-width: 900px) {
+      /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .intro {
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 30px;
+        width: 49.15254%;
+        float: left;
+        margin-right: 1.69492%;
+        display: inline; } }
+    @media screen and (min-width: 900px) {
+      /* line 19, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action .intro {
+        font-size: 30px;
+        font-weight: 100;
+        line-height: 40px;
+        width: 49.15254%;
+        float: left;
+        margin-right: 1.69492%;
+        display: inline;
+        padding-left: 16.94915%; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 45, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .action form {
+      width: 49.15254%;
+      float: right;
+      margin-right: 0;
+      *margin-left: -20px;
+      display: inline; } }
+  @media screen and (min-width: 900px) {
+    /* line 45, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .action form {
+      width: 32.20339%;
+      float: right;
+      margin-right: 0;
+      *margin-left: -20px;
+      display: inline; } }
+  /* line 58, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+  body#transaction .action form fieldset {
+    width: 100%;
+    padding: 0;
+    margin: 20px 0 0 0;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 300;
+    border: none; }
+    /* line 65, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .action form fieldset div {
+      width: 100%;
+      margin: 0 0 10px 0;
+      padding: 0; }
+      /* line 70, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action form fieldset div label {
+        display: block;
+        float: left;
+        text-align: right;
+        width: 30%;
+        padding-right: 2%;
+        font-weight: 300;
+        line-height: 36px; }
+      /* line 80, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action form fieldset div input {
+        display: block;
+        float: right;
+        width: 65%;
+        font-size: 18px;
+        line-height: 36px;
+        padding: 0 6px; }
+      /* line 89, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+      body#transaction .action form fieldset div.form-actions input {
+        background: rgba(0, 0, 0, 0.2);
+        color: black;
+        text-shadow: none; }
+/* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map, body#transaction .photo, body#transaction .newsletter {
+  -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  height: 250px;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  @media screen and (min-width: 900px) {
+    /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .map, body#transaction .photo, body#transaction .newsletter {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; }
+      /* line 184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/susy-1.0.9/sass/susy/_grid.scss */
+      body#transaction .map:nth-child(3n), body#transaction .photo:nth-child(3n), body#transaction .newsletter:nth-child(3n) {
+        float: right;
+        margin-right: 0; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 100, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+    body#transaction .map, body#transaction .photo, body#transaction .newsletter {
+      width: 49.15254%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; }
+      /* line 184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/susy-1.0.9/sass/susy/_grid.scss */
+      body#transaction .map:nth-child(2n), body#transaction .photo:nth-child(2n), body#transaction .newsletter:nth-child(2n) {
+        float: right;
+        margin-right: 0; } }
+/* line 119, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map iframe {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  padding: 0; }
+/* line 126, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map a {
+  display: block;
+  float: right;
+  margin: 0;
+  padding: 4px 10px;
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  -ms-border-radius: 0 0 0 4px;
+  -o-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+  background: #888888;
+  color: white; }
+/* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .map p {
+  padding: 4px 10px;
+  margin: 0; }
+/* line 138, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .photo img {
+  display: block;
+  width: 100%; }
+/* line 142, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/transaction.css.scss */
+body#transaction .newsletter img {
+  display: block;
+  float: left;
+  margin-right: 6px; }
+
+/* line 1, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+body#list {
+  background-color: #fafafa; }
+  /* line 3, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .control-group {
+    margin-bottom: 10px; }
+  /* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .form-horizontal .control-label {
+    width: 90px; }
+  /* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .form-horizontal .controls {
+    margin-left: 125px; }
+  /* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .action {
+    display: block;
+    clear: both;
+    overflow: hidden; }
+    /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .action img {
+      display: block;
+      float: right;
+      margin: 20px 0 20px 20px; }
+      @media screen and (min-width: 900px) {
+        /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action img {
+          height: 120px;
+          box-shadow: 0px 1px 3px #424641; } }
+      @media screen and (max-width: 900px) {
+        /* line 23, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action img {
+          width: 100%;
+          margin-top: 10px; } }
+    /* line 39, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .action ul.plans {
+      margin-top: 40px; }
+      /* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+      body#list .action ul.plans li {
+        display: block;
+        float: right;
+        clear: both;
+        width: 100%;
+        list-style: none;
+        margin: 0 0 2px 0;
+        background: #cccccc;
+        color: white;
+        font-size: 16px;
+        line-height: 40px;
+        text-align: right;
+        padding-right: 5px; }
+        @media screen and (max-width: 600px) {
+          /* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+          body#list .action ul.plans li {
+            font-size: 13px; } }
+        /* line 65, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li a {
+          display: block;
+          float: right;
+          color: white;
+          background: rgba(0, 0, 0, 0.1);
+          padding: 0 12px;
+          margin-left: 8px;
+          text-transform: lowercase; }
+          /* line 74, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+          body#list .action ul.plans li a:after {
+            content: " \00bb"; }
+          /* line 75, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+          body#list .action ul.plans li a:hover {
+            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            color: black; }
+        /* line 78, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li strong {
+          display: block;
+          float: left;
+          font-size: 28px;
+          font-weight: 100;
+          line-height: 36px;
+          padding: 4px 6px 0 6px; }
+          @media screen and (max-width: 600px) {
+            /* line 78, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+            body#list .action ul.plans li strong {
+              font-size: 21px; } }
+        /* line 89, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.lite {
+          width: 70%;
+          background: #56a9f5; }
+        /* line 90, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.basic {
+          width: 80%;
+          background: #7ac943; }
+        /* line 91, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.regular {
+          width: 90%;
+          background: #ec9138; }
+        /* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action ul.plans li.avid {
+          background: #e64437; }
+    /* line 96, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .action p.intro {
+      font-size: 24px;
+      font-weight: 100;
+      line-height: 40px;
+      text-align: center; }
+      @media screen and (min-width: 900px) {
+        /* line 96, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action p.intro {
+          width: 40.67797%;
+          float: left;
+          margin-right: 1.69492%;
+          display: inline;
+          padding-left: 16.94915%; } }
+      @media screen and (max-width: 900px) {
+        /* line 96, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+        body#list .action p.intro {
+          width: 100%;
+          float: left;
+          margin-right: 1.69492%;
+          display: inline; } }
+  /* line 113, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .info, body#list .refer, body#list .newsletter {
+    -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px 0; }
+  /* line 119, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map {
+    height: 300px;
+    width: 500px; }
+  @media screen and (min-width: 900px) {
+    /* line 124, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .map, body#list .info {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 124, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .map, body#list .info {
+      width: 66.10169%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; } }
+  @media screen and (min-width: 900px) {
+    /* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .refer, body#list .newsletter {
+      width: 15.25424%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline; }
+      /* line 184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/susy-1.0.9/sass/susy/_grid.scss */
+      body#list .refer:nth-child(5), body#list .newsletter:nth-child(5) {
+        float: right;
+        margin-right: 0; } }
+  @media screen and (min-width: 600px) and (max-width: 900px) {
+    /* line 134, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+    body#list .refer, body#list .newsletter {
+      width: 32.20339%;
+      float: left;
+      margin-right: 1.69492%;
+      display: inline;
+      float: right;
+      margin-right: 0;
+      *margin-left: -20px;
+      display: inline; } }
+  /* line 147, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .refer h3, body#list .info h3 {
+    margin: 10px 6px 0 6px;
+    font-size: 13px; }
+  /* line 148, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .refer p, body#list .info p {
+    margin: 0 6px 6px 6px; }
+  /* line 152, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map iframe {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    padding: 0; }
+  /* line 159, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map a {
+    display: block;
+    float: right;
+    margin: 0;
+    padding: 4px 10px;
+    -webkit-border-radius: 0 0 0 4px;
+    -moz-border-radius: 0 0 0 4px;
+    -ms-border-radius: 0 0 0 4px;
+    -o-border-radius: 0 0 0 4px;
+    border-radius: 0 0 0 4px;
+    background: #888888;
+    color: white; }
+  /* line 167, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .map p {
+    padding: 4px 10px;
+    margin: 0; }
+  /* line 171, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .photo img {
+    display: block;
+    width: 100%; }
+  /* line 175, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/list.css.scss */
+  body#list .newsletter img {
+    display: block;
+    float: left;
+    margin-right: 6px; }
+
+/*
+ *  Font Awesome 4.0.0
+ *  the iconic font designed for Bootstrap
+ *  ------------------------------------------------------------------------------
+ *  The full suite of pictographic icons, examples, and documentation can be
+ *  found at http://fontawesome.io.  Stay up to date on Twitter at
+ *  http://twitter.com/fontawesome.
+ *
+ *  License
+ *  ------------------------------------------------------------------------------
+ *  - The Font Awesome font is licensed under SIL OFL 1.1 -
+ *    http://scripts.sil.org/OFL
+ *  - Font Awesome CSS, LESS, and SASS files are licensed under MIT License -
+ *    http://opensource.org/licenses/mit-license.html
+ *  - Font Awesome documentation licensed under CC BY 3.0 -
+ *    http://creativecommons.org/licenses/by/3.0/
+ *  - Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+ *    "Font Awesome by Dave Gandy - http://fontawesome.io"
+ *
+ *  Author - Dave Gandy
+ *  ------------------------------------------------------------------------------
+ *  Email: dave@fontawesome.io
+ *  Twitter: http://twitter.com/davegandy
+ *  Work: Lead Product Designer @ Kyruus - http://kyruus.com
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("/assets/fontawesome-webfont.eot");
+  src: url("/assets/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fontawesome-webfont.woff") format("woff"), url("/assets/fontawesome-webfont.ttf") format("truetype"), url("/assets/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 36, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* makes the font 33% larger relative to the icon container */
+/* line 46, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%; }
+
+/* line 51, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-2x {
+  font-size: 2em; }
+
+/* line 54, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-3x {
+  font-size: 3em; }
+
+/* line 57, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-4x {
+  font-size: 4em; }
+
+/* line 60, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-5x {
+  font-size: 5em; }
+
+/* line 63, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fw {
+  width: 1.2857142857142858em;
+  text-align: center; }
+
+/* line 67, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ul {
+  padding-left: 0;
+  margin-left: 2.142857142857143em;
+  list-style-type: none; }
+
+/* line 72, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ul > li {
+  position: relative; }
+
+/* line 75, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-li {
+  position: absolute;
+  left: -2.142857142857143em;
+  width: 2.142857142857143em;
+  top: 0.14285714285714285em;
+  text-align: center; }
+
+/* line 82, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-li.fa-lg {
+  left: -1.8571428571428572em; }
+
+/* line 85, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-border {
+  padding: .2em .25em .15em;
+  border: solid 0.08em #eeeeee;
+  border-radius: .1em; }
+
+/* line 90, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.pull-right {
+  float: right; }
+
+/* line 93, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.pull-left {
+  float: left; }
+
+/* line 96, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa.pull-left {
+  margin-right: .3em; }
+
+/* line 99, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa.pull-right {
+  margin-left: .3em; }
+
+/* line 102, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-spin {
+  -webkit-animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear; }
+
+@-moz-keyframes spin {
+  /* line 109, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  0% {
+    -moz-transform: rotate(0deg); }
+
+  /* line 112, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  100% {
+    -moz-transform: rotate(359deg); } }
+
+@-webkit-keyframes spin {
+  /* line 117, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  0% {
+    -webkit-transform: rotate(0deg); }
+
+  /* line 120, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  100% {
+    -webkit-transform: rotate(359deg); } }
+
+@-o-keyframes spin {
+  /* line 125, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  0% {
+    -o-transform: rotate(0deg); }
+
+  /* line 128, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  100% {
+    -o-transform: rotate(359deg); } }
+
+@-ms-keyframes spin {
+  /* line 133, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  0% {
+    -ms-transform: rotate(0deg); }
+
+  /* line 136, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  100% {
+    -ms-transform: rotate(359deg); } }
+
+@keyframes spin {
+  /* line 141, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  0% {
+    transform: rotate(0deg); }
+
+  /* line 144, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+  100% {
+    transform: rotate(359deg); } }
+
+/* line 148, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+/* line 156, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+/* line 164, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg); }
+
+/* line 172, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  -o-transform: scale(-1, 1);
+  transform: scale(-1, 1); }
+
+/* line 180, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -webkit-transform: scale(1, -1);
+  -moz-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  -o-transform: scale(1, -1);
+  transform: scale(1, -1); }
+
+/* line 188, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle; }
+
+/* line 197, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stack-1x,
+.fa-stack-2x {
+  position: absolute;
+  width: 100%;
+  text-align: center; }
+
+/* line 202, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stack-1x {
+  line-height: inherit; }
+
+/* line 205, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stack-2x {
+  font-size: 2em; }
+
+/* line 208, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-inverse {
+  color: #ffffff; }
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+/* line 213, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-glass:before {
+  content: "\f000"; }
+
+/* line 216, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-music:before {
+  content: "\f001"; }
+
+/* line 219, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-search:before {
+  content: "\f002"; }
+
+/* line 222, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-envelope-o:before {
+  content: "\f003"; }
+
+/* line 225, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-heart:before {
+  content: "\f004"; }
+
+/* line 228, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-star:before {
+  content: "\f005"; }
+
+/* line 231, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-star-o:before {
+  content: "\f006"; }
+
+/* line 234, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-user:before {
+  content: "\f007"; }
+
+/* line 237, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-film:before {
+  content: "\f008"; }
+
+/* line 240, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-th-large:before {
+  content: "\f009"; }
+
+/* line 243, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-th:before {
+  content: "\f00a"; }
+
+/* line 246, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-th-list:before {
+  content: "\f00b"; }
+
+/* line 249, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-check:before {
+  content: "\f00c"; }
+
+/* line 252, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-times:before {
+  content: "\f00d"; }
+
+/* line 255, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-search-plus:before {
+  content: "\f00e"; }
+
+/* line 258, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-search-minus:before {
+  content: "\f010"; }
+
+/* line 261, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-power-off:before {
+  content: "\f011"; }
+
+/* line 264, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-signal:before {
+  content: "\f012"; }
+
+/* line 268, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-gear:before,
+.fa-cog:before {
+  content: "\f013"; }
+
+/* line 271, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-trash-o:before {
+  content: "\f014"; }
+
+/* line 274, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-home:before {
+  content: "\f015"; }
+
+/* line 277, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-file-o:before {
+  content: "\f016"; }
+
+/* line 280, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-clock-o:before {
+  content: "\f017"; }
+
+/* line 283, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-road:before {
+  content: "\f018"; }
+
+/* line 286, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-download:before {
+  content: "\f019"; }
+
+/* line 289, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-o-down:before {
+  content: "\f01a"; }
+
+/* line 292, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-o-up:before {
+  content: "\f01b"; }
+
+/* line 295, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-inbox:before {
+  content: "\f01c"; }
+
+/* line 298, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-play-circle-o:before {
+  content: "\f01d"; }
+
+/* line 302, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rotate-right:before,
+.fa-repeat:before {
+  content: "\f01e"; }
+
+/* line 305, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-refresh:before {
+  content: "\f021"; }
+
+/* line 308, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-list-alt:before {
+  content: "\f022"; }
+
+/* line 311, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-lock:before {
+  content: "\f023"; }
+
+/* line 314, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flag:before {
+  content: "\f024"; }
+
+/* line 317, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-headphones:before {
+  content: "\f025"; }
+
+/* line 320, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-volume-off:before {
+  content: "\f026"; }
+
+/* line 323, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-volume-down:before {
+  content: "\f027"; }
+
+/* line 326, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-volume-up:before {
+  content: "\f028"; }
+
+/* line 329, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-qrcode:before {
+  content: "\f029"; }
+
+/* line 332, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-barcode:before {
+  content: "\f02a"; }
+
+/* line 335, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tag:before {
+  content: "\f02b"; }
+
+/* line 338, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tags:before {
+  content: "\f02c"; }
+
+/* line 341, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-book:before {
+  content: "\f02d"; }
+
+/* line 344, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bookmark:before {
+  content: "\f02e"; }
+
+/* line 347, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-print:before {
+  content: "\f02f"; }
+
+/* line 350, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-camera:before {
+  content: "\f030"; }
+
+/* line 353, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-font:before {
+  content: "\f031"; }
+
+/* line 356, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bold:before {
+  content: "\f032"; }
+
+/* line 359, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-italic:before {
+  content: "\f033"; }
+
+/* line 362, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-text-height:before {
+  content: "\f034"; }
+
+/* line 365, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-text-width:before {
+  content: "\f035"; }
+
+/* line 368, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-align-left:before {
+  content: "\f036"; }
+
+/* line 371, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-align-center:before {
+  content: "\f037"; }
+
+/* line 374, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-align-right:before {
+  content: "\f038"; }
+
+/* line 377, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-align-justify:before {
+  content: "\f039"; }
+
+/* line 380, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-list:before {
+  content: "\f03a"; }
+
+/* line 384, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-dedent:before,
+.fa-outdent:before {
+  content: "\f03b"; }
+
+/* line 387, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-indent:before {
+  content: "\f03c"; }
+
+/* line 390, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-video-camera:before {
+  content: "\f03d"; }
+
+/* line 393, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-picture-o:before {
+  content: "\f03e"; }
+
+/* line 396, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-pencil:before {
+  content: "\f040"; }
+
+/* line 399, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-map-marker:before {
+  content: "\f041"; }
+
+/* line 402, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-adjust:before {
+  content: "\f042"; }
+
+/* line 405, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tint:before {
+  content: "\f043"; }
+
+/* line 409, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-edit:before,
+.fa-pencil-square-o:before {
+  content: "\f044"; }
+
+/* line 412, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-share-square-o:before {
+  content: "\f045"; }
+
+/* line 415, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-check-square-o:before {
+  content: "\f046"; }
+
+/* line 418, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-move:before {
+  content: "\f047"; }
+
+/* line 421, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-step-backward:before {
+  content: "\f048"; }
+
+/* line 424, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fast-backward:before {
+  content: "\f049"; }
+
+/* line 427, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-backward:before {
+  content: "\f04a"; }
+
+/* line 430, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-play:before {
+  content: "\f04b"; }
+
+/* line 433, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-pause:before {
+  content: "\f04c"; }
+
+/* line 436, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stop:before {
+  content: "\f04d"; }
+
+/* line 439, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-forward:before {
+  content: "\f04e"; }
+
+/* line 442, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fast-forward:before {
+  content: "\f050"; }
+
+/* line 445, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-step-forward:before {
+  content: "\f051"; }
+
+/* line 448, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-eject:before {
+  content: "\f052"; }
+
+/* line 451, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-left:before {
+  content: "\f053"; }
+
+/* line 454, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-right:before {
+  content: "\f054"; }
+
+/* line 457, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-plus-circle:before {
+  content: "\f055"; }
+
+/* line 460, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-minus-circle:before {
+  content: "\f056"; }
+
+/* line 463, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-times-circle:before {
+  content: "\f057"; }
+
+/* line 466, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-check-circle:before {
+  content: "\f058"; }
+
+/* line 469, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-question-circle:before {
+  content: "\f059"; }
+
+/* line 472, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-info-circle:before {
+  content: "\f05a"; }
+
+/* line 475, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-crosshairs:before {
+  content: "\f05b"; }
+
+/* line 478, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-times-circle-o:before {
+  content: "\f05c"; }
+
+/* line 481, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-check-circle-o:before {
+  content: "\f05d"; }
+
+/* line 484, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ban:before {
+  content: "\f05e"; }
+
+/* line 487, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-left:before {
+  content: "\f060"; }
+
+/* line 490, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-right:before {
+  content: "\f061"; }
+
+/* line 493, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-up:before {
+  content: "\f062"; }
+
+/* line 496, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-down:before {
+  content: "\f063"; }
+
+/* line 500, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-mail-forward:before,
+.fa-share:before {
+  content: "\f064"; }
+
+/* line 503, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-resize-full:before {
+  content: "\f065"; }
+
+/* line 506, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-resize-small:before {
+  content: "\f066"; }
+
+/* line 509, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-plus:before {
+  content: "\f067"; }
+
+/* line 512, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-minus:before {
+  content: "\f068"; }
+
+/* line 515, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-asterisk:before {
+  content: "\f069"; }
+
+/* line 518, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-exclamation-circle:before {
+  content: "\f06a"; }
+
+/* line 521, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-gift:before {
+  content: "\f06b"; }
+
+/* line 524, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-leaf:before {
+  content: "\f06c"; }
+
+/* line 527, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fire:before {
+  content: "\f06d"; }
+
+/* line 530, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-eye:before {
+  content: "\f06e"; }
+
+/* line 533, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-eye-slash:before {
+  content: "\f070"; }
+
+/* line 537, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-warning:before,
+.fa-exclamation-triangle:before {
+  content: "\f071"; }
+
+/* line 540, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-plane:before {
+  content: "\f072"; }
+
+/* line 543, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-calendar:before {
+  content: "\f073"; }
+
+/* line 546, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-random:before {
+  content: "\f074"; }
+
+/* line 549, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-comment:before {
+  content: "\f075"; }
+
+/* line 552, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-magnet:before {
+  content: "\f076"; }
+
+/* line 555, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-up:before {
+  content: "\f077"; }
+
+/* line 558, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-down:before {
+  content: "\f078"; }
+
+/* line 561, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-retweet:before {
+  content: "\f079"; }
+
+/* line 564, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-shopping-cart:before {
+  content: "\f07a"; }
+
+/* line 567, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-folder:before {
+  content: "\f07b"; }
+
+/* line 570, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-folder-open:before {
+  content: "\f07c"; }
+
+/* line 573, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-resize-vertical:before {
+  content: "\f07d"; }
+
+/* line 576, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-resize-horizontal:before {
+  content: "\f07e"; }
+
+/* line 579, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bar-chart-o:before {
+  content: "\f080"; }
+
+/* line 582, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-twitter-square:before {
+  content: "\f081"; }
+
+/* line 585, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-facebook-square:before {
+  content: "\f082"; }
+
+/* line 588, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-camera-retro:before {
+  content: "\f083"; }
+
+/* line 591, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-key:before {
+  content: "\f084"; }
+
+/* line 595, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-gears:before,
+.fa-cogs:before {
+  content: "\f085"; }
+
+/* line 598, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-comments:before {
+  content: "\f086"; }
+
+/* line 601, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-thumbs-o-up:before {
+  content: "\f087"; }
+
+/* line 604, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-thumbs-o-down:before {
+  content: "\f088"; }
+
+/* line 607, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-star-half:before {
+  content: "\f089"; }
+
+/* line 610, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-heart-o:before {
+  content: "\f08a"; }
+
+/* line 613, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sign-out:before {
+  content: "\f08b"; }
+
+/* line 616, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-linkedin-square:before {
+  content: "\f08c"; }
+
+/* line 619, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-thumb-tack:before {
+  content: "\f08d"; }
+
+/* line 622, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-external-link:before {
+  content: "\f08e"; }
+
+/* line 625, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sign-in:before {
+  content: "\f090"; }
+
+/* line 628, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-trophy:before {
+  content: "\f091"; }
+
+/* line 631, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-github-square:before {
+  content: "\f092"; }
+
+/* line 634, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-upload:before {
+  content: "\f093"; }
+
+/* line 637, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-lemon-o:before {
+  content: "\f094"; }
+
+/* line 640, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-phone:before {
+  content: "\f095"; }
+
+/* line 643, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-square-o:before {
+  content: "\f096"; }
+
+/* line 646, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bookmark-o:before {
+  content: "\f097"; }
+
+/* line 649, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-phone-square:before {
+  content: "\f098"; }
+
+/* line 652, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-twitter:before {
+  content: "\f099"; }
+
+/* line 655, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-facebook:before {
+  content: "\f09a"; }
+
+/* line 658, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-github:before {
+  content: "\f09b"; }
+
+/* line 661, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-unlock:before {
+  content: "\f09c"; }
+
+/* line 664, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-credit-card:before {
+  content: "\f09d"; }
+
+/* line 667, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rss:before {
+  content: "\f09e"; }
+
+/* line 670, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-hdd:before {
+  content: "\f0a0"; }
+
+/* line 673, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bullhorn:before {
+  content: "\f0a1"; }
+
+/* line 676, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bell:before {
+  content: "\f0f3"; }
+
+/* line 679, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-certificate:before {
+  content: "\f0a3"; }
+
+/* line 682, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-hand-o-right:before {
+  content: "\f0a4"; }
+
+/* line 685, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-hand-o-left:before {
+  content: "\f0a5"; }
+
+/* line 688, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-hand-o-up:before {
+  content: "\f0a6"; }
+
+/* line 691, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-hand-o-down:before {
+  content: "\f0a7"; }
+
+/* line 694, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-left:before {
+  content: "\f0a8"; }
+
+/* line 697, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-right:before {
+  content: "\f0a9"; }
+
+/* line 700, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-up:before {
+  content: "\f0aa"; }
+
+/* line 703, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-down:before {
+  content: "\f0ab"; }
+
+/* line 706, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-globe:before {
+  content: "\f0ac"; }
+
+/* line 709, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-wrench:before {
+  content: "\f0ad"; }
+
+/* line 712, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tasks:before {
+  content: "\f0ae"; }
+
+/* line 715, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-filter:before {
+  content: "\f0b0"; }
+
+/* line 718, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-briefcase:before {
+  content: "\f0b1"; }
+
+/* line 721, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fullscreen:before {
+  content: "\f0b2"; }
+
+/* line 724, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-group:before {
+  content: "\f0c0"; }
+
+/* line 728, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chain:before,
+.fa-link:before {
+  content: "\f0c1"; }
+
+/* line 731, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-cloud:before {
+  content: "\f0c2"; }
+
+/* line 734, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flask:before {
+  content: "\f0c3"; }
+
+/* line 738, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-cut:before,
+.fa-scissors:before {
+  content: "\f0c4"; }
+
+/* line 742, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-copy:before,
+.fa-files-o:before {
+  content: "\f0c5"; }
+
+/* line 745, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-paperclip:before {
+  content: "\f0c6"; }
+
+/* line 749, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-save:before,
+.fa-floppy-o:before {
+  content: "\f0c7"; }
+
+/* line 752, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-square:before {
+  content: "\f0c8"; }
+
+/* line 755, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-reorder:before {
+  content: "\f0c9"; }
+
+/* line 758, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-list-ul:before {
+  content: "\f0ca"; }
+
+/* line 761, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-list-ol:before {
+  content: "\f0cb"; }
+
+/* line 764, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-strikethrough:before {
+  content: "\f0cc"; }
+
+/* line 767, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-underline:before {
+  content: "\f0cd"; }
+
+/* line 770, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-table:before {
+  content: "\f0ce"; }
+
+/* line 773, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-magic:before {
+  content: "\f0d0"; }
+
+/* line 776, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-truck:before {
+  content: "\f0d1"; }
+
+/* line 779, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-pinterest:before {
+  content: "\f0d2"; }
+
+/* line 782, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-pinterest-square:before {
+  content: "\f0d3"; }
+
+/* line 785, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-google-plus-square:before {
+  content: "\f0d4"; }
+
+/* line 788, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-google-plus:before {
+  content: "\f0d5"; }
+
+/* line 791, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-money:before {
+  content: "\f0d6"; }
+
+/* line 794, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-caret-down:before {
+  content: "\f0d7"; }
+
+/* line 797, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-caret-up:before {
+  content: "\f0d8"; }
+
+/* line 800, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-caret-left:before {
+  content: "\f0d9"; }
+
+/* line 803, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-caret-right:before {
+  content: "\f0da"; }
+
+/* line 806, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-columns:before {
+  content: "\f0db"; }
+
+/* line 810, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-unsorted:before,
+.fa-sort:before {
+  content: "\f0dc"; }
+
+/* line 814, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-down:before,
+.fa-sort-asc:before {
+  content: "\f0dd"; }
+
+/* line 818, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-up:before,
+.fa-sort-desc:before {
+  content: "\f0de"; }
+
+/* line 821, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-envelope:before {
+  content: "\f0e0"; }
+
+/* line 824, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-linkedin:before {
+  content: "\f0e1"; }
+
+/* line 828, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rotate-left:before,
+.fa-undo:before {
+  content: "\f0e2"; }
+
+/* line 832, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-legal:before,
+.fa-gavel:before {
+  content: "\f0e3"; }
+
+/* line 836, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-dashboard:before,
+.fa-tachometer:before {
+  content: "\f0e4"; }
+
+/* line 839, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-comment-o:before {
+  content: "\f0e5"; }
+
+/* line 842, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-comments-o:before {
+  content: "\f0e6"; }
+
+/* line 846, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flash:before,
+.fa-bolt:before {
+  content: "\f0e7"; }
+
+/* line 849, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sitemap:before {
+  content: "\f0e8"; }
+
+/* line 852, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-umbrella:before {
+  content: "\f0e9"; }
+
+/* line 856, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-paste:before,
+.fa-clipboard:before {
+  content: "\f0ea"; }
+
+/* line 859, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-lightbulb-o:before {
+  content: "\f0eb"; }
+
+/* line 862, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-exchange:before {
+  content: "\f0ec"; }
+
+/* line 865, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-cloud-download:before {
+  content: "\f0ed"; }
+
+/* line 868, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-cloud-upload:before {
+  content: "\f0ee"; }
+
+/* line 871, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-user-md:before {
+  content: "\f0f0"; }
+
+/* line 874, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stethoscope:before {
+  content: "\f0f1"; }
+
+/* line 877, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-suitcase:before {
+  content: "\f0f2"; }
+
+/* line 880, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bell-o:before {
+  content: "\f0a2"; }
+
+/* line 883, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-coffee:before {
+  content: "\f0f4"; }
+
+/* line 886, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-cutlery:before {
+  content: "\f0f5"; }
+
+/* line 889, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-file-text-o:before {
+  content: "\f0f6"; }
+
+/* line 892, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-building:before {
+  content: "\f0f7"; }
+
+/* line 895, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-hospital:before {
+  content: "\f0f8"; }
+
+/* line 898, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ambulance:before {
+  content: "\f0f9"; }
+
+/* line 901, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-medkit:before {
+  content: "\f0fa"; }
+
+/* line 904, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fighter-jet:before {
+  content: "\f0fb"; }
+
+/* line 907, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-beer:before {
+  content: "\f0fc"; }
+
+/* line 910, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-h-square:before {
+  content: "\f0fd"; }
+
+/* line 913, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-plus-square:before {
+  content: "\f0fe"; }
+
+/* line 916, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-double-left:before {
+  content: "\f100"; }
+
+/* line 919, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-double-right:before {
+  content: "\f101"; }
+
+/* line 922, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-double-up:before {
+  content: "\f102"; }
+
+/* line 925, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-double-down:before {
+  content: "\f103"; }
+
+/* line 928, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-left:before {
+  content: "\f104"; }
+
+/* line 931, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-right:before {
+  content: "\f105"; }
+
+/* line 934, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-up:before {
+  content: "\f106"; }
+
+/* line 937, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-angle-down:before {
+  content: "\f107"; }
+
+/* line 940, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-desktop:before {
+  content: "\f108"; }
+
+/* line 943, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-laptop:before {
+  content: "\f109"; }
+
+/* line 946, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tablet:before {
+  content: "\f10a"; }
+
+/* line 950, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-mobile-phone:before,
+.fa-mobile:before {
+  content: "\f10b"; }
+
+/* line 953, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-circle-o:before {
+  content: "\f10c"; }
+
+/* line 956, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-quote-left:before {
+  content: "\f10d"; }
+
+/* line 959, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-quote-right:before {
+  content: "\f10e"; }
+
+/* line 962, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-spinner:before {
+  content: "\f110"; }
+
+/* line 965, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-circle:before {
+  content: "\f111"; }
+
+/* line 969, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-mail-reply:before,
+.fa-reply:before {
+  content: "\f112"; }
+
+/* line 972, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-github-alt:before {
+  content: "\f113"; }
+
+/* line 975, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-folder-o:before {
+  content: "\f114"; }
+
+/* line 978, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-folder-open-o:before {
+  content: "\f115"; }
+
+/* line 981, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-expand-o:before {
+  content: "\f116"; }
+
+/* line 984, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-collapse-o:before {
+  content: "\f117"; }
+
+/* line 987, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-smile-o:before {
+  content: "\f118"; }
+
+/* line 990, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-frown-o:before {
+  content: "\f119"; }
+
+/* line 993, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-meh-o:before {
+  content: "\f11a"; }
+
+/* line 996, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-gamepad:before {
+  content: "\f11b"; }
+
+/* line 999, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-keyboard-o:before {
+  content: "\f11c"; }
+
+/* line 1002, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flag-o:before {
+  content: "\f11d"; }
+
+/* line 1005, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flag-checkered:before {
+  content: "\f11e"; }
+
+/* line 1008, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-terminal:before {
+  content: "\f120"; }
+
+/* line 1011, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-code:before {
+  content: "\f121"; }
+
+/* line 1014, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-reply-all:before {
+  content: "\f122"; }
+
+/* line 1017, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-mail-reply-all:before {
+  content: "\f122"; }
+
+/* line 1022, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-star-half-empty:before,
+.fa-star-half-full:before,
+.fa-star-half-o:before {
+  content: "\f123"; }
+
+/* line 1025, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-location-arrow:before {
+  content: "\f124"; }
+
+/* line 1028, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-crop:before {
+  content: "\f125"; }
+
+/* line 1031, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-code-fork:before {
+  content: "\f126"; }
+
+/* line 1035, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-unlink:before,
+.fa-chain-broken:before {
+  content: "\f127"; }
+
+/* line 1038, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-question:before {
+  content: "\f128"; }
+
+/* line 1041, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-info:before {
+  content: "\f129"; }
+
+/* line 1044, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-exclamation:before {
+  content: "\f12a"; }
+
+/* line 1047, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-superscript:before {
+  content: "\f12b"; }
+
+/* line 1050, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-subscript:before {
+  content: "\f12c"; }
+
+/* line 1053, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-eraser:before {
+  content: "\f12d"; }
+
+/* line 1056, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-puzzle-piece:before {
+  content: "\f12e"; }
+
+/* line 1059, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-microphone:before {
+  content: "\f130"; }
+
+/* line 1062, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-microphone-slash:before {
+  content: "\f131"; }
+
+/* line 1065, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-shield:before {
+  content: "\f132"; }
+
+/* line 1068, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-calendar-o:before {
+  content: "\f133"; }
+
+/* line 1071, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-fire-extinguisher:before {
+  content: "\f134"; }
+
+/* line 1074, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rocket:before {
+  content: "\f135"; }
+
+/* line 1077, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-maxcdn:before {
+  content: "\f136"; }
+
+/* line 1080, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-circle-left:before {
+  content: "\f137"; }
+
+/* line 1083, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-circle-right:before {
+  content: "\f138"; }
+
+/* line 1086, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-circle-up:before {
+  content: "\f139"; }
+
+/* line 1089, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-chevron-circle-down:before {
+  content: "\f13a"; }
+
+/* line 1092, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-html5:before {
+  content: "\f13b"; }
+
+/* line 1095, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-css3:before {
+  content: "\f13c"; }
+
+/* line 1098, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-anchor:before {
+  content: "\f13d"; }
+
+/* line 1101, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-unlock-o:before {
+  content: "\f13e"; }
+
+/* line 1104, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bullseye:before {
+  content: "\f140"; }
+
+/* line 1107, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ellipsis-horizontal:before {
+  content: "\f141"; }
+
+/* line 1110, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ellipsis-vertical:before {
+  content: "\f142"; }
+
+/* line 1113, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rss-square:before {
+  content: "\f143"; }
+
+/* line 1116, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-play-circle:before {
+  content: "\f144"; }
+
+/* line 1119, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ticket:before {
+  content: "\f145"; }
+
+/* line 1122, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-minus-square:before {
+  content: "\f146"; }
+
+/* line 1125, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-minus-square-o:before {
+  content: "\f147"; }
+
+/* line 1128, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-level-up:before {
+  content: "\f148"; }
+
+/* line 1131, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-level-down:before {
+  content: "\f149"; }
+
+/* line 1134, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-check-square:before {
+  content: "\f14a"; }
+
+/* line 1137, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-pencil-square:before {
+  content: "\f14b"; }
+
+/* line 1140, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-external-link-square:before {
+  content: "\f14c"; }
+
+/* line 1143, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-share-square:before {
+  content: "\f14d"; }
+
+/* line 1146, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-compass:before {
+  content: "\f14e"; }
+
+/* line 1150, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-toggle-down:before,
+.fa-caret-square-o-down:before {
+  content: "\f150"; }
+
+/* line 1154, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-toggle-up:before,
+.fa-caret-square-o-up:before {
+  content: "\f151"; }
+
+/* line 1158, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-toggle-right:before,
+.fa-caret-square-o-right:before {
+  content: "\f152"; }
+
+/* line 1162, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-euro:before,
+.fa-eur:before {
+  content: "\f153"; }
+
+/* line 1165, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-gbp:before {
+  content: "\f154"; }
+
+/* line 1169, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-dollar:before,
+.fa-usd:before {
+  content: "\f155"; }
+
+/* line 1173, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-rupee:before,
+.fa-inr:before {
+  content: "\f156"; }
+
+/* line 1179, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-cny:before,
+.fa-rmb:before,
+.fa-yen:before,
+.fa-jpy:before {
+  content: "\f157"; }
+
+/* line 1184, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-ruble:before,
+.fa-rouble:before,
+.fa-rub:before {
+  content: "\f158"; }
+
+/* line 1188, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-won:before,
+.fa-krw:before {
+  content: "\f159"; }
+
+/* line 1192, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bitcoin:before,
+.fa-btc:before {
+  content: "\f15a"; }
+
+/* line 1195, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-file:before {
+  content: "\f15b"; }
+
+/* line 1198, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-file-text:before {
+  content: "\f15c"; }
+
+/* line 1201, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-alpha-asc:before {
+  content: "\f15d"; }
+
+/* line 1204, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-alpha-desc:before {
+  content: "\f15e"; }
+
+/* line 1207, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-amount-asc:before {
+  content: "\f160"; }
+
+/* line 1210, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-amount-desc:before {
+  content: "\f161"; }
+
+/* line 1213, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-numeric-asc:before {
+  content: "\f162"; }
+
+/* line 1216, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sort-numeric-desc:before {
+  content: "\f163"; }
+
+/* line 1219, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-thumbs-up:before {
+  content: "\f164"; }
+
+/* line 1222, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-thumbs-down:before {
+  content: "\f165"; }
+
+/* line 1225, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-youtube-square:before {
+  content: "\f166"; }
+
+/* line 1228, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-youtube:before {
+  content: "\f167"; }
+
+/* line 1231, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-xing:before {
+  content: "\f168"; }
+
+/* line 1234, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-xing-square:before {
+  content: "\f169"; }
+
+/* line 1237, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-youtube-play:before {
+  content: "\f16a"; }
+
+/* line 1240, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-dropbox:before {
+  content: "\f16b"; }
+
+/* line 1243, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stack-overflow:before {
+  content: "\f16c"; }
+
+/* line 1246, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-instagram:before {
+  content: "\f16d"; }
+
+/* line 1249, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-flickr:before {
+  content: "\f16e"; }
+
+/* line 1252, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-adn:before {
+  content: "\f170"; }
+
+/* line 1255, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bitbucket:before {
+  content: "\f171"; }
+
+/* line 1258, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bitbucket-square:before {
+  content: "\f172"; }
+
+/* line 1261, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tumblr:before {
+  content: "\f173"; }
+
+/* line 1264, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-tumblr-square:before {
+  content: "\f174"; }
+
+/* line 1267, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-long-arrow-down:before {
+  content: "\f175"; }
+
+/* line 1270, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-long-arrow-up:before {
+  content: "\f176"; }
+
+/* line 1273, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-long-arrow-left:before {
+  content: "\f177"; }
+
+/* line 1276, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-long-arrow-right:before {
+  content: "\f178"; }
+
+/* line 1279, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-apple:before {
+  content: "\f179"; }
+
+/* line 1282, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-windows:before {
+  content: "\f17a"; }
+
+/* line 1285, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-android:before {
+  content: "\f17b"; }
+
+/* line 1288, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-linux:before {
+  content: "\f17c"; }
+
+/* line 1291, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-dribbble:before {
+  content: "\f17d"; }
+
+/* line 1294, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-skype:before {
+  content: "\f17e"; }
+
+/* line 1297, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-foursquare:before {
+  content: "\f180"; }
+
+/* line 1300, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-trello:before {
+  content: "\f181"; }
+
+/* line 1303, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-female:before {
+  content: "\f182"; }
+
+/* line 1306, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-male:before {
+  content: "\f183"; }
+
+/* line 1309, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-gittip:before {
+  content: "\f184"; }
+
+/* line 1312, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-sun-o:before {
+  content: "\f185"; }
+
+/* line 1315, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-moon-o:before {
+  content: "\f186"; }
+
+/* line 1318, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-archive:before {
+  content: "\f187"; }
+
+/* line 1321, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-bug:before {
+  content: "\f188"; }
+
+/* line 1324, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-vk:before {
+  content: "\f189"; }
+
+/* line 1327, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-weibo:before {
+  content: "\f18a"; }
+
+/* line 1330, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-renren:before {
+  content: "\f18b"; }
+
+/* line 1333, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-pagelines:before {
+  content: "\f18c"; }
+
+/* line 1336, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-stack-exchange:before {
+  content: "\f18d"; }
+
+/* line 1339, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-o-right:before {
+  content: "\f18e"; }
+
+/* line 1342, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-arrow-circle-o-left:before {
+  content: "\f190"; }
+
+/* line 1346, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-toggle-left:before,
+.fa-caret-square-o-left:before {
+  content: "\f191"; }
+
+/* line 1349, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-dot-circle-o:before {
+  content: "\f192"; }
+
+/* line 1352, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-wheelchair:before {
+  content: "\f193"; }
+
+/* line 1355, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-vimeo-square:before {
+  content: "\f194"; }
+
+/* line 1359, /home/surabhi/.rvm/gems/ruby-2.0.0-p247@sh/gems/font-awesome-rails-4.0.0.0/app/assets/stylesheets/font-awesome.css.erb */
+.fa-turkish-lira:before,
+.fa-try:before {
+  content: "\f195"; }
+
+/* Basic jQuery Slider essential styles */
+/* line 4, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  display: none; }
+
+/* line 5, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+li.bjqs-slide {
+  position: absolute;
+  display: none; }
+
+/* line 6, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 9999; }
+
+/* line 7, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li a {
+  position: absolute; }
+
+/* line 8, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li.bjqs-next a {
+  right: 0; }
+
+/* line 9, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li a {
+  display: block;
+  padding: 10px;
+  background: #fff;
+  color: #000;
+  text-decoration: none; }
+
+/* line 10, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li a:hover {
+  background: #000;
+  color: #fff; }
+
+/* line 11, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ul.bjqs-controls.v-centered li.bjqs-prev a {
+  left: 0; }
+
+/* line 12, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+
+/* line 13, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers.h-centered {
+  text-align: center; }
+
+/* line 14, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers li {
+  display: inline; }
+
+/* line 15, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+ol.bjqs-markers li a {
+  display: inline-block; }
+
+/* line 16, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/bjqs.css.scss */
+p.bjqs-caption {
+  display: block;
+  width: 96%;
+  margin: 0;
+  padding: 2%;
+  position: absolute;
+  bottom: 0; }
+
+/* line 15, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.modal.large {
+  width: 60%;
+  /* respsonsive width */
+  margin-left: -30%;
+  /* width/2) */ }
+
+/* line 20, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.box {
+  -moz-box-shadow: 0 0 5px #888;
+  -webkit-box-shadow: 0 0 5px #888888;
+  box-shadow: 0 0 5px #888888;
+  border-bottom: 2px solid #eee; }
+
+/* line 27, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.box .content {
+  padding: 6px;
+  background: #F0F0F0;
+  color: black; }
+
+/* line 33, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.box .title {
+  color: black;
+  text-align: center;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e5e5e5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+  /* IE6-9 */
+  height: auto;
+  position: relative;
+  padding: 10px;
+  border-bottom: 2px solid #eee; }
+
+/* line 50, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.item-details {
+  clear: both;
+  overflow: hidden;
+  margin: 10px; }
+
+/* line 56, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.item-details p {
+  clear: both;
+  display: block;
+  line-height: 25px;
+  margin: 5px;
+  border-bottom: 1px dotted #bcbcbc; }
+
+/* line 64, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.item-details p b {
+  font-weight: bold;
+  color: #999;
+  background: #f2f2f2;
+  width: 170px;
+  text-align: right;
+  display: block;
+  float: left;
+  margin-right: 5px;
+  padding-right: 5px; }
+
+/* line 75, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.order-package {
+  display: block;
+  float: left;
+  position: relative;
+  margin: 0px 0 0 0;
+  padding: 0;
+  border: solid 2px #eeeedd;
+  overflow: hidden; }
+  /* line 84, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .order-package .header {
+    padding: 6px;
+    color: black;
+    background: #FECC00;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: solid 1.5px #eeeeee; }
+  /* line 92, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .order-package .content {
+    padding: 10px; }
+
+/* line 98, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.thumb-container {
+  text-align: center;
+  margin-bottom: 3px; }
+  /* line 101, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail {
+    -webkit-box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, 0.1);
+    -moz-box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, 0.1);
+    box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, 0.1);
+    overflow: hidden; }
+  /* line 107, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.large {
+    height: 180px;
+    width: 125px; }
+    /* line 110, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.large img {
+      height: 180px;
+      max-height: 200px;
+      max-width: 125px; }
+  /* line 116, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.medium {
+    height: 150px;
+    width: 100px; }
+    /* line 119, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.medium img {
+      max-height: 150px;
+      max-width: 100px; }
+  /* line 124, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.small {
+    height: 100px;
+    width: 75px; }
+    /* line 127, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.small img {
+      max-height: 100px;
+      max-width: 75px; }
+  /* line 132, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .thumb-container .thumbnail.people {
+    height: 100px;
+    width: 100px; }
+    /* line 135, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    .thumb-container .thumbnail.people img {
+      max-height: 100px;
+      max-width: 100px; }
+
+/* line 142, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.imgborder {
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  -moz-box-shadow: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); }
+
+/* line 147, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc_details {
+  text-align: center;
+  background: #ffffff;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #e5e5e5));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #e5e5e5 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  /* W3C */ }
+
+/* line 158, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.filler-div {
+  height: 25px;
+  background: white; }
+
+/* line 162, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.filler-div-home {
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  font-size: 13pt;
+  padding-bottom: 14px;
+  margin-top: 0px;
+  line-height: 11px;
+  padding-bottom: 4px;
+  background: #f1f1f0;
+  height: 25px; }
+
+/* line 174, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.home-box {
+  background: #ffcc11;
+  -webkit-box-shadow: 0 0 5px #888888;
+  border-bottom: 2px solid #eee; }
+
+/* line 180, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc-hr {
+  background-color: #cccccc;
+  height: 1px;
+  margin: 0px; }
+
+/* line 186, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.info-line1 {
+  font-size: 15pt;
+  text-align: center;
+  padding-top: 10px; }
+
+/* line 192, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.info-line2 {
+  font-size: 12pt;
+  padding-top: 5px;
+  padding-left: 10px; }
+
+/* line 198, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.nav {
+  border-bottom: 0px;
+  margin-bottom: 0px;
+  margin-top: 25px; }
+
+/* line 203, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.tab-pane {
+  background-color: #27689b;
+  color: black; }
+
+/* line 208, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+form textarea {
+  height: 50px;
+  width: 300px; }
+
+/* line 216, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#history-tabs .nav-tabs li.active .custom-tabs {
+  color: white;
+  background-color: #27689b; }
+/* line 222, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#history-tabs .tab-content {
+  overflow: hidden; }
+
+/* line 227, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.grid {
+  padding: 0;
+  list-style: none;
+  margin: 20px auto 0;
+  width: 1000px; }
+
+/* line 234, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li {
+  float: left;
+  padding: 0;
+  margin: 0 5px 10px 5px; }
+
+/* line 240, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li a {
+  display: block; }
+
+/* line 244, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li img {
+  background-color: white;
+  padding: 7px;
+  margin: 0;
+  border: 1px dotted #58595b;
+  width: 200px;
+  height: 200px; }
+
+/* line 253, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li .speech-bubble {
+  background-color: black;
+  border: 1px solid #c8c8c8;
+  border-radius: 5px;
+  width: 110px;
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  display: none; }
+
+/* line 266, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.grid li a:hover img + .speech-bubble {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: block; }
+
+@font-face {
+  font-family: 'GraublauWeb';
+  src: url(fonts/GraublauWeb.eot);
+  src: url(fonts/GraublauWeb.otf) format("opentype"); }
+
+/* line 277, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#facebox .image {
+  width: 800px !important; }
+  /* line 279, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  #facebox .image img {
+    width: 800px !important; }
+
+/* line 284, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.short-text {
+  overflow: hidden;
+  height: 322px;
+  border-bottom: 20px solid #f5f5f5; }
+
+/* line 290, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.full-text {
+  height: auto; }
+
+/* line 295, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#profile .personal-info-header {
+  font-size: 20px;
+  color: #37404e; }
+
+/* line 300, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.account-info {
+  list-style: none;
+  margin-top: 40px;
+  padding: 0px;
+  font-size: 16px; }
+  /* line 305, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .account-info li {
+    clear: both; }
+  /* line 308, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .account-info label {
+    width: 230px;
+    font-weight: bold;
+    line-height: 25px;
+    font-size: 16px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    padding-left: 5px; }
+
+/* line 320, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation-panel {
+  list-style: none; }
+  /* line 322, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation-panel a {
+    font-size: 12pt; }
+  /* line 325, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation-panel li {
+    padding: 6px; }
+  /* line 328, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation-panel li.active {
+    background-color: #efefef; }
+    /* line 330, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+    ul.navigation-panel li.active a {
+      color: #666666;
+      font-weight: bold; }
+
+/* line 337, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation {
+  position: fixed;
+  margin: 0px;
+  padding: 0px;
+  top: 100px;
+  left: 0px;
+  list-style: none;
+  z-index: 9999; }
+
+/* line 347, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation li {
+  width: 55px; }
+
+/* line 350, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation li a.active {
+  background-color: #FFCC11; }
+
+/* line 353, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+ul.navigation li a {
+  cursor: pointer;
+  display: block;
+  width: 55px;
+  height: 70px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: 1px solid black;
+  -moz-border-radius: 0px 10px 10px 0px;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -khtml-border-bottom-right-radius: 10px;
+  -khtml-border-top-right-radius: 10px; }
+  /* line 367, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  ul.navigation li a:hover {
+    background-color: #FFCC11; }
+
+/* line 372, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc-bio {
+  font-family: "Open Sans" sans-serif; }
+
+/* line 376, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form {
+  background-color: #fff;
+  padding: 10px 20px 20px 20px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  position: relative;
+  z-index: 10;
+  color: #000; }
+
+/* line 392, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .textfield {
+  position: relative;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  color: #999;
+  width: 90%; }
+
+/* line 402, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form [class^="icon-"] {
+  top: 6px;
+  left: 5px;
+  color: inherit;
+  position: absolute;
+  z-index: 1;
+  font-size: 16px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  vertical-align: text-top; }
+
+/* line 416, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .fa-group {
+  top: 7px;
+  left: 3px;
+  color: inherit;
+  position: absolute;
+  z-index: 1;
+  font-size: 16px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  vertical-align: text-top; }
+
+/* line 430, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .fa-mobile {
+  top: 3px;
+  left: 6px;
+  color: inherit;
+  position: absolute;
+  z-index: 1;
+  font-size: 29px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  vertical-align: text-top; }
+
+/* line 444, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .fa-android {
+  top: 3px;
+  left: 5px;
+  color: inherit;
+  position: absolute;
+  z-index: 1;
+  font-size: 22px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  vertical-align: text-top; }
+
+/* line 458, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form input.text {
+  width: 100%;
+  padding: 6px 0px 5px 32px;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 300;
+  -webkit-transition-property: border, color;
+  -moz-transition-property: border, color;
+  -o-transition-property: border, color;
+  transition-property: border, color;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  font-size: 16px; }
+
+/* line 476, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form input.text:focus {
+  border-color: #1bc4a3; }
+
+/* line 480, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .textfield.active {
+  color: #ffcc11; }
+
+/* line 484, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.b-form .required {
+  top: 9px;
+  left: 252px;
+  right: 0;
+  color: #ddd;
+  position: absolute;
+  z-index: 1;
+  font-size: 6px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  text-transform: uppercase; }
+
+/* line 500, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.fieldset {
+  border: 0px;
+  margin: 0px;
+  padding: 0px; }
+
+/* line 506, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#response-form {
+  margin-left: 95px;
+  margin-top: -12px;
+  margin-left: 95px; }
+
+/* line 512, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#vc-profile {
+  margin-right: 0px;
+  margin-top: 92px;
+  margin-left: 65px; }
+
+/* line 518, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+#instruction {
+  font-family: source-sans-pro, Helvetica, Arial, sans-serif, sans-serif;
+  color: #282f7a;
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 9px;
+  margin-bottom: 8px; }
+
+/* line 527, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.vc-pro-details {
+  font-family: source-sans-pro, Helvetica, Arial, sans-serif, sans-serif;
+  list-style: none;
+  padding: 0px;
+  font-size: 17px;
+  color: #282f7a;
+  margin-top: 126px;
+  line-height: 22px; }
+
+/* line 537, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.show-request {
+  margin-top: 100px;
+  list-style: none;
+  font-size: 20px; }
+  /* line 541, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .show-request li {
+    clear: both; }
+  /* line 544, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+  .show-request label {
+    font-weight: bold;
+    float: left;
+    font-size: 17px;
+    margin-right: 5px;
+    padding-left: 5px;
+    padding-right: 10px;
+    width: 100px;
+    text-align: left; }
+
+/* line 557, /home/surabhi/jbonrails/strata_holidays/app/assets/stylesheets/unwinders/application.css.scss */
+.testimonials blockquote {
+  border-left: 5px solid #ffffff !important; }

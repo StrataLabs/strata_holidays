@@ -10,31 +10,34 @@
       #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
         = @vc.name
       %p.vc-bio{:style => 'text-align:justify'}
-        = "As a vacation consultant, #{@vc.name} living in #{@vc.city}, is happy to engage with customers living in neighborhoods #{@vc.preferred_neighborhood} of Bangalore to offer planning & booking services. Of the destinations that #{@vc.name} has planned, the popular ones have been"
-        - l = @vc.preferred_locations.length
-        - @vc.preferred_locations.each_with_index do |d,k|
-          - if k == (l-1)
-            - a = "."
-          -else
-            - a = ","
-          = "#{Destination.find(d.to_i).name}#{a}"
-          / - if k == (l-1)
+        As a vacation consultant, Divya is happy to engage with customers living in Bangalore to offer planning & booking services. Of the destinations that Divya has planned, the popular ones have been Switzerland, Andaman and Chikmagalur.
+        / = "As a vacation consultant, #{@vc.name} living in #{@vc.city}, is happy to engage with customers living in neighborhoods #{@vc.preferred_neighborhood} of Bangalore to offer planning & booking services. Of the destinations that #{@vc.name} has planned, the popular ones have been"
+        / - l = @vc.preferred_locations.length
+        / - @vc.preferred_locations.each_with_index do |d,k|
+        /   - if k == (l-1)
+        /     - a = "."
+        /   -else
+        /     - a = ","
+        /   = "#{Destination.find(d.to_i).name}#{a}"
+        /   / - if k == (l-1)
 
-          / - else
-          /   ,
+        /   / - else
+        /   /   ,
     .span5.pull-right{:style => 'padding-right:10px'}
       = render 'top_destinations'
   .row
     .span6
-      .box{:style => 'margin-top:15px;margin-left:25px;margin-bottom:20px'}
+      .box.testimonials{:style => 'margin-top:15px;margin-left:25px;margin-bottom:20px'}
         .title{:style => 'background:#ffcc11;font-size:12pt'}
           Customer Testimonials
         .content{:style => 'background:white;min-height:290px'}
           -if @vc.testimonials.present?
             -@vc.testimonials.each do |t|
+              %a{:href => "#{asset_path("unwinders/testimonial_#{t.customer_id}.jpg")}", :rel => "facebox"}
+                =image_tag("#{asset_path("unwinders/testimonial_#{t.customer_id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:50px;height:50px;float:left;margin-top:5px')
               %blockquote
                 %p.vc-bio{:style => 'font-size:13px;color:black;margin-top:-10px'}
-                  = t.content
+                  = t.content.html_safe
               - if t.customer_id.present?
                 #quote-by.vc-bio.pull-right
                   \-

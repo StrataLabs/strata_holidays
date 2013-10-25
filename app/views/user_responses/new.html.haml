@@ -1,51 +1,49 @@
-#response-form.span5
-  .b-form
-    = form_for(@user_response, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
-      .textfield
-        %i.icon-user
-        %input.text{:autocomplete => "off", :name => "user[name]", :placeholder => "Your name", :size => "24", :type => "text"}
-          %em.required required
-      .textfield
-        %i.icon-envelope
-        %input.text{:autocomplete => "off", :email => "user[email]", :placeholder => "Your email", :size => "24", :type => "text"}
-          %em.required required
-      .textfield
-        %i.icon-signal
-        %input.text{:autocomplete => "off", :contact_no => "user[contact_no]", :placeholder => "Your Contact No.", :size => "24", :type => "text"}
-          %em.required required
-      .textfield
-        %i.icon-calendar
-        %input.text{:autocomplete => "off", :start_date => "user[start_date]", :placeholder => "Start Date", :size => "24", :type => "text", :as => :date_picker}
-          %em.required required
-      .textfield
-        %i.icon-calendar
-        %input.text{:autocomplete => "off", :end_date => "user[end_date]", :placeholder => "End Date", :size => "24", :type => "text", :as => :date_picker}
-          %em.required required
-      .textfield
-        %i.icon-globe
-        %input.text{:autocomplete => "off", :no_of_adults => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text"}
-          %em.required required
-      .textfield
-        %i.icon-flag
-        %input.text{:autocomplete => "off", :no_of_children => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text"}
-          %em.required required
-      / %br
-      / = f.text_field :email, :placeholder => "Email"
-      / %br
-      / = f.text_field :contact_no, :placeholder => "Contact No."
-      / %br
-      / = f.text_field :start_date, :as => :date_picker, :placeholder => "Start Date"
-      / %br
-      / = f.text_field :end_date, :as => :date_picker, :placeholder => "End Date"
-      / %br
-      / = f.text_field :no_of_adults, :placeholder => "No. of adults"
-      / %br
-      / = f.text_field :no_of_children, :placeholder => "No. of children"
-      / / .form-actions
-      %center
-        = f.button :submit, :value => "Request" , :class => 'btn btn-success btn-medium btn-block'
-/ %h1 New user_response
-
-/ = render 'form'
-
-/ = link_to 'Back', user_responses_path
+%div{:style => 'background-color:#ffcc11;min-height:72px;max-height:72px;margin-top:237px;width:966px'}
+  %p{:style => 'color: #282f7a;font-size:20px;font-family: Gabriola,Serif;font-style:oblique;padding:12px 0px 0px 12px;line-height:24px'}
+    Turquoise waters, colours of different cultures, flavours of different tastes. An unforgettable holiday experience that makes you realize what true beauty really means... MAURITIUS!
+.row
+  .span4#response-form
+    #instruction
+      To get your vacation planned for free, fill up these details and we will contact you!
+    .b-form
+      = form_for(@user_response, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px', :id => "user_response_form"}) do |f|
+        .textfield
+          %i.icon-user
+          %input.text{:autocomplete => "off", :name => "user[name]", :placeholder => "Your name", :size => "24", :type => "text", :class => "span2 validate[required]"}
+            %em.required required
+        .textfield
+          %i.icon-envelope
+          %input.text{:autocomplete => "off", :name => "user[email]", :placeholder => "Your email", :size => "24", :type => "text", :class => "validate[required,custom[email]]"}
+            %em.required required
+        .textfield
+          %i.fa.fa-mobile
+          %input.text{:autocomplete => "off", :name => "user[contact_no]", :placeholder => "Your Contact No.", :size => "24", :type => "text"}
+        .textfield
+          %i.icon-calendar
+          %input.text{:autocomplete => "off", :name => "user[start_date]", :placeholder => "Start Date", :size => "24", :type => "text", :as => :date_picker}
+        .textfield
+          %i.icon-calendar
+          %input.text{:autocomplete => "off", :name => "user[end_date]", :placeholder => "End Date", :size => "24", :type => "text", :as => :date_picker}
+        .textfield
+          %i.fa.fa-group
+          %input.text{:autocomplete => "off", :name => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text", :class => "span2 validate[required]"}
+        .textfield
+          %i.fa.fa-android
+          %input.text{:autocomplete => "off", :name => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text"}
+        %br
+        %center
+          = f.button "Submit", :class => 'btn btn-success btn-medium btn-block', :style => 'background:#FFCC11;color:brown', :id => "response_submit"
+  .span2#vc-profile{:style => 'margin-right: 0px'}
+    =image_tag("#{asset_path("unwinders/vc_1.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:120px;height:150px;', :class => 'img-polaroid')
+  .span5#vc-profile-details{:style => 'margin-left: -25px;margin-top: 0px;'}
+    .vc-pro-details
+      Name: Divya S Rajan
+      %br
+      Work Profile: Vacation Consultant
+      %br
+      Loves to travel, travel, travel and plan holidays
+      %br
+      Reach her at 080 67683816
+      %br
+    .test{:style => 'margin-top:5px;padding:3px'}
+      = link_to "Know more about Divya", vc_unwinders_path(:id => "divya"), :style => 'font-size:16px;margin-left:0px;background-color:#ffcc11;padding:5px', :class => 'profile-link btn'

@@ -17,6 +17,8 @@
 //= require chosen-jquery
 //= require_tree .
 //= require jquery.facebox
+//= require jquery.validationEngine-en
+//= require jquery.validationEngine
 jQuery(document).ready(function($) {
   $('.select-vcs').on('click', function() {
       var vc_ids = [];
@@ -30,6 +32,12 @@ jQuery(document).ready(function($) {
       });
       return false;
     });
+});
+
+$(document).ready(function(){
+  $("#response_submit").on('click', function() {
+    $("#user_response_form").validationEngine({promptPosition : "bottomLeft"});
+  });
 });
 
 jQuery(document).ready(function($) {
@@ -187,6 +195,20 @@ $(function ()
         .appendTo('#slideshow');
     },  5000);
   }
+});
+
+$(document).ready(function(){
+  $("input[name='user[start_date]']").datepicker(
+    {
+      dateFormat: 'dd MM yy',
+      minDate: 1,
+    });
+
+  $("input[name='user[end_date]']").datepicker(
+    {
+      dateFormat: 'dd MM yy',
+      minDate: 1,
+    });
 });
 
 var Sessionapp = {};

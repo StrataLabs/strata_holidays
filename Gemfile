@@ -23,6 +23,10 @@ gem 'jbuilder', '~> 1.0.1'
 
 gem 'facebox-rails'
 
+gem "font-awesome-rails"
+
+gem 'jQuery-Validation-Engine-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

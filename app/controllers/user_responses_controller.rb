@@ -5,10 +5,13 @@ class UserResponsesController < ApplicationController
   # GET /user_responses
   def index
     @user_responses = UserResponse.all
+    render :layout => "home"
+    # redirect_to new_user_response_path
   end
 
   # GET /user_responses/1
   def show
+    render :layout => "home"
   end
 
   # GET /user_responses/new
@@ -24,8 +27,9 @@ class UserResponsesController < ApplicationController
   def create
     @user_response = UserResponse.new(user_response_params)
 
-    if @user_response.save
-      redirect_to @user_response, notice: 'User response was successfully created.'
+    if @user_response.save!
+      redirect_to '/mauritius', notice: 'Thank you for your request. We will get in touch with you shortly.'
+      # redirect_to new_user_response_path, notice: 'Thank you for your request. We will get in touch with you shortly.'
     else
       render action: 'new'
     end
@@ -54,6 +58,6 @@ class UserResponsesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_response_params
-      params[:user_response]
+      params.require(:user).permit(:name, :email, :contact_no, :start_date, :end_date, :no_of_adults, :no_of_children)
     end
 end
