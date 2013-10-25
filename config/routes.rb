@@ -60,6 +60,6 @@ StrataHolidays::Application.routes.draw do
   # resources :points_of_attractions
   # resources :destinations
   # resources :poa_types
-  # root 'home#index'
+  root 'user_responses#new'
 end
 
