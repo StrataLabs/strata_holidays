@@ -1,7 +1,7 @@
 #response-form.span5
   .b-form
     = form_for(@user_response, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px'}) do |f|
-      .textfield.active
+      .textfield
         %i.icon-user
         %input.text{:autocomplete => "off", :name => "user[name]", :placeholder => "Your name", :size => "24", :type => "text"}
           %em.required required
@@ -15,19 +15,19 @@
           %em.required required
       .textfield
         %i.icon-calendar
-        %input.text{:autocomplete => "off", :start_date => "user[start_date]", :placeholder => "Start Date (dd-mm-yy)", :size => "24", :type => "text", :as => :date_picker}
+        %input.text{:autocomplete => "off", :start_date => "user[start_date]", :placeholder => "Start Date", :size => "24", :type => "text", :as => :date_picker}
           %em.required required
       .textfield
         %i.icon-calendar
-        %input.text{:autocomplete => "off", :end_date => "user[end_date]", :placeholder => "End Date DD-MM-YY", :size => "24", :type => "text", :as => :date_picker}
+        %input.text{:autocomplete => "off", :end_date => "user[end_date]", :placeholder => "End Date", :size => "24", :type => "text", :as => :date_picker}
           %em.required required
       .textfield
         %i.icon-globe
-        %input.text{:autocomplete => "off", :no_of_adults => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text", :as => :date_picker}
+        %input.text{:autocomplete => "off", :no_of_adults => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text"}
           %em.required required
       .textfield
         %i.icon-flag
-        %input.text{:autocomplete => "off", :no_of_children => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text", :as => :date_picker}
+        %input.text{:autocomplete => "off", :no_of_children => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text"}
           %em.required required
       / %br
       / = f.text_field :email, :placeholder => "Email"

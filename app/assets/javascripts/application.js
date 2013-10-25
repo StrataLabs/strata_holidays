@@ -77,6 +77,16 @@ $(".show-more a").on("click", function() {
 
 jQuery(document).ready(function($) {
 
+ $(".text").focus(function(){
+    $(this).parent().addClass("active");
+
+  }).blur(function(){
+       $(this).parent().removeClass("active");
+  })
+});
+
+jQuery(document).ready(function($) {
+
 $("#personal-information .proceed").on("click", function() {
     var div_id = document.getElementById("progress-bar").style.width = "66%";
     $('#personal-information').hide(300);
