@@ -31,7 +31,7 @@ class UserResponsesController < ApplicationController
       redirect_to '/mauritius', notice: 'Thank you for your request. We will get in touch with you shortly.'
       # redirect_to new_user_response_path, notice: 'Thank you for your request. We will get in touch with you shortly.'
     else
-      render action: 'new'
+      render action: 'new', notice: 'Something went wrong. Try again.'
     end
   end
 
