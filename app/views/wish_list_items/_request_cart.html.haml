@@ -1,7 +1,7 @@
 -if current_user.customer.wish_list_items.present?
   .row
     .span5
-      %table.table.table-striped
+      %table.table.table-striped.wishlist_table
         %tr
           %th
           %th
@@ -10,7 +10,7 @@
         -customer = current_user.customer
         - customer.wish_list_items.each do |destination|
           - destination_object = Destination.find(destination[:destination_id])
-          %tr{:id => "#{destination_object}"}
+          %tr{:id => "#{destination_object.id}"}
             %td.cb
               %input{:type => "checkbox", :value => "#{destination_object.id}"}/
             %td

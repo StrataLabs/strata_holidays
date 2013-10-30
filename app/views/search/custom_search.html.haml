@@ -1,0 +1,57 @@
+%title
+  Search Results
+.container{:style => 'min-height:600px;margin-top:60px'}
+  #alert{:style => 'background:#f2dede;width:850px;padding:5px;color:#b94a48;text-align:center;margin-left:145px;margin-bottom:10px;border-color:#eed3d7;border-radius:8px'}
+    = "Found #{@count["Destination"] || 0} results for destinations, #{@count["PointsOfAttraction"] || 0} results for points of attraction and #{@count["VacationConsultant"] || 0} results for consultants"
+    -if params.has_key?(:branch_id)
+      %br
+      %b= "To find results in all branches, click 'All Branches' above"
+  = will_paginate @search_results, :style => 'font-size:14px', renderer: BootstrapPagination::Rails, :class => 'pagination pagination-centered'
+  - @search_results.each do |sr|
+    - if sr.class == VacationConsultant
+      .container{:style => 'border:1px solid #ccc;padding:10px 0px 10px 0px;width:1000px'}
+        .row{:style => 'margin-left:30px'}
+          .span2
+            =image_tag("#{asset_path("unwinders/vc_#{sr.id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:120px;height:150px;', :class => 'img-polaroid')
+          .span7
+            #class-name{:style => 'font-size:16px;color:black;margin-top:20px'}
+              Vacation Consultant
+            #name{:style => 'font-weight:bold;font-size:24px;color:green;padding-top:15px'}
+              = link_to "#{sr.name}", vc_unwinders_path(:id => "#{sr.id}"), :style => 'color:green'
+            %p.vc-bio{:style => 'text-align:justify;color:black'}
+              = "As a vacation consultant, #{sr.name} living in #{sr.city}, is happy to engage with customers living in neighborhoods #{sr.preferred_neighborhood} of Bangalore to offer planning & booking services. Of the destinations that #{sr.name} has planned, the popular ones have been"
+              - l = sr.preferred_locations.length
+              - sr.preferred_locations.each_with_index do |d,k|
+                - if k == (l-1)
+                  - a = "."
+                -else
+                  - a = ","
+                = "#{Destination.find(d.to_i).name}#{a}"
+      %br
+    - elsif sr.class == Destination
+      .container{:style => 'border:1px solid #ccc;padding:10px 0px 10px 0px;width:1000px'}
+        .row{:style => 'margin-left:30px'}
+          .span2
+            =image_tag("#{sr.image.url}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:150px;height:100px;', :class => 'img-polaroid')
+          .span7
+            #class-name{:style => 'font-size:16px;color:black;margin-top:10px'}
+              Destination
+            #name{:style => 'font-weight:bold;font-size:24px;color:green;padding-top:15px'}
+              = link_to "#{sr.name}", destination_path(:id => "#{sr.id}"), :style => 'color:green'
+            %p.vc-bio{:style => 'text-align:justify;color:black'}
+              = sr.description
+      %br
+    - else
+      .container{:style => 'border:1px solid #ccc;padding:10px 0px 10px 0px;width:1000px'}
+        .row{:style => 'margin-left:30px'}
+          .span2
+            =image_tag("#{sr.image.url}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:150px;height:100px;', :class => 'img-polaroid')
+          .span7
+            #class-name{:style => 'font-size:16px;color:black;margin-top:10px'}
+              Point of Attraction
+            #name{:style => 'font-weight:bold;font-size:24px;color:green;padding-top:15px'}
+              = link_to "#{sr.name}", points_of_attraction_path(:id => "#{sr.id}"), :style => 'color:green'
+            %p.vc-bio{:style => 'text-align:justify;color:black'}
+              = sr.description
+      %br
+  = will_paginate @search_results, :style => 'font-size:14px', renderer: BootstrapPagination::Rails, :class => 'pagination pagination-centered'

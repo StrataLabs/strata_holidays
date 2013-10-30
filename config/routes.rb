@@ -1,4 +1,5 @@
 StrataHolidays::Application.routes.draw do
+  get "/search" => "search#custom_search"
   resources :testimonials
 
   devise_for :users do

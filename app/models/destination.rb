@@ -13,4 +13,11 @@ class Destination < ActiveRecord::Base
   :default_url => "unwinders/default.jpg"
   validates_attachment :image, :content_type => { :content_type => /image/ }, :size => { :in => 0..2.megabytes }
   # validates_attachment_size :image, :in => 0.megabytes..2.megabytes, :message => "Image must be less than 2 megabytes in size"
+
+  searchable do
+    text :name, :boost => 2.0
+    string :class_name do
+      self.class.name
+    end
+  end
 end

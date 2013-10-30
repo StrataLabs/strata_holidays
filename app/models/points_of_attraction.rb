@@ -13,4 +13,11 @@ class PointsOfAttraction < ActiveRecord::Base
   },
   :default_url => "unwinders/default.jpg"
   validates_attachment :image, :content_type => { :content_type => /image/ }, :size => { :in => 0..2.megabytes }
+
+  searchable do
+    text :name, :boost => 2.0
+    string :class_name do
+      self.class.name
+    end
+  end
 end

@@ -100,12 +100,12 @@ class CustItiRequestsController < ApplicationController
 
   def request_from_cart
     @cust_iti_request = CustItiRequest.new
-    destinations = []
-    if session[:request] && session[:request].count > 0
-      session[:request].each do |d|
-        destinations << d[:destination_id].to_s
-      end
-    end
+    destinations = params[:destination_ids].split(',')
+    # if session[:request] && session[:request].count > 0
+    #   session[:request].each do |d|
+    #     destinations << d[:destination_id].to_s
+    #   end
+    # end
     @cust_iti_request.destinations = destinations
     render :layout => 'unwinders'
   end

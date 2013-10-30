@@ -30,6 +30,9 @@ class VacationConsultant < ActiveRecord::Base
         end
       end
     end
+    string :class_name do
+      self.class.name
+    end
     text :poa do
       consultant_customer_destinations.map do |hsh|
         hsh.cust_iti_header.cust_iti_details.map do |h|
@@ -39,7 +42,7 @@ class VacationConsultant < ActiveRecord::Base
     end
   end
 
-  def self.search_me(query)
+  def self.search_me(query, page)
     VacationConsultant.search do
       fulltext query
     end

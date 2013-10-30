@@ -4,6 +4,7 @@
     = stylesheet_link_tag "application", :media => "all" if @body_id != "home"
     = stylesheet_link_tag "unwinders/application", :media => "all"
     = javascript_include_tag "application"
+    = javascript_include_tag "autocomplete-rails.js"
     = csrf_meta_tags
   %body{:id => "list", :style => 'padding-top: 0px;background:#1f1b20'}
     .container
@@ -14,9 +15,13 @@
           %a{:href => root_path}
             %img{:src => "#{asset_path("unwinders/logo_2.png")}"}
         #menu
-          .container{:style => 'min-height:42px'}
+          .container{:style => 'min-height:42px;width:800px;margin-left:145px'}
             %h2.branch_name
               = current_user.name rescue ""
+          #search
+            = form_tag "/search", :method => :get do
+              %input{:name => "search", :type => "text", :placeholder => "Search anything"}
+              / = submit_tag "Search", :class => 'btn'
         #submenu
           %ul
             - if current_user
@@ -68,7 +73,7 @@
     .modal-rec-body
     .modal-rec-body-results
   .modal-footer
-    = link_to "Request Package" , "/request_from_cart", :class => ['btn btn-primary', '', 'select-destinations']
+    = link_to "Request Package" , "#", :class => ['btn btn-primary', '', 'select-destinations'], :remote => true
     %a.btn{"data-dismiss" => "modal", :href => "#"} Close
 
 :css

@@ -36,18 +36,33 @@ jQuery(document).ready(function($) {
 
 jQuery(document).ready(function($) {
   $('.select-destinations').on('click', function() {
-      var vc_ids = [];
-      $('.search_vc_table tr').filter(':has(:checkbox:checked)').each(function() {
-        vc_ids.push($(this).attr("id"));
+      var selected_destinations = $("#select_destination").chosen().val();
+      var destination_ids = [];
+      $('.wishlist_table tr').filter(':has(:checkbox:checked)').each(function() {
+        destination_ids.push($(this).attr("id"));
       });
-      $.post('/assign-vcs', {vc_ids: vc_ids, cust_req_id: $('.search_vc_table').attr("id")},
-      function(data, status, xhr){
-        location.href = '/unwinders/user';
-          // $(".assigned-vcs").html(data);
-      });
+      destination_ids.push(selected_destinations);
+      location.href = '/request_from_cart?destination_ids='+destination_ids;
       return false;
     });
 });
+
+$(document).ready(function () {
+  $(".remove a").click(function(event) {
+    var href = $(this).attr('href');
+    var destination_id = $(this).attr('wish_list_item_id');
+    $.get('/remove_from_wishlist?id='+destination_id,
+      function(data) {
+        $(".requests_cart").html(data)
+        return false;
+      });
+    $(this).closest("tr").fadeOut("slow",function() { $(this).remove(); }); // remove row
+    rowCountRemove = $('.modal-rec-body tr').length;
+    return false; // prevents default behavior
+   });
+});
+
+
 jQuery(document).ready(function($) {
   $('a[rel*=facebox]').facebox()
 })

@@ -11,8 +11,8 @@
         .dest-header
           .polaroid
             .wrapper.item
-              %button.add-to-cart
-                -if current_user && current_user.user_type == User::CUSTOMER
+              -if current_user && current_user.user_type == User::CUSTOMER
+                %button.add-to-cart
                   = link_to "Add to Wishlist", wish_list_items_path(:destination_id => @destination.id, :customer_id => current_user.customer.id), :method => :post,:remote => true
               %img{:src => @destination.image.url}
                 %p
