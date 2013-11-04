@@ -1,0 +1,12 @@
+%title
+  New Campaign
+
+.row
+  .span12
+    = render 'form'
+    / = link_to 'Back', campaigns_path
+  / .span{:style => 'width:40%;margin-left:5%;margin-right:1%;'}
+  /   #preview
+  /     = @campaign.header
+  /     = @campaign.body
+

@@ -22,7 +22,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 
 gem 'facebox-rails'
-
 gem 'best_in_place', github: 'bernat/best_in_place'
 
 group :doc do

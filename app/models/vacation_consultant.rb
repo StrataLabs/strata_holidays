@@ -2,6 +2,7 @@ class VacationConsultant < ActiveRecord::Base
   has_many :vc_assignments
   has_many :consultant_customer_destinations
   has_many :testimonials
+  has_many :campaigns
   serialize :preferred_locations
   has_and_belongs_to_many :destinations
   belongs_to :user, :autosave => true

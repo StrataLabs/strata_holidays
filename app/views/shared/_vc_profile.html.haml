@@ -10,6 +10,12 @@
         = current_user.vacation_consultant.city
       %br
       .vc-hr
+    .span3
+      .box
+        .title Campaigns
+        .content
+          / = current_user.vacation_consultant.campaigns
+          = link_to "New campaign", new_campaign_path
   .row
     .span4.box
       .title

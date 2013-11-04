@@ -1,0 +1,27 @@
+%title
+  My Campaigns
+.container{:style => 'padding:0px'}
+  .row
+  %h1 My Campaigns
+  - @campaigns.each do |c|
+    .row
+      - 6.times do
+        .span4
+          .campaign-holder
+            %a{:href => campaign_path(:id => c.id)}
+              %img{:src => "#{c.image.url}"}
+            .campaign-info
+              #name
+                =c.name
+              %br
+              - if c.active?
+                #status{:style => 'color:green'}
+                  = "Active"
+              - else
+                #status{:style => 'color:red'}
+                  = "Not active"
+              %br
+              #created-at{:style =>'margin-top:-15px;color:black'}
+                =c.created_at.strftime("%d %b 20%y at %I:%M %p")
+              %br
+              =link_to "Edit", edit_campaign_path(:id => c.id)

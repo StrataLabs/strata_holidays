@@ -3,71 +3,94 @@
   |
   = "#{@vacation_consultant.name}"
 .container{:style => 'background:white;padding:0px'}
+  %ul.navigation
+    %li
+      %a{:title => "Home", :style => "background-image:url(#{asset_path("unwinders/home.jpg")});background-size:100%;background-repeat:no-repeat", :href => user_unwinders_path}
+    %li
+      %a.active{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
+    %li
+      %a{:title => "Campaigns", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => my_campaigns_vacation_consultant_path(:id => current_user.vacation_consultant.id)}
+    %li
+      %a{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
+    / %li
+    /   %a{:title => "Edit Info", :style => "background-image:url(#{asset_path("unwinders/edit_info.jpg")});background-size:100%;background-repeat:no-repeat", :href => edit_vacation_consultant_path(current_user.vacation_consultant)}
   - model_class = VacationConsultant
-  #profile{:style => 'padding-left:20px;padding-top:80px'}
-    %p
-      %strong= model_class.human_attribute_name(:name) + ':'
-      %br
-      = @vacation_consultant.name
-    %p
-      %strong= model_class.human_attribute_name(:address_1) + ':'
-      %br
-      = @vacation_consultant.address_1
-    %p
-      %strong= model_class.human_attribute_name(:address_2) + ':'
-      %br
-      = @vacation_consultant.address_2
-    %p
-      %strong= model_class.human_attribute_name(:city) + ':'
-      %br
-      = @vacation_consultant.city
-    %p
-      %strong= model_class.human_attribute_name(:state) + ':'
-      %br
-      = @vacation_consultant.state
-    %p
-      %strong= model_class.human_attribute_name(:country) + ':'
-      %br
-      = @vacation_consultant.country
-    %p
-      %strong= model_class.human_attribute_name(:lphone) + ':'
-      %br
-      = @vacation_consultant.lphone
-    %p
-      %strong= model_class.human_attribute_name(:mphone) + ':'
-      %br
-      = @vacation_consultant.mphone
-    %p
-      %strong= model_class.human_attribute_name(:email) + ':'
-      %br
-      = @vacation_consultant.email
-    %p
-      %strong= model_class.human_attribute_name(:planning) + ':'
-      %br
-      -if @vacation_consultant.planning
-        Yes
-      -else
-        No
-    %p
-      %strong= model_class.human_attribute_name(:booking) + ':'
-      %br
-      -if @vacation_consultant.booking
-        Yes
-      -else
-        No
-    %p
-      %strong= model_class.human_attribute_name(:preferred_neighborhood) + ':'
-      %br
-      = @vacation_consultant.preferred_neighborhood
-    %p
-      %strong= model_class.human_attribute_name(:preferred_locations) + ':'
-      %br
-      = @vacation_consultant.preferred_locations
-    %p
-      %strong= model_class.human_attribute_name(:comments) + ':'
-      %br
-      = @vacation_consultant.comments
+  #pro{:style => 'padding:20px;background:white'}
+    %h2 Personal Information
+    %ul.account-info
+      %li
+        %label= model_class.human_attribute_name(:name) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :name
+      %li
+        %label= model_class.human_attribute_name(:address_1) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :address_1
+      %li
+        %label= model_class.human_attribute_name(:address_2) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :address_2
+      %li
+        %label= model_class.human_attribute_name(:city) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :city
+      %li
+        %label= model_class.human_attribute_name(:state) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :state
+      %li
+        %label= model_class.human_attribute_name(:country) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :country, type: :select, collection: (ActionView::Helpers::FormOptionsHelper::COUNTRIES.zip(ActionView::Helpers::FormOptionsHelper::COUNTRIES))
+      %li
+        %label= model_class.human_attribute_name(:lphone) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :lphone
+      %li
+        %label= model_class.human_attribute_name(:mphone) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :mphone
+      %li
+        %label= model_class.human_attribute_name(:email) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :email
+      %li
+        %label= model_class.human_attribute_name(:planning) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :planning, type: :checkbox, collection: %w[No Yes]
+      %li
+        %label= model_class.human_attribute_name(:booking) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :booking, type: :checkbox, collection: %w[No Yes]
+      %li
+        %label= model_class.human_attribute_name(:preferred_neighborhood) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :preferred_neighborhood
+      %li
+        %label= model_class.human_attribute_name(:preferred_locations) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :preferred_locations, type: :select, collection: Destination.all, :multiple => true
+      %li
+        %label= model_class.human_attribute_name(:comments) + ':'
+        %span
+          &nbsp;
+          = best_in_place @vacation_consultant, :comments
 
-    .form-actions
-      = link_to t('.edit', :default => t("helpers.links.edit")), edit_vacation_consultant_path(@vacation_consultant), :class => 'btn'
-      = link_to "Change password", edit_user_registration_path
+      .form-actions
+        = link_to "Change password", edit_user_registration_path
+      %br
+      %div.pull-left
+        Click any field to edit

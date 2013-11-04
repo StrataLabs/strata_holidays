@@ -119,6 +119,11 @@ class VacationConsultantsController < ApplicationController
     end
   end
 
+  def my_campaigns
+    @campaigns = Campaign.where(:vacation_consultant_id => params[:id])
+    render :layout => 'unwinders'
+  end
+
   def edit_vc_assignment
     new_status = params[:status]
     vc = VcAssignment.find(params[:vc_assign_id])

@@ -1,7 +1,7 @@
 StrataHolidays::Application.routes.draw do
   get "/search" => "search#custom_search"
   resources :testimonials
-
+  resources :campaigns
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -19,7 +19,11 @@ StrataHolidays::Application.routes.draw do
     end
   end
   resources :consultant_customer_destinations
-  resources :vacation_consultants
+  resources :vacation_consultants do
+    member do
+      get 'my_campaigns'
+    end
+  end
   resources :customers
   resources :iti_cust_dest_poa_details do
     resources :comments

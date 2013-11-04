@@ -1,0 +1,8 @@
+= simple_form_for @campaign, :html => { :multipart => true, :class => 'form-horizontal' } do |f|
+  = f.input :name
+  = f.input :image
+  = f.input :active
+  = hidden_field_tag :vacation_consultant_id, current_user.vacation_consultant.id
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), campaigns_path(:vc_id => current_user.vacation_consultant.id), :class => 'btn'

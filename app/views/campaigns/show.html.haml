@@ -1,0 +1,21 @@
+%title
+  = "#{@campaign.name.titleize}"
+  |
+  Campaign
+%p#notice= notice
+.row
+  .span8.offset1
+    %h1{:style => 'text-align:center'}
+      =@campaign.name
+    %img{:src => @campaign.image.url}
+  .span2
+    #control-centre{:style=> 'margin-top:150px'}
+      = link_to ' Edit', edit_campaign_path(@campaign), :class => 'btn btn-large btn-success icon-pencil'
+      %br
+      %br
+      %br
+      = link_to ' Delete', campaign_path(@campaign), :method => :delete, :class => 'btn btn-large btn-danger icon-trash'
+      %br
+      %br
+      %br
+      = link_to ' Send Email', '#', :class => 'btn btn-large btn-info icon-envelope'
