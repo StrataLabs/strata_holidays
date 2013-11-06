@@ -18,4 +18,26 @@
       %br
       %br
       %br
-      = link_to ' Send Email', '#', :class => 'btn btn-large btn-info icon-envelope'
+      = link_to ' Send Email', '#' , :class => 'btn btn-large btn-info icon-envelope send-email'
+
+
+#email-modal.modal.hide.fade{"tabindex" => "-1"}
+  .modal-header
+    %a.close{"data-dismiss" => "modal"} x
+    %h3 Email your campaign details
+  .modal-body
+    .modal-rec-body
+      = form_tag promotion_mail_campaign_path(@campaign), :html => {:class =>'form-inline' } do
+        = label_tag "To:"
+        = text_field_tag :to_ids
+        = label_tag "CC:"
+        = text_field_tag :cc_ids
+        = label_tag "Subject:"
+        = text_field_tag :subject
+        = label_tag "Content"
+        = text_area_tag :content
+        = label_tag "Include campaign image?"
+        = check_box_tag :include_image
+        .modal-footer
+          = submit_tag "Send", :class => 'btn btn-primary'
+          %a.btn{"data-dismiss" => "modal", :href => "#"} Close

@@ -1,29 +1,88 @@
-.container
-  .row-fluid{:style => 'display: none'}
-    .well.span8
-      .history-large-pic
-        .history-image-info
-          .heading{:style => 'font-size:20px;padding-bottom:10px'}
-            Alappuzha
-          Alappuzha is the most popular tourist attraction in Kerala. A houseboat cruise in these backwaters is a delightful experience. Alappuzha is also the access point for Annual Nehru Trophy Boat Race, held on the Punnamada Lake, one of the most popular of the boat races in India.
-        .row.span4.offset4.history-image-info{:style => 'text-align:center'}
-          19-07-2013 to 23-07-2013
-    .span4.well
-      - 4.times do |s|
-        .row-fluid
-          .span6
-            %div{:id => "history-poa-"+Random.rand(100).to_s}
-              = link_to "#" do
-                = image_tag("unwinders/pondi_1.jpg", size: "160x90")
-            .contenthover{:id => "#{Random.rand(100)}"}
-              Poa Details with Time
-          .span6
-            #history-poa
-              = link_to "#" do
-                = image_tag("unwinders/pondi_1.jpg", size: "160x90")
-            .contenthover{:id => "#{Random.rand(100)}"}
-              Poa Details with Time
-        %br
-  .row-fluid
-    .span12.well
+- c = @cust_iti_header
+%title
+  = c.cust_iti_name
+  | Itinerary
+.row
+  .span8.offset2
+    %h1 Itinerary
+    %table.table.table-striped{:style => 'text-align:center'}
+      %tr
+        %td Itinerary name
+        %td
+          = c.cust_iti_name
+      %tr
+        %td Customer
+        %td
+          = c.customer.name
+      %tr
+        %td Itinerary type
+        %td
+          = c.iti_type
+      %tr
+        %td Vacation type
+        %td
+          = c.vacation_type.vac_type
+      %tr
+        %td Start date
+        %td
+          = c.trip_start_date.strftime("%d %b 20%y")
+      %tr
+        %td End date
+        %td
+          = c.trip_end_date.strftime("%d %b 20%y")
+      %tr
+        %td Seasons
+        %td
+          = c.seasons
+      %tr
+        %td Duration
+        %td
+          = c.duration
+          days
+      %tr
+        %td Adults
+        %td
+          = c.no_of_adults
+      %tr
+        %td Children
+        %td
+          = c.no_of_children
+    %h2 Destination Details
+    - c.cust_iti_details.each do |det|
+      %h3
+        = det.destination.name
+      %table.table.table-condensed
+        %tr
+          %td From
+          %td
+            = det.dest_start_date.strftime("%d %b 20%y")
+        %tr
+          %td To
+          %td
+            = det.dest_end_date.strftime("%d %b 20%y")
+        %tr
+          %td Place of stay
+          %td
+            = det.property.name
+      %h4
+        POA Details
+      - det.iti_cust_dest_poa_details.each do |poa|
+        %h4
+          = poa.points_of_attraction.name
+        %table.table.table-condensed
+          %tr
+            %td Day
+            %td
+              = poa.day_number
+          %tr
+            %td Arrival time
+            %td
+              = poa.preferred_time_of_arrival.strftime("%I:%M %p")
+          %tr
+            %td Departure time
+            %td
+              = poa.preferred_time_of_departure.strftime("%I:%M %p")
 
+    = link_to "Edit", edit_cust_iti_header_path(c), :class => 'btn btn-info'
+    = link_to "Delete", cust_iti_header_path(c), :method => :delete, :class => 'btn btn-danger'
+    = link_to "Publish", '#', :class => 'btn btn-success'

@@ -1,2 +1,2 @@
 $(".modal-vc-rec-body").html("<%= escape_javascript(render :partial => 'show_cust_iti_request', :locals => {:cust_iti_request => @cust_iti_request})%>");
-$(".modal-footer").html("<%= escape_javascript(link_to 'Process Request' , edit_vc_assignment_path(:vc_assign_id => @vc_assignment.id, :status => 'in_process'), :class => ['btn btn-success']) %>");
+$(".modal-footer").html("<%= escape_javascript(link_to 'Process Request' , new_cust_iti_header_path( :vc_assign_id => @vc_assignment.id), :class => ['btn btn-success']) %>");

@@ -22,12 +22,12 @@ class ItiCustDestPoaDetailsController < ApplicationController
       dest_headers.each do |dest_hdr|
         @dest_details << dest_hdr.dest_iti_details
       end
-      p @dest_details.flatten!
+      @dest_details.flatten!
       # p dest_header.first.dest_iti_details.load
       @dest = @cust_iti_det.destination
       @poa_all = @cust_iti_det.destination.points_of_attractions.load
       @poa = @poa_all.first
-      p @poa.dest_iti_details.first.dest_iti_header
+      @poa.dest_iti_details.first.dest_iti_header
       @iti_cust_dest_poa_detail = ItiCustDestPoaDetail.new
     else
       redirect_to cust_iti_details_path

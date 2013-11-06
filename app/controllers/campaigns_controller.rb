@@ -54,6 +54,16 @@ class CampaignsController < ApplicationController
     redirect_to campaigns_url, notice: 'Campaign was successfully destroyed.'
   end
 
+  def promotion_mail
+    Delayed::Job.enqueue PromotionMailerJob.new(params)
+    m = VcPromotionMailer.new
+    m.subject = params[:subject]
+    m.content = params[:content]
+    m.vacation_consultant_id = current_user.vacation_consultant.id
+    m.save
+    redirect_to user_unwinders_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_campaign

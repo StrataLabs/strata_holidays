@@ -23,12 +23,13 @@ gem 'jbuilder', '~> 1.0.1'
 
 gem 'facebox-rails'
 gem 'best_in_place', github: 'bernat/best_in_place'
-
+gem 'delayed_job_active_record'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
+gem 'jQuery-Validation-Engine-rails'
+gem "nested_form"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

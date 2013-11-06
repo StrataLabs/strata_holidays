@@ -1,0 +1,16 @@
+.row
+  .span5
+    = f.association :destination
+  .span4#error-msg{:style => 'display:none;color:red;margin: 8px 0px 0px -55px'}
+    Please select a destination
+= f.input :destination_group_id
+= f.input :dest_start_date
+= f.input :dest_end_date
+= f.association :property, :label_method => lambda{|prop| "#{prop.destination.name} - #{prop.name}"}
+
+= f.fields_for :iti_cust_dest_poa_details do |builder|
+  .remove-link.pull-right
+    = builder.link_to_remove "Remove POA"
+  = render 'iti_cust_dest_poa_detail_fields', :f => builder
+
+= f.link_to_add "Add POA Detail", :iti_cust_dest_poa_details

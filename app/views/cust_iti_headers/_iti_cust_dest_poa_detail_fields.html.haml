@@ -1,0 +1,6 @@
+%h3 POA Details
+/= f.input :location, :collection => @locations,:label_method => :location_name,:value_method => :id,:label => "Location" ,:include_blank => false
+= f.association :points_of_attraction, :label_method => lambda { |owner| "#{owner.destination.name} | #{owner.name}" }
+= f.input :preferred_time_of_arrival
+= f.input :preferred_time_of_departure
+= f.input :day_number

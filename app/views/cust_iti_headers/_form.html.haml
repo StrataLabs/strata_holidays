@@ -1,15 +1,27 @@
-= simple_form_for @cust_iti_header, :html => { :class => 'form-horizontal' } do |f|
+= simple_nested_form_for @cust_iti_header, :html => { :class => 'form-horizontal' } do |f|
   = f.input :cust_iti_name
   = f.association :customer
   = f.input :iti_type, :collection => ["Single", "Multiple", "Single Destination", "Multiple Destination"]
   = f.association :vacation_type, :label_method => :vac_type
-  = f.input :trip_start_date
-  = f.input :trip_end_date
+  = f.input :trip_start_date, :as => :date_picker
+  = f.input :trip_end_date, :as => :date_picker
   = f.input :seasons
   = f.input :duration
   = f.input :no_of_adults
   = f.input :no_of_children
-  = f.association :vacation_consultant
+  - if current_user.user_type == User::ADMIN
+    = f.association :vacation_consultant
+  - elsif current_user.user_type == User::VC
+    = hidden_field_tag :vacation_consultant_id, current_user.vacation_consultant.id
+  = hidden_field_tag :vc_assign_id, params[:vc_assign_id]
+  = f.fields_for :cust_iti_details do |builder|
+    %h2 Customer Itinerary Detail
+    .remove-link.pull-right
+      = builder.link_to_remove "Remove this Detail"
+    = render 'cust_iti_detail_fields', :f => builder
+  %br
+  %br
+  = f.link_to_add "Add Destination Detail", :cust_iti_details, :class => 'btn'
   .form-actions
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), cust_iti_headers_path, :class => 'btn'

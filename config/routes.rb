@@ -1,7 +1,11 @@
 StrataHolidays::Application.routes.draw do
   get "/search" => "search#custom_search"
   resources :testimonials
-  resources :campaigns
+  resources :campaigns do
+    member do
+      post 'promotion_mail'
+    end
+  end
   devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -67,6 +71,6 @@ StrataHolidays::Application.routes.draw do
   resources :points_of_attractions
   resources :destinations
   resources :poa_types
-  root 'home#index'
+  root :to => "home#index"
 end
 

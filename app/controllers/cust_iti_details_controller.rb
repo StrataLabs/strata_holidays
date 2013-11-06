@@ -93,6 +93,6 @@ class CustItiDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cust_iti_detail_params
-      params.require(:cust_iti_detail).permit(:cust_iti_header_id, :destination_id, :destination_group_id, :dest_start_date, :dest_end_date, :property_id)
+      params.require(:cust_iti_detail).permit(:cust_iti_header_id, :destination_id, :destination_group_id, :dest_start_date, :dest_end_date, :property_id, iti_cust_dest_poa_details_attributes: [:_destroy, :points_of_attraction_id, :preferred_time_of_arrival, :preferred_time_of_departure, :comments, :day_number])
     end
 end
