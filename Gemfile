@@ -30,6 +30,7 @@ group :doc do
 end
 gem 'jQuery-Validation-Engine-rails'
 gem "nested_form"
+gem "transitions", :require => ["transitions", "active_record/transitions"]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

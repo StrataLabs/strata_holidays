@@ -85,4 +85,7 @@
 
     = link_to "Edit", edit_cust_iti_header_path(c), :class => 'btn btn-info'
     = link_to "Delete", cust_iti_header_path(c), :method => :delete, :class => 'btn btn-danger'
-    = link_to "Publish", '#', :class => 'btn btn-success'
+    - if c.state == "New"
+      = link_to "Publish", publish_cust_iti_header_path(c), :class => 'btn btn-success'
+    - else
+      = c.state

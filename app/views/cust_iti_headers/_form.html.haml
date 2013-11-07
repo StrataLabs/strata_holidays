@@ -12,8 +12,7 @@
   - if current_user.user_type == User::ADMIN
     = f.association :vacation_consultant
   - elsif current_user.user_type == User::VC
-    = hidden_field_tag :vacation_consultant_id, current_user.vacation_consultant.id
-  = hidden_field_tag :vc_assign_id, params[:vc_assign_id]
+    = f.input :vacation_consultant_id , :as => :hidden,:input_html => {:value => current_user.vacation_consultant.id}
   = f.fields_for :cust_iti_details do |builder|
     %h2 Customer Itinerary Detail
     .remove-link.pull-right

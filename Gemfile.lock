@@ -343,6 +343,7 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
+    transitions (0.1.11)
     treetop (1.4.14)
       polyglot
       polyglot (>= 0.3.1)
@@ -412,6 +413,7 @@ DEPENDENCIES
   sunspot_solr (~> 2.0.0)
   susy (~> 1.0.9)
   therubyracer
+  transitions
   turbolinks
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)

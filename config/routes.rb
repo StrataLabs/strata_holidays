@@ -43,6 +43,7 @@ StrataHolidays::Application.routes.draw do
   resources :cust_iti_headers do
     member do
       get 'history'
+      get 'publish'
     end
   end
   resources :dest_iti_details
