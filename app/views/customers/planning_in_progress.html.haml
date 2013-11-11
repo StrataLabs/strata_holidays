@@ -1,0 +1,120 @@
+%title
+  Trip planning
+.row
+  .span10.offset1
+    %h1{:style => 'color:#27689b'}
+      Your current itineraries
+    This page shows all responses from consultants against your requests.
+
+.row
+  .span10.offset1
+    #bookshelf.accordion
+      %h3
+      .accordion-group
+        .accordion-heading
+          %a.accordion-toggle{:'data-toggle' => "collapse", :'data-parent' => "#bookshelf", :href => "#booksathome", :id => 'bookshelf_currently_reading', :customer_id => @customer.id, :onclick_current => "true"}
+            %h3
+              New Requests &nbsp;&nbsp;
+              (
+              = "#{@new.count}"
+              ) &nbsp;&nbsp;
+              %i.icon-chevron-down{:style => 'margin-top:3px;'}
+        #booksathome.accordion-body.collapse
+          .accordion-inner
+            - if @new.nil? || @new.empty?
+              %table.table.table-condensed
+                %tr
+                  %td
+                    No requests
+            - else
+              %table.table.table-condensed
+                %thead
+                  %th Destinations
+                  %th Date
+                  %th Planner
+                  %th &nbsp;
+                - @new.each do |req|
+                  %tr
+                    %td
+                      - l = req.cust_iti_request.destinations.length
+                      - req.cust_iti_request.destinations.each_with_index do |d,k|
+                        = Destination.find(d.to_i).name
+                    %td
+                      = req.created_at.strftime("%d %m 20%y")
+                    %td
+                      = req.vacation_consultant.name
+                    %td
+                      = link_to "Assign more VCs", "/search_vcs?cust_req_id=#{req.cust_iti_request.id}", :method => :get, :class => 'btn'
+      %h3
+      .accordion-group
+        .accordion-heading
+          %a.accordion-toggle{:'data-toggle' => "collapse", :'data-parent' => "#bookshelf", :href => "#booksinprocess", :id => 'books_in_order', :onclick_in_order => "true"}
+            %h3
+              In Process &nbsp;&nbsp;
+              (
+              = "#{@in_process.count}"
+              )
+              %i.icon-chevron-down{:style => 'margin-top:3px;'}
+        #booksinprocess.accordion-body.collapse
+          .accordion-inner
+            - if @in_process.nil? || @in_process.empty?
+              %table.table.table-condensed
+                %tr
+                  %td
+                    No requests
+            - else
+              %table.table.table-condensed
+                %thead
+                  %th Destinations
+                  %th Date
+                  %th Planner
+                  %th &nbsp;
+                - @in_process.each do |req|
+                  %tr
+                    %td
+                      - l = req.cust_iti_request.destinations.length
+                      - req.cust_iti_request.destinations.each_with_index do |d,k|
+                        = Destination.find(d.to_i).name
+                    %td
+                      = req.created_at.strftime("%d %m 20%y")
+                    %td
+                      = req.vacation_consultant.name
+                    %td
+                      - header = CustItiHeader.where(:cust_iti_request_id => req.cust_iti_request.id, :vacation_consultant_id => req.vacation_consultant_id).first
+                      = link_to "View itinerary", customer_view_cust_iti_header_path(header.id), :class => 'btn'
+
+      %h3
+      .accordion-group
+        .accordion-heading
+          %a.accordion-toggle{:'data-toggle' => "collapse", :'data-parent' => "#bookshelf", :href => "#booksinqueue", :id => 'wish_list_div', :card_no => @current_card_no, :user_id => params[:user_id], :onclick_wish_list => "true"}
+            %h3
+              Done &nbsp;&nbsp
+              (
+              %b.wish_list_count
+                = "#{@done.count}"
+              )&nbsp;&nbsp;
+              %i.icon-chevron-down{:style => 'margin-top:3px;'}
+        #booksinqueue.accordion-body.collapse
+          .accordion-inner
+            - if @done.nil? || @done.empty?
+              No requests
+            - else
+              %table.table.table-condensed
+                %thead
+                  %th Destinations
+                  %th Date
+                  %th Planner
+                  %th &nbsp;
+                - @done.each do |req|
+                  %tr
+                    %td
+                      - l = req.cust_iti_request.destinations.length
+                      - req.cust_iti_request.destinations.each_with_index do |d,k|
+                        = Destination.find(d.to_i).name
+                    %td
+                      = req.created_at.strftime("%d %m 20%y")
+                    %td
+                      = req.vacation_consultant.name
+                    %td
+                      - header = CustItiHeader.where(:cust_iti_request_id => req.cust_iti_request.id, :vacation_consultant_id => req.vacation_consultant_id).first
+                      = link_to "View itinerary", customer_view_cust_iti_header_path(header.id), :class => 'btn'

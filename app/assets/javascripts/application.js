@@ -27,6 +27,7 @@ jQuery(document).ready(function($) {
     $('#my-vc-modal').modal("show");
   });
 });
+
 jQuery(document).ready(function($) {
   $('.select-vcs').on('click', function() {
       var vc_ids = [];
@@ -184,6 +185,7 @@ jQuery(document).ready(function($) {
       overlay_background:'#000',
       overlay_opacity:0.8
   });
+
   $('.add-to-cart').on('click', function () {
     var cart = $('.shopping-cart');
     var imgtodrag = $(this).parent('.item').find("img").eq(0);

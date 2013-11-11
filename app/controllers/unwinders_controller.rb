@@ -26,7 +26,7 @@ class UnwindersController < ApplicationController
       @vcs = vcs.sort_by{rand}[0..3]
       @cust_iti_request = CustItiRequest.new
     elsif type == User::VC
-      @vc = VacationConsultant.find_by_user_id(current_user.id)
+      @vc = VacationConsultant.find(current_user.vacation_consultant.id)
       @vc_assignments = @vc.vc_assignments
     else
     end

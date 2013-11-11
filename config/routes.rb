@@ -28,7 +28,13 @@ StrataHolidays::Application.routes.draw do
       get 'my_campaigns'
     end
   end
-  resources :customers
+
+  get '/customers/new_requests' => 'customers#new_requests'
+  resources :customers do
+    member do
+      get 'planning_in_progress'
+    end
+  end
   resources :iti_cust_dest_poa_details do
     resources :comments
   end
@@ -44,6 +50,8 @@ StrataHolidays::Application.routes.draw do
     member do
       get 'history'
       get 'publish'
+      get 'customer_view'
+      get 'edit_state'
     end
   end
   resources :dest_iti_details

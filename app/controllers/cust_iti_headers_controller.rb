@@ -1,8 +1,8 @@
 class CustItiHeadersController < ApplicationController
-  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish]
+  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state]
   before_filter :authenticate_admin_user, only: [:index]
-  before_filter :confirm_user_type_is_vc, except: [:history, :update, :index]
-  before_filter :confirm_user_type_is_customer, only: [:history]
+  before_filter :confirm_user_type_is_vc, except: [:history, :update, :index, :customer_view, :edit_state]
+  before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state]
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index
@@ -18,6 +18,13 @@ class CustItiHeadersController < ApplicationController
   # GET /cust_iti_headers/new
   def new
     @cust_iti_header = CustItiHeader.new
+    vc_assignment = VcAssignment.find(params[:vc_assign_id])
+    request = vc_assignment.cust_iti_request
+    @cust_iti_header.customer_id = request.customer_id
+    @cust_iti_header.cust_iti_request_id = request.id
+    @cust_iti_header.trip_start_date = request.start_date
+    @cust_iti_header.trip_end_date = request.end_date
+    @cust_iti_header.vacation_type_id = request.vacation_type_id
     detail = @cust_iti_header.cust_iti_details.build
     render :layout => 'unwinders'
   end
@@ -31,11 +38,11 @@ class CustItiHeadersController < ApplicationController
   # POST /cust_iti_headers.json
   def create
     @cust_iti_header = CustItiHeader.new(cust_iti_header_params)
+    @cust_iti_header.version = 0
     vc_assignment = VcAssignment.find(params[:vc_assign_id])
-    @cust_iti_header.cust_iti_request = vc_assignment.cust_iti_request
     respond_to do |format|
-      if @cust_iti_header.save
-        vc_assignment.status = 'in_process'
+      if @cust_iti_header.save!
+        vc_assignment.process!
         vc_assignment.save
         request = vc_assignment.cust_iti_request
         @cust_iti_header
@@ -53,6 +60,10 @@ class CustItiHeadersController < ApplicationController
   def update
     respond_to do |format|
       if @cust_iti_header.update!(cust_iti_header_params)
+        if @cust_iti_header.state == "Rejected"
+          @cust_iti_header.processEvent('pending')
+          @cust_iti_header.save
+        end
         format.html { redirect_to @cust_iti_header, notice: 'Cust iti header was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,11 +91,25 @@ class CustItiHeadersController < ApplicationController
   def publish
     if current_user.user_type == User::VC && current_user.vacation_consultant.id == @cust_iti_header.vacation_consultant_id
       if @cust_iti_header.publish!
+        @cust_iti_header.version += 1
         @cust_iti_header.save
-        redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Successfully Published"
+        redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Successfully Published version #{@cust_iti_header.version} !"
       end
     else
       redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Something went wrong"
+    end
+  end
+
+  def customer_view
+    render :layout => 'unwinders'
+  end
+
+  def edit_state
+    @cust_iti_header.processEvent(params[:event])
+    if @cust_iti_header.save!
+      redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "Itinerary was successfully #{@cust_iti_header.state}!"
+    else
+      redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "Something went wrong"
     end
   end
 

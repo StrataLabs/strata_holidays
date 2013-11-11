@@ -49,6 +49,9 @@ class CustItiRequestsController < ApplicationController
   # PATCH/PUT /cust_iti_requests/1
   # PATCH/PUT /cust_iti_requests/1.json
   def update
+    unless params[:cust_iti_request][:destinations].nil?
+      params[:cust_iti_request][:destinations].reject! { |c| c.empty? }
+    end
     respond_to do |format|
       if @cust_iti_request.update(cust_iti_request_params)
         format.html { redirect_to @cust_iti_request, notice: 'Cust iti request was successfully updated.' }

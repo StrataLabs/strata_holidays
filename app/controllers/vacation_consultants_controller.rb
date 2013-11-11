@@ -90,7 +90,7 @@ class VacationConsultantsController < ApplicationController
   def search_vcs
     params[:keyword] ||= ''
     # @vcs = Customer.all
-    @vcs_solr_response = VacationConsultant.search_me(params[:keyword])
+    @vcs_solr_response = VacationConsultant.search_me(params[:keyword], 1)
     @vcs = @vcs_solr_response.results.to_a #searching customer for time-being
     # @vcs = VacationConsultant.where(:name => params[:keyword])
     # render :partial => 'search_vcs'
@@ -104,7 +104,7 @@ class VacationConsultantsController < ApplicationController
   def assign_vcs
     if params[:vc_ids].present?
       params[:vc_ids].each do |vc|
-        VcAssignment.create(:vacation_consultant_id => vc, :cust_iti_request_id => params[:cust_req_id], :status => 'New')
+        VcAssignment.create(:vacation_consultant_id => vc, :cust_iti_request_id => params[:cust_req_id])
       end
       session[:request].clear if session[:request]
       render :partial => 'layouts/requests_cart'

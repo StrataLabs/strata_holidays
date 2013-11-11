@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106104323) do
+ActiveRecord::Schema.define(version: 20131107074223) do
 
   create_table "campaigns", force: true do |t|
     t.integer  "vacation_consultant_id"
@@ -384,7 +384,7 @@ ActiveRecord::Schema.define(version: 20131106104323) do
   create_table "vc_assignments", force: true do |t|
     t.integer  "vacation_consultant_id"
     t.integer  "cust_iti_request_id"
-    t.string   "status"
+    t.string   "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

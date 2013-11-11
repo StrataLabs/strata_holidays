@@ -1,7 +1,8 @@
 class CustomersController < ApplicationController
-  before_action :set_customer, only: [:show, :edit, :update, :destroy, :history, :package_requests]
-  before_filter :confirm_user_type_is_customer, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :history, :package_requests, :add_to_wishlist]
-  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :history, :package_requests, :add_to_wishlist]
+  require 'will_paginate/array'
+  before_action :set_customer, only: [:show, :edit, :update, :destroy, :planning_in_progress]
+  before_filter :confirm_user_type_is_customer, only: [:show, :edit, :update, :search_vcs, :assign_vcs, :planning_in_progress, :new_requests]
+  before_filter :authenticate_admin_user, except: [:show, :edit, :update, :planning_in_progress, :new_requests]
 
   # GET /customers
   # GET /customers.json
@@ -70,6 +71,14 @@ class CustomersController < ApplicationController
       format.html { redirect_to customers_url }
       format.json { head :no_content }
     end
+  end
+
+  def planning_in_progress
+    all_assignments = VcAssignment.joins(:cust_iti_request).where(cust_iti_requests: { customer_id: params[:id] })
+    @new = all_assignments.select{ |v| v.state == "New"}
+    @in_process = all_assignments.select{ |v| v.state == "InProcess"}
+    @done = all_assignments.select{ |v| v.state == "Done"}
+    render layout: 'unwinders'
   end
 
   private

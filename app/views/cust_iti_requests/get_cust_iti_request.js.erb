@@ -1,2 +1,10 @@
 $(".modal-vc-rec-body").html("<%= escape_javascript(render :partial => 'show_cust_iti_request', :locals => {:cust_iti_request => @cust_iti_request})%>");
-$(".modal-footer").html("<%= escape_javascript(link_to 'Process Request' , new_cust_iti_header_path( :vc_assign_id => @vc_assignment.id), :class => ['btn btn-success']) %>");
+
+<% if @vc_assignment.state == "New" -%>
+  $(".modal-footer").html("<%= escape_javascript(link_to 'Process Request' , new_cust_iti_header_path( :vc_assign_id => @vc_assignment.id), :class => ['btn btn-success']) %>");
+<% elsif @vc_assignment.state == "InProcess" %>
+  <% header = CustItiHeader.where(:cust_iti_request_id => @vc_assignment.cust_iti_request_id).first %>
+  $(".modal-footer").html("<%= escape_javascript(link_to 'Edit Itinerary' , edit_cust_iti_header_path( :id => header.id), :class => ['btn btn-success']) %>");
+  $(".modal-footer").append("<%= escape_javascript(link_to 'View Itinerary' , cust_iti_header_path( :id => header.id), :class => ['btn']) %>");
+<% end %>
+

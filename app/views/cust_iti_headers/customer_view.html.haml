@@ -1,0 +1,120 @@
+%title
+  Unwinders | History
+- if @cust_iti_header.version == 1 && @cust_iti_header.state == "New"
+  .row
+    .well.span8.offset2{:style => 'text-align:center'}
+      Your planner is still preparing your itinerary. Please wait...
+- else
+  #history-tabs
+    .tabbable
+      / Only required for left/right tabs
+      - @details = @cust_iti_header.cust_iti_details
+      %ul.nav.nav-tabs
+        -@details.each_with_index do |d,index|
+          -if index == 0
+            %li.active
+              %a{"data-toggle" => "tab", :href => "#tab_#{index}", :style => 'width:200px;text-align:center;font-weight:bold;font-size:14pt;', :class => 'custom-tabs'}
+                = d.destination.name
+          -else
+            %li
+              %a{"data-toggle" => "tab", :href => "#tab_#{index}", :style => 'width:200px;text-align:center;font-weight:bold;font-size:14pt', :class => 'custom-tabs'}
+                = d.destination.name
+      .tab-content
+        -@details.each_with_index do |d,index|
+          -if index == 0
+            %div{:id => "tab_#{index}", :class => "tab-pane active"}
+              .container
+                .row-fluid{:style => 'margin-top:20px'}
+                  .well.span6.history-large-pic{:style => "background-image:url(#{d.destination.image.url});background-size:cover;background-repeat:no-repeat;padding-left:0px;padding-right:0px;padding-bottom:20px;border:5px solid white;"}
+                    .history-image-info
+                      .heading{:style => 'font-size:20px;padding-bottom:10px'}
+                        = d.destination.name
+                      = d.destination.description
+                    .row.span4.offset4.history-image-info{:style => 'text-align:center'}
+                      = d.dest_start_date.strftime("%d-%m-%y")
+                      to
+                      = d.dest_end_date.strftime("%d-%m-%y")
+                      - @d = d
+                  .well.span5.text-container
+                    .text-content.short-text
+                      %p
+                        %b{:style => 'color:#0A9B10;font-size:16pt' }
+                          .icon-home.icon-large
+                            = d.property.name
+                      %div
+                        - poa_details = d.iti_cust_dest_poa_details
+                        - poa_details.each do |detail|
+                          -if detail.points_of_attraction
+                            .icon-star.icon-small
+                              %b{:style => 'font-size:11pt'}
+                                = detail.points_of_attraction.name
+                            %rm{:style => 'font-size:7pt'}
+                              (
+                              = detail.preferred_time_of_arrival.strftime("%I:%M %p")
+                              to
+                              = detail.preferred_time_of_departure.strftime("%I:%M %p")
+                              )
+                            %br
+                            %p
+                              = detail.points_of_attraction.description
+                            %br
+                      .vc-hr
+                      %br
+                    .show-more
+                      %a{:href => "#"} See more
+          -else
+            %div{:id => "tab_#{index}", :class => "tab-pane"}
+              .container
+                .row-fluid{:style => 'margin-top:20px'}
+                  .well.span6.history-large-pic{:style => "background:transparent;background-image:url(#{d.destination.image.url});background-size:cover;background-repeat:no-repeat;padding-left:0px;padding-right:0px;padding-bottom:20px;border:5px solid white"}
+                    .history-image-info
+                      .heading{:style => 'font-size:20px;padding-bottom:10px'}
+                        = d.destination.name
+                      = d.destination.description
+                    .row.span4.offset4.history-image-info{:style => 'text-align:center'}
+                      = d.dest_start_date.strftime("%d-%m-%y")
+                      to
+                      = d.dest_end_date.strftime("%d-%m-%y")
+                    .row.span4.offset4.btn.btn-success.btn-large.comment-section
+                      - @d = d
+                      Trip Feedback?
+                  .well.span5.text-container
+                    .text-content.short-text
+                      %p
+                        %b{:style => 'color:#0A9B10;font-size:16pt' }
+                          .icon-home.icon-large
+                            = d.property.name
+                      %div
+                        - poa_details = d.iti_cust_dest_poa_details
+                        - poa_details.each do |detail|
+                          -if detail.points_of_attraction
+                            .icon-star.icon-small
+                              %b{:style => 'font-size:11pt'}
+                                = detail.points_of_attraction.name
+                            %rm{:style => 'font-size:7pt'}
+                              (
+                              = detail.preferred_time_of_arrival.strftime("%I:%M %p")
+                              to
+                              = detail.preferred_time_of_departure.strftime("%I:%M %p")
+                              )
+                            %br
+                            %p
+                              = detail.points_of_attraction.description
+                            %br
+                      .vc-hr
+                      %br
+                    .show-more
+                      %a{:href => "#show-more-div"} See more/Add comments
+  %br
+  %br
+  .row
+    #actions{:style => 'padding-right:45px'}
+      .pull-right
+        -if @cust_iti_header.state == "Published"
+          = link_to "Approve", edit_state_cust_iti_header_path(@cust_iti_header, :event => "approve"), :class => 'btn btn-success btn-large'
+          = link_to "Reject", edit_state_cust_iti_header_path(@cust_iti_header, :event => "reject"), :class => 'btn btn-danger btn-large'
+        - elsif @cust_iti_header.state == "Pending"
+          = "This itinerary is being edited"
+        - else
+          = "You have #{@cust_iti_header.state} this itinerary."
+  %br
