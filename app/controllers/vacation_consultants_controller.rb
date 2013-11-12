@@ -92,6 +92,8 @@ class VacationConsultantsController < ApplicationController
     # @vcs = Customer.all
     @vcs_solr_response = VacationConsultant.search_me(params[:keyword], 1)
     @vcs = @vcs_solr_response.results.to_a #searching customer for time-being
+    existing_vcs_for_request = VcAssignment.where(:cust_iti_request_id => params[:cust_req_id]).map{ |v| v.vacation_consultant_id}
+    @vcs = @vcs.reject{|vc| existing_vcs_for_request.include?(vc.id)}
     # @vcs = VacationConsultant.where(:name => params[:keyword])
     # render :partial => 'search_vcs'
     # respond_to do |format|

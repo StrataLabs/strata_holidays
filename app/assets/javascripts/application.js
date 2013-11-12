@@ -29,6 +29,25 @@ jQuery(document).ready(function($) {
 });
 
 jQuery(document).ready(function($) {
+  $(".show-more a").on("click", function() {
+    var $link = $(this);
+    var $content = $link.parent().prev("div.text-content");
+    var linkText = $link.text().toUpperCase();
+    switchClasses($content);
+
+    $link.text(getShowLinkText(linkText));
+
+    if (linkText === "SEE MORE/ADD COMMENTS"){
+      $('html,body').animate({scrollTop: +450},'slow');
+    } else{
+      $('html,body').animate({scrollTop: '0px'},'slow');
+    }
+
+    return false;
+  });
+});
+
+jQuery(document).ready(function($) {
   $('.select-vcs').on('click', function() {
       var vc_ids = [];
       $('.search_vc_table tr').filter(':has(:checkbox:checked)').each(function() {
@@ -86,24 +105,6 @@ jQuery(document).ready(function($) {
   });
 
   $("#element").popover();
-
-  $(".show-more a").on("click", function() {
-      var $link = $(this);
-      var $content = $link.parent().prev("div.text-content");
-      var linkText = $link.text().toUpperCase();
-      switchClasses($content);
-
-      $link.text(getShowLinkText(linkText));
-
-      if (linkText === "SEE MORE/ADD COMMENTS"){
-        $('html,body').animate({scrollTop: +450},'slow');
-      } else{
-        $('html,body').animate({scrollTop: '0px'},'slow');
-      }
-
-      return false;
-  });
-
 
   $("#personal-information .proceed").on("click", function() {
       var div_id = document.getElementById("progress-bar").style.width = "66%";

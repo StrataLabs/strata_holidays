@@ -40,29 +40,20 @@ class CustItiHeader < ActiveRecord::Base
     self.state = "New"
   end
 
-  def valid_customer?
-    if current_user.user_type == User::CUSTOMER && current_user.customer.id == self.cust_iti_request.customer_id
-      return true
-    end
-    false
-  end
-
   def after_approval
     vc_assignment = VcAssignment.where(:cust_iti_request_id => self.cust_iti_request_id, :vacation_consultant_id => self.vacation_consultant_id).first
-    vc_assignment.done!
+    vc_assignment.complete!
     vc_assignment.save
   end
 
   def processEvent(event)
-    p event
     case event
     when 'approve'
       self.approve!
     when 'reject'
       self.reject!
     when 'pending'
-      p event
-      p self.pending!
+      self.pending!
     end
   end
 end

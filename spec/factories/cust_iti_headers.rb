@@ -12,5 +12,7 @@ FactoryGirl.define do
     duration 1
     no_of_adults 1
     no_of_children "MyString"
+    version 0
+    cust_iti_request_id 1
   end
 end

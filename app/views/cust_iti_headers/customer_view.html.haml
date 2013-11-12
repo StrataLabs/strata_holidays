@@ -61,7 +61,7 @@
                       .vc-hr
                       %br
                     .show-more
-                      %a{:href => "#"} See more
+                      %a{:href => "#"} See more/Add Comments
           -else
             %div{:id => "tab_#{index}", :class => "tab-pane"}
               .container
@@ -75,9 +75,7 @@
                       = d.dest_start_date.strftime("%d-%m-%y")
                       to
                       = d.dest_end_date.strftime("%d-%m-%y")
-                    .row.span4.offset4.btn.btn-success.btn-large.comment-section
                       - @d = d
-                      Trip Feedback?
                   .well.span5.text-container
                     .text-content.short-text
                       %p
@@ -104,7 +102,7 @@
                       .vc-hr
                       %br
                     .show-more
-                      %a{:href => "#show-more-div"} See more/Add comments
+                      %a{:href => "#show-more-div"} See more/Add Comments
   %br
   %br
   .row
