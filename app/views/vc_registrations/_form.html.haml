@@ -7,7 +7,7 @@
     = simple_form_for @vc_registration, :html => { :class => 'form-horizontal'} do |f|
       #personal-information
         %h2 Personal Information
-        = f.input :name
+        /= f.input :name
         = f.input :address_1, :as => :text
         = f.input :address_2, :as => :text
         = f.input :city
@@ -29,7 +29,8 @@
         %h2 Contact Information
         = f.input :lphone
         = f.input :mphone
-        = f.input :email
+        / = f.hidden_field :user_id, current_user.id
+        /= f.input :email
         .form-actions
           %a.btn.pull-left{:href => '#', :class => 'btn back'} Back
           = link_to t('.cancel', :default => t("helpers.links.cancel")), root_path, :class => 'btn pull-left'

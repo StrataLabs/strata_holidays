@@ -30,9 +30,13 @@ class VcRegistrationsController < ApplicationController
       params[:vc_registration][:preferred_locations].reject! { |c| c.empty? }
     end
     @vc_registration = VcRegistration.new(vc_registration_params)
+    @vc_registration.email = current_user.email
+    @vc_registration.name = current_user.name
+    @vc_registration.user_id = current_user.id
     respond_to do |format|
       if @vc_registration.save
-        format.html { redirect_to @vc_registration, notice: 'Vc registration was successfully created.' }
+        Delayed::Job.enqueue VcRegistrationConfirmationJob.new(@vc_registration)
+        format.html { redirect_to user_unwinders_path notice: 'Vc registration was successfully created.' }
         format.json { render action: 'show', status: :created, location: @vc_registration }
       else
         format.html { render action: 'new', layout: 'unwinders' }

@@ -52,7 +52,6 @@ class VacationConsultant < ActiveRecord::Base
   def self.build_from_vc_reg(vc_reg)
     vc_reg = vc_reg.attributes.delete_if {|k,v| k =="id" }
     vc = VacationConsultant.new(vc_reg)
-    vc.user = User.build(vc_reg)
     vc.created_at = Time.zone.now
     vc.updated_at = Time.zone.now
     vc

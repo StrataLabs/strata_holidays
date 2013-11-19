@@ -40,7 +40,7 @@
                       - req.cust_iti_request.destinations.each_with_index do |d,k|
                         = Destination.find(d.to_i).name
                     %td
-                      = req.created_at.strftime("%d %m 20%y")
+                      = req.created_at.strftime("%d-%m-20%y")
                     %td
                       = req.vacation_consultant.name
                     %td
@@ -76,7 +76,7 @@
                       - req.cust_iti_request.destinations.each_with_index do |d,k|
                         = Destination.find(d.to_i).name
                     %td
-                      = req.created_at.strftime("%d %m 20%y")
+                      = req.created_at.strftime("%d-%m-20%y")
                     %td
                       = req.vacation_consultant.name
                     %td
@@ -112,7 +112,7 @@
                       - req.cust_iti_request.destinations.each_with_index do |d,k|
                         = Destination.find(d.to_i).name
                     %td
-                      = req.created_at.strftime("%d %m 20%y")
+                      = req.created_at.strftime("%d-%m-20%y")
                     %td
                       = req.vacation_consultant.name
                     %td

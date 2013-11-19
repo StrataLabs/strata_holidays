@@ -102,6 +102,7 @@ describe VcRegistrationsController do
       VcRegistration.last.email.should == "foo@example.com"
     end
     it "allows everyone" do
+      Delayed::Job.delete_all
       sign_in @user
       post :create, {:vc_registration => @vc_registration_params}
       VcRegistration.last.email.should == "foo@example.com"
@@ -112,6 +113,7 @@ describe VcRegistrationsController do
       post :create, {:vc_registration => @vc_registration_params}
       assigns(:vc_registration).should be_a(VcRegistration)
       VcRegistration.last.email.should == "foo@example.com"
+      Delayed::Job.all[0].handler.should include("VcRegistrationConfirmationJob")
       @user.user_type = User::ADMIN
       @user.save
       sign_out @user

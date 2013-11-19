@@ -1,6 +1,6 @@
 %title
   Unwinders | Home
-- if current_user.user_type == User::CUSTOMER
+- if session[:user_role] == User::CUSTOMER
   #header-image
     .row
       .span4
@@ -17,9 +17,14 @@
             = render :partial => 'shared/current_user_requests'
         .span3
           = render :partial => 'shared/top_vc'
-- elsif current_user.user_type == User::VC
+- elsif session[:user_role] == User::VC
   = render :partial => 'shared/vc_profile'
--else
+-elsif session[:user_role] == User::ADMIN
   .span6.offset3
     .well{:style => 'margin-top:20px;text-align:center'}
       = link_to "Admin Page", "/admin"
+- else
+  -if current_user.vc_registration
+    .span6.offset3
+      .well{:style => 'margin-top:20px;text-align:center'}
+        = link_to "Your application state is - #{current_user.vc_registration.status}", vc_registration_path(current_user.vc_registration)

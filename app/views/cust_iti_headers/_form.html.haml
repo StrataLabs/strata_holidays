@@ -8,9 +8,9 @@
   = f.input :duration
   = f.input :no_of_adults
   = f.input :no_of_children
-  - if current_user.user_type == User::ADMIN
+  - if session[:user_role] == User::ADMIN
     = f.association :vacation_consultant
-  - elsif current_user.user_type == User::VC
+  - elsif session[:user_role] == User::VC
     = f.input :vacation_consultant_id , :as => :hidden,:input_html => {:value => current_user.vacation_consultant.id}
   = f.hidden_field :cust_iti_request_id
   = hidden_field_tag :vc_assign_id, params[:vc_assign_id]

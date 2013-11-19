@@ -12,6 +12,8 @@ class VacationConsultantsController < ApplicationController
     vc = VacationConsultant.build_from_vc_reg(vc_reg).save!
     vc_reg.status = "Accepted"
     if vc_reg.save
+      vc_reg.user.add_role :planner
+      Delayed::Job.enqueue VcRegistrationApprovalNotificationJob.new(vc_reg)
       redirect_to vacation_consultants_path
     else
       redirect_to vacation_consultants_path, :notice => "we are sorry something went wrong"
@@ -106,8 +108,10 @@ class VacationConsultantsController < ApplicationController
   def assign_vcs
     if params[:vc_ids].present?
       params[:vc_ids].each do |vc|
-        VcAssignment.create(:vacation_consultant_id => vc, :cust_iti_request_id => params[:cust_req_id])
+        vc_assignment = VcAssignment.create(:vacation_consultant_id => vc, :cust_iti_request_id => params[:cust_req_id])
+        Delayed::Job.enqueue VcNewRequestNotificationJob.new(vc_assignment.id)
       end
+      Delayed::Job.enqueue CustomerNewRequestConfirmationJob.new(params[:vc_ids], params[:cust_req_id])
       session[:request].clear if session[:request]
       render :partial => 'layouts/requests_cart'
       flash[:notice] = "Request assigned successfully."

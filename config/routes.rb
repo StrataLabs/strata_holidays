@@ -6,9 +6,12 @@ StrataHolidays::Application.routes.draw do
       post 'promotion_mail'
     end
   end
-  devise_for :users do
-    get '/users/sign_out' => 'devise/sessions#destroy'
+  devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations" } do
+    get '/users/sign_out' => 'users/sessions#destroy'
   end
+
+  get '/choose_role' => 'static_pages#choose_role'
+  post '/set_role' => 'static_pages#set_role'
   get 'itinerary' => 'static_pages#itinerary'
   get 'admin' => 'static_pages#admin'
   resources :vc_registrations

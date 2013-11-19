@@ -17,6 +17,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(id) unless id.nil?
     @current_user_requests = CustItiRequest.where(:customer_id => current_user.customer.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
     @cust_iti_headers = @customer.cust_iti_headers
+    @cust_iti_headers = @cust_iti_headers.reject{ |h| h.trip_end_date >= Time.zone.today}
     respond_to do |format|
       format.js
       format.html { render :layout => 'unwinders' }
@@ -54,6 +55,7 @@ class CustomersController < ApplicationController
   def update
     respond_to do |format|
       if @customer.update(customer_params)
+        @customer.user.update(:name => params[:customer][:name])
         format.html { redirect_to @customer, notice: 'Customer was successfully updated.' }
         format.json { head :no_content }
       else

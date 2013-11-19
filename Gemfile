@@ -15,6 +15,8 @@ gem 'therubyracer', platforms: :ruby
 gem "jquery-rails", "~> 3.0.1"
 gem "jquery-ui-rails", "~> 4.0.3"
 
+#User roles
+gem "rolify"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 

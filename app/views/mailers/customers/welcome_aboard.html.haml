@@ -1,0 +1,17 @@
+%div{:style => "background:#1f1b20"}
+  %center
+    %table{:width => "588", :border => "0", :cellspacing => "10", :bgcolor => "#FFCC11", :cellpadding => "0", :height => "40", :style => "font-family:arial,helvetica,sans-serif;margin:0px;"}
+      %tbody{:style => "padding:0px"}
+        %tr{:style => "margin:0px;padding:0px"}
+          %td{:align => "left"}
+            %img{:src => "https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/logo_2.png", :width => "100px", :height => "25px" }
+          %td{:style => "min-height:40px;font-size:24px;line-height:24px;font-weight:bold;color:#1f1b20;"} New Request
+  %center
+    %table{:width => "588", :border => "0", :cellspacing => "10", :cellpadding => "0", :bgcolor => "#FFFFFF", :style => "font-family:arial,helvetica,sans-serif;margin:4px;min-height:300px;border:1px solid #ccc;"}
+      %tbody
+        %tr
+          %td{:style => "min-height:40px;font-size:12px;line-height:19px;color:#000;vertical-align:top;", :valign => "top"}
+            %p= "Dear #{@customer.name},"
+
+            %p
+              Welcome aboard!

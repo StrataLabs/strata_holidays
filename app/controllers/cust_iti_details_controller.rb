@@ -67,7 +67,7 @@ class CustItiDetailsController < ApplicationController
     if current_user
       @cust_iti_detail = CustItiDetail.find(params[:id])
       cust_iti_header = @cust_iti_detail.cust_iti_header
-      if current_user.user_type == User::CUSTOMER
+      if session[:user_role] == User::CUSTOMER
         if cust_iti_header.customer_id != current_user.customer.id
           redirect_to user_unwinders_path
         end

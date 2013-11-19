@@ -1,0 +1,29 @@
+%div{:style => "background:#1f1b20"}
+  %center
+    %table{:width => "588", :border => "0", :cellspacing => "10", :bgcolor => "#FFCC11", :cellpadding => "0", :height => "40", :style => "font-family:arial,helvetica,sans-serif;margin:0px;"}
+      %tbody
+        %tr
+          %td{:align => "left"}
+            %img{:src => "https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/logo_2.png", :width => "100px", :height => "25px" }
+          %td{:style => "min-height:40px;font-size:24px;line-height:24px;font-weight:bold;color:#1f1b20;"} Review your itinerary
+  %center
+    %table{:width => "588", :border => "0", :cellspacing => "10", :cellpadding => "0", :bgcolor => "#FFFFFF", :style => "font-family:arial,helvetica,sans-serif;margin:4px;min-height:300px;border:1px solid #ccc;"}
+      %tbody
+        %tr
+          %td{:style => "min-height:40px;font-size:12px;line-height:19px;color:#000;vertical-align:top;", :valign => "top"}
+            %p= "Dear #{@cust_iti_header.cust_iti_request.customer.name},"
+
+            %p
+              Your planner
+              = "#{@cust_iti_header.vacation_consultant.name}"
+              has prepared a preliminary itinerary for you against your request with ID
+              %b
+                = "#{@cust_iti_header.cust_iti_request_id}."
+              %br
+              %br
+
+              You will find the same under the "In Process" plans in the Trip Planning section of your Unwinders account.
+
+              %br
+              %br
+              Kindly review and reply. We hope you are enjoying planning your vacation as much as we are!

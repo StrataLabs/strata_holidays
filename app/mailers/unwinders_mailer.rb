@@ -1,10 +1,6 @@
 class UnwindersMailer < ActionMailer::Base
-  default :template_path => 'mailers'
+  default :template_path => 'mailers/unwinders'
   default :from => 'info@strataholidays.in'
-
-  def test_email
-    mail(:to => "vishnu.prasad@strata.co.in", :subject => "Your Book recommendation is Sucessful and Order is Placed.")
-  end
 
   def promotion_mail(details)
     @content = details[:content]
@@ -14,5 +10,10 @@ class UnwindersMailer < ActionMailer::Base
       @url = Campaign.find(details[:id]).image.url(:landscape)
     end
     mail(:to => details[:to_ids], :cc => details[:cc_ids], :subject => details[:subject])
+  end
+
+  def vc_registration_confirmation(vc_registration)
+    @vc_registration = vc_registration
+    mail(:to => @vc_registration.email, :subject => "Unwinders - Thank you for your interest")
   end
 end

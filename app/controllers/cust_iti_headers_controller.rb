@@ -12,7 +12,7 @@ class CustItiHeadersController < ApplicationController
   # GET /cust_iti_headers/1
   # GET /cust_iti_headers/1.json
   def show
-    if (@cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id || current_user.user_type == User::ADMIN)
+    if (@cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id || session[:user_role] == User::ADMIN)
       render :layout => 'unwinders'
     else
       redirect_to user_unwinders_path, :notice => "You do not have the authority to view this page"
@@ -22,7 +22,7 @@ class CustItiHeadersController < ApplicationController
   # GET /cust_iti_headers/new
   def new
     vc_assignment = VcAssignment.find(params[:vc_assign_id])
-    if (vc_assignment.vacation_consultant.id == current_user.vacation_consultant.id || current_user.user_type == User::ADMIN)
+    if (vc_assignment.vacation_consultant.id == current_user.vacation_consultant.id || session[:user_role] == User::ADMIN)
       @cust_iti_header = CustItiHeader.new
       request = vc_assignment.cust_iti_request
       @cust_iti_header.customer_id = request.customer_id
@@ -99,6 +99,9 @@ class CustItiHeadersController < ApplicationController
       if @cust_iti_header.publish!
         @cust_iti_header.version += 1
         @cust_iti_header.save
+        if @cust_iti_header.version == 1
+          Delayed::Job.enqueue ItineraryPublishedNotificationJob.new(@cust_iti_header)
+        end
         redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Successfully Published version #{@cust_iti_header.version} !"
       else
         redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Something went wrong"
@@ -116,6 +119,7 @@ class CustItiHeadersController < ApplicationController
     if current_user.customer.id == @cust_iti_header.cust_iti_request.customer_id
       if @cust_iti_header.processEvent(params[:event])
         @cust_iti_header.save!
+        Delayed::Job.enqueue CustomerResponseToItineraryJob.new(@cust_iti_header)
         redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "Itinerary was successfully #{@cust_iti_header.state}!"
       else
         redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "Something went wrong"

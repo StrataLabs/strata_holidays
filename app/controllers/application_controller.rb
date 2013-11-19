@@ -9,17 +9,26 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    if current_user.user_type == User::ADMIN
-      "/admin"
+    if current_user.roles.count > 2
+     '/choose_role'
     else
-      "/unwinders/user"
+      if current_user.has_role? :traveller
+        session[:user_role] = User::CUSTOMER
+      elsif current_user.has_role? :planner
+        session[:user_role] = User::VC
+      elsif current_user.has_role? :admin
+        session[:user_role] = User::ADMIN
+      else
+        session[:user_role] = User::DEFAULT
+      end
+      user_unwinders_path
     end
   end
 
   def authenticate_admin_user
     authenticate_user!
     if current_user
-      if current_user.user_type != User::ADMIN
+      if session[:user_role] != User::ADMIN
         flash[:error] = "Not authorized to view this page"
         respond_to do |format|
           format.html {redirect_to user_unwinders_path}
@@ -36,7 +45,7 @@ class ApplicationController < ActionController::Base
 
   def confirm_user_type_is_vc
     if current_user
-      if current_user.user_type == User::CUSTOMER
+      if session[:user_role] == User::CUSTOMER
         flash[:error] = "Not authorized to view this page"
         respond_to do |format|
           format.html {redirect_to user_unwinders_path}
@@ -53,7 +62,7 @@ class ApplicationController < ActionController::Base
 
   def confirm_user_type_is_customer
     if current_user
-      if current_user.user_type == User::VC
+      if session[:user_role] == User::VC
         flash[:error] = "Not authorized to view this page"
         respond_to do |format|
           format.html {redirect_to user_unwinders_path}
@@ -67,7 +76,8 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-  # def after_sign_out_path_for(resource)
-  #   "/home/sign_in"
-  # end
 end
+
+  def after_sign_up_path_for(resource)
+    after_sign_in_path_for(resource)
+  end

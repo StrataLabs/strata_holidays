@@ -19,16 +19,14 @@ class UnwindersController < ApplicationController
 
   #FIXME All this has to be moved to respective controllers once devise is ready
   def user
-    type = current_user.user_type
-    if type == User::CUSTOMER
+    if session[:user_role] == User::CUSTOMER
       @current_user_requests = CustItiRequest.where(:customer_id => current_user.customer.id).order('created_at Desc').paginate(:per_page => 2, :page => params[:page] || 1)
       vcs = VacationConsultant.all
       @vcs = vcs.sort_by{rand}[0..3]
       @cust_iti_request = CustItiRequest.new
-    elsif type == User::VC
+    elsif session[:user_role] == User::VC
       @vc = VacationConsultant.find(current_user.vacation_consultant.id)
       @vc_assignments = @vc.vc_assignments
-    else
     end
     @body_id = "list"
     respond_to do |format|

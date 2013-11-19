@@ -116,6 +116,7 @@ describe VacationConsultantsController do
     end
 
     it "allows only admin" do
+      Delayed::Job.delete_all
       sign_in @user
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       response.should redirect_to(user_unwinders_path)
@@ -132,6 +133,7 @@ describe VacationConsultantsController do
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       @vc_reg.reload.status.should == "Accepted"
       VacationConsultant.last.destinations.first.id = @destination.id
+      Delayed::Job.all[0].handler.should include("VcRegistrationApprovalNotificationJob")
     end
   end
 
@@ -255,6 +257,7 @@ describe VacationConsultantsController do
     end
 
     it "allows customer and admin" do
+      Delayed::Job.delete_all
       sign_in @user1
       get :assign_vcs, {:cust_req_id => @cust_iti_req.to_param, :vc_ids => [@user1.vacation_consultant.id.to_param]}
       response.should redirect_to(user_unwinders_path)
@@ -266,6 +269,8 @@ describe VacationConsultantsController do
       vc_assignment = VcAssignment.last
       vc_assignment.cust_iti_request_id.should == @cust_iti_req.id
       vc_assignment.vacation_consultant_id.should == @user1.vacation_consultant.id
+      Delayed::Job.all[0].handler.should include("VcNewRequestNotificationJob")
+      Delayed::Job.all[1].handler.should include("CustomerNewRequestConfirmationJob")
       @user1.user_type = 'A'
       @user1.save
       sign_out @user1

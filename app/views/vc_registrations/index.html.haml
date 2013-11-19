@@ -2,7 +2,7 @@
 %table.table
   -VcRegistration.where(:status => 'New').order('created_at desc').each do |vc_reg|
     %tr
-      %td= vc_reg.name
+      %td= link_to vc_reg.name, vc_registration_path(vc_reg)
       %td= vc_reg.email
       %td= link_to "Approve", create_vc_path(:vc_reg_id => vc_reg.id), :class => 'btn btn-mini'
       %td= link_to "Decline", vc_registration_path(:id => vc_reg.id), :method => :delete, :class => 'btn btn-mini'

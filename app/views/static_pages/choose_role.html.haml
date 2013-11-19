@@ -1,0 +1,12 @@
+%title
+  Switch Role | Unwinders
+.row
+  .span4.offset4
+    #choose-role{:style => 'margin-top:100px'}
+      .well
+        = form_tag "/set_role", :html => {:class =>'form-inline' } do
+          = label_tag "Login as"
+          - select_list = current_user.roles.collect{ |c| [c.name.titleize, c.name] }
+          - select_list.reject!{ |c| c[0] == "Default"}
+          = select_tag :role, options_for_select(select_list)
+          = submit_tag "Select", :class => 'btn btn-primary'

@@ -196,6 +196,7 @@ describe CustItiHeadersController do
       response.should redirect_to(user_session_path)
     end
     it "allows only admin and VC" do
+      Delayed::Job.delete_all
       sign_in @user
       post :publish, {:id => @cust_iti_header.id}
       response.should redirect_to(user_unwinders_path)
@@ -219,6 +220,7 @@ describe CustItiHeadersController do
       header1.save
       header1.reload.state.should == "Published"
       header1.reload.version.should == 1
+      Delayed::Job.all[0].handler.should include("ItineraryPublishedNotificationJob")
     end
   end
 
@@ -240,6 +242,7 @@ describe CustItiHeadersController do
       response.should redirect_to(user_session_path)
     end
     it "allows only admin and Customer" do
+      Delayed::Job.delete_all
       @vc_assignment1.state = "InProcess"
       @vc_assignment1.save
       sign_in @vc_user
@@ -255,7 +258,9 @@ describe CustItiHeadersController do
       post :edit_state, {:id => @cust_iti_header1.id, :event => 'reject'}
       @cust_iti_header1.save
       @cust_iti_header1.reload.state.should == "Rejected"
+      #Delayed::Job.all[0].handler.should include("CustomerResponseToItineraryJob")
       sign_out @customer_user
+
 
       sign_in @vc_user
       post :update, {:id => 2, :cust_iti_header => {
@@ -294,6 +299,7 @@ describe CustItiHeadersController do
       @cust_iti_header1.save
       @cust_iti_header1.reload.state.should == "Approved"
       @vc_assignment1.reload.state.should == "Done"
+      #Delayed::Job.all[0].handler.should include("CustomerResponseToItineraryJob")
       sign_out @customer_user
     end
   end
