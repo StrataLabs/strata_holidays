@@ -27,6 +27,33 @@ jQuery(document).ready(function($) {
     $('#my-vc-modal').modal("show");
   });
 });
+jQuery(document).ready(function($) {
+  $('.dropdown-toggle').dropdown();
+
+      $('#my-slideshow').bjqs({
+          'height' : 300,
+          'width' : 550,
+          'responsive' : true,
+          'showmarkers' : false,
+          'usecaptions' : true,
+          'animtype' : 'fade',
+          'animduration' : 450,
+          'animspeed' : 3000,
+          'automatic' : true,
+      });
+  $('[id^=history-poa]').contenthover({
+      effect:'slide',
+      slide_speed:300,
+      overlay_background:'#000',
+      overlay_opacity:0.8
+  });
+});
+
+jQuery(document).ready(function($) {
+  $('.send-email').on('click', function(){
+    $('#campaign-email-modal').modal("show");
+  });
+});
 
 jQuery(document).ready(function($) {
   $(".show-more a").on("click", function() {
@@ -126,10 +153,6 @@ jQuery(document).ready(function($) {
     $('#comment-modal').modal("show");
   });
 
-  $('.send-email').on('click', function(){
-    $('#email-modal').modal("show");
-  });
-
   $('#new-photo').on('click', function(){
     $('#add-image-modal').modal("show");
   });
@@ -169,25 +192,6 @@ jQuery(document).ready(function($) {
     });
   });
 
-  $('.dropdown-toggle').dropdown();
-
-      $('#my-slideshow').bjqs({
-          'height' : 250,
-          'width' : 377,
-          'responsive' : true,
-          'showmarkers' : false,
-          'usecaptions' : true,
-          'animtype' : 'fade',
-          'animduration' : 450,
-          'animspeed' : 1000,
-          'automatic' : true
-      });
-  $('[id^=history-poa]').contenthover({
-      effect:'slide',
-      slide_speed:300,
-      overlay_background:'#000',
-      overlay_opacity:0.8
-  });
 
   $('.add-to-cart').on('click', function () {
     var cart = $('.shopping-cart');

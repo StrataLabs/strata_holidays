@@ -6,6 +6,9 @@ describe CustomersController do
   end
   before(:each) do
     @user = FactoryGirl.create(:user)
+    @user.customer = FactoryGirl.create(:customer)
+    @user.vacation_consultant = FactoryGirl.create(:vacation_consultant)
+    @user.save
     sign_in @user
   end
   after(:all) do
@@ -26,13 +29,13 @@ describe CustomersController do
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -49,19 +52,19 @@ describe CustomersController do
     end
     it "does not allow VC" do
       sign_in @user
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @user.customer.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @user.customer.to_param}
       assigns(:customer).should eq(@user.customer)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -78,19 +81,19 @@ describe CustomersController do
     end
     it "allows only admin" do
       sign_in @user
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @user.customer.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @user.customer.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user

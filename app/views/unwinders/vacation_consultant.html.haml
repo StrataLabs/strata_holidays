@@ -47,7 +47,13 @@
         .title{:style => 'background:#ffcc11;font-size:12pt'}
           Campaigns
         .content{:style => 'background:white;min-height:290px'}
-    / .map.box{:style => 'margin-top:15px;margin-left:60px;padding-bottom:40px;margin-bottom:30px'}
+          #my-slideshow
+            %ul.bjqs
+              - @campaigns.each do |campaign|
+                %li
+                  %a{:href => campaign_path(campaign)}
+                    =image_tag("#{campaign.image.url}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:550px;height:402px;float:left;')
+            / .map.box{:style => 'margin-top:15px;margin-left:60px;padding-bottom:40px;margin-bottom:30px'}
     /   .title{:style => 'background:#ffcc11;font-size:12pt'}
     /     See Points of Attraction in Destinations
     /   .content{:style => 'background:#fff1bb'}

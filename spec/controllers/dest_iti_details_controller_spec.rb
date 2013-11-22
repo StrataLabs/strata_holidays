@@ -2,7 +2,8 @@ require 'spec_helper'
 describe DestItiDetailsController do
   before(:each) do
     @dest_iti_detail = FactoryGirl.create(:dest_iti_detail)
-    @user = FactoryGirl.create(:user, :user_type => User::CUSTOMER)
+    @user = FactoryGirl.create(:user)
+    session[:user_role] = User::CUSTOMER
     sign_in @user
   end
   after(:all) do
@@ -22,13 +23,13 @@ describe DestItiDetailsController do
       get :index
       assigns(:dest_iti_details).should == nil
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       assigns(:dest_iti_details).should eq([@dest_iti_detail])
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -47,13 +48,13 @@ describe DestItiDetailsController do
       sign_in @user
       get :show, {:id => @dest_iti_detail.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @dest_iti_detail.to_param}
       assigns(:dest_iti_detail).should eq(@dest_iti_detail)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -75,14 +76,14 @@ describe DestItiDetailsController do
       sign_in @user
       delete :destroy, {:id => @dest_iti_detail.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @dest_iti_detail.to_param}
       DestItiDetail.all.should == [@dest_iti_detail2]
       response.should redirect_to(dest_iti_details_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user

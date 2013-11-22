@@ -1,27 +1,45 @@
 %title
   My Campaigns
+.container{:style => 'background:white;padding:0px'}
+  %ul.navigation
+    %li
+      %a{:title => "Home", :style => "background-image:url(#{asset_path("unwinders/home.jpg")});background-size:100%;background-repeat:no-repeat", :href => user_unwinders_path}
+    %li
+      %a{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => vacation_consultant_path(current_user.vacation_consultant)}
+    %li
+      %a.active{:title => "Campaign Manager", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
+    %li
+      %a{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
+    / %li
+    /   %a{:title => "Edit Info", :style => "background-image:url(#{asset_path("unwinders/edit_info.jpg")});background-size:100%;background-repeat:no-repeat", :href => edit_vacation_consultant_path(current_user.vacation_consultant)}
 .container{:style => 'padding:0px'}
+  %h1{:style => 'color:black;text-align:center'} Campaign Manager
+
   .row
-  %h1 My Campaigns
-  - @campaigns.each do |c|
-    .row
-      - 6.times do
-        .span4
-          .campaign-holder
-            %a{:href => campaign_path(:id => c.id)}
-              %img{:src => "#{c.image.url}"}
-            .campaign-info
-              #name
+    .span10.offset1
+      %table.table
+        %tr
+          %th
+          %th Name
+          %th Status
+          %th Created
+          %th
+          - @campaigns.each do |c|
+            %tr
+              %td{:style => 'width:300px'}
+                %a{:href => campaign_path(:id => c.id)}
+                  %img{:src => "#{c.image.url}", :style => 'height:150px;width:250px'}
+              %td
                 =c.name
-              %br
-              - if c.active?
-                #status{:style => 'color:green'}
-                  = "Active"
-              - else
-                #status{:style => 'color:red'}
-                  = "Not active"
-              %br
-              #created-at{:style =>'margin-top:-15px;color:black'}
-                =c.created_at.strftime("%d %b 20%y at %I:%M %p")
-              %br
-              =link_to "Edit", edit_campaign_path(:id => c.id)
+              %td
+                - if c.active?
+                  #status{:style => 'color:green'}
+                    = "Active"
+                - else
+                  #status{:style => 'color:red'}
+                    = "Not active"
+              %td
+                #created-at{:style =>'color:black'}
+                  =c.created_at.strftime("%d %b 20%y at %I:%M %p")
+              %td
+                =link_to "See campaign", campaign_path(:id => c.id)

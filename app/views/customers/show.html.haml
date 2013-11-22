@@ -71,7 +71,7 @@
         %h2 Control Centre
         - if !(current_user.has_role? :planner) && !current_user.vc_registration
           = link_to "Think you plan well? Sign up as a travel planner on Unwinders!", new_vc_registration_path
-        - if current_user.vc_registration
+        - if !(current_user.has_role? :planner) && current_user.vc_registration
           = link_to "Your application state is - #{current_user.vc_registration.status}", vc_registration_path(current_user.vc_registration)
     %br
     .current_user_requests

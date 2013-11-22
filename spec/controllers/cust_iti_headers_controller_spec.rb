@@ -2,7 +2,8 @@ require 'spec_helper'
 describe CustItiHeadersController do
   before(:each) do
     @cust_iti_header = FactoryGirl.create(:cust_iti_header)
-    @user = FactoryGirl.create(:user, :user_type => User::CUSTOMER)
+    @user = FactoryGirl.create(:user)
+    session[:user_role] = User::CUSTOMER
     sign_in @user
   end
   after(:all) do
@@ -22,13 +23,13 @@ describe CustItiHeadersController do
       get :index
       assigns(:cust_iti_headers).should == nil
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -47,7 +48,7 @@ describe CustItiHeadersController do
       sign_in @user
       get :show, {:id => @cust_iti_header.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       vc = FactoryGirl.create(:vacation_consultant)
       @user.vacation_consultant = vc
       @user.save
@@ -55,7 +56,7 @@ describe CustItiHeadersController do
       sign_in @user
       get :show, {:id => @cust_iti_header.to_param}
       assigns(:cust_iti_header).should eq(@cust_iti_header)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -81,7 +82,7 @@ describe CustItiHeadersController do
       sign_in @user
       get :new, @params
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       vc = FactoryGirl.create(:vacation_consultant, :user_id => @user.id)
       @user.vacation_consultant = vc
       @user.save
@@ -90,19 +91,20 @@ describe CustItiHeadersController do
       get :new, @params
       # it allows only the VC assigned to create the header
       assigns(:cust_iti_header).should be_a(CustItiHeader)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
       get :new, @params
       assigns(:cust_iti_header).should be_a(CustItiHeader)
 
-      user1 = FactoryGirl.create(:user, :user_type => User::VC)
+      user1 = FactoryGirl.create(:user)
 
-      vc = FactoryGirl.create(:vacation_consultant, :user_id => user1.id)
-      user1.vacation_consultant = vc
+      vc1 = FactoryGirl.create(:vacation_consultant, :user_id => user1.id)
+      user1.vacation_consultant = vc1
       user1.save
       sign_out @user
+      session[:user_role] = User::VC
       sign_in user1
       get :new, @params
       response.should redirect_to(user_unwinders_path)
@@ -113,7 +115,7 @@ describe CustItiHeadersController do
   context "POST create" do
     before(:each) do
       @cust_iti_request = FactoryGirl.create(:cust_iti_request)
-      @customer = FactoryGirl.create(:customer)
+      @customer = FactoryGirl.create(:customer, :user_id => @user.id)
       @cust_iti_header_params = {
         :customer_id => @customer.id,
         :cust_iti_name => "MyString",
@@ -137,7 +139,7 @@ describe CustItiHeadersController do
       sign_in @user
       post :create, {:cust_iti_header => @cust_iti_header_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
@@ -146,7 +148,7 @@ describe CustItiHeadersController do
       assigns(:cust_iti_header).should be_a(CustItiHeader)
       vc_assignment1.reload.state.should == "InProcess"
       CustItiHeader.last.customer_id.should == @customer.id
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -171,14 +173,14 @@ describe CustItiHeadersController do
       sign_in @user
       delete :destroy, {:id => @cust_iti_header.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @cust_iti_header.to_param}
       CustItiHeader.all.should == [@cust_iti_header2]
       response.should redirect_to(cust_iti_headers_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -201,7 +203,7 @@ describe CustItiHeadersController do
       post :publish, {:id => @cust_iti_header.id}
       response.should redirect_to(user_unwinders_path)
       vc = FactoryGirl.create(:vacation_consultant)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.vacation_consultant = vc
       @user.save
       sign_out @user
@@ -230,8 +232,15 @@ describe CustItiHeadersController do
       @vc_user = FactoryGirl.create(:user, :user_type => User::VC)
       @vc_user.vacation_consultant = vc
       vc.save
+
       @customer_user = FactoryGirl.create(:user)
+      @customer_user.customer = FactoryGirl.create(:customer)
+      @customer_user.save
+
       @wrong_customer_user = FactoryGirl.create(:user)
+      @wrong_customer_user.customer = FactoryGirl.create(:customer)
+      @wrong_customer_user.save
+
       @cust_iti_request = FactoryGirl.create(:cust_iti_request, :customer_id => @customer_user.customer.id)
       @vc_assignment1 = FactoryGirl.create(:vc_assignment, :cust_iti_request_id => @cust_iti_request.id, :vacation_consultant_id => vc.id, :state => "InProcess")
       @cust_iti_header1 = FactoryGirl.create(:cust_iti_header, :cust_iti_request_id => @cust_iti_request.id, :vacation_consultant_id => vc.id)
@@ -246,8 +255,10 @@ describe CustItiHeadersController do
       @vc_assignment1.state = "InProcess"
       @vc_assignment1.save
       sign_in @vc_user
+      session[:user_role] = User::VC
       post :edit_state, {:id => @cust_iti_header1.id}
       response.should redirect_to(user_unwinders_path)
+
       post :publish, {:id => @cust_iti_header1.id}
       @cust_iti_header1.save
       @cust_iti_header1.reload.version.should == 1
@@ -255,6 +266,7 @@ describe CustItiHeadersController do
       sign_out @vc_user
 
       sign_in @customer_user
+      session[:user_role] = User::CUSTOMER
       post :edit_state, {:id => @cust_iti_header1.id, :event => 'reject'}
       @cust_iti_header1.save
       @cust_iti_header1.reload.state.should == "Rejected"
@@ -263,6 +275,7 @@ describe CustItiHeadersController do
 
 
       sign_in @vc_user
+      session[:user_role] = User::VC
       post :update, {:id => 2, :cust_iti_header => {
         id: 2,
         cust_iti_name: "MyString",
@@ -289,9 +302,10 @@ describe CustItiHeadersController do
       sign_out @vc_user
 
       sign_in @wrong_customer_user
-        post :edit_state, {:id => @cust_iti_header1.id, :event => 'approve'}
-        response.should redirect_to(customer_view_cust_iti_header_path)
-        flash[:notice].should == "You are not authorized to perform this action"
+      session[:user_role] = User::CUSTOMER
+      post :edit_state, {:id => @cust_iti_header1.id, :event => 'approve'}
+      response.should redirect_to(customer_view_cust_iti_header_path)
+      flash[:notice].should == "You are not authorized to perform this action"
       sign_out @wrong_customer_user
 
       sign_in @customer_user

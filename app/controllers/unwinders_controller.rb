@@ -44,6 +44,7 @@ class UnwindersController < ApplicationController
     if params[:id].present?
       @vc = VacationConsultant.find(params[:id])
       @vc_assignments = @vc.vc_assignments
+      p @campaigns = Campaign.where(:vacation_consultant_id => @vc.id, :active => true)
       render :layout => 'unwinders'
     else
     end

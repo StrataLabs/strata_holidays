@@ -70,6 +70,7 @@ class VacationConsultantsController < ApplicationController
     end
     respond_to do |format|
       if @vacation_consultant.update(vacation_consultant_params)
+        @vacation_consultant.user.update(:name => params[:vacation_consultant][:name])
         format.html { redirect_to @vacation_consultant, notice: 'Vacation consultant was successfully updated.' }
         format.json { head :no_content }
       else

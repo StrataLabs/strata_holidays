@@ -548,32 +548,3 @@ ul.navigation li a {
 .wizard-steps .completed-step:hover a:after, .wizard-steps .active-step:hover a:after {
     border-left: 12px solid #8F061E;
 }
-
-.campaign-holder{
-  border: 1px dotted black;
-  padding:10px;
-  margin-bottom:20px;
-  margin-left:10px;
-  margin-right:10px;
-
-  img{
-    padding-bottom: 15px;
-    border-bottom: 1px dotted black;
-    height:200px;
-  }
-
-  .campaign-info{
-    text-align:center;
-    margin-top:15px;
-  }
-
-  #name{
-    color:black;
-    font-size:24px;
-    font-weight:bold;
-  }
-
-  #status{
-    margin-top:-15px;
-  }
-}

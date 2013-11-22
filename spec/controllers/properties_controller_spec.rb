@@ -21,13 +21,13 @@ describe PropertiesController do
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -46,13 +46,13 @@ describe PropertiesController do
       sign_in @user
       get :show, {:id => @property.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @property.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -86,13 +86,13 @@ describe PropertiesController do
       sign_in @user
       post :create, {:property => @property_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       post :create, {:property => @property_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -112,13 +112,13 @@ describe PropertiesController do
       sign_in @user
       delete :destroy, {:id => @property.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @property.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user

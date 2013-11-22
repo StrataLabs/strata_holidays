@@ -11,6 +11,7 @@ describe VacationConsultantsController do
     vc.user = @user
     vc.save
     sign_in @user
+    session[:user_role] = User::VC
   end
   after(:all) do
     User.delete_all
@@ -30,13 +31,13 @@ describe VacationConsultantsController do
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -53,19 +54,19 @@ describe VacationConsultantsController do
     end
     it "does not allow Customer" do
       sign_in @user
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @user.vacation_consultant.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @user.vacation_consultant.to_param}
       assigns(:vacation_consultant).should eq(@user.vacation_consultant)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -82,19 +83,19 @@ describe VacationConsultantsController do
     end
     it "allows only admin" do
       sign_in @user
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @user.vacation_consultant.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @user.vacation_consultant.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -106,7 +107,8 @@ describe VacationConsultantsController do
 
   context "POST create_vc" do
     before(:each) do
-      @vc_reg = FactoryGirl.create(:vc_registration)
+      @user1 = FactoryGirl.create(:user)
+      @vc_reg = FactoryGirl.create(:vc_registration, :user_id => @user1.id)
     end
 
     it "does not allow access without logging in" do
@@ -120,13 +122,13 @@ describe VacationConsultantsController do
       sign_in @user
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       post :create_vc, {:vc_reg_id => @vc_reg.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -172,13 +174,13 @@ describe VacationConsultantsController do
          }}
       @vac_con.destinations.count.should == 1
       @vac_con.destinations.first.id.should == @destination.id
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       post :update, {:id => @vac_con.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -218,7 +220,7 @@ describe VacationConsultantsController do
       sign_in @user
       get :search_vcs
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       @user.vacation_consultant.index!
       sign_out @user
@@ -228,7 +230,7 @@ describe VacationConsultantsController do
     end
 
     it "allows admin" do
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -261,7 +263,7 @@ describe VacationConsultantsController do
       sign_in @user1
       get :assign_vcs, {:cust_req_id => @cust_iti_req.to_param, :vc_ids => [@user1.vacation_consultant.id.to_param]}
       response.should redirect_to(user_unwinders_path)
-      @user1.user_type = 'C'
+      session[:user_role] = 'C'
       @user1.save
       sign_out @user1
       sign_in @user1
@@ -271,7 +273,7 @@ describe VacationConsultantsController do
       vc_assignment.vacation_consultant_id.should == @user1.vacation_consultant.id
       Delayed::Job.all[0].handler.should include("VcNewRequestNotificationJob")
       Delayed::Job.all[1].handler.should include("CustomerNewRequestConfirmationJob")
-      @user1.user_type = 'A'
+      session[:user_role] = 'A'
       @user1.save
       sign_out @user1
       sign_in @user1

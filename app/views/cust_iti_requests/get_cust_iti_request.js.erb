@@ -5,6 +5,9 @@ $(".modal-vc-rec-body").html("<%= escape_javascript(render :partial => 'show_cus
 <% elsif @vc_assignment.state == "InProcess" %>
   <% header = CustItiHeader.where(:cust_iti_request_id => @vc_assignment.cust_iti_request_id).first %>
   $(".modal-footer").html("<%= escape_javascript(link_to 'Edit Itinerary' , edit_cust_iti_header_path( :id => header.id), :class => ['btn btn-success']) %>");
-  $(".modal-footer").append("<%= escape_javascript(link_to 'View Itinerary' , cust_iti_header_path( :id => header.id), :class => ['btn']) %>");
+  $(".modal-footer").html("<%= escape_javascript(link_to 'View Itinerary' , cust_iti_header_path( :id => header.id), :class => ['btn']) %>");
+<% else @vc_assignment.state == "Done" %>
+  <% header = CustItiHeader.where(:cust_iti_request_id => @vc_assignment.cust_iti_request_id).first %>
+  $(".modal-footer").html("<%= escape_javascript(link_to 'View Itinerary' , cust_iti_header_path( :id => header.id), :class => ['btn']) %>");
 <% end %>
 

@@ -9,7 +9,7 @@
     %li
       %a.active{:title => "Personal Information", :style => "background-image:url(#{asset_path("unwinders/personal_information.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
     %li
-      %a{:title => "Campaigns", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => my_campaigns_vacation_consultant_path(:id => current_user.vacation_consultant.id)}
+      %a{:title => "Campaign Manager", :style => "background-image:url(#{asset_path("unwinders/request.jpg")});background-size:100%;background-repeat:no-repeat", :href => my_campaigns_vacation_consultant_path(:id => current_user.vacation_consultant.id)}
     %li
       %a{:title => "History", :style => "background-image:url(#{asset_path("unwinders/history.jpg")});background-size:100%;background-repeat:no-repeat", :href => '#'}
     / %li
@@ -58,11 +58,11 @@
         %span
           &nbsp;
           = best_in_place @vacation_consultant, :mphone
-      %li
-        %label= model_class.human_attribute_name(:email) + ':'
-        %span
-          &nbsp;
-          = best_in_place @vacation_consultant, :email
+      / %li
+      /   %label= model_class.human_attribute_name(:email) + ':'
+      /   %span
+      /     &nbsp;
+      /     = best_in_place @vacation_consultant, :email
       %li
         %label= model_class.human_attribute_name(:planning) + ':'
         %span

@@ -41,14 +41,14 @@ describe TestimonialsController do
       get :index
       assigns(:testimonials).should == nil
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       assigns(:testimonials).should == nil
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -69,13 +69,13 @@ describe TestimonialsController do
       sign_in @user
       get :show, {:id => @testimonial.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @testimonial.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -101,13 +101,13 @@ describe TestimonialsController do
       sign_in @user
       post :create, {:testimonial => @testimonial_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       post :create, {:testimonial => @testimonial_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -127,13 +127,13 @@ describe TestimonialsController do
       sign_in @user
       delete :destroy, {:id => @testimonial.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @testimonial.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user

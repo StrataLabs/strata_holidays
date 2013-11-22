@@ -96,14 +96,14 @@ class CustItiRequestsController < ApplicationController
     end
   end
 
-  def remove_session
-    session[:request].delete_if{|key| key[:destination_id].to_s==params[:destination_id].to_s}
-    render :partial => 'layouts/requests_cart'
-  end
+  # def remove_session
+  #   session[:request].delete_if{|key| key[:destination_id].to_s==params[:destination_id].to_s}
+  #   render :partial => 'layouts/requests_cart'
+  # end
 
   def request_from_cart
     @cust_iti_request = CustItiRequest.new
-    destinations = params[:destination_ids].split(',')
+    destinations = params[:destination_ids].split(',').flatten!
     # if session[:request] && session[:request].count > 0
     #   session[:request].each do |d|
     #     destinations << d[:destination_id].to_s

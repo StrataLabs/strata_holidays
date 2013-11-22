@@ -21,13 +21,13 @@ describe PointsOfAttractionsController do
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -46,13 +46,13 @@ describe PointsOfAttractionsController do
       sign_in @user
       get :show, {:id => @points_of_attraction.to_param}
       assigns(:points_of_attraction).should eq(@points_of_attraction)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @points_of_attraction.to_param}
       assigns(:points_of_attraction).should eq(@points_of_attraction)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -82,13 +82,13 @@ describe PointsOfAttractionsController do
       sign_in @user
       post :create, {:points_of_attraction => @points_of_attraction_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       post :create, {:points_of_attraction => @points_of_attraction_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -109,13 +109,13 @@ describe PointsOfAttractionsController do
       sign_in @user
       delete :destroy, {:id => @points_of_attraction.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @points_of_attraction.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user

@@ -26,6 +26,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    respond_to do |format|
+      format.html { redirect_to user_unwinders_path }
+      format.js
+    end
+  end
+
   private
   def find_commentable
     params.each do |name, value|

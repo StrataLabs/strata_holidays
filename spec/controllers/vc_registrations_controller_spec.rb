@@ -41,13 +41,13 @@ describe VcRegistrationsController do
       get :index
       assigns(:vc_registrations).should == nil
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       assigns(:vc_registrations).should == nil
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -61,13 +61,13 @@ describe VcRegistrationsController do
       sign_in @user
       get :show, {:id => @vc_registration.to_param}
       assigns(:vc_registration).should eq(@vc_registration)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @vc_registration.to_param}
       assigns(:vc_registration).should eq(@vc_registration)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -79,7 +79,6 @@ describe VcRegistrationsController do
   context "POST create" do
     before(:each) do
       @vc_registration_params = {
-        :name => "MyString",
         :address_1 => "MyString",
         :address_2 => "MyString",
         :city => "MyString",
@@ -90,37 +89,39 @@ describe VcRegistrationsController do
         :preferred_locations => ["1","2","3","4"],
         :lphone => "MyString",
         :mphone => "1234567890",
-        :email => "foo@example.com",
         :comments => "MyString",
         :country => "MyString",
         :status => "New"
       }
     end
-    it "allows access without logging in" do
+    it "does allows access without logging in" do
       sign_out @user
       post :create, {:vc_registration => @vc_registration_params}
-      VcRegistration.last.email.should == "foo@example.com"
+      response.should redirect_to(user_session_path)
     end
     it "allows everyone" do
       Delayed::Job.delete_all
       sign_in @user
       post :create, {:vc_registration => @vc_registration_params}
-      VcRegistration.last.email.should == "foo@example.com"
-      @user.user_type = User::VC
+      VcRegistration.last.email.should == @user.email
+      VcRegistration.last.name.should == @user.name
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       post :create, {:vc_registration => @vc_registration_params}
       assigns(:vc_registration).should be_a(VcRegistration)
-      VcRegistration.last.email.should == "foo@example.com"
+      VcRegistration.last.email.should == @user.email
+      VcRegistration.last.name.should == @user.name
       Delayed::Job.all[0].handler.should include("VcRegistrationConfirmationJob")
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
       post :create, {:vc_registration => @vc_registration_params}
       assigns(:vc_registration).should be_a(VcRegistration)
-      VcRegistration.last.email.should == "foo@example.com"
+      VcRegistration.last.email.should == @user.email
+      VcRegistration.last.name.should == @user.name
     end
   end
 
@@ -134,13 +135,13 @@ describe VcRegistrationsController do
       sign_in @user
       delete :destroy, {:id => @vc_registration.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @vc_registration.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user

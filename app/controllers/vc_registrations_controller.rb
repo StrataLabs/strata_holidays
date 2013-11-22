@@ -15,8 +15,12 @@ class VcRegistrationsController < ApplicationController
 
   # GET /vc_registrations/new
   def new
-    @vc_registration = VcRegistration.new
-    render :layout => 'unwinders'
+    if current_user
+      @vc_registration = VcRegistration.new
+      render :layout => 'unwinders'
+    else
+      redirect_to user_session_path
+    end
   end
 
   # GET /vc_registrations/1/edit
@@ -26,22 +30,26 @@ class VcRegistrationsController < ApplicationController
   # POST /vc_registrations
   # POST /vc_registrations.json
   def create
-    unless params[:vc_registration][:preferred_locations].nil?
-      params[:vc_registration][:preferred_locations].reject! { |c| c.empty? }
-    end
-    @vc_registration = VcRegistration.new(vc_registration_params)
-    @vc_registration.email = current_user.email
-    @vc_registration.name = current_user.name
-    @vc_registration.user_id = current_user.id
-    respond_to do |format|
-      if @vc_registration.save
-        Delayed::Job.enqueue VcRegistrationConfirmationJob.new(@vc_registration)
-        format.html { redirect_to user_unwinders_path notice: 'Vc registration was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @vc_registration }
-      else
-        format.html { render action: 'new', layout: 'unwinders' }
-        format.json { render json: @vc_registration.errors, status: :unprocessable_entity }
+    if current_user
+      unless params[:vc_registration][:preferred_locations].nil?
+        params[:vc_registration][:preferred_locations].reject! { |c| c.empty? }
       end
+      @vc_registration = VcRegistration.new(vc_registration_params)
+      @vc_registration.email = current_user.email
+      @vc_registration.name = current_user.name
+      @vc_registration.user_id = current_user.id
+      respond_to do |format|
+        if @vc_registration.save
+          Delayed::Job.enqueue VcRegistrationConfirmationJob.new(@vc_registration)
+          format.html { redirect_to user_unwinders_path notice: 'Vc registration was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @vc_registration }
+        else
+          format.html { render action: 'new', layout: 'unwinders' }
+          format.json { render json: @vc_registration.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      redirect_to user_session_path
     end
     # render :layout => 'unwinders'
   end

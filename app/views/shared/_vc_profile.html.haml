@@ -16,6 +16,8 @@
         .content
           / = current_user.vacation_consultant.campaigns
           = link_to "New campaign", new_campaign_path
+          %br
+          = link_to "View my campaigns", my_campaigns_vacation_consultant_path(current_user.vacation_consultant)
   .row
     .span4.box
       .title

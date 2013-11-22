@@ -44,6 +44,6 @@ class User < ActiveRecord::Base
   end
 
   def admin?
-    (self.user_type == ADMIN)
+    (session[:user_role] == User::ADMIN)
   end
 end

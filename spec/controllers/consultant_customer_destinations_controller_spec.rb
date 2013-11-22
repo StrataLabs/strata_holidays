@@ -22,18 +22,18 @@ describe ConsultantCustomerDestinationsController do
     end
 
     it "allows only admin" do
-      @user.user_type = User::CUSTOMER
+      session[:user_role] = User::CUSTOMER
       @user.save
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -50,19 +50,19 @@ describe ConsultantCustomerDestinationsController do
     end
     it "allows only admin" do
       sign_in @user
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @consultant_customer_destination.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @consultant_customer_destination.to_param}
       assigns(:consultant_customer_destination).should eq(@consultant_customer_destination)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -79,19 +79,19 @@ describe ConsultantCustomerDestinationsController do
     end
     it "allows only admin" do
       sign_in @user
-      @user.user_type = 'V'
+      session[:user_role] = 'V'
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @consultant_customer_destination.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'C'
+      session[:user_role] = 'C'
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @consultant_customer_destination.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user

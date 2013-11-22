@@ -55,9 +55,16 @@
                               = detail.preferred_time_of_departure.strftime("%I:%M %p")
                               )
                             %br
+                            Day
+                            = detail.day_number
                             %p
                               = detail.points_of_attraction.description
-                            %br
+                            -@comments = detail.comments
+                            %div{:id => "comments_#{detail.id}"}
+                              = render :partial => "shared/comments_section", :locals => { :comments => @comments}
+                            - @commentable = detail
+                            - @comment = Comment.new
+                            = render :partial => "comments/form", :locals => {:index => detail.id}
                       .vc-hr
                       %br
                     .show-more
@@ -96,8 +103,16 @@
                               = detail.preferred_time_of_departure.strftime("%I:%M %p")
                               )
                             %br
+                            Day
+                            = detail.day_number
                             %p
                               = detail.points_of_attraction.description
+                            -@comments = detail.comments
+                            %div{:id => "comments_#{index}"}
+                              = render :partial => "shared/comments_section", :locals => { :comments => @comments}
+                            - @commentable = detail
+                            - @comment = Comment.new
+                            = render :partial => "comments/form", :locals => {:index => index}
                             %br
                       .vc-hr
                       %br

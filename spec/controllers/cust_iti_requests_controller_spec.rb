@@ -3,7 +3,8 @@ require 'spec_helper'
 describe CustItiRequestsController do
     before(:each) do
     @cust_iti_request = FactoryGirl.create(:cust_iti_request)
-    @user = FactoryGirl.create(:user, :user_type => User::CUSTOMER)
+    @user = FactoryGirl.create(:user)
+    session[:user_role] = User::CUSTOMER
     sign_in @user
   end
   after(:all) do
@@ -25,13 +26,13 @@ describe CustItiRequestsController do
       get :index
       assigns(:cust_iti_requests).should == nil
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :index
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = 'A'
+      session[:user_role] = 'A'
       @user.save
       sign_out @user
       sign_in @user
@@ -50,13 +51,13 @@ describe CustItiRequestsController do
       sign_in @user
       get :show, {:id => @cust_iti_request.to_param}
       assigns(:cust_iti_request).should eq(@cust_iti_request)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       get :show, {:id => @cust_iti_request.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -89,13 +90,13 @@ describe CustItiRequestsController do
       post :create, {:cust_iti_request => @cust_iti_request_params}
       assigns(:cust_iti_request).should be_a(CustItiRequest)
       CustItiRequest.last.customer_id.should == @customer.id
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       post :create, {:cust_iti_request => @cust_iti_request_params}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -115,13 +116,13 @@ describe CustItiRequestsController do
       sign_in @user
       delete :destroy, {:id => @cust_iti_request.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::VC
+      session[:user_role] = User::VC
       @user.save
       sign_out @user
       sign_in @user
       delete :destroy, {:id => @cust_iti_request.to_param}
       response.should redirect_to(user_unwinders_path)
-      @user.user_type = User::ADMIN
+      session[:user_role] = User::ADMIN
       @user.save
       sign_out @user
       sign_in @user
@@ -155,29 +156,29 @@ describe CustItiRequestsController do
     end
   end
 
-  context "GET remove_session" do
-    before(:each) do
-      @destination = FactoryGirl.create(:destination)
-      @destination2 = FactoryGirl.create(:destination)
-    end
+  # context "GET remove_session" do
+  #   before(:each) do
+  #     @destination = FactoryGirl.create(:destination)
+  #     @destination2 = FactoryGirl.create(:destination)
+  #   end
 
-    it "does not allow access without logging in" do
-      sign_out @user
-      get :request_cart, {:destination_id => @destination.id}
-      response.should redirect_to(user_session_path)
-    end
-    it "removes destination from cart" do
-      sign_in @user
-      get :request_cart, {:destination_id => @destination.id, :format => 'js'}
-      get :request_cart, {:destination_id => @destination2.id, :format => 'js'}
-      session[:request].count.should == 2
-      get :remove_session, {:destination_id => @destination.id, :format => 'js'}
-      session[:request].should include({:destination_id => @destination2.id})
-      session[:request].count.should == 1
-      get :remove_session, {:destination_id => @destination2.id, :format => 'js'}
-      session[:request].count.should == 0
-    end
-  end
+  #   it "does not allow access without logging in" do
+  #     sign_out @user
+  #     get :request_cart, {:destination_id => @destination.id}
+  #     response.should redirect_to(user_session_path)
+  #   end
+  #   it "removes destination from cart" do
+  #     sign_in @user
+  #     get :request_cart, {:destination_id => @destination.id, :format => 'js'}
+  #     get :request_cart, {:destination_id => @destination2.id, :format => 'js'}
+  #     session[:request].count.should == 2
+  #     get :remove_session, {:destination_id => @destination.id, :format => 'js'}
+  #     session[:request].should include({:destination_id => @destination2.id})
+  #     session[:request].count.should == 1
+  #     get :remove_session, {:destination_id => @destination2.id, :format => 'js'}
+  #     session[:request].count.should == 0
+  #   end
+  # end
 
   context "GET request_from_cart" do
     before(:each) do
@@ -190,12 +191,12 @@ describe CustItiRequestsController do
       get :request_from_cart, {:destination_id => @destination.id}
       response.should redirect_to(user_session_path)
     end
-    it "removes destination from cart" do
+    it "request from cart" do
       sign_in @user
       get :request_cart, {:destination_id => @destination.id, :format => 'js'}
       get :request_cart, {:destination_id => @destination2.id, :format => 'js'}
       session[:request].count.should == 2
-      get :request_from_cart
+      get :request_from_cart, {:destination_ids => [@destination.id.to_s, @destination2.id.to_s]}
       assigns[:cust_iti_request].destinations.should include(@destination.id.to_s)
       assigns[:cust_iti_request].destinations.should include(@destination2.id.to_s)
     end
