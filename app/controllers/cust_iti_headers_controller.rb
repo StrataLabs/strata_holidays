@@ -1,8 +1,13 @@
 class CustItiHeadersController < ApplicationController
-  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state]
+  include CustItiHeadersHelper
+  require 'cust_iti_header_version'
+  require 'cust_iti_detail_version'
+  require 'iti_cust_dest_poa_detail_version'
+
+  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state, :earlier_versions]
   before_filter :authenticate_admin_user, only: [:index]
-  before_filter :confirm_user_type_is_vc, except: [:history, :update, :index, :customer_view, :edit_state]
-  before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state]
+  before_filter :confirm_user_type_is_vc, except: [:history, :update, :index, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
+  before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index
@@ -97,12 +102,10 @@ class CustItiHeadersController < ApplicationController
   def publish
     if current_user.vacation_consultant.id == @cust_iti_header.vacation_consultant_id
       if @cust_iti_header.publish!
-        @cust_iti_header.version += 1
-        @cust_iti_header.save
         if @cust_iti_header.version == 1
           Delayed::Job.enqueue ItineraryPublishedNotificationJob.new(@cust_iti_header)
         end
-        redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Successfully Published version #{@cust_iti_header.version} !"
+        redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Successfully Published version"
       else
         redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Something went wrong"
       end
@@ -117,8 +120,12 @@ class CustItiHeadersController < ApplicationController
 
   def edit_state
     if current_user.customer.id == @cust_iti_header.cust_iti_request.customer_id
+      if params[:event] == 'reject'
+        @cust_iti_header.paper_trail_event = "Capture"
+      end
       if @cust_iti_header.processEvent(params[:event])
-        @cust_iti_header.save!
+        @cust_iti_header.paper_trail_event = nil
+        capture_itinerary_versions(@cust_iti_header)
         Delayed::Job.enqueue CustomerResponseToItineraryJob.new(@cust_iti_header)
         redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "Itinerary was successfully #{@cust_iti_header.state}!"
       else
@@ -127,6 +134,34 @@ class CustItiHeadersController < ApplicationController
     else
       redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "You are not authorized to perform this action"
     end
+  end
+
+  def earlier_versions
+    @versions = CustItiHeaderVersion.where(:item_id => params[:id], :event => "Capture")
+    render :layout => 'unwinders'
+  end
+
+  def rebuild_version
+    version = CustItiHeaderVersion.find(params[:version])
+    header_version_map = VersionMapper.where(:value => version.id, :modeltype => "CustItiHeader", :model_id => params[:id]).first
+    @cust_iti_header = version.reify
+    @orig_poa = []
+    header_version_map.children.each do |detail_map|
+      detail_version_map = VersionMapper.where(:id => detail_map.to_i).first
+      detail = CustItiDetailVersion.where(:id => detail_version_map.value).first.reify
+      temp = {}
+      temp[:detail] = detail
+      poas = []
+      detail_version_map.children.each do |poa_map|
+        poa_version_map = VersionMapper.where(:id => poa_map.to_i).first
+        poas << ItiCustDestPoaDetailVersion.where(:id => poa_version_map.value).first.reify
+      end
+      temp[:poa] = poas
+      @orig_poa << temp
+    end
+    p @cust_iti_header
+    p @orig_poa
+    render :layout => 'unwinders'
   end
 
   private

@@ -1,5 +1,7 @@
 class CustItiHeader < ActiveRecord::Base
   include ActiveRecord::Transitions
+  has_paper_trail :class_name => 'CustItiHeaderVersion'
+
   belongs_to :vacation_type
   belongs_to :cust_iti_request
   belongs_to :customer

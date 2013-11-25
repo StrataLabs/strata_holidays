@@ -227,6 +227,9 @@ GEM
     nested_form (0.3.2)
     nokogiri (1.5.10)
     orm_adapter (0.4.0)
+    paper_trail (3.0.0.rc2)
+      activerecord (>= 3.0, < 5.0)
+      activesupport (>= 3.0, < 5.0)
     paperclip (3.5.0)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -395,6 +398,7 @@ DEPENDENCIES
   less-rails
   meta_request (~> 0.2.6)
   nested_form
+  paper_trail (>= 3.0.0.rc2)
   paperclip (~> 3.5.0)
   pg (~> 0.15.1)
   pg_search (~> 0.7.0)

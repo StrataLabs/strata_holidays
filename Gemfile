@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'facebox-rails'
 gem 'best_in_place', github: 'bernat/best_in_place'
 gem 'delayed_job_active_record'
+
+#versioning
+gem 'paper_trail', '>= 3.0.0.rc2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

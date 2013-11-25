@@ -1,0 +1,12 @@
+%title
+  Plan Versions | Unwinders
+.row
+  .span8.offset2
+    %table.table.table-striped.table-hover
+      %tr
+        %th Published on
+        %th
+      - @versions.each do |version|
+        %tr
+          %td= version.created_at.strftime("%d %b 20%y at %I:%M%p")
+          %td= link_to "View details", rebuild_version_cust_iti_header_path(:version => version.id, :id => version.item_id)

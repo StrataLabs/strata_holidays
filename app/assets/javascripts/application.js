@@ -149,9 +149,9 @@ jQuery(document).ready(function($) {
    }, 5000);
 
 
-  $('.comment-section').on('click', function(){
-    $('#comment-modal').modal("show");
-  });
+  // $('.comment-section').on('click', function(){
+  //   $('#comment-modal').modal("show");
+  // });
 
   $('#new-photo').on('click', function(){
     $('#add-image-modal').modal("show");

@@ -1,4 +1,6 @@
 class ItiCustDestPoaDetail < ActiveRecord::Base
+  has_paper_trail :class_name => 'ItiCustDestPoaDetailVersion'
+
   belongs_to :cust_iti_detail
   belongs_to :dest_iti_detail
   belongs_to :points_of_attraction

@@ -1,4 +1,6 @@
 class CustItiDetail < ActiveRecord::Base
+
+  has_paper_trail :class_name => 'CustItiDetailVersion'
   belongs_to :cust_iti_header
   belongs_to :destination
   belongs_to :property
