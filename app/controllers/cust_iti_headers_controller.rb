@@ -4,10 +4,10 @@ class CustItiHeadersController < ApplicationController
   require 'cust_iti_detail_version'
   require 'iti_cust_dest_poa_detail_version'
 
-  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state, :earlier_versions]
+  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
   before_filter :authenticate_admin_user, only: [:index]
   before_filter :confirm_user_type_is_vc, except: [:history, :update, :index, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
-  before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
+  before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state]
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index
@@ -102,15 +102,15 @@ class CustItiHeadersController < ApplicationController
   def publish
     if current_user.vacation_consultant.id == @cust_iti_header.vacation_consultant_id
       if @cust_iti_header.publish!
-        if @cust_iti_header.version == 1
+        #if @cust_iti_header.version == 1
           Delayed::Job.enqueue ItineraryPublishedNotificationJob.new(@cust_iti_header)
-        end
+        #end
         redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Successfully Published version"
       else
         redirect_to cust_iti_header_path(@cust_iti_header), :notice => "Something went wrong"
       end
     else
-      redirect_to user_unwinders_path, :notice => "Not authorized to view this page"
+      redirect_to user_unwinders_path, :notice => "Not authorized to view this page."
     end
   end
 
@@ -125,7 +125,7 @@ class CustItiHeadersController < ApplicationController
       end
       if @cust_iti_header.processEvent(params[:event])
         @cust_iti_header.paper_trail_event = nil
-        capture_itinerary_versions(@cust_iti_header)
+        VersionMapper.capture_itinerary_versions(@cust_iti_header)
         Delayed::Job.enqueue CustomerResponseToItineraryJob.new(@cust_iti_header)
         redirect_to customer_view_cust_iti_header_path(@cust_iti_header), :notice => "Itinerary was successfully #{@cust_iti_header.state}!"
       else
@@ -137,31 +137,61 @@ class CustItiHeadersController < ApplicationController
   end
 
   def earlier_versions
-    @versions = CustItiHeaderVersion.where(:item_id => params[:id], :event => "Capture")
-    render :layout => 'unwinders'
+    if current_user
+      allow_access = false
+      if session[:user_role] == User::ADMIN
+        allow_access = true
+      elsif session[:user_role] == User::CUSTOMER && @cust_iti_header.cust_iti_request.customer.id == current_user.customer.id
+        allow_access = true
+      elsif session[:user_role] == User::VC && @cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id
+        allow_access = true
+      end
+      if allow_access
+        @versions = CustItiHeaderVersion.where(:item_id => params[:id], :event => "Capture")
+        render :layout => 'unwinders'
+      else
+        redirect_to user_unwinders_path, :notice => "You do not have the authority to view this page."
+      end
+    else
+      redirect_to user_session_path
+    end
   end
 
   def rebuild_version
-    version = CustItiHeaderVersion.find(params[:version])
-    header_version_map = VersionMapper.where(:value => version.id, :modeltype => "CustItiHeader", :model_id => params[:id]).first
-    @cust_iti_header = version.reify
-    @orig_poa = []
-    header_version_map.children.each do |detail_map|
-      detail_version_map = VersionMapper.where(:id => detail_map.to_i).first
-      detail = CustItiDetailVersion.where(:id => detail_version_map.value).first.reify
-      temp = {}
-      temp[:detail] = detail
-      poas = []
-      detail_version_map.children.each do |poa_map|
-        poa_version_map = VersionMapper.where(:id => poa_map.to_i).first
-        poas << ItiCustDestPoaDetailVersion.where(:id => poa_version_map.value).first.reify
+    if current_user
+      allow_access = false
+      if session[:user_role] == User::ADMIN
+        allow_access = true
+      elsif session[:user_role] == User::CUSTOMER && @cust_iti_header.cust_iti_request.customer.id == current_user.customer.id
+        allow_access = true
+      elsif session[:user_role] == User::VC && @cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id
+        allow_access = true
       end
-      temp[:poa] = poas
-      @orig_poa << temp
+      if allow_access
+        version = CustItiHeaderVersion.find(params[:version])
+        header_version_map = VersionMapper.where(:value => version.id, :modeltype => "CustItiHeader", :model_id => params[:id]).first
+        @cust_iti_header = version.reify
+        @orig_poa = []
+        header_version_map.children.each do |detail_map|
+          detail_version_map = VersionMapper.where(:id => detail_map.to_i).first
+          detail = CustItiDetailVersion.where(:id => detail_version_map.value).first.reify
+          temp = {}
+          temp[:detail] = detail
+          poas = []
+          detail_version_map.children.each do |poa_map|
+            poa_version_map = VersionMapper.where(:id => poa_map.to_i).first
+            poas << ItiCustDestPoaDetailVersion.where(:id => poa_version_map.value).first.reify
+          end
+          temp[:poa] = poas
+          @orig_poa << temp
+        end
+          render :layout => 'unwinders'
+      else
+        redirect_to user_unwinders_path, :notice => "You do not have the authority to view this page."
+      end
+    else
+      redirect_to user_session_path
     end
-    p @cust_iti_header
-    p @orig_poa
-    render :layout => 'unwinders'
   end
 
   private

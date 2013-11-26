@@ -221,7 +221,6 @@ describe CustItiHeadersController do
       post :publish, {:id => header1.id}
       header1.save
       header1.reload.state.should == "Published"
-      header1.reload.version.should == 1
       Delayed::Job.all[0].handler.should include("ItineraryPublishedNotificationJob")
     end
   end
@@ -261,15 +260,17 @@ describe CustItiHeadersController do
 
       post :publish, {:id => @cust_iti_header1.id}
       @cust_iti_header1.save
-      @cust_iti_header1.reload.version.should == 1
-      @cust_iti_header1.state.should == "Published"
+      @cust_iti_header1.reload.state.should == "Published"
       sign_out @vc_user
 
+      VersionMapper.delete_all
       sign_in @customer_user
       session[:user_role] = User::CUSTOMER
       post :edit_state, {:id => @cust_iti_header1.id, :event => 'reject'}
       @cust_iti_header1.save
       @cust_iti_header1.reload.state.should == "Rejected"
+      VersionMapper.last.modeltype.should == "CustItiHeader"
+      VersionMapper.last.model_id.should == @cust_iti_header1.id
       #Delayed::Job.all[0].handler.should include("CustomerResponseToItineraryJob")
       sign_out @customer_user
 
@@ -298,7 +299,7 @@ describe CustItiHeadersController do
       @cust_iti_header1.reload.state.should == "Pending"
       post :publish, {:id => @cust_iti_header1.id}
       @cust_iti_header1.reload.state.should == "Published"
-      @cust_iti_header1.version.should == 2
+      #@cust_iti_header1.version.should == 2
       sign_out @vc_user
 
       sign_in @wrong_customer_user
@@ -315,6 +316,199 @@ describe CustItiHeadersController do
       @vc_assignment1.reload.state.should == "Done"
       #Delayed::Job.all[0].handler.should include("CustomerResponseToItineraryJob")
       sign_out @customer_user
+    end
+  end
+
+  context "GET earlier_versions" do
+    before(:each) do
+      vc = FactoryGirl.create(:vacation_consultant)
+      @vc_user = FactoryGirl.create(:user, :user_type => User::VC)
+      @vc_user.vacation_consultant = vc
+      @vc_user.save
+
+      vc1 = FactoryGirl.create(:vacation_consultant)
+      @wrong_vc_user = FactoryGirl.create(:user, :user_type => User::VC)
+      @wrong_vc_user.vacation_consultant = vc1
+      @wrong_vc_user.save
+
+      @customer_user = FactoryGirl.create(:user)
+      @customer_user.customer = FactoryGirl.create(:customer)
+      @customer_user.save
+
+      @wrong_customer_user = FactoryGirl.create(:user)
+      @wrong_customer_user.customer = FactoryGirl.create(:customer)
+      @wrong_customer_user.save
+
+      @cust_iti_request = FactoryGirl.create(:cust_iti_request, :customer_id => @customer_user.customer.id)
+      @vc_assignment1 = FactoryGirl.create(:vc_assignment, :cust_iti_request_id => @cust_iti_request.id, :vacation_consultant_id => vc.id, :state => "InProcess")
+      @cust_iti_header1 = FactoryGirl.create(:cust_iti_header, :cust_iti_request_id => @cust_iti_request.id, :vacation_consultant_id => vc.id)
+    end
+    it "does not allow access without logging in" do
+      sign_out @user
+      session[:user_role] = nil
+      get :earlier_versions, {:id => @cust_iti_header1.id}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin, correct Customer and correct VC" do
+      @vc_assignment1.state = "InProcess"
+      @vc_assignment1.save
+      sign_in @vc_user
+      session[:user_role] = User::VC
+      get :earlier_versions, {:id => @cust_iti_header1.id}
+      assigns[:versions].should == []
+      CustItiHeaderVersion.where(:item_id => @cust_iti_header1.id).count.should == 1
+
+      post :publish, {:id => @cust_iti_header1.id}
+      @cust_iti_header1.save
+      #@cust_iti_header1.reload.version.should == 1
+      @cust_iti_header1.reload.state.should == "Published"
+      CustItiHeaderVersion.where(:item_id => @cust_iti_header1.id).count.should == 2
+      sign_out @vc_user
+
+      VersionMapper.delete_all
+      sign_in @customer_user
+      session[:user_role] = User::CUSTOMER
+      post :edit_state, {:id => @cust_iti_header1.id, :event => 'reject'}
+      @cust_iti_header1.save
+      @cust_iti_header1.reload.state.should == "Rejected"
+      VersionMapper.last.modeltype.should == "CustItiHeader"
+      VersionMapper.last.model_id.should == @cust_iti_header1.id
+      get :earlier_versions, {:id => @cust_iti_header1.id}
+      assigns[:versions].count.should == 1
+      #Delayed::Job.all[0].handler.should include("CustomerResponseToItineraryJob")
+      sign_out @customer_user
+
+
+      sign_in @vc_user
+      session[:user_role] = User::VC
+      post :update, {:id => 2, :cust_iti_header => {
+        id: 2,
+        cust_iti_name: "MyString",
+        iti_type: "MyString",
+        vacation_type_id: 1,
+        trip_start_date: "2013-06-24",
+        trip_end_date: "2013-06-24",
+        seasons: "MyString",
+        duration: 1,
+        no_of_adults: 1,
+        no_of_children: 0,
+        created_at: "2013-11-11 09:55:34",
+        updated_at: "2013-11-11 09:55:34",
+        customer_id: 1,
+        vacation_consultant_id: 1,
+        version: 1,
+        state: "Rejected",
+        cust_iti_request_id: 1
+        }}
+      @cust_iti_header1.reload.state.should == "Pending"
+      post :publish, {:id => @cust_iti_header1.id}
+      @cust_iti_header1.reload.state.should == "Published"
+      get :earlier_versions, {:id => @cust_iti_header1.id}
+      assigns[:versions].count.should == 1
+      sign_out @vc_user
+
+      sign_in @wrong_customer_user
+      session[:user_role] = User::CUSTOMER
+      get :earlier_versions, {:id => @cust_iti_header1.id}
+      response.should redirect_to(user_unwinders_path)
+      flash[:notice].should == "You do not have the authority to view this page."
+      sign_out @wrong_customer_user
+
+
+      sign_in @wrong_vc_user
+      session[:user_role] = User::VC
+      get :earlier_versions, {:id => @cust_iti_header1.id}
+      response.should redirect_to(user_unwinders_path)
+      flash[:notice].should == "You do not have the authority to view this page."
+      sign_out @wrong_vc_user
+    end
+  end
+
+  context "GET rebuild_version" do
+    before(:all) do
+      CustItiHeaderVersion.delete_all
+      CustItiDetailVersion.delete_all
+      ItiCustDestPoaDetailVersion.delete_all
+    end
+    before(:each) do
+      vc = FactoryGirl.create(:vacation_consultant)
+      @vc_user = FactoryGirl.create(:user, :user_type => User::VC)
+      @vc_user.vacation_consultant = vc
+      @vc_user.save
+
+      vc1 = FactoryGirl.create(:vacation_consultant)
+      @wrong_vc_user = FactoryGirl.create(:user, :user_type => User::VC)
+      @wrong_vc_user.vacation_consultant = vc1
+      @wrong_vc_user.save
+
+      @customer_user = FactoryGirl.create(:user)
+      @customer_user.customer = FactoryGirl.create(:customer)
+      @customer_user.save
+
+      @wrong_customer_user = FactoryGirl.create(:user)
+      @wrong_customer_user.customer = FactoryGirl.create(:customer)
+      @wrong_customer_user.save
+
+      @cust_iti_request = FactoryGirl.create(:cust_iti_request, :customer_id => @customer_user.customer.id)
+      @vc_assignment1 = FactoryGirl.create(:vc_assignment, :cust_iti_request_id => @cust_iti_request.id, :vacation_consultant_id => vc.id, :state => "InProcess")
+      @cust_iti_header1 = FactoryGirl.create(:cust_iti_header, :cust_iti_request_id => @cust_iti_request.id, :vacation_consultant_id => vc.id)
+
+      @cust_iti_detail = FactoryGirl.create(:cust_iti_detail, :cust_iti_header_id => @cust_iti_header1.id)
+      @iti_cust_dest_poa_detail = FactoryGirl.create(:iti_cust_dest_poa_detail, :cust_iti_detail_id => @cust_iti_detail.id)
+
+      @cust_iti_header1.save
+      @cust_iti_detail.save
+    end
+    it "does not allow access without logging in" do
+      sign_out @user
+      session[:user_role] = nil
+      get :rebuild_version, {:id => @cust_iti_header1.id, :version => @cust_iti_header1.versions.last}
+      response.should redirect_to(user_session_path)
+    end
+    it "allows only admin and right Customer and right VC" do
+      @vc_assignment1.state = "InProcess"
+      @vc_assignment1.save
+
+      sign_in @vc_user
+      session[:user_role] = User::VC
+      post :publish, {:id => @cust_iti_header1.id}
+      #@cust_iti_header1.reload.version.should == 1
+      @cust_iti_header1.reload.state.should == "Published"
+      @cust_iti_header1.versions.length.should == 2
+      sign_out @vc_user
+
+      VersionMapper.delete_all
+      sign_in @customer_user
+      session[:user_role] = User::CUSTOMER
+      post :edit_state, {:id => @cust_iti_header1.id, :event => 'reject'}
+      @cust_iti_header1.reload.state.should == "Rejected"
+      @cust_iti_header1.versions.length.should == 3
+
+      get :rebuild_version, {:id => @cust_iti_header1.id, :version => @cust_iti_header1.versions.last.id}
+
+      reified_header = @cust_iti_header1.versions.last.reify
+      assigns[:cust_iti_header].should == reified_header
+
+      result = assigns[:orig_poa].first
+      result[:detail].should == @cust_iti_detail.versions.last.reify
+      result[:poa].first.should == @iti_cust_dest_poa_detail.versions.last.reify
+      sign_out @customer_user
+
+
+      sign_in @wrong_customer_user
+      session[:user_role] = User::CUSTOMER
+      get :rebuild_version, {:id => @cust_iti_header1.id, :version => @cust_iti_header1.versions.last.id}
+      response.should redirect_to(user_unwinders_path)
+      flash[:notice].should == "You do not have the authority to view this page."
+      sign_out @wrong_customer_user
+
+      sign_in @wrong_vc_user
+      session[:user_role] = User::VC
+      get :rebuild_version, {:id => @cust_iti_header1.id, :version => @cust_iti_header1.versions.last.id}
+      response.should redirect_to(user_unwinders_path)
+      flash[:notice].should == "You do not have the authority to view this page."
+      sign_out @wrong_vc_user
+
     end
   end
 end
