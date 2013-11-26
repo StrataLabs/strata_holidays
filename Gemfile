@@ -51,7 +51,7 @@ gem "devise", "~> 3.0.0.rc"
 gem "less-rails"
 gem 'sass-rails', '~> 4.0.0.rc1'
 # gem "compass-rails", "~> 1.0.3"
-gem "compass-rails", github: "milgner/compass-rails", branch: "rails4"
+gem "compass-rails", "~> 2.0.alpha.0"
 gem "compass-normalize", "~> 1.4.3"
 gem "susy", "~> 1.0.9"
 
