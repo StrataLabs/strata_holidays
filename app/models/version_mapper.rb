@@ -13,11 +13,15 @@ class VersionMapper < ActiveRecord::Base
     cust_iti_header.cust_iti_details.each do |detail|
       d = VersionMapper.new
       d.children = []
+      detail.updated_at = Time.zone.now
+      detail.save
       d.value = detail.versions.last.id
       d.modeltype = "CustItiDetail"
       d.model_id = detail.id
       detail.iti_cust_dest_poa_details.each do |poa|
         p = VersionMapper.new
+        poa.updated_at = Time.zone.now
+        poa.save
         p.value = poa.versions.last.id
         p.children = []
         p.modeltype = "ItiCustDestPoaDetail"

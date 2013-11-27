@@ -4,7 +4,7 @@ class CustItiHeadersController < ApplicationController
   require 'cust_iti_detail_version'
   require 'iti_cust_dest_poa_detail_version'
 
-  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
+  before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state, :earlier_versions, :rebuild_version, :revert_to_version]
   before_filter :authenticate_admin_user, only: [:index]
   before_filter :confirm_user_type_is_vc, except: [:history, :update, :index, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
   before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state]
@@ -138,15 +138,7 @@ class CustItiHeadersController < ApplicationController
 
   def earlier_versions
     if current_user
-      allow_access = false
-      if session[:user_role] == User::ADMIN
-        allow_access = true
-      elsif session[:user_role] == User::CUSTOMER && @cust_iti_header.cust_iti_request.customer.id == current_user.customer.id
-        allow_access = true
-      elsif session[:user_role] == User::VC && @cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id
-        allow_access = true
-      end
-      if allow_access
+      if allow_access?
         @versions = CustItiHeaderVersion.where(:item_id => params[:id], :event => "Capture")
         render :layout => 'unwinders'
       else
@@ -159,28 +151,20 @@ class CustItiHeadersController < ApplicationController
 
   def rebuild_version
     if current_user
-      allow_access = false
-      if session[:user_role] == User::ADMIN
-        allow_access = true
-      elsif session[:user_role] == User::CUSTOMER && @cust_iti_header.cust_iti_request.customer.id == current_user.customer.id
-        allow_access = true
-      elsif session[:user_role] == User::VC && @cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id
-        allow_access = true
-      end
-      if allow_access
+      if allow_access?
         version = CustItiHeaderVersion.find(params[:version])
         header_version_map = VersionMapper.where(:value => version.id, :modeltype => "CustItiHeader", :model_id => params[:id]).first
         @cust_iti_header = version.reify
         @orig_poa = []
-        header_version_map.children.each do |detail_map|
-          detail_version_map = VersionMapper.where(:id => detail_map.to_i).first
-          detail = CustItiDetailVersion.where(:id => detail_version_map.value).first.reify
+        header_version_map.children.each do |detail_map_id|
+          detail_version_map = VersionMapper.find(detail_map_id.to_i)
+          detail = CustItiDetailVersion.find(detail_version_map.value).reify
           temp = {}
           temp[:detail] = detail
           poas = []
-          detail_version_map.children.each do |poa_map|
-            poa_version_map = VersionMapper.where(:id => poa_map.to_i).first
-            poas << ItiCustDestPoaDetailVersion.where(:id => poa_version_map.value).first.reify
+          detail_version_map.children.each do |poa_map_id|
+            poa_version_map = VersionMapper.find(poa_map_id.to_i)
+            poas << ItiCustDestPoaDetailVersion.find(poa_version_map.value).reify
           end
           temp[:poa] = poas
           @orig_poa << temp
@@ -194,6 +178,42 @@ class CustItiHeadersController < ApplicationController
     end
   end
 
+  def revert_to_version
+    if ((current_user.vacation_consultant.id == @cust_iti_header.vacation_consultant_id) || session[:user_role] == User::ADMIN)
+      version = CustItiHeaderVersion.find(params[:version])
+      header_version_map = VersionMapper.where(:value => version.id, :modeltype => "CustItiHeader", :model_id => params[:id]).first
+      header = CustItiHeader.find(version.item_id)
+      header = version.reify
+      header.save
+
+      header_version_map.children.each do |detail_map_id|
+        detail_version_map = VersionMapper.find(detail_map_id.to_i)
+        detail_version = CustItiDetailVersion.find(detail_version_map.value)
+        detail = CustItiDetail.find(detail_version.item_id) rescue nil
+        detail = detail_version.reify
+        detail.save
+
+        detail_version_map.children.each do |poa_map_id|
+          poa_version_map = VersionMapper.find(poa_map_id.to_i)
+          poa_version = ItiCustDestPoaDetailVersion.find(poa_version_map.value)
+          poa = ItiCustDestPoaDetail.find(poa_version.item_id) rescue nil
+          poa = poa_version.reify
+          poa.save
+        end
+      end
+
+      unless header.state == "Rejected"
+        header.paper_trail_event = "Capture"
+      end
+      header.pending!
+      header.paper_trail_event = nil
+      VersionMapper.capture_itinerary_versions(header)
+      redirect_to cust_iti_header_path(header)
+    else
+      redirect_to user_unwinders_path, :notice => "You do not have the authority to view this page."
+    end
+  end
+
   private
 
   def set_cust_iti_header
@@ -203,5 +223,17 @@ class CustItiHeadersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def cust_iti_header_params
     params.require(:cust_iti_header).permit(:id, :cust_iti_name, :cust_iti_request_id, :state, :customer_id, :iti_type, :vacation_type_id, :trip_start_date, :trip_end_date, :seasons, :duration, :no_of_adults, :no_of_children, :vacation_consultant_id, trip_images_attributes: [:id, :caption, :image], cust_iti_details_attributes: [:id, :_destroy, :destination_id, :destination_group_id, :dest_start_date, :dest_end_date, :property_id, iti_cust_dest_poa_details_attributes: [:id, :_destroy, :points_of_attraction_id, :preferred_time_of_arrival, :preferred_time_of_departure, :day_number]] )
+  end
+
+  def allow_access?
+    allow_access = false
+    if session[:user_role] == User::ADMIN
+      allow_access = true
+    elsif session[:user_role] == User::CUSTOMER && @cust_iti_header.cust_iti_request.customer.id == current_user.customer.id
+      allow_access = true
+    elsif session[:user_role] == User::VC && @cust_iti_header.vacation_consultant_id == current_user.vacation_consultant.id
+      allow_access = true
+    end
+    allow_access
   end
 end

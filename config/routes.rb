@@ -57,6 +57,7 @@ StrataHolidays::Application.routes.draw do
       get 'edit_state'
       get 'earlier_versions'
       get 'rebuild_version'
+      get 'revert_to_version'
     end
   end
   resources :dest_iti_details

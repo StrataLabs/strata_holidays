@@ -26,7 +26,7 @@ class CustItiHeader < ActiveRecord::Base
     end
 
     event :pending do
-      transitions :to => :Pending, :from => [:Rejected]
+      transitions :to => :Pending, :from => [:Rejected, :Published, :Pending]
     end
 
     event :approve, :success => :after_approval do

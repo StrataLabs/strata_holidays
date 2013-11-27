@@ -250,7 +250,6 @@ describe CustItiHeadersController do
       response.should redirect_to(user_session_path)
     end
     it "allows only admin and Customer" do
-      Delayed::Job.delete_all
       @vc_assignment1.state = "InProcess"
       @vc_assignment1.save
       sign_in @vc_user
