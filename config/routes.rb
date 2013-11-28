@@ -4,6 +4,7 @@ StrataHolidays::Application.routes.draw do
   resources :campaigns do
     member do
       post 'promotion_mail'
+      post 'import_email_ids'
     end
   end
   devise_for :users, :controllers => { :sessions => "users/sessions", :registrations => "users/registrations" } do

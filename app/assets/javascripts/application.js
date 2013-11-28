@@ -262,6 +262,19 @@ jQuery(document).ready(function($) {
     });
   }
 
+  $("#recipient_choice").on('change', function(){
+    var choice = $(this).val();
+
+    if(choice == "Manual"){
+      $("#csv-upload").hide(200);
+      $("#manual-entry").show(200);
+    }
+
+    if(choice == "CSV"){
+      $("#manual-entry").hide(200);
+      $("#csv-upload").show(200);
+    }
+  });
   // $("#cust_iti_header_cust_iti_details_attributes_0_destination_id").on('change', function() {
   //   var sel_dest = $(this).val();
   //   if(sel_dest) {
@@ -272,7 +285,19 @@ jQuery(document).ready(function($) {
   //     document.getElementById('add-fields-link').disabled = true;
   //   }
   // });
-
+// (document).ready ->
+//   $("#from_date").datepicker
+//     dateFormat: "dd MM yy"
+//     minDate: 1
+//   $("#end_date").datepicker
+//     dateFormat: "dd MM yy"
+//     minDate: 1
+jQuery(function(){
+  jQuery('#from_date').val("");
+  jQuery('#from_date').datepicker({dateFormat: "dd MM yy", minDate: 1});
+  jQuery('#end_date').val("");
+  jQuery('#end_date').datepicker({dateFormat: "dd MM yy", minDate: 1});
+});
 });
 
 var Sessionapp = {};

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout "unwinders"
+  layout "home"
   before_filter :authenticate_user!, :except => 'index'
   def index
     vcs = VacationConsultant.all

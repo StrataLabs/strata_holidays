@@ -24,7 +24,6 @@
         Newly Assigned Requests
         .icon-envelope-alt.pull-right
       .content#cust-request
-        - p @vc_assignments
         - @vc_assignments.where(:state => 'New').each do |vc_assign|
           .icon-fighter-jet
           New Request received from

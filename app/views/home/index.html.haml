@@ -1,7 +1,11 @@
 %title
   Unwinders
-.container{:style => 'padding-left:0px'}
-  #root-image
+#root-image
+  .container{:style => 'padding-left:0px;height:750px'}
+    #empty-div{:style => 'min-height:100px;'}
+    .row
+      .span11#visitor-request-form
+        = render 'visitor_request'
     /.well{:style => 'height:4px'}
     /= link_to "Click here to sign up as a consultant with us!!", new_vc_registration_path
   #filler.filler-div-home

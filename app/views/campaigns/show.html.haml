@@ -27,11 +27,7 @@
     %h3 Email your campaign details
   .modal-body
     .modal-rec-body
-      = form_tag promotion_mail_campaign_path(@campaign), :html => {:class =>'form-inline' } do
-        = label_tag "To:"
-        = text_field_tag :to_ids
-        = label_tag "CC:"
-        = text_field_tag :cc_ids
+      = form_tag import_email_ids_campaign_path(@campaign), :html => {:class =>'form-inline' } do
         = label_tag "Subject:"
         = text_field_tag :subject
         = label_tag "Content"
@@ -39,5 +35,5 @@
         = label_tag "Include campaign image?"
         = check_box_tag :include_image
         .modal-footer
-          = submit_tag "Send", :class => 'btn btn-primary'
+          = submit_tag "Enter recipients", :class => 'btn btn-primary'
           %a.btn{"data-dismiss" => "modal", :href => "#"} Close

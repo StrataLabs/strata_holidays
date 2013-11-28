@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-  before_action :set_campaign, only: [:show, :edit, :update, :destroy]
+  before_action :set_campaign, only: [:show, :edit, :update, :destroy, :import_email_ids, :promotion_mail]
   before_filter :confirm_user_type_is_vc, except: :index
   before_filter :authenticate_admin_user, only: :index
   layout 'unwinders'
@@ -54,8 +54,30 @@ class CampaignsController < ApplicationController
     redirect_to campaigns_url, notice: 'Campaign was successfully destroyed.'
   end
 
+  def import_email_ids
+    @include_image = false
+    if params[:include_image]
+      @include_image = true
+    end
+  end
+
   def promotion_mail
-    Delayed::Job.enqueue PromotionMailerJob.new(params)
+    if params[:choice] == 'Manual'
+      to_ids = params[:to_ids].split(',').flatten!
+    elsif params[:choice] == 'CSV'
+      to_ids = []
+      CSV.foreach(params[:file].path) do |row|
+        to_ids << row[0]
+      end
+    end
+    details = {}
+    details[:to_ids] = to_ids
+    details[:subject] = params[:subject]
+    details[:include_image] = params[:include_image] if params[:include_image]
+    details[:content] = params[:content]
+    details[:id] = @campaign.id
+
+    Delayed::Job.enqueue PromotionMailerJob.new(details)
     m = VcPromotionMailer.new
     m.subject = params[:subject]
     m.content = params[:content]

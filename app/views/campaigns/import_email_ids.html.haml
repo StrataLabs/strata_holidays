@@ -1,0 +1,24 @@
+.row
+  .span12
+    %h1{:style => 'color:black;text-align:center'} Recipients
+%br
+.row
+  .span8.offset2
+    = form_tag promotion_mail_campaign_path(@campaign), multipart: true do
+      = label_tag "Recipients list:"
+      = select_tag(:choice, options_for_select([['Enter Manually','Manual'],['Upload CSV','CSV']]), :include_blank => true, :id => "recipient_choice")
+      #csv-upload{:style => 'display:none'}
+        %br
+        %h3{:style => 'color:black'}
+          The CSV file should have a single column with "EMAIL" as the header
+        = file_field_tag :file
+        = submit_tag "Import and Send"
+      #manual-entry{:style => 'display:none'}
+        %br
+        %h3{:style => 'color:black'}
+          Enter email addresses separated by commas
+        = text_area_tag :to_ids
+        = submit_tag "Send Mail"
+      = hidden_field_tag :subject, params[:subject]
+      = hidden_field_tag :content, params[:content]
+      = hidden_field_tag :include_image, @include_image

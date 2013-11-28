@@ -548,3 +548,25 @@ ul.navigation li a {
 .wizard-steps .completed-step:hover a:after, .wizard-steps .active-step:hover a:after {
     border-left: 12px solid #8F061E;
 }
+
+#banner-home{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 55px;
+  background: #ffcc11;
+
+  h1{
+    display: block;
+    position: relative;
+    width: 320px;
+    height: 145px;
+    float: left;
+    z-index: 20;
+    padding: 0;
+    margin: 0px;
+    @media screen and (max-width: 600px) {
+      margin: 0;
+    }
+  }
+}
