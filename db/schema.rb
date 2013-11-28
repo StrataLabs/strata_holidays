@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20131122114901) do
     t.boolean  "active"
   end
 
+ActiveRecord::Schema.define(version: 20131024113535) do
   create_table "comments", force: true do |t|
     t.text     "content"
     t.integer  "commentable_id"
@@ -307,6 +308,18 @@ ActiveRecord::Schema.define(version: 20131122114901) do
     t.datetime "image_updated_at"
   end
 
+  create_table "user_responses", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "contact_no"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "no_of_adults"
+    t.integer  "no_of_children"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -416,6 +429,13 @@ ActiveRecord::Schema.define(version: 20131122114901) do
   end
 
   add_index "versions", ["item_type", "item_id"], name: "index_versions_on_item_type_and_item_id"
+
+  create_table "wish_list_items", force: true do |t|
+    t.integer  "customer_id"
+    t.integer  "destination_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "wish_list_items", force: true do |t|
     t.integer  "customer_id"

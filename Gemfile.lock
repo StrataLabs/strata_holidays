@@ -159,6 +159,8 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.9.0)
+    font-awesome-rails (4.0.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     fssm (0.2.10)
     growl (1.0.3)
@@ -385,6 +387,7 @@ DEPENDENCIES
   devise (~> 3.0.0.rc)
   facebox-rails
   factory_girl_rails (~> 4.0)
+  font-awesome-rails
   growl (~> 1.0.3)
   guard-bundler (~> 1.0.0)
   guard-livereload (~> 1.4.0)

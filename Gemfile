@@ -30,6 +30,10 @@ gem 'delayed_job_active_record'
 #versioning
 gem 'paper_trail', '>= 3.0.0.rc2'
 
+gem "font-awesome-rails"
+
+gem 'jQuery-Validation-Engine-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

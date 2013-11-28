@@ -22,9 +22,44 @@
 //= require jquery.validationEngine-en
 //= require jquery.validationEngine
 //= require nested_form
+
 jQuery(document).ready(function($) {
   $('.get_cust_iti_request').on('click', function(){
     $('#my-vc-modal').modal("show");
+
+jQuery(document).ready(function($) {
+  $('.select-vcs').on('click', function() {
+      var vc_ids = [];
+      $('.search_vc_table tr').filter(':has(:checkbox:checked)').each(function() {
+        vc_ids.push($(this).attr("id"));
+      });
+      $.post('/assign-vcs', {vc_ids: vc_ids, cust_req_id: $('.search_vc_table').attr("id")},
+      function(data, status, xhr){
+        location.href = '/unwinders/user';
+          // $(".assigned-vcs").html(data);
+      });
+      return false;
+    });
+});
+
+$(document).ready(function(){
+  $("#response_submit").on('click', function() {
+    $("#user_response_form").validationEngine({promptPosition : "bottomLeft"});
+  });
+});
+
+jQuery(document).ready(function($) {
+  $('a[rel*=facebox]').facebox()
+})
+
+window.setInterval(function(){
+   $('.alert').fadeOut();
+ }, 5000);
+
+
+jQuery(document).ready(function($) {
+  $('.comment-section').on('click', function(){
+    $('#comment-modal').modal("show");
   });
 });
 jQuery(document).ready(function($) {
@@ -88,6 +123,22 @@ jQuery(document).ready(function($) {
       $('#contact-information').show(300);
       return false;
   });
+ $(".text").focus(function(){
+    $(this).parent().addClass("active");
+
+  }).blur(function(){
+       $(this).parent().removeClass("active");
+  })
+});
+
+jQuery(document).ready(function($) {
+
+$("#personal-information .proceed").on("click", function() {
+    var div_id = document.getElementById("progress-bar").style.width = "66%";
+    $('#personal-information').hide(300);
+    $('#professional-details').show(300);
+    return false;
+});
 
   $("#professional-details .back").on("click", function() {
       var div_id = document.getElementById("progress-bar").style.width = "33%";
@@ -298,6 +349,20 @@ jQuery(function(){
   jQuery('#end_date').val("");
   jQuery('#end_date').datepicker({dateFormat: "dd MM yy", minDate: 1});
 });
+});
+
+$(document).ready(function(){
+  $("input[name='user[start_date]']").datepicker(
+    {
+      dateFormat: 'dd MM yy',
+      minDate: 1,
+    });
+
+  $("input[name='user[end_date]']").datepicker(
+    {
+      dateFormat: 'dd MM yy',
+      minDate: 1,
+    });
 });
 
 var Sessionapp = {};

@@ -8,12 +8,14 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
  *= require bootstrap_and_overrides
+ *= require_self
+ *= require font-awesome
  *= require custom_css
  *= require jquery.ui.all
  *= require jquery.facebox
  *= require chosen
+ *= require validationEngine.jquery
  */
 
 .contenthover { padding:20px 20px 10px 20px;cursor: pointer; }
@@ -80,6 +82,13 @@
   margin-top: -65px;
   background: image-url("<%= asset_path 'unwinders/pic1.jpg' %>") no-repeat;
   background-size: cover;
+}
+
+#page-content{
+  background: image-url("https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/Unwinders_2.jpg") no-repeat;
+  padding:0px;
+  min-height:670px;
+  background-size:100%;
 }
 
 #root-image
@@ -317,3 +326,4 @@ span {
     height: 24px;
 }
 }
+.formError{margin-left: 150px!important;}

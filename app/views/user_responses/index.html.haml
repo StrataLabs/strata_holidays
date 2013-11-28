@@ -1,0 +1,23 @@
+.container{:style => 'background:white;min-height:550px'}
+  %h1 Listing responses
+
+  %table
+    %tr
+      %th Name
+      %th Email
+      %th No. of adults
+      %th Actions
+
+    - @user_responses.each do |user_response|
+      %tr
+        %td= user_response.name
+        %td= user_response.email
+        %td= user_response.no_of_adults
+        %td
+          = link_to 'Show', user_response
+          = link_to 'Edit', edit_user_response_path(user_response)
+          = link_to 'Destroy', user_response, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New User response', new_user_response_path
