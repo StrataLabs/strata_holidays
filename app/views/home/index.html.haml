@@ -4,14 +4,25 @@
   .container{:style => 'padding-left:0px;height:750px'}
     #empty-div{:style => 'min-height:100px;'}
     .row
-      .span11#visitor-request-form
-        = render 'visitor_request'
+      .span7
+      = render 'visitor_request'
     /.well{:style => 'height:4px'}
     /= link_to "Click here to sign up as a consultant with us!!", new_vc_registration_path
-  #filler.filler-div-home
+.container{:style => 'padding-left:0px;'}
+  .row
     %br
-    Meet our Vacation Consultants
+    .span12{:style => 'text-align:center;font:normal 40px/60px AllerLightRegular;color:black'}
+      Meet our expert planners
+  %br
+  %br
   #vcs-page
     = render :partial => 'vcs_page'
-  #destination-carousel
-    = render :partial => 'picture_carousel'
+  .row
+    .span12
+      #all-vcs-link.pull-right
+        = link_to "See all", '#'
+  %br
+  %br
+  %br
+  / #destination-carousel
+  /   = render :partial => 'picture_carousel'

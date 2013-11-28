@@ -160,16 +160,11 @@ padding-right: 5px;
   background: $white;
 }
 .filler-div-home{
- font-weight:bold;
- text-align:center;
- color:black;
- font-size:13pt;
- padding-bottom:14px;
- margin-top:0px;
- line-height:11px;
- padding-bottom:4px;
- background:#f1f1f0;
- height:25px;
+   font-weight:bold;
+   text-align:center;
+   color:black;
+   font-size:13pt;
+   background:#f1f1f0;
 }
 .home-box {
   background: $back-color;
@@ -571,7 +566,7 @@ ul.navigation li a {
     }
   }
 }
-=======
+
 .b-form{
   background-color: #fff;
   padding: 10px 20px 20px 20px;
@@ -707,6 +702,12 @@ ul.navigation li a {
   margin-left:95px;
 }
 
+#response-form1{
+  padding:30px;
+  background-color:rgba(0,0,0,0.3);
+  border-radius: 15px;
+}
+
 #vc-profile{
   margin-right: 0px;
   margin-top: 92px;
@@ -722,13 +723,21 @@ ul.navigation li a {
   margin-bottom: 8px;
 }
 
+#instruction1{
+  font-family: source-sans-pro, Helvetica, Arial, sans-serif, sans-serif;
+  color: white;
+  font-weight:bold;
+  font-size:18px;
+  padding-left: 9px;
+  margin-bottom: 8px;
+}
+
 .vc-pro-details{
   font-family: source-sans-pro, Helvetica, Arial, sans-serif, sans-serif;
   list-style: none;
   padding: 0px;
   font-size:17px;
   color: #282f7a;
-  margin-top: 126px;
   line-height: 22px;
 }
 

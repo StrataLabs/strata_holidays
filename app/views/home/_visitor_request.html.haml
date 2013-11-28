@@ -1,42 +1,41 @@
-= form_tag do
-  = text_field_tag :destination, nil, :placeholder => "Where to?"
-  = text_field_tag :no_of_adults, nil, :placeholder => "How many travellers?"
-  = text_field_tag :from_date, nil, :placeholder => "Starting", :as => :date_picker
-  = text_field_tag :end_date, nil, :placeholder => "Return", :as => :date_picker
-  / = text_field_tag :email, nil, :placeholder => "Email"
-  / = text_field_tag :contact_no, nil, :placeholder => "Mobile No."
-  = submit_tag "Go!", :class => 'btn btn-large btn-info', :style => 'font-size:24px'
-  /= text_field_tag :no_of_adults
+/ = form_tag do
+/   = text_field_tag :destination, nil, :placeholder => "Where to?"
+/   = text_field_tag :no_of_adults, nil, :placeholder => "How many travellers?"
+/   = text_field_tag :from_date, nil, :placeholder => "Starting", :as => :date_picker
+/   = text_field_tag :end_date, nil, :placeholder => "Return", :as => :date_picker
+/   / = text_field_tag :email, nil, :placeholder => "Email"
+/   / = text_field_tag :contact_no, nil, :placeholder => "Mobile No."
+/   = submit_tag "Go!", :class => 'btn btn-large btn-info', :style => 'font-size:24px'
+/   /= text_field_tag :no_of_adult
 
-/ .row
-/   .span4#response-form
-/     #instruction
-/       To get your vacation planned for free, fill up these details and we will contact you!
-/     .b-form
-/       = form_for(@user_response, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px', :id => "user_response_form"}) do |f|
-/         .textfield
-/           %i.icon-user
-/           %input.text{:autocomplete => "off", :name => "user[name]", :placeholder => "Your name", :size => "24", :type => "text", :class => "span2 validate[required]"}
-/             %em.required required
-/         .textfield
-/           %i.icon-envelope
-/           %input.text{:autocomplete => "off", :name => "user[email]", :placeholder => "Your email", :size => "24", :type => "text", :class => "validate[required,custom[email]]"}
-/             %em.required required
-/         .textfield
-/           %i.fa.fa-mobile
-/           %input.text{:autocomplete => "off", :name => "user[contact_no]", :placeholder => "Your Contact No.", :size => "24", :type => "text"}
-/         .textfield
-/           %i.icon-calendar
-/           %input.text{:autocomplete => "off", :name => "user[start_date]", :placeholder => "Start Date", :size => "24", :type => "text", :as => :date_picker}
-/         .textfield
-/           %i.icon-calendar
-/           %input.text{:autocomplete => "off", :name => "user[end_date]", :placeholder => "End Date", :size => "24", :type => "text", :as => :date_picker}
-/         .textfield
-/           %i.fa.fa-group
-/           %input.text{:autocomplete => "off", :name => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text"}
-/         .textfield
-/           %i.fa.fa-android
-/           %input.text{:autocomplete => "off", :name => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text"}
-/         %br
-/         %center
-/           = f.button "Submit", :class => 'btn btn-success btn-medium btn-block', :style => 'background:#FFCC11;color:brown', :id => "response_submit"
+.span4#response-form1
+  #instruction1
+    To get your vacation planned for free, fill up these details and we will contact you!
+  .b-form
+    = form_for(@user_response, :defaults => {:required => false}, :html => { :class => 'form-horizontal', :style => 'padding-bottom:0px', :id => "user_response_form"}) do |f|
+      .textfield
+        %i.icon-user
+        %input.text{:autocomplete => "off", :name => "user[name]", :placeholder => "Your name", :size => "24", :type => "text", :class => "span2 validate[required]"}
+          %em.required required
+      .textfield
+        %i.icon-envelope
+        %input.text{:autocomplete => "off", :name => "user[email]", :placeholder => "Your email", :size => "24", :type => "text", :class => "validate[required,custom[email]]"}
+          %em.required required
+      .textfield
+        %i.fa.fa-mobile
+        %input.text{:autocomplete => "off", :name => "user[contact_no]", :placeholder => "Your Contact No.", :size => "24", :type => "text"}
+      .textfield
+        %i.icon-calendar
+        %input.text{:autocomplete => "off", :name => "user[start_date]", :placeholder => "Start Date", :size => "24", :type => "text", :as => :date_picker}
+      .textfield
+        %i.icon-calendar
+        %input.text{:autocomplete => "off", :name => "user[end_date]", :placeholder => "End Date", :size => "24", :type => "text", :as => :date_picker}
+      .textfield
+        %i.fa.fa-group
+        %input.text{:autocomplete => "off", :name => "user[no_of_adults]", :placeholder => "No. of Adults", :size => "24", :type => "text"}
+      .textfield
+        %i.fa.fa-android
+        %input.text{:autocomplete => "off", :name => "user[no_of_children]", :placeholder => "No. of Children", :size => "24", :type => "text"}
+      %br
+      %center
+        = f.button "Submit", :class => 'btn btn-success btn-medium btn-block', :style => 'background:#FFCC11;color:brown', :id => "response_submit"

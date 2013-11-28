@@ -93,9 +93,12 @@
 
 #root-image
 {
-  height: 750px;
   background: image-url("<%= asset_path 'unwinders/h3.jpg' %>") no-repeat;
+  background-attachment: fixed;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
   background-size: cover;
+  height: 750px;
   padding-left:10px;
 }
 
@@ -327,3 +330,29 @@ span {
 }
 }
 .formError{margin-left: 150px!important;}
+
+.vc-profile-pic .featured-vcs-info{
+  display:none;
+}
+
+.vc-profile-pic:hover{
+  cursor: pointer;
+
+  .featured-vcs-info{
+    display:inline-block;
+    z-index: 2;
+    position: absolute;
+  }
+}
+
+.featured-vcs-info .vc-pro-details{
+  border: 1px solid black;
+  font-family: source-sans-pro, Helvetica, Arial, sans-serif, sans-serif;
+  list-style: none;
+  font-size:17px;
+  color:black;
+  line-height: 22px;
+  background-color:rgba(255,255,255,0.7);
+  padding: 20px;
+  border-radius: 5px;
+}

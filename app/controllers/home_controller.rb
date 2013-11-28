@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!, :except => 'index'
   def index
     vcs = VacationConsultant.all
-    @vcs = vcs.sort_by{rand}[0..2]
-    @cust_iti_request = CustItiRequest.new
+    @vcs = vcs.sort_by{rand}[0..5]
+    @user_response = UserResponse.new
   end
 end

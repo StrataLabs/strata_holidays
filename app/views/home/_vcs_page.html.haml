@@ -1,33 +1,53 @@
-.box
-  .content{:style => 'padding-left:50px;background:white'}
-    .row
-      - @vcs.each do |vc|
-        .span4.box{:style => 'margin-left:10px'}
-          .vc-pro-header{:style => 'background:#ffcc11'}
-            .row
-              .span1{:style => 'padding-left:10px'}
-                .vc_image.imgborder
-                  =image_tag("#{asset_path("unwinders/vc_#{vc.id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';",:style => 'height:60px;width:50px')
-              .span2{:style => 'padding-top:15px;margin-left:5px; color:black'}
-                %b{:style => "font-size:20px"}
-                  = link_to "#{vc.name}", vc_unwinders_path(:id => "#{vc.id}")
-                %br
-                  = vc.city
-          %table.table.my-table-striped.table-condensed{:style => 'margin-bottom:0px'}
-            %tr
-              %td{:style => 'font-weight:bold;text-align:center;font-size:13pt;background:white'}
-                2108 nights planned
-            %tr
-              %td
-                %b Top Destinations
-                %br
-                %b National:
-                Ooty, Kodai, Goa, Mangalore
-                %br
-                %b International:
-                Germany, New Zealand, France
-            %tr
-              %td{:style => 'background:white'}
-                %b Customer Reviews
-                %br
-                Excellent planning, extremely customer-friendly
+/ .box
+/   .content{:style => 'padding-left:50px;background:white'}
+/     .row
+/       - @vcs.each do |vc|
+/         .span4.box{:style => 'margin-left:10px'}
+/           .vc-pro-header{:style => 'background:#ffcc11'}
+/             .row
+/               .span1{:style => 'padding-left:10px'}
+/                 .vc_image.imgborder
+/                   =image_tag("#{asset_path("unwinders/vc_#{vc.id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';",:style => 'height:60px;width:50px')
+/               .span2{:style => 'padding-top:15px;margin-left:5px; color:black'}
+/                 %b{:style => "font-size:20px"}
+/                   = link_to "#{vc.name}", vc_unwinders_path(:id => "#{vc.id}")
+/                 %br
+/                   = vc.city
+/           %table.table.my-table-striped.table-condensed{:style => 'margin-bottom:0px'}
+/             %tr
+/               %td{:style => 'font-weight:bold;text-align:center;font-size:13pt;background:white'}
+/                 2108 nights planned
+/             %tr
+/               %td
+/                 %b Top Destinations
+/                 %br
+/                 %b National:
+/                 Ooty, Kodai, Goa, Mangalore
+/                 %br
+/                 %b International:
+/                 Germany, New Zealand, France
+/             %tr
+/               %td{:style => 'background:white'}
+/                 %b Customer Reviews
+/                 %br
+/                 Excellent planning, extremely customer-friendly
+.row
+  - @vcs.each do |vc|
+    .span2
+      .vc-profile-pic{:id => "hover_box_pol", :style => 'width:150px;height:180px;'}
+        =image_tag("#{asset_path("unwinders/vc_#{vc.id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:150px;height:180px;')
+      .contenthover{:id => "pol"}
+        #vc-name{:style => 'background-color:black;color:white;font-weight:bold;font-size:20px;margin:20px 0px 15px 0px'}
+          = vc.name
+        = vc.city
+        %br
+        - (0..Random.new.rand(2..4)).each do |no|
+          %i.icon-star{:style => 'color:#eeee09'}
+        %br
+        = link_to "View Profile", vc_unwinders_path(:id => vc.id), :class => 'btn btn-small btn-success'
+        / = link_to "#{vc.name.titleize}", vc_unwinders_path(:id => vc.id)
+        / %br
+        / Work Profile: Vacation Consultant
+        / %br
+        / Reach her at 080 67683816
+        / %br
