@@ -25,6 +25,9 @@
         %i.fa.fa-mobile
         %input.text{:autocomplete => "off", :name => "user[contact_no]", :placeholder => "Your Contact No.", :size => "24", :type => "text"}
       .textfield
+        %i.icon-globe
+        %input.text{:autocomplete => "off", :name => "user[destinations]", :placeholder => "Destination(s)", :size => "24", :type => "text"}
+      .textfield
         %i.icon-calendar
         %input.text{:autocomplete => "off", :name => "user[start_date]", :placeholder => "Start Date", :size => "24", :type => "text", :as => :date_picker}
       .textfield

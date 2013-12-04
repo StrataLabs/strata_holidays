@@ -22,75 +22,73 @@
         %label= model_class.human_attribute_name(:name) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :name
+          = @vacation_consultant.name
       %li
         %label= model_class.human_attribute_name(:address_1) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :address_1
+          = @vacation_consultant.address_1
       %li
         %label= model_class.human_attribute_name(:address_2) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :address_2
+          = @vacation_consultant.address_2
       %li
         %label= model_class.human_attribute_name(:city) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :city
+          = @vacation_consultant.city
       %li
         %label= model_class.human_attribute_name(:state) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :state
+          = @vacation_consultant.state
       %li
         %label= model_class.human_attribute_name(:country) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :country, type: :select, collection: (ActionView::Helpers::FormOptionsHelper::COUNTRIES.zip(ActionView::Helpers::FormOptionsHelper::COUNTRIES))
+          = @vacation_consultant.country
       %li
         %label= model_class.human_attribute_name(:lphone) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :lphone
+          = @vacation_consultant.lphone
       %li
         %label= model_class.human_attribute_name(:mphone) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :mphone
+          = @vacation_consultant.mphone
       / %li
       /   %label= model_class.human_attribute_name(:email) + ':'
       /   %span
       /     &nbsp;
-      /     = best_in_place @vacation_consultant, :email
+      /     = @vacation_consultant.email
       %li
         %label= model_class.human_attribute_name(:planning) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :planning, type: :checkbox, collection: %w[No Yes]
+          = @vacation_consultant.planning
       %li
         %label= model_class.human_attribute_name(:booking) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :booking, type: :checkbox, collection: %w[No Yes]
+          = @vacation_consultant.booking
       %li
         %label= model_class.human_attribute_name(:preferred_neighborhood) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :preferred_neighborhood
+          = @vacation_consultant.preferred_neighborhood
       %li
         %label= model_class.human_attribute_name(:preferred_locations) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :preferred_locations, type: :select, collection: Destination.all, :multiple => true
+          = @vacation_consultant.preferred_locations
       %li
         %label= model_class.human_attribute_name(:comments) + ':'
         %span
           &nbsp;
-          = best_in_place @vacation_consultant, :comments
+          = @vacation_consultant.comments
 
       .form-actions
         = link_to "Change password", edit_user_registration_path
-      %br
-      %div.pull-left
-        Click any field to edit
+        = link_to "Edit", edit_vacation_consultant_path(@vacation_consultant), :class => 'btn btn-info'

@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
         :password_confirmation => password, :user_type => "V")
   end
 
-  def admin?
-    (session[:user_role] == User::ADMIN)
+  def admin?(user_role)
+    (user_role == User::ADMIN)
   end
 end

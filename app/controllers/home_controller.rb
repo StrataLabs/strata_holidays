@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   def index
     vcs = VacationConsultant.all
     @vcs = vcs.sort_by{rand}[0..5]
+    @testimonials = Testimonial.all.sort_by{rand}[0..5]
     @user_response = UserResponse.new
   end
 end

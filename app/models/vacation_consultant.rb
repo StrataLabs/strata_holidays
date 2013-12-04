@@ -3,14 +3,27 @@ class VacationConsultant < ActiveRecord::Base
   has_many :consultant_customer_destinations
   has_many :testimonials
   has_many :campaigns
+  has_attached_file :profile_picture, styles: {
+    profile: '150x180#',
+    large: '500x500>'}, :processors => [:cropper]
   serialize :preferred_locations
   has_and_belongs_to_many :destinations
   belongs_to :user, :autosave => true
-  attr_accessor :status
+  attr_accessor :status, :crop_x, :crop_y, :crop_h, :crop_w
   validates_presence_of ["name", "address_1", "city", "state", "country", "mphone", "email", "preferred_neighborhood", "preferred_locations"]
   validate :check_mobile_no
  # after_save :commit_sunspot
   after_save :create_destinations_vc_mapping
+  after_update :reprocess_profile_picture, :if => :cropping?
+
+  def cropping?
+    !crop_x.blank? && !crop_y.blank? && !crop_w.blank? && !crop_h.blank?
+  end
+
+  def profile_picture_geometry(style = :original)
+    @geometry ||= {}
+    @geometry[style] ||= Paperclip::Geometry.from_file(profile_picture.url(style))
+  end
 
   def commit_sunspot
     self.index! if self.changed?
@@ -69,5 +82,12 @@ class VacationConsultant < ActiveRecord::Base
         end
       end
     end
+  end
+
+  private
+
+  def reprocess_profile_picture
+    profile_picture.assign(profile_picture)
+    profile_picture.save
   end
 end

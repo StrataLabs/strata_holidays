@@ -1,7 +1,7 @@
 .container{:style => 'background:#f0f0f0;padding-top:40px;padding-left:0px;padding-right:0px'}
   .action
     .span2{:style => 'border-right:1px solid;border-color:#bbb; padding-right:25px;height:250px'}
-      =image_tag("#{asset_path("unwinders/vc.png")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';")
+      =image_tag("#{current_user.vacation_consultant.profile_picture.url(:large)}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:150px;height:180px')
     .span3
       #name{:style => 'font-weight:bold;font-size:32px;color:green;padding-top:30px'}
         = current_user.vacation_consultant.name

@@ -1,5 +1,10 @@
 .box
-  .content{:style => 'background:#ffeb99'}
+  .content{:style => 'background-color:#033355'}
+    .container{:style => 'padding-left:0px;'}
+      .row
+        %br
+        .span12{:style => 'text-align:center;font:normal 40px/60px AllerLightRegular;color:white'}
+          Featured Destinations
     #myCarousel1.carousel.slide
       %ol.carousel-indicators.hide
         %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel1"}
@@ -12,12 +17,12 @@
           -if index == 0
             .active.item
               - p.each do |p1|
-                %a{:href => destination_path(:id => p1.id)}
+                %a{:href => destination_path(:id => p1.id), :title => "#{p1.name}"}
                   %img{:src => "#{p1.image.url(:medium)}"}
           -else
             .item
               - p.each do |p1|
-                %a{:href => destination_path(:id => p1.id)}
+                %a{:href => destination_path(:id => p1.id), :title => "#{p1.name}"}
                   %img{:src => "#{p1.image.url(:medium)}"}
       %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel1"} &lsaquo;
       %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel1"} &rsaquo;

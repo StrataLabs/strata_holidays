@@ -5,24 +5,60 @@
     #empty-div{:style => 'min-height:100px;'}
     .row
       .span7
+        #signup-link{:style => 'background-color:rgba(0,0,0,0.2);border-radius:5px;padding:40px;font-size:24px;font-weight:bold;color:white'}
+          = link_to "Sign in", user_session_path, :class => 'btn btn-large btn-success', :style => 'width: 500px'
+          %br
+          %br
+          To sign up as a member at Unwinders, click here
+          %br
+          %br
+          = link_to "Sign up", new_user_registration_path, :class => 'btn btn-large btn-info', :style => 'width: 500px'
       = render 'visitor_request'
+
     /.well{:style => 'height:4px'}
     /= link_to "Click here to sign up as a consultant with us!!", new_vc_registration_path
-.container{:style => 'padding-left:0px;'}
-  .row
+.home-page
+  .container{:style => 'padding-left:0px;'}
+    .row
+      %br
+      .span12{:style => 'text-align:center;font:normal 40px/60px AllerLightRegular;color:black'}
+        Meet our expert planners
     %br
-    .span12{:style => 'text-align:center;font:normal 40px/60px AllerLightRegular;color:black'}
-      Meet our expert planners
-  %br
-  %br
-  #vcs-page
-    = render :partial => 'vcs_page'
-  .row
-    .span12
-      #all-vcs-link.pull-right
-        = link_to "See all", '#'
-  %br
-  %br
-  %br
-  / #destination-carousel
-  /   = render :partial => 'picture_carousel'
+    %br
+    #vcs-page
+      = render :partial => 'vcs_page'
+    .row
+      .span12
+        #all-vcs-link.pull-right
+          = link_to "See all", '#'
+    %br
+    %br
+    %br
+#destination-carousel
+  = render :partial => 'picture_carousel'
+.home-page
+  .container{:style => 'padding-left:0px;'}
+    .row
+      %br
+      .span12{:style => 'text-align:center;font:normal 40px/60px AllerLightRegular;color:black'}
+        Testimonials
+    %br
+    %br
+    -@testimonials.each do |t|
+      .row
+        .span12
+          %a{:href => "#{asset_path("unwinders/testimonial_#{t.customer_id}.jpg")}", :rel => "facebox"}
+            =image_tag("#{asset_path("unwinders/testimonial_#{t.customer_id}.jpg")}", :onerror => "this.src= 'https://s3.amazonaws.com/dev.justbooksclc.com/strata_holidays/default.jpg';", :style => 'width:50px;height:50px;float:left;margin-top:5px')
+          %blockquote
+            %p.vc-bio{:style => 'font:normal 14px AllerLightRegular;color:black;margin-top:-10px;text-align:justify'}
+              = t.content.html_safe
+          - if t.customer_id.present?
+            #quote-by.vc-bio.pull-right{:style => 'font:normal 10px AllerLightRegular;color:gray;margin-top:-10px;'}
+              \-
+              = Customer.find(t.customer_id).name
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br

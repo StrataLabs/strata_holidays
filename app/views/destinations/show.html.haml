@@ -72,7 +72,7 @@
               = vc.city
 .row
   .span12
-    -if current_user && current_user.admin?
+    -if current_user && current_user.admin?(session[:user_role])
       = link_to "See all Destinations", destinations_path, :class => 'btn'
       = link_to t('.new', :default => t("helpers.links.new")), new_destination_path, :class => 'btn'
       = link_to t('.edit', :default => t("helpers.links.edit")), edit_destination_path(@destination), :class => 'btn'

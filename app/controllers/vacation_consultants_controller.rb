@@ -44,6 +44,7 @@ class VacationConsultantsController < ApplicationController
 
   # GET /vacation_consultants/1/edit
   def edit
+    render :layout => 'unwinders'
   end
 
   # POST /vacation_consultants
@@ -68,15 +69,15 @@ class VacationConsultantsController < ApplicationController
     unless params[:vacation_consultant][:preferred_locations].nil?
       params[:vacation_consultant][:preferred_locations].reject! { |c| c.empty? }
     end
-    respond_to do |format|
-      if @vacation_consultant.update(vacation_consultant_params)
-        @vacation_consultant.user.update(:name => params[:vacation_consultant][:name])
-        format.html { redirect_to @vacation_consultant, notice: 'Vacation consultant was successfully updated.' }
-        format.json { head :no_content }
+    if @vacation_consultant.update(vacation_consultant_params)
+      @vacation_consultant.user.update(:name => params[:vacation_consultant][:name])
+      if params[:vacation_consultant][:profile_picture].blank?
+        redirect_to @vacation_consultant, notice: "Successfully updated."
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @vacation_consultant.errors, status: :unprocessable_entity }
+        render :action => "crop", :layout => 'unwinders'
       end
+    else
+      render action: 'edit'
     end
   end
 
@@ -147,6 +148,6 @@ class VacationConsultantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vacation_consultant_params
-      params.require(:vacation_consultant).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :lphone, :mphone, :email, :comments, :country, :preferred_locations => [])
+      params.require(:vacation_consultant).permit(:name, :address_1, :address_2, :city, :state, :preferred_neighborhood, :planning, :booking, :lphone, :mphone, :email, :comments, :country, :profile_picture, :crop_x, :crop_y, :crop_w, :crop_h, :preferred_locations => [])
     end
 end

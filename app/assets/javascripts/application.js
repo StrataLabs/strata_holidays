@@ -74,7 +74,6 @@ jQuery(document).ready(function($) {
 jQuery(document).ready(function($){
   $("#response_submit").on('click', function() {
     $("#user_response_form").validationEngine({promptPosition : "bottomLeft"});
-    alert("done");
   });
 });
 

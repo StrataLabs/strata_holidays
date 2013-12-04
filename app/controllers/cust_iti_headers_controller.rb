@@ -7,7 +7,7 @@ class CustItiHeadersController < ApplicationController
   before_action :set_cust_iti_header, only: [:show, :edit, :update, :destroy, :publish, :customer_view, :edit_state, :earlier_versions, :rebuild_version, :revert_to_version]
   before_filter :authenticate_admin_user, only: [:index]
   before_filter :confirm_user_type_is_vc, except: [:history, :update, :index, :customer_view, :edit_state, :earlier_versions, :rebuild_version]
-  before_filter :confirm_user_type_is_customer, only: [:history, :customer_view, :edit_state]
+  before_filter :confirm_user_type_is_customer, only: [:history, :edit_state]
   # GET /cust_iti_headers
   # GET /cust_iti_headers.json
   def index
@@ -115,7 +115,15 @@ class CustItiHeadersController < ApplicationController
   end
 
   def customer_view
-    render :layout => 'unwinders'
+    if current_user
+      if allow_access?
+        render :layout => 'unwinders'
+      else
+        redirect_to user_unwinders_path, :notice => "You do not have the authority to view this page."
+      end
+    else
+      redirect_to user_session_path
+    end
   end
 
   def edit_state

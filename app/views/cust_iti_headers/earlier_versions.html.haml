@@ -6,11 +6,14 @@
       %tr
         %th Published on
         %th
-        - if session[:user_role] == User::VC
+        - if session[:user_role] == User::VC and @cust_iti_header.state != "Approved"
           %th
       - @versions.each do |version|
         %tr
           %td= version.created_at.strftime("%d %b 20%y at %I:%M%p")
           %td= link_to "View details", rebuild_version_cust_iti_header_path(:version => version.id, :id => version.item_id)
-          - if session[:user_role] == User::VC
+          - if session[:user_role] == User::VC and @cust_iti_header.state != "Approved"
             %td= link_to "Revert to this version", revert_to_version_cust_iti_header_path(:version => version.id, :id => version.item_id)
+      %tr
+        %td Current Version
+        %td= link_to "View details", customer_view_cust_iti_header_path(:id => params[:id])
